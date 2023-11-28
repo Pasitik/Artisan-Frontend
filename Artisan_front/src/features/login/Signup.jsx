@@ -3,29 +3,43 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { signupUser } from "./signupSlice";
+import Validation from "../../components/Validation";
 import AuthSide from "../../components/AuthSide";
 
 
 const SignupForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [profession, setProfession] = useState('')
-  const [dob, setDob] = useState('')
-  const [phone, setPhone] = useState('')
-  const [password, setPassword] = useState('')
+  const [formData, setFormData] = useState(
+    {
+      username:"",
+      email: "",
+      password: "",
+      membership: false
+    }
+  )
+  const [confirmPassword, setConfirmPassword] = useState('')
   const { status, error} = useSelector ((state) => state.users)
 
+  const target_ = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value})
+  }
+
+  const handleValidation = () =>{
+    Validation(formData, confirmPassword);
+  }
   const handleSignup = (e) => {
     e.preventDefault()
-    let userData={
-      name, email, password,
-    }
-    console.log(userData)
-    dispatch(signupUser(userData)).then((result)=>{
-      setEmail('')
-      setPassword('')
+    // if (handleValidation){
+    //   return console.log("error")
+    // }
+    dispatch(signupUser(formData)).then((result)=>{
+      console.log(result);
+      setFormData({
+        username:"",
+        email:"",
+        password:""
+      })
       navigate('/login')
       console.log("Registered")
     })
@@ -46,36 +60,44 @@ return (
         <div className="w-full flex flex-col">
           <form action="">
           <input 
+              name="username"
               type="text"
               placeholder="username"
-              value={name}
-              onChange={e => setName(e.target.value)}
+              onChange={target_}
               className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
             />
 
             <input 
+              name= "email"
               type="email"
               placeholder="Email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={target_}
               className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
             />
 
             <input 
+              name="password"
               type="password"
               placeholder="Password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={target_}
               className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
             />
 
             <input 
-              type="text"
+              name="confirm Pasword"
+              type="password"
               placeholder="Confirm Password"
-              value=""
-              onChange=""
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)}
               className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
             />
+
+            <div className="w-full flex items-center justify-center">
+                <div className="w-full flex items-center">
+                  <input name="membership" type="checkbox" className="w-4 h-4 mr-2" onChange={e => setFormData({...formData, [e.target.name]: true})}/>
+                  <p className="text-sm">I am an artisan</p>
+                </div>
+              </div>
 
             <div className="w-full flex flex-col my-4">
               <button 

@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+import axios from 'axios';
+
 
 const initialState = {
     user: null,
@@ -7,8 +9,15 @@ const initialState = {
 }
 
 export const signupUser = createAsyncThunk("register/registerUser", async(data) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    return {username: data.username}
+    try {
+        const response = await axios.post('http://localhost:8000/auth/users/', data);
+        return console.log( response.data);
+      } catch (error) {
+        // Handle error appropriately, e.g., by throwing or returning an error object
+        throw error;
+      }  
+    //await new Promise((resolve) => setTimeout(resolve, 1000));
+    //return data
 })
 
 const signupSlice = createSlice({
@@ -30,7 +39,7 @@ const signupSlice = createSlice({
         .addCase(signupUser.rejected, (state, action) => {
             state.status = 'idle'
             state.user = null
-            state.error = 'failed'
+            //state.error = 'failed'
             state.error = action.error.message
         })
     }
