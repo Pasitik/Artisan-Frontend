@@ -20,7 +20,7 @@ export const loginUser = createAsyncThunk("login/loginUser", async(credentials) 
 
         console.log("Success");
         console.log(response.data);
-
+        localStorage.setItem('authToken', response.data.access);
         return response.data;
     } catch (error) {
     // Handle error appropriately, e.g., by throwing or returning an error object
