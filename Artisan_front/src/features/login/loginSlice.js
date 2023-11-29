@@ -45,6 +45,7 @@ const loginSlice = createSlice({
             state.status = 'succeeded'
             state.error = null
             state.user = action.payload
+            state.token = action.payload.access
         })
         .addCase(loginUser.rejected, (state, action) => {
             state.status = 'idle'
