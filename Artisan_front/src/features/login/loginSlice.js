@@ -1,34 +1,40 @@
-import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-    user: null,
-    status: "idle",
-    error: null
-}
+  user: null,
+  status: "idle",
+  error: null,
+};
 
-export const loginUser = createAsyncThunk("login/loginUser", async(credentials) => {
+export const loginUser = createAsyncThunk(
+  "login/loginUser",
+  async (credentials) => {
     try {
-        const response = await axios.post('http://localhost:8000/auth/jwt/create/', {
-            username: credentials.username,
-            password: credentials.password,
-        });
+      const response = await axios.post(
+        "http://localhost:8000/auth/jwt/create/",
+        {
+          username: credentials.username,
+          password: credentials.password,
+        },
+      );
 
-        if (!response.data) {
-            throw new Error('Invalid username or password');
-        }
+      if (!response.data) {
+        throw new Error("Invalid username or password");
+      }
 
         console.log("Success");
         console.log(response.data);
         localStorage.setItem('authToken', response.data.access);
         return response.data;
     } catch (error) {
-    // Handle error appropriately, e.g., by throwing or returning an error object
-        throw error;
+      // Handle error appropriately, e.g., by throwing or returning an error object
+      throw error;
     }
     //await new Promise((resolve) => setTimeout(resolve, 1000));
     //return {credentials}
-})
+  },
+);
 
 const loginSlice = createSlice({
     name: "login",

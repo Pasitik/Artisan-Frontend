@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import PrivateRoutes from "./components/PrivateRoutes";
 import "./App.css";
 import SignupForm from "./features/login/signup";
+import AddArtisan from "./features/AddArtisan";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           </Route>
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
+          <Route path="/artisan/join" element={<AddArtisan />} />
         </Routes>
       </Router>
     </>
