@@ -1,4 +1,3 @@
-
 const AuthSide = () => {
   return (
     <div className="relative w-1/2 h-full flex flex-col">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loginUser } from "./loginSlice";
 import { useNavigate, Link } from "react-router-dom";
@@ -6,30 +6,75 @@ import AuthSide from "../../components/AuthSide";
 import { useApi } from "../../data/ApiProvider";
 
 const LoginForm = () => {
+  const [error, setError] = useState({
+    hasError: false,
+    message: "",
+  });
+
+  const [formError, setFormError] = useState({
+    message: "",
+    fieldname: "",
+  });
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const api = useApi()
-  //const [email, setEmail] = useState('')
-  //const [password, setPassword] = useState('')
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
+  const api = useApi();
+
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+
   const { status } = useSelector((state) => state.users);
+
+  useEffect(() => {
+    usernameRef.current.focus();
+    if (!usernameRef.current.value || !passwordRef.current.value) {
+      setError({ hasError: true, message: "" });
+    }
+  }, []);
+
+  const handleBlur = (e) => {
+    if (!e.target.value) {
+      console.log("yeah yeah");
+      setFormError({
+        fieldname: e.target.name,
+        message: `${e.target.name} is required`,
+      });
+    }
+    error.message = "";
+
+    if (!e.target.value) {
+      setError({ hasError: true, message: "" });
+    }
+  };
+
+  const handleOnChange = (e) => {
+    if (e.target.value.length > 0) {
+      setFormError({
+        message: "",
+      });
+    }
+    if (e.target.value) {
+      setError({ hasError: false, message: "" });
+    }
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    dispatch(loginUser(async () => await api.login(formData.username, formData.password)))
-   .then((result) => {
-      console.log('------------------->', result);
-    //   setFormData({
-    //     username: "",
-    //     password: "",
-    //   });
-    //   navigate("/");
-    //   console.log("we are in");
-    });
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+
+    dispatch(loginUser(async () => await api.login(username, password))).then(
+      (result) => {
+        if (result.error && result.error.code === "ERR_BAD_REQUEST") {
+          setError({ hasError: true, message: "Invalid username or password" });
+        } else {
+          //console.log("we are in");
+          localStorage.setItem('authToken', result.access)
+          navigate("/");
+        }
+      },
+    );
   };
 
   return (
@@ -55,24 +100,36 @@ const LoginForm = () => {
                 name="username"
                 type="text"
                 placeholder="Username"
-                //value={formData}
-                //onChange={e => setEmail(e.target.value)}
-                onChange={(e) =>
-                  setFormData({ ...formData, [e.target.name]: e.target.value })
-                }
+                ref={usernameRef}
+                onBlur={handleBlur}
+                onChange={handleOnChange}
                 className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
               />
+              <p
+                hidden={!(formError.fieldname === "username")}
+                className="text-red-500 text-sm"
+              >
+                {formError.message}
+              </p>
+
               <input
                 name="password"
                 type="password"
                 placeholder="Password"
-                //value={formData}
-                //onChange={e => setPassword(e.target.value)}
-                onChange={(e) =>
-                  setFormData({ ...formData, [e.target.name]: e.target.value })
-                }
+                ref={passwordRef}
+                onBlur={handleBlur}
+                onChange={handleOnChange}
                 className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
               />
+              <p
+                hidden={!(formError.fieldname === "password")}
+                className="text-red-500 text-sm"
+              >
+                {formError.message}
+              </p>
+              <p hidden={!error.hasError} className="text-red-500 text-sm">
+                {error.message}
+              </p>
               <div className="w-full flex items-center justify-center">
                 <div className="w-full flex items-center">
                   <input type="checkbox" className="w-4 h-4 mr-2" />
@@ -87,7 +144,7 @@ const LoginForm = () => {
               <div className="w-full flex flex-col my-4">
                 <button
                   onClick={handleLogin}
-                  disabled={status === "loading"}
+                  disabled={status === "loading" || error.hasError}
                   className="w-full text-white my-2 font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >
                   Login

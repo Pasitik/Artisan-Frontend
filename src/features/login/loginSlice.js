@@ -10,32 +10,6 @@ const initialState = {
 export const loginUser = createAsyncThunk(
   "login/loginUser",
   async (login) => await login()
-  // {
-
-  //   try {
-  //     const response = await axios.post(
-  //       "http://localhost:8000/auth/jwt/create/",
-  //       {
-  //         username: credentials.username,
-  //         password: credentials.password,
-  //       },
-  //     );
-
-  //     // if (!response.data) {
-  //     //   throw new Error("Invalid username or password");
-  //     // }
-
-  //     console.log("Success");
-  //     console.log(response.data);
-  //     localStorage.setItem("authToken", response.data.access);
-  //     return response.data;
-  //   } catch (error) {
-  //     // Handle error appropriately, e.g., by throwing or returning an error object
-  //     throw error;
-  //   }
-  //   //await new Promise((resolve) => setTimeout(resolve, 1000));
-  //   //return {credentials}
-  // },
 );
 
 const loginSlice = createSlice({
@@ -59,7 +33,7 @@ const loginSlice = createSlice({
         state.status = "idle";
         state.user = null;
         //state.error = 'failed'
-        state.error = action.error.message;
+        state.error = action.error;
       });
   },
 });

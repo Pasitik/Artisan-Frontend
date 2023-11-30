@@ -10,17 +10,17 @@ import ApiProvider from "./data/ApiProvider";
 function App() {
   return (
     <>
-    <ApiProvider>
-      <Router>
-        <Routes>
-          <Route element={<PrivateRoutes />}>
-            <Route exact path="/" element={<Home />} />
-          </Route>
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/signup" element={<SignupForm />} />
-          <Route path="/artisan/join" element={<AddArtisan />} />
-        </Routes>
-      </Router>
+      <ApiProvider>
+        <Router>
+          <Routes>
+            <Route element={<PrivateRoutes />}>
+              <Route exact path="/" element={<Home />} />
+            </Route>
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/signup" element={<SignupForm />} />
+            <Route path="/artisan/join" element={<AddArtisan />} />
+          </Routes>
+        </Router>
       </ApiProvider>
     </>
   );
