@@ -1,7 +1,4 @@
-import React from "react";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-// import { loginUser } from "./loginSlice";
 import { useNavigate, Link } from "react-router-dom";
 import AuthSide from "../components/AuthSide";
 

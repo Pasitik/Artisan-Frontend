@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
@@ -16,15 +15,15 @@ const SignupForm = () => {
     membership: false,
   });
   const [confirmPassword, setConfirmPassword] = useState("");
-  const { status, error } = useSelector((state) => state.users);
+  const { status } = useSelector((state) => state.users);
 
   const target_ = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleValidation = () => {
-    Validation(formData, confirmPassword);
-  };
+  // const handleValidation = () => {
+  //   Validation(formData, confirmPassword);
+  // };
   const handleSignup = (e) => {
     e.preventDefault();
     // if (handleValidation){

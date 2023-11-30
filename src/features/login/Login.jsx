@@ -1,36 +1,34 @@
-import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loginUser } from "./loginSlice";
 import { useNavigate, Link } from "react-router-dom";
 import AuthSide from "../../components/AuthSide";
+import { useApi } from "../../data/ApiProvider";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const api = useApi()
   //const [email, setEmail] = useState('')
   //const [password, setPassword] = useState('')
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
-  const { status, error } = useSelector((state) => state.users);
+  const { status } = useSelector((state) => state.users);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // let userData={
-    //   email,
-    //   password
-    // }
-    //console.log(formData);
-    dispatch(loginUser(formData)).then((result) => {
-      console.log(result);
-      setFormData({
-        username: "",
-        password: "",
-      });
-      navigate("/");
-      console.log("we are in");
+
+    dispatch(loginUser(async () => await api.login(formData.username, formData.password)))
+   .then((result) => {
+      console.log('------------------->', result);
+    //   setFormData({
+    //     username: "",
+    //     password: "",
+    //   });
+    //   navigate("/");
+    //   console.log("we are in");
     });
   };
 
@@ -120,7 +118,7 @@ const LoginForm = () => {
 
               <div className="w-full flex items-center justify-center">
                 <p className="text-sm mt-4">
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <Link to="/signup">
                     {" "}
                     <span className="font-semibold underline underline-offset-2 cursor-pointer">
