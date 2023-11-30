@@ -12,21 +12,21 @@ const AddArtisan = () => {
   const [formData, setFormData] = useState(null);
   //   const { status, error } = useSelector((state) => state.users);
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-	  alert(JSON.stringify(formData))
-    
-      //console.log(formData);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(JSON.stringify(formData));
+
+    //console.log(formData);
     //   dispatch(loginUser(formData)).then((result) => {
     //     console.log(result);
     //     setFormData({
     //       username: "",
     //       password: "",
     //     });
-        // navigate("/");
-        console.log("we are in");
+    // navigate("/");
+    console.log("we are in");
     //   });
-    };
+  };
 
   return (
     <div className="w-full h-screen flex items-start">
