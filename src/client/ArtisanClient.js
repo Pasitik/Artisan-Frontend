@@ -79,4 +79,14 @@ export default class ArtisanClient {
     });
     return response.data;
   }
+
+  async getArtisanCategories() {
+    const response = await this.get("business/category");
+    return response.data;
+  }
+
+  async addArtisan(body) {
+    const response = await this.post("business/artisan/profile/", body);
+    return response.data;
+  }
 }

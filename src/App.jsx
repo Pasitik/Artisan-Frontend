@@ -4,7 +4,8 @@ import Home from "./pages/Home";
 import PrivateRoutes from "./components/PrivateRoutes";
 import "./App.css";
 import SignupForm from "./features/login/signup";
-import AddArtisan from "./features/AddAddress";
+import AddAddress from "./features/AddAddress";
+import AddArtisan from "./features/AddArtisan";
 import ApiProvider from "./data/ApiProvider";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route element={<PrivateRoutes />}>
               <Route exact path="/" element={<Home />} />
+              <Route path="/artisan/address" element={<AddAddress />} />
               <Route path="/artisan/join" element={<AddArtisan />} />
             </Route>
             <Route path="/login" element={<LoginForm />} />
