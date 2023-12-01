@@ -1,26 +1,53 @@
-const Validation = (formData, confirmPassword) => {
-  let errors = {};
-  const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+export const signUpValidation = (e, newErrors, password, confirmPassword) => {
+  if (!e.target.value && e.target.name == "username") {
+    newErrors = {
+      ...newErrors,
+      username: {
+        message: "Username is required",
+        field: "username",
+      },
+    };
+  }
 
-  if (formData.email === "") {
-    errors.email = "Email is required";
+  if (!e.target.value && e.target.name == "email") {
+    newErrors = {
+      ...newErrors,
+      email: {
+        message: "Email is required",
+        field: "email",
+      },
+    };
   }
-  if (!email_pattern.test(formData.email)) {
-    errors.email = "Invalid Email";
+
+  if (!e.target.value && e.target.name == "password") {
+    newErrors = {
+      ...newErrors,
+      password: {
+        message: "Password is required",
+        field: "password",
+      },
+    };
   }
-  if (formData.password === "") {
-    errors.password = "Password is required";
+
+  if (!e.target.value && e.target.name == "confirm_password") {
+    newErrors = {
+      ...newErrors,
+      confirm_password: {
+        message: "Confirm password is required",
+        field: "confirm_password",
+      },
+    };
   }
-  if (!password_pattern.test(formData.password)) {
-    errors.password =
-      "Must contain at least 1 uppercase letter, 1 lowercase letter and a number";
+
+  if (password && confirmPassword && password !== confirmPassword) {
+    newErrors = {
+      ...newErrors,
+      confirm_password: {
+        message: "Passwords does not match",
+        field: "confirm_password",
+      },
+    };
   }
-  if (confirmPassword === "" || confirmPassword != formData.password) {
-    errors.confirmPassword = "Password not matched";
-  }
-  if (errors == {}) return null;
-  else return errors;
+
+  return newErrors;
 };
-
-export default Validation;

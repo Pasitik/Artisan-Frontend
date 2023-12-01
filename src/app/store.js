@@ -9,6 +9,6 @@ export const store = configureStore({
     users: loginReducer,
     signup: signupReducer,
     category: categoryReducer,
-    artisanProfile: artisanProfileReducer
-  }
+    artisanProfile: artisanProfileReducer,
+  },
 });
