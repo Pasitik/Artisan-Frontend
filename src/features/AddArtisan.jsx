@@ -68,20 +68,23 @@ const AddArtisan = () => {
 
     if (!formData.job_title || !formData.summary || !formData.category) {
       setFormIsValid(false);
+      return;
     }
     console.log(formData);
 
-    dispatch(addArtisan(async () => await api.addArtisan(formData))).then((result) => {
-      console.log(result);
-      // navigate("/");
-	  setFormData({
-		job_title: "",
-		summary: "",
-		category: "",
-	  })
-	  setFormIsValid(false)
-      console.log("we are in", formErrors);
-    });
+    dispatch(addArtisan(async () => await api.addArtisan(formData))).then(
+      (result) => {
+        console.log(result);
+        // navigate("/");
+        setFormData({
+          job_title: "",
+          summary: "",
+          category: "",
+        });
+        setFormIsValid(false);
+        console.log("we are in", formErrors);
+      },
+    );
   };
 
   if (status === "loading") {
@@ -117,7 +120,7 @@ const AddArtisan = () => {
                   id="job_title"
                   name="job_title"
                   type="text"
-				  value={formData.job_title}
+                  value={formData.job_title}
                   placeholder="Profession"
                   onChange={handleOnChange}
                   onBlur={handleBlur}
@@ -139,7 +142,7 @@ const AddArtisan = () => {
                   name="summary"
                   type="text"
                   placeholder="Summary"
-				  value={formData.summary}
+                  value={formData.summary}
                   onChange={handleOnChange}
                   onBlur={handleBlur}
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"

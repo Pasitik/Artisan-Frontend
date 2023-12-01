@@ -9,24 +9,11 @@ const initialState = {
 
 export const signupUser = createAsyncThunk(
   "register/registerUser",
-  async (data) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:8000/auth/users/",
-        data,
-      );
-      return console.log(response.data);
-    } catch (error) {
-      // Handle error appropriately, e.g., by throwing or returning an error object
-      throw error;
-    }
-    //await new Promise((resolve) => setTimeout(resolve, 1000));
-    //return data
-  },
+  async (signupUser) => signupUser(),
 );
 
 const signupSlice = createSlice({
-  name: "login",
+  name: "signup",
   initialState,
   reducers: {},
   extraReducers: (builder) => {

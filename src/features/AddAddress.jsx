@@ -44,7 +44,7 @@ const AddAddress = () => {
 
   const handleBlur = (e) => {
     let newErrors = { ...formErrors };
-    console.log(formData.houseNo);
+
     if (!e.target.value && e.target.name == "houseNo") {
       newErrors = {
         ...newErrors,
@@ -83,6 +83,7 @@ const AddAddress = () => {
     }
     setFormErrors(newErrors);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(JSON.stringify(formData));
@@ -94,6 +95,7 @@ const AddAddress = () => {
       !formData.street
     ) {
       setFormIsValid(false);
+      return;
     }
     console.log(formData);
 

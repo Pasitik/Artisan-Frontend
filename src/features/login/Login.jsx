@@ -34,7 +34,6 @@ const LoginForm = () => {
 
   const handleBlur = (e) => {
     if (!e.target.value) {
-      console.log("yeah yeah");
       setFormError({
         fieldname: e.target.name,
         message: `${e.target.name} is required`,

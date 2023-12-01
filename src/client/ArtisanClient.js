@@ -28,12 +28,12 @@ export default class ArtisanClient {
     });
 
     this.httpClient.interceptors.request.use((config) => {
-      console.log(`  Request: ${config.method} ${config.url}`);
+      console.log(`Request: ${config.method} ${config.url}`);
       return config;
     }, errorHandler);
 
     this.httpClient.interceptors.response.use((response) => {
-      if (response.statusText != "Ok" && response.status >= 300) {
+      if (response.statusText != "OK" && response.status >= 300) {
         if (response.status >= 500) {
           throw new Error("Server failure");
         }
@@ -67,6 +67,11 @@ export default class ArtisanClient {
       username,
       password,
     });
+    return response.data;
+  }
+
+  async signup(body) {
+    const response = await this.post("auth/users/", body);
     return response.data;
   }
 
