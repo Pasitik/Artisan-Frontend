@@ -23,7 +23,7 @@ export default class ArtisanClient {
       baseURL: BASE_API_URL + "/",
       headers: {
         "Content-Type": "application/json",
-        Authorization: accessToken,
+        Authorization: `JWT ${accessToken}`,
       },
     });
 
@@ -67,7 +67,16 @@ export default class ArtisanClient {
       username,
       password,
     });
+    return response.data;
+  }
 
+  async addAddress(body) {
+    const response = await this.post("business/address/profile/", {
+      house_number: body.houseNo,
+      street: body.street,
+      city: body.city,
+      state: body.state,
+    });
     return response.data;
   }
 }

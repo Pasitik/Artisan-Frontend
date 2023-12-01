@@ -9,7 +9,7 @@ const initialState = {
 
 export const loginUser = createAsyncThunk(
   "login/loginUser",
-  async (login) => await login()
+  async (login) => await login(),
 );
 
 const loginSlice = createSlice({

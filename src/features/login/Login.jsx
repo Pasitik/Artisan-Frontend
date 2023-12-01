@@ -69,8 +69,8 @@ const LoginForm = () => {
         if (result.error && result.error.code === "ERR_BAD_REQUEST") {
           setError({ hasError: true, message: "Invalid username or password" });
         } else {
-          //console.log("we are in");
-          localStorage.setItem('authToken', result.access)
+          console.log("we are in");
+          localStorage.setItem("authToken", result.payload.access);
           navigate("/");
         }
       },
