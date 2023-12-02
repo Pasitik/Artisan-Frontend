@@ -19,7 +19,7 @@ const SignupForm = () => {
     username: "",
     email: "",
     password: "",
-    membership: false,
+    membership: true,
   });
 
   const { status } = useSelector((state) => state.users);
@@ -40,6 +40,7 @@ const SignupForm = () => {
     let newErrors = { ...formErrors };
     const validationErrors = signUpValidation(
       e,
+      e.target.name,
       newErrors,
       formData.password,
       confirmPassword,
@@ -49,23 +50,6 @@ const SignupForm = () => {
   };
 
   const handleOnChange = (e) => {
-    let newErrors = { ...formErrors };
-
-    const field = e.target.name;
-    const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
-
-    if (field === "password" && !password_pattern.test(e.target.value)) {
-      newErrors = {
-        ...newErrors,
-        confirm_password: {
-          message:
-            "Must contain at least 1 uppercase letter, 1 lowercase letter and a number",
-          field: "password",
-        },
-      };
-      setFormErrors(newErrors);
-    }
-
     if (e.target.value.length > 0) {
       formErrors[e.target.name] = {};
       setFormErrors({});
@@ -79,13 +63,12 @@ const SignupForm = () => {
   const handleSignup = (e) => {
     e.preventDefault();
 
-    console.log(Object.keys(formErrors).length);
     if (Object.keys(formErrors).length > 0) {
       setFormIsValid(false);
     } else {
       dispatch(signupUser(() => api.signup(formData))).then((result) => {
-        console.log(result);
         setIsRegistered(true);
+
         setTimeout(() => {
           dispatch(
             loginUser(
@@ -98,18 +81,14 @@ const SignupForm = () => {
                 message: "Invalid username or password",
               });
             } else {
-              console.log("we are in");
               localStorage.setItem("authToken", result.payload.access);
               navigate("/");
             }
           });
         }, 2000);
-
         console.log("Registered");
       });
     }
-
-    // navigate("/login");
   };
 
   return (
@@ -217,8 +196,9 @@ const SignupForm = () => {
                     name="membership"
                     type="checkbox"
                     className="w-4 h-4 mr-2"
+                    defaultChecked
                     onChange={(e) =>
-                      setFormData({ ...formData, [e.target.name]: true })
+                      setFormData({ ...formData, [e.target.name]: false })
                     }
                   />
                   <p className="text-sm">I am an artisan</p>
@@ -249,7 +229,6 @@ const SignupForm = () => {
             </Link>
           </p>
         </div>
-        {console.log(Object.keys(formErrors).length)}
       </div>
 
       <AuthSide />
