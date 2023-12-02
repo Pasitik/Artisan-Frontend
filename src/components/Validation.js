@@ -1,40 +1,12 @@
-export const signUpValidation = (e, newErrors, password, confirmPassword) => {
-  if (!e.target.value && e.target.name == "username") {
-    newErrors = {
-      ...newErrors,
-      username: {
-        message: "Username is required",
-        field: "username",
-      },
-    };
-  }
+export const signUpValidation = (e, field, newErrors, password, confirmPassword) => {
+  const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]?)[a-zA-Z0-9\W_]{8,}$/;
 
-  if (!e.target.value && e.target.name == "email") {
+  if (!e.target.value && e.target.name === field) {
     newErrors = {
       ...newErrors,
-      email: {
-        message: "Email is required",
-        field: "email",
-      },
-    };
-  }
-
-  if (!e.target.value && e.target.name == "password") {
-    newErrors = {
-      ...newErrors,
-      password: {
-        message: "Password is required",
-        field: "password",
-      },
-    };
-  }
-
-  if (!e.target.value && e.target.name == "confirm_password") {
-    newErrors = {
-      ...newErrors,
-      confirm_password: {
-        message: "Confirm password is required",
-        field: "confirm_password",
+      [e.target.name]: {
+        message: `${field.replaceAll('_', ' ')} is required`,
+        field: field,
       },
     };
   }
@@ -48,6 +20,16 @@ export const signUpValidation = (e, newErrors, password, confirmPassword) => {
       },
     };
   }
-
+  
+  if (password && !password_pattern.test(password)) {
+    newErrors = {
+      ...newErrors,
+      password: {
+        message:
+          "Password must contain at least 1 uppercase letter, 1 lowercase letter and a number",
+        field: "password",
+      },
+    };
+  }
   return newErrors;
 };
