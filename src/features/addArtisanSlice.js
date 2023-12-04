@@ -1,34 +1,34 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   data: null,
-  status: "idle",
+  status: 'idle',
   error: null,
 };
 
 export const addArtisan = createAsyncThunk(
-  "artisan/profile",
+  'artisan/profile',
   async (addArtisan) => await addArtisan(),
 );
 
 const artisanSlice = createSlice({
-  name: "artisanProfile",
+  name: 'artisanProfile',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(addArtisan.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
         state.data = null;
         state.error = null;
       })
       .addCase(addArtisan.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.status = 'succeeded';
         state.error = null;
         state.data = action.payload;
       })
       .addCase(addArtisan.rejected, (state, action) => {
-        state.status = "idle";
+        state.status = 'idle';
         state.data = null;
         //state.error = 'failed'
         state.error = action.error;

@@ -1,6 +1,6 @@
 // vite.config.js
-import { defineConfig } from "file:///Users/compozerisrael/Desktop/cLabs/personal%20proj/React/Artisan-Frontend/Artisan_front/node_modules/vite/dist/node/index.js";
-import react from "file:///Users/compozerisrael/Desktop/cLabs/personal%20proj/React/Artisan-Frontend/Artisan_front/node_modules/@vitejs/plugin-react/dist/index.mjs";
+import { defineConfig } from 'file:///Users/compozerisrael/Desktop/cLabs/personal%20proj/React/Artisan-Frontend/Artisan_front/node_modules/vite/dist/node/index.js';
+import react from 'file:///Users/compozerisrael/Desktop/cLabs/personal%20proj/React/Artisan-Frontend/Artisan_front/node_modules/@vitejs/plugin-react/dist/index.mjs';
 var vite_config_default = defineConfig({
   plugins: [react()],
 });

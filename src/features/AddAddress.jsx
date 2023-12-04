@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import AuthSide from "../components/AuthSide";
-import { useSelector, useDispatch } from "react-redux";
-import { addAddress } from "./addressSlice";
-import { useApi } from "../data/ApiProvider";
+import { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import AuthSide from '../components/AuthSide';
+import { useSelector, useDispatch } from 'react-redux';
+import { addAddress } from './addressSlice';
+import { useApi } from '../data/ApiProvider';
 
 const AddAddress = () => {
   const dispatch = useDispatch();
@@ -13,10 +13,10 @@ const AddAddress = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isValidForm, setFormIsValid] = useState(false);
   const [formData, setFormData] = useState({
-    houseNo: "",
-    street: "",
-    city: "",
-    state: "",
+    houseNo: '',
+    street: '',
+    city: '',
+    state: '',
   });
   //   const { status, error } = useSelector((state) => state.users);
 
@@ -45,39 +45,39 @@ const AddAddress = () => {
   const handleBlur = (e) => {
     let newErrors = { ...formErrors };
 
-    if (!e.target.value && e.target.name == "houseNo") {
+    if (!e.target.value && e.target.name == 'houseNo') {
       newErrors = {
         ...newErrors,
         houseNo: {
-          message: "House number is required",
-          field: "houseNo",
+          message: 'House number is required',
+          field: 'houseNo',
         },
       };
     }
-    if (!formData.street && e.target.name == "street") {
+    if (!formData.street && e.target.name == 'street') {
       newErrors = {
         ...newErrors,
         street: {
-          message: "Street name is required",
-          field: "street",
+          message: 'Street name is required',
+          field: 'street',
         },
       };
     }
-    if (!formData.city && e.target.name == "city") {
+    if (!formData.city && e.target.name == 'city') {
       newErrors = {
         ...newErrors,
         city: {
-          message: "City name is required",
-          field: "city",
+          message: 'City name is required',
+          field: 'city',
         },
       };
     }
-    if (!formData.state && e.target.name == "state") {
+    if (!formData.state && e.target.name == 'state') {
       newErrors = {
         ...newErrors,
         state: {
-          message: "State name is required",
-          field: "state",
+          message: 'State name is required',
+          field: 'state',
         },
       };
     }
@@ -102,7 +102,7 @@ const AddAddress = () => {
     dispatch(async () => await api.addAddress(formData)).then((result) => {
       console.log(result);
       // navigate("/");
-      console.log("we are in", formErrors);
+      console.log('we are in', formErrors);
     });
   };
 
@@ -138,7 +138,7 @@ const AddAddress = () => {
                 />
                 {formErrors.houseNo && (
                   <p
-                    hidden={!(formErrors.houseNo.field === "houseNo")}
+                    hidden={!(formErrors.houseNo.field === 'houseNo')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.houseNo.message}
@@ -158,7 +158,7 @@ const AddAddress = () => {
                 />
                 {formErrors.street && (
                   <p
-                    hidden={!(formErrors.street.field === "street")}
+                    hidden={!(formErrors.street.field === 'street')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.street.message}
@@ -178,7 +178,7 @@ const AddAddress = () => {
                 />
                 {formErrors.city && (
                   <p
-                    hidden={!(formErrors.city.field === "city")}
+                    hidden={!(formErrors.city.field === 'city')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.city.message}
@@ -198,7 +198,7 @@ const AddAddress = () => {
                 />
                 {formErrors.state && (
                   <p
-                    hidden={!(formErrors.state.field === "state")}
+                    hidden={!(formErrors.state.field === 'state')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.state.message}
@@ -209,7 +209,7 @@ const AddAddress = () => {
               <div className="w-full flex flex-col my-4">
                 <button
                   onClick={handleSubmit}
-                  disabled={status === "loading" || !isValidForm}
+                  disabled={status === 'loading' || !isValidForm}
                   className="w-full text-white my-2 font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >
                   Join

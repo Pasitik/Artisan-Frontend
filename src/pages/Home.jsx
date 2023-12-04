@@ -1,11 +1,13 @@
-import NavBar from "../components/NavBar";
+import NavBar from '../components/NavBar';
 
 const Home = () => {
   return (
     <div>
       <NavBar />
 
-      <h1 className="text-3xl font-bold underline text-gray-600">Hello world!</h1>
+      <h1 className="text-3xl font-bold underline text-gray-600">
+        Hello world!
+      </h1>
     </div>
   );
 };

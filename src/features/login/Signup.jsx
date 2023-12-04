@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
-import { signupUser } from "./signupSlice";
-import { loginUser } from "./loginSlice";
-import AuthSide from "../../components/AuthSide";
-import { useApi } from "../../data/ApiProvider";
-import { signUpValidation } from "../../components/Validation";
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
+import { signupUser } from './signupSlice';
+import { loginUser } from './loginSlice';
+import AuthSide from '../../components/AuthSide';
+import { useApi } from '../../data/ApiProvider';
+import { signUpValidation } from '../../components/Validation';
 
 const SignupForm = () => {
   const dispatch = useDispatch();
@@ -13,12 +13,12 @@ const SignupForm = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [isValidForm, setFormIsValid] = useState(false);
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isRegistered, setIsRegistered] = useState(false);
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
+    username: '',
+    email: '',
+    password: '',
     membership: true,
   });
 
@@ -75,18 +75,18 @@ const SignupForm = () => {
               async () => await api.login(formData.username, formData.password),
             ),
           ).then((result) => {
-            if (result.error && result.error.code === "ERR_BAD_REQUEST") {
+            if (result.error && result.error.code === 'ERR_BAD_REQUEST') {
               setError({
                 hasError: true,
-                message: "Invalid username or password",
+                message: 'Invalid username or password',
               });
             } else {
-              localStorage.setItem("authToken", result.payload.access);
-              navigate("/");
+              localStorage.setItem('authToken', result.payload.access);
+              navigate('/');
             }
           });
         }, 2000);
-        console.log("Registered");
+        console.log('Registered');
       });
     }
   };
@@ -103,8 +103,8 @@ const SignupForm = () => {
             <h1 className="text-3xl font-semibold mb-2">Register</h1>
             <p className="text-base mb-2">
               {isRegistered
-                ? "Registration Successful!"
-                : "Welcome! Please enter your details"}
+                ? 'Registration Successful!'
+                : 'Welcome! Please enter your details'}
             </p>
           </div>
 
@@ -121,7 +121,7 @@ const SignupForm = () => {
                 />
                 {formErrors.username && (
                   <p
-                    hidden={!(formErrors.username.field === "username")}
+                    hidden={!(formErrors.username.field === 'username')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.username.message}
@@ -140,7 +140,7 @@ const SignupForm = () => {
                 />
                 {formErrors.email && (
                   <p
-                    hidden={!(formErrors.email.field === "email")}
+                    hidden={!(formErrors.email.field === 'email')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.email.message}
@@ -159,7 +159,7 @@ const SignupForm = () => {
                 />
                 {formErrors.password && (
                   <p
-                    hidden={!(formErrors.password.field === "password")}
+                    hidden={!(formErrors.password.field === 'password')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.password.message}
@@ -180,7 +180,7 @@ const SignupForm = () => {
                   <p
                     hidden={
                       !(
-                        formErrors.confirm_password.field === "confirm_password"
+                        formErrors.confirm_password.field === 'confirm_password'
                       )
                     }
                     className="text-red-500 text-sm"
@@ -208,12 +208,12 @@ const SignupForm = () => {
               <div className="w-full flex flex-col my-4">
                 <button
                   onClick={handleSignup}
-                  disabled={status === "loading" || !isValidForm}
+                  disabled={status === 'loading' || !isValidForm}
                   className="w-full text-white font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >
                   Register
                 </button>
-                {status === "loading" ? "Registering..." : ""}
+                {status === 'loading' ? 'Registering...' : ''}
               </div>
             </form>
           </div>
@@ -221,7 +221,7 @@ const SignupForm = () => {
 
         <div className="w-full flex items-center justify-center">
           <p className="text-sm mt-4">
-            Have an account?{" "}
+            Have an account?{' '}
             <Link to="/login">
               <span className="font-semibold underline underline-offset-2 cursor-pointer">
                 Log in here

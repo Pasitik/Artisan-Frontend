@@ -1,4 +1,4 @@
-import "./chunk-ZS7NZCD4.js";
+import './chunk-ZS7NZCD4.js';
 
 // node_modules/immer/dist/immer.esm.mjs
 function n(n2) {
@@ -11,24 +11,24 @@ function n(n2) {
   if (true) {
     var i2 = Y[n2],
       o2 = i2
-        ? "function" == typeof i2
+        ? 'function' == typeof i2
           ? i2.apply(null, t2)
           : i2
-        : "unknown error nr: " + n2;
-    throw Error("[Immer] " + o2);
+        : 'unknown error nr: ' + n2;
+    throw Error('[Immer] ' + o2);
   }
   throw Error(
-    "[Immer] minified error nr: " +
+    '[Immer] minified error nr: ' +
       n2 +
       (t2.length
-        ? " " +
+        ? ' ' +
           t2
             .map(function (n3) {
               return "'" + n3 + "'";
             })
-            .join(",")
-        : "") +
-      ". Find the full error at: https://bit.ly/3cXEKWf",
+            .join(',')
+        : '') +
+      '. Find the full error at: https://bit.ly/3cXEKWf',
   );
 }
 function r(n2) {
@@ -39,13 +39,13 @@ function t(n2) {
   return (
     !!n2 &&
     ((function (n3) {
-      if (!n3 || "object" != typeof n3) return false;
+      if (!n3 || 'object' != typeof n3) return false;
       var r3 = Object.getPrototypeOf(n3);
       if (null === r3) return true;
-      var t2 = Object.hasOwnProperty.call(r3, "constructor") && r3.constructor;
+      var t2 = Object.hasOwnProperty.call(r3, 'constructor') && r3.constructor;
       return (
         t2 === Object ||
-        ("function" == typeof t2 && Function.toString.call(t2) === Z)
+        ('function' == typeof t2 && Function.toString.call(t2) === Z)
       );
     })(n2) ||
       Array.isArray(n2) ||
@@ -62,7 +62,7 @@ function i(n2, r2, t2) {
   void 0 === t2 && (t2 = false),
     0 === o(n2)
       ? (t2 ? Object.keys : nn)(n2).forEach(function (e2) {
-          (t2 && "symbol" == typeof e2) || r2(e2, n2[e2], n2);
+          (t2 && 'symbol' == typeof e2) || r2(e2, n2[e2], n2);
         })
       : n2.forEach(function (t3, e2) {
           return r2(e2, t3, n2);
@@ -147,7 +147,7 @@ function h() {
   n(2);
 }
 function y(n2) {
-  return null == n2 || "object" != typeof n2 || Object.isFrozen(n2);
+  return null == n2 || 'object' != typeof n2 || Object.isFrozen(n2);
 }
 function b(r2) {
   var t2 = tn[r2];
@@ -160,7 +160,7 @@ function _() {
   return U || n(0), U;
 }
 function j(n2, r2) {
-  r2 && (b("Patches"), (n2.u = []), (n2.s = []), (n2.v = r2));
+  r2 && (b('Patches'), (n2.u = []), (n2.s = []), (n2.v = r2));
 }
 function g(n2) {
   O(n2), n2.p.forEach(S), (n2.p = null);
@@ -180,11 +180,11 @@ function P(r2, e2) {
   var i2 = e2.p[0],
     o2 = void 0 !== r2 && r2 !== i2;
   return (
-    e2.h.O || b("ES5").S(e2, r2, o2),
+    e2.h.O || b('ES5').S(e2, r2, o2),
     o2
       ? (i2[Q].P && (g(e2), n(4)),
         t(r2) && ((r2 = M(e2, r2)), e2.l || x(e2, r2)),
-        e2.u && b("Patches").M(i2[Q].t, r2, e2.u, e2.s))
+        e2.u && b('Patches').M(i2[Q].t, r2, e2.u, e2.s))
       : (r2 = M(e2, i2, [])),
     g(e2),
     e2.u && e2.v(e2.u, e2.s),
@@ -217,7 +217,7 @@ function M(n2, r2, t2) {
         return A(n2, e2, o2, r3, i2, t2, a2);
       }),
       x(n2, o2, false),
-      t2 && n2.u && b("Patches").N(e2, t2, n2.u, n2.s);
+      t2 && n2.u && b('Patches').N(e2, t2, n2.u, n2.s);
   }
   return e2.o;
 }
@@ -259,9 +259,9 @@ function E(n2) {
 }
 function N(n2, r2, t2) {
   var e2 = s(r2)
-    ? b("MapSet").F(r2, t2)
+    ? b('MapSet').F(r2, t2)
     : v(r2)
-      ? b("MapSet").T(r2, t2)
+      ? b('MapSet').T(r2, t2)
       : n2.O
         ? (function (n3, r3) {
             var t3 = Array.isArray(n3),
@@ -286,7 +286,7 @@ function N(n2, r2, t2) {
               f2 = u2.proxy;
             return (e3.k = f2), (e3.j = a2), f2;
           })(r2, t2)
-        : b("ES5").J(r2, t2);
+        : b('ES5').J(r2, t2);
   return (t2 ? t2.A : _()).p.push(e2), e2;
 }
 function R(e2) {
@@ -298,7 +298,7 @@ function R(e2) {
         u2 = r2[Q],
         c2 = o(r2);
       if (u2) {
-        if (!u2.P && (u2.i < 4 || !b("ES5").K(u2))) return u2.t;
+        if (!u2.P && (u2.i < 4 || !b('ES5').K(u2))) return u2.t;
         (u2.I = true), (e3 = D(r2, c2)), (u2.I = false);
       } else e3 = D(r2, c2);
       return (
@@ -385,13 +385,13 @@ function F() {
     r2.g && n(3, JSON.stringify(p(r2)));
   }
   var s2 = {};
-  m("ES5", {
+  m('ES5', {
     J: function (n2, r2) {
       var e3 = Array.isArray(n2),
         i2 = (function (n3, r3) {
           if (n3) {
             for (var e4 = Array(r3.length), i3 = 0; i3 < r3.length; i3++)
-              Object.defineProperty(e4, "" + i3, t2(i3, true));
+              Object.defineProperty(e4, '' + i3, t2(i3, true));
             return e4;
           }
           var o4 = rn(r3);
@@ -422,7 +422,7 @@ function F() {
         ? r(t3) && t3[Q].A === n2 && e2(n2.p)
         : (n2.u &&
             (function n3(r2) {
-              if (r2 && "object" == typeof r2) {
+              if (r2 && 'object' == typeof r2) {
                 var t4 = r2[Q];
                 if (t4) {
                   var e3 = t4.t,
@@ -471,45 +471,45 @@ function F() {
 }
 var G;
 var U;
-var W = "undefined" != typeof Symbol && "symbol" == typeof Symbol("x");
-var X = "undefined" != typeof Map;
-var q = "undefined" != typeof Set;
+var W = 'undefined' != typeof Symbol && 'symbol' == typeof Symbol('x');
+var X = 'undefined' != typeof Map;
+var q = 'undefined' != typeof Set;
 var B =
-  "undefined" != typeof Proxy &&
+  'undefined' != typeof Proxy &&
   void 0 !== Proxy.revocable &&
-  "undefined" != typeof Reflect;
+  'undefined' != typeof Reflect;
 var H = W
-  ? Symbol.for("immer-nothing")
-  : (((G = {})["immer-nothing"] = true), G);
-var L = W ? Symbol.for("immer-draftable") : "__$immer_draftable";
-var Q = W ? Symbol.for("immer-state") : "__$immer_state";
+  ? Symbol.for('immer-nothing')
+  : (((G = {})['immer-nothing'] = true), G);
+var L = W ? Symbol.for('immer-draftable') : '__$immer_draftable';
+var Q = W ? Symbol.for('immer-state') : '__$immer_state';
 var Y = {
-  0: "Illegal state",
-  1: "Immer drafts cannot have computed properties",
-  2: "This object has been frozen and should not be mutated",
+  0: 'Illegal state',
+  1: 'Immer drafts cannot have computed properties',
+  2: 'This object has been frozen and should not be mutated',
   3: function (n2) {
     return (
-      "Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? " +
+      'Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? ' +
       n2
     );
   },
-  4: "An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.",
-  5: "Immer forbids circular references",
-  6: "The first or second argument to `produce` must be a function",
-  7: "The third argument to `produce` must be a function or undefined",
-  8: "First argument to `createDraft` must be a plain object, an array, or an immerable object",
-  9: "First argument to `finishDraft` must be a draft returned by `createDraft`",
-  10: "The given draft is already finalized",
-  11: "Object.defineProperty() cannot be used on an Immer draft",
-  12: "Object.setPrototypeOf() cannot be used on an Immer draft",
-  13: "Immer only supports deleting array indices",
+  4: 'An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.',
+  5: 'Immer forbids circular references',
+  6: 'The first or second argument to `produce` must be a function',
+  7: 'The third argument to `produce` must be a function or undefined',
+  8: 'First argument to `createDraft` must be a plain object, an array, or an immerable object',
+  9: 'First argument to `finishDraft` must be a draft returned by `createDraft`',
+  10: 'The given draft is already finalized',
+  11: 'Object.defineProperty() cannot be used on an Immer draft',
+  12: 'Object.setPrototypeOf() cannot be used on an Immer draft',
+  13: 'Immer only supports deleting array indices',
   14: "Immer only supports setting array indices and the 'length' property",
   15: function (n2) {
     return "Cannot apply patch, path doesn't resolve: " + n2;
   },
   16: 'Sets cannot have "replace" patches.',
   17: function (n2) {
-    return "Unsupported patch operation: " + n2;
+    return 'Unsupported patch operation: ' + n2;
   },
   18: function (n2) {
     return (
@@ -517,10 +517,10 @@ var Y = {
       n2 +
       "' has not been loaded into Immer. To enable the plugin, import and call `enable" +
       n2 +
-      "()` when initializing your application."
+      '()` when initializing your application.'
     );
   },
-  20: "Cannot use proxies if Proxy, Proxy.revocable or Reflect are not available",
+  20: 'Cannot use proxies if Proxy, Proxy.revocable or Reflect are not available',
   21: function (n2) {
     return (
       "produce can only be called on things that are draftable: plain objects, arrays, Map, Set or classes that are marked with '[immerable]: true'. Got '" +
@@ -534,11 +534,11 @@ var Y = {
   23: function (n2) {
     return "'original' expects a draft, got: " + n2;
   },
-  24: "Patching reserved attributes like __proto__, prototype and constructor is not allowed",
+  24: 'Patching reserved attributes like __proto__, prototype and constructor is not allowed',
 };
-var Z = "" + Object.prototype.constructor;
+var Z = '' + Object.prototype.constructor;
 var nn =
-  "undefined" != typeof Reflect && Reflect.ownKeys
+  'undefined' != typeof Reflect && Reflect.ownKeys
     ? Reflect.ownKeys
     : void 0 !== Object.getOwnPropertySymbols
       ? function (n2) {
@@ -568,7 +568,7 @@ var en = {
         var e3,
           i3 = I(r3, t2);
         return i3
-          ? "value" in i3
+          ? 'value' in i3
             ? i3.value
             : null === (e3 = i3.get) || void 0 === e3
               ? void 0
@@ -620,7 +620,7 @@ var en = {
     return e2
       ? {
           writable: true,
-          configurable: 1 !== n2.i || "length" !== r2,
+          configurable: 1 !== n2.i || 'length' !== r2,
           enumerable: e2.enumerable,
           value: t2[r2],
         }
@@ -647,7 +647,7 @@ i(en, function (n2, r2) {
   }),
   (on.set = function (r2, t2, e2) {
     return (
-      "length" !== t2 && isNaN(parseInt(t2)) && n(14),
+      'length' !== t2 && isNaN(parseInt(t2)) && n(14),
       en.set.call(this, r2[0], t2, e2, r2[0])
     );
   });
@@ -657,7 +657,7 @@ var un = (function () {
     (this.O = B),
       (this.D = true),
       (this.produce = function (r3, i3, o2) {
-        if ("function" == typeof r3 && "function" != typeof i3) {
+        if ('function' == typeof r3 && 'function' != typeof i3) {
           var u2 = i3;
           i3 = r3;
           var a2 = e3;
@@ -680,8 +680,8 @@ var un = (function () {
         }
         var f2;
         if (
-          ("function" != typeof i3 && n(6),
-          void 0 !== o2 && "function" != typeof o2 && n(7),
+          ('function' != typeof i3 && n(6),
+          void 0 !== o2 && 'function' != typeof o2 && n(7),
           t(r3))
         ) {
           var c2 = w(e3),
@@ -692,7 +692,7 @@ var un = (function () {
           } finally {
             v2 ? g(c2) : O(c2);
           }
-          return "undefined" != typeof Promise && f2 instanceof Promise
+          return 'undefined' != typeof Promise && f2 instanceof Promise
             ? f2.then(
                 function (n2) {
                   return j(c2, o2), P(n2, c2);
@@ -703,7 +703,7 @@ var un = (function () {
               )
             : (j(c2, o2), P(f2, c2));
         }
-        if (!r3 || "object" != typeof r3) {
+        if (!r3 || 'object' != typeof r3) {
           if (
             (void 0 === (f2 = i3(r3)) && (f2 = r3),
             f2 === H && (f2 = void 0),
@@ -712,14 +712,14 @@ var un = (function () {
           ) {
             var p2 = [],
               l2 = [];
-            b("Patches").M(r3, f2, p2, l2), o2(p2, l2);
+            b('Patches').M(r3, f2, p2, l2), o2(p2, l2);
           }
           return f2;
         }
         n(21, r3);
       }),
       (this.produceWithPatches = function (n2, r3) {
-        if ("function" == typeof n2)
+        if ('function' == typeof n2)
           return function (r4) {
             for (
               var t3 = arguments.length,
@@ -738,15 +738,15 @@ var un = (function () {
           o2 = e3.produce(n2, r3, function (n3, r4) {
             (t2 = n3), (i3 = r4);
           });
-        return "undefined" != typeof Promise && o2 instanceof Promise
+        return 'undefined' != typeof Promise && o2 instanceof Promise
           ? o2.then(function (n3) {
               return [n3, t2, i3];
             })
           : [o2, t2, i3];
       }),
-      "boolean" == typeof (null == r2 ? void 0 : r2.useProxies) &&
+      'boolean' == typeof (null == r2 ? void 0 : r2.useProxies) &&
         this.setUseProxies(r2.useProxies),
-      "boolean" == typeof (null == r2 ? void 0 : r2.autoFreeze) &&
+      'boolean' == typeof (null == r2 ? void 0 : r2.autoFreeze) &&
         this.setAutoFreeze(r2.autoFreeze);
   }
   var i2 = e2.prototype;
@@ -773,13 +773,13 @@ var un = (function () {
       var e3;
       for (e3 = t2.length - 1; e3 >= 0; e3--) {
         var i3 = t2[e3];
-        if (0 === i3.path.length && "replace" === i3.op) {
+        if (0 === i3.path.length && 'replace' === i3.op) {
           n2 = i3.value;
           break;
         }
       }
       e3 > -1 && (t2 = t2.slice(e3 + 1));
-      var o2 = b("Patches").$;
+      var o2 = b('Patches').$;
       return r(n2)
         ? o2(n2, t2)
         : this.produce(n2, function (n3) {
@@ -801,19 +801,19 @@ var immer_esm_default = fn;
 
 // node_modules/@babel/runtime/helpers/esm/typeof.js
 function _typeof(o2) {
-  "@babel/helpers - typeof";
+  '@babel/helpers - typeof';
   return (
     (_typeof =
-      "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+      'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
         ? function (o3) {
             return typeof o3;
           }
         : function (o3) {
             return o3 &&
-              "function" == typeof Symbol &&
+              'function' == typeof Symbol &&
               o3.constructor === Symbol &&
               o3 !== Symbol.prototype
-              ? "symbol"
+              ? 'symbol'
               : typeof o3;
           }),
     _typeof(o2)
@@ -822,20 +822,20 @@ function _typeof(o2) {
 
 // node_modules/@babel/runtime/helpers/esm/toPrimitive.js
 function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
+  if (_typeof(input) !== 'object' || input === null) return input;
   var prim = input[Symbol.toPrimitive];
   if (prim !== void 0) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
+    var res = prim.call(input, hint || 'default');
+    if (_typeof(res) !== 'object') return res;
+    throw new TypeError('@@toPrimitive must return a primitive value.');
   }
-  return (hint === "string" ? String : Number)(input);
+  return (hint === 'string' ? String : Number)(input);
 }
 
 // node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
 function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
+  var key = _toPrimitive(arg, 'string');
+  return _typeof(key) === 'symbol' ? key : String(key);
 }
 
 // node_modules/@babel/runtime/helpers/esm/defineProperty.js
@@ -889,20 +889,20 @@ function _objectSpread2(e2) {
 
 // node_modules/redux/es/redux.js
 var $$observable = (function () {
-  return (typeof Symbol === "function" && Symbol.observable) || "@@observable";
+  return (typeof Symbol === 'function' && Symbol.observable) || '@@observable';
 })();
 var randomString = function randomString2() {
-  return Math.random().toString(36).substring(7).split("").join(".");
+  return Math.random().toString(36).substring(7).split('').join('.');
 };
 var ActionTypes = {
-  INIT: "@@redux/INIT" + randomString(),
-  REPLACE: "@@redux/REPLACE" + randomString(),
+  INIT: '@@redux/INIT' + randomString(),
+  REPLACE: '@@redux/REPLACE' + randomString(),
   PROBE_UNKNOWN_ACTION: function PROBE_UNKNOWN_ACTION() {
-    return "@@redux/PROBE_UNKNOWN_ACTION" + randomString();
+    return '@@redux/PROBE_UNKNOWN_ACTION' + randomString();
   },
 };
 function isPlainObject(obj) {
-  if (typeof obj !== "object" || obj === null) return false;
+  if (typeof obj !== 'object' || obj === null) return false;
   var proto = obj;
   while (Object.getPrototypeOf(proto) !== null) {
     proto = Object.getPrototypeOf(proto);
@@ -910,50 +910,50 @@ function isPlainObject(obj) {
   return Object.getPrototypeOf(obj) === proto;
 }
 function miniKindOf(val) {
-  if (val === void 0) return "undefined";
-  if (val === null) return "null";
+  if (val === void 0) return 'undefined';
+  if (val === null) return 'null';
   var type = typeof val;
   switch (type) {
-    case "boolean":
-    case "string":
-    case "number":
-    case "symbol":
-    case "function": {
+    case 'boolean':
+    case 'string':
+    case 'number':
+    case 'symbol':
+    case 'function': {
       return type;
     }
   }
-  if (Array.isArray(val)) return "array";
-  if (isDate(val)) return "date";
-  if (isError(val)) return "error";
+  if (Array.isArray(val)) return 'array';
+  if (isDate(val)) return 'date';
+  if (isError(val)) return 'error';
   var constructorName = ctorName(val);
   switch (constructorName) {
-    case "Symbol":
-    case "Promise":
-    case "WeakMap":
-    case "WeakSet":
-    case "Map":
-    case "Set":
+    case 'Symbol':
+    case 'Promise':
+    case 'WeakMap':
+    case 'WeakSet':
+    case 'Map':
+    case 'Set':
       return constructorName;
   }
-  return type.slice(8, -1).toLowerCase().replace(/\s/g, "");
+  return type.slice(8, -1).toLowerCase().replace(/\s/g, '');
 }
 function ctorName(val) {
-  return typeof val.constructor === "function" ? val.constructor.name : null;
+  return typeof val.constructor === 'function' ? val.constructor.name : null;
 }
 function isError(val) {
   return (
     val instanceof Error ||
-    (typeof val.message === "string" &&
+    (typeof val.message === 'string' &&
       val.constructor &&
-      typeof val.constructor.stackTraceLimit === "number")
+      typeof val.constructor.stackTraceLimit === 'number')
   );
 }
 function isDate(val) {
   if (val instanceof Date) return true;
   return (
-    typeof val.toDateString === "function" &&
-    typeof val.getDate === "function" &&
-    typeof val.setDate === "function"
+    typeof val.toDateString === 'function' &&
+    typeof val.getDate === 'function' &&
+    typeof val.setDate === 'function'
   );
 }
 function kindOf(val) {
@@ -966,21 +966,21 @@ function kindOf(val) {
 function createStore(reducer, preloadedState, enhancer) {
   var _ref2;
   if (
-    (typeof preloadedState === "function" && typeof enhancer === "function") ||
-    (typeof enhancer === "function" && typeof arguments[3] === "function")
+    (typeof preloadedState === 'function' && typeof enhancer === 'function') ||
+    (typeof enhancer === 'function' && typeof arguments[3] === 'function')
   ) {
     throw new Error(
       false
         ? formatProdErrorMessage(0)
-        : "It looks like you are passing several store enhancers to createStore(). This is not supported. Instead, compose them together to a single function. See https://redux.js.org/tutorials/fundamentals/part-4-store#creating-a-store-with-enhancers for an example.",
+        : 'It looks like you are passing several store enhancers to createStore(). This is not supported. Instead, compose them together to a single function. See https://redux.js.org/tutorials/fundamentals/part-4-store#creating-a-store-with-enhancers for an example.',
     );
   }
-  if (typeof preloadedState === "function" && typeof enhancer === "undefined") {
+  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
     enhancer = preloadedState;
     preloadedState = void 0;
   }
-  if (typeof enhancer !== "undefined") {
-    if (typeof enhancer !== "function") {
+  if (typeof enhancer !== 'undefined') {
+    if (typeof enhancer !== 'function') {
       throw new Error(
         false
           ? formatProdErrorMessage(1)
@@ -991,7 +991,7 @@ function createStore(reducer, preloadedState, enhancer) {
     }
     return enhancer(createStore)(reducer, preloadedState);
   }
-  if (typeof reducer !== "function") {
+  if (typeof reducer !== 'function') {
     throw new Error(
       false
         ? formatProdErrorMessage(2)
@@ -1015,13 +1015,13 @@ function createStore(reducer, preloadedState, enhancer) {
       throw new Error(
         false
           ? formatProdErrorMessage(3)
-          : "You may not call store.getState() while the reducer is executing. The reducer has already received the state as an argument. Pass it down from the top reducer instead of reading it from the store.",
+          : 'You may not call store.getState() while the reducer is executing. The reducer has already received the state as an argument. Pass it down from the top reducer instead of reading it from the store.',
       );
     }
     return currentState;
   }
   function subscribe(listener2) {
-    if (typeof listener2 !== "function") {
+    if (typeof listener2 !== 'function') {
       throw new Error(
         false
           ? formatProdErrorMessage(4)
@@ -1034,7 +1034,7 @@ function createStore(reducer, preloadedState, enhancer) {
       throw new Error(
         false
           ? formatProdErrorMessage(5)
-          : "You may not call store.subscribe() while the reducer is executing. If you would like to be notified after the store has been updated, subscribe from a component and invoke store.getState() in the callback to access the latest state. See https://redux.js.org/api/store#subscribelistener for more details.",
+          : 'You may not call store.subscribe() while the reducer is executing. If you would like to be notified after the store has been updated, subscribe from a component and invoke store.getState() in the callback to access the latest state. See https://redux.js.org/api/store#subscribelistener for more details.',
       );
     }
     var isSubscribed = true;
@@ -1048,7 +1048,7 @@ function createStore(reducer, preloadedState, enhancer) {
         throw new Error(
           false
             ? formatProdErrorMessage(6)
-            : "You may not unsubscribe from a store listener while the reducer is executing. See https://redux.js.org/api/store#subscribelistener for more details.",
+            : 'You may not unsubscribe from a store listener while the reducer is executing. See https://redux.js.org/api/store#subscribelistener for more details.',
         );
       }
       isSubscribed = false;
@@ -1068,7 +1068,7 @@ function createStore(reducer, preloadedState, enhancer) {
             "'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.",
       );
     }
-    if (typeof action.type === "undefined") {
+    if (typeof action.type === 'undefined') {
       throw new Error(
         false
           ? formatProdErrorMessage(8)
@@ -1079,7 +1079,7 @@ function createStore(reducer, preloadedState, enhancer) {
       throw new Error(
         false
           ? formatProdErrorMessage(9)
-          : "Reducers may not dispatch actions.",
+          : 'Reducers may not dispatch actions.',
       );
     }
     try {
@@ -1096,7 +1096,7 @@ function createStore(reducer, preloadedState, enhancer) {
     return action;
   }
   function replaceReducer(nextReducer) {
-    if (typeof nextReducer !== "function") {
+    if (typeof nextReducer !== 'function') {
       throw new Error(
         false
           ? formatProdErrorMessage(10)
@@ -1123,7 +1123,7 @@ function createStore(reducer, preloadedState, enhancer) {
          * emission of values from the observable.
          */
         subscribe: function subscribe2(observer) {
-          if (typeof observer !== "object" || observer === null) {
+          if (typeof observer !== 'object' || observer === null) {
             throw new Error(
               false
                 ? formatProdErrorMessage(11)
@@ -1166,7 +1166,7 @@ function createStore(reducer, preloadedState, enhancer) {
 }
 var legacy_createStore = createStore;
 function warning(message) {
-  if (typeof console !== "undefined" && typeof console.error === "function") {
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
     console.error(message);
   }
   try {
@@ -1182,14 +1182,14 @@ function getUnexpectedStateShapeWarningMessage(
   var reducerKeys = Object.keys(reducers);
   var argumentName =
     action && action.type === ActionTypes.INIT
-      ? "preloadedState argument passed to createStore"
-      : "previous state received by the reducer";
+      ? 'preloadedState argument passed to createStore'
+      : 'previous state received by the reducer';
   if (reducerKeys.length === 0) {
-    return "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers.";
+    return 'Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers.';
   }
   if (!isPlainObject(inputState)) {
     return (
-      "The " +
+      'The ' +
       argumentName +
       ' has unexpected type of "' +
       kindOf(inputState) +
@@ -1206,15 +1206,15 @@ function getUnexpectedStateShapeWarningMessage(
   if (action && action.type === ActionTypes.REPLACE) return;
   if (unexpectedKeys.length > 0) {
     return (
-      "Unexpected " +
-      (unexpectedKeys.length > 1 ? "keys" : "key") +
-      " " +
+      'Unexpected ' +
+      (unexpectedKeys.length > 1 ? 'keys' : 'key') +
+      ' ' +
       ('"' +
         unexpectedKeys.join('", "') +
         '" found in ' +
         argumentName +
-        ". ") +
-      "Expected to find one of the known reducer keys instead: " +
+        '. ') +
+      'Expected to find one of the known reducer keys instead: ' +
       ('"' + reducerKeys.join('", "') + '". Unexpected keys will be ignored.')
     );
   }
@@ -1225,7 +1225,7 @@ function assertReducerShape(reducers) {
     var initialState = reducer(void 0, {
       type: ActionTypes.INIT,
     });
-    if (typeof initialState === "undefined") {
+    if (typeof initialState === 'undefined') {
       throw new Error(
         false
           ? formatProdErrorMessage(12)
@@ -1237,7 +1237,7 @@ function assertReducerShape(reducers) {
     if (
       typeof reducer(void 0, {
         type: ActionTypes.PROBE_UNKNOWN_ACTION(),
-      }) === "undefined"
+      }) === 'undefined'
     ) {
       throw new Error(
         false
@@ -1248,7 +1248,7 @@ function assertReducerShape(reducers) {
             ("Don't try to handle '" +
               ActionTypes.INIT +
               `' or other actions in "redux/*" `) +
-            "namespace. They are considered private. Instead, you must return the current state for any unknown actions, unless it is undefined, in which case you must return the initial state, regardless of the action type. The initial state may not be undefined, but can be null.",
+            'namespace. They are considered private. Instead, you must return the current state for any unknown actions, unless it is undefined, in which case you must return the initial state, regardless of the action type. The initial state may not be undefined, but can be null.',
       );
     }
   });
@@ -1259,11 +1259,11 @@ function combineReducers(reducers) {
   for (var i2 = 0; i2 < reducerKeys.length; i2++) {
     var key = reducerKeys[i2];
     if (true) {
-      if (typeof reducers[key] === "undefined") {
+      if (typeof reducers[key] === 'undefined') {
         warning('No reducer provided for key "' + key + '"');
       }
     }
-    if (typeof reducers[key] === "function") {
+    if (typeof reducers[key] === 'function') {
       finalReducers[key] = reducers[key];
     }
   }
@@ -1303,13 +1303,13 @@ function combineReducers(reducers) {
       var reducer = finalReducers[_key];
       var previousStateForKey = state[_key];
       var nextStateForKey = reducer(previousStateForKey, action);
-      if (typeof nextStateForKey === "undefined") {
+      if (typeof nextStateForKey === 'undefined') {
         var actionType = action && action.type;
         throw new Error(
           false
             ? formatProdErrorMessage(14)
-            : "When called with an action of type " +
-              (actionType ? '"' + String(actionType) + '"' : "(unknown type)") +
+            : 'When called with an action of type ' +
+              (actionType ? '"' + String(actionType) + '"' : '(unknown type)') +
               ', the slice reducer for key "' +
               _key +
               '" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.',
@@ -1329,10 +1329,10 @@ function bindActionCreator(actionCreator, dispatch) {
   };
 }
 function bindActionCreators(actionCreators, dispatch) {
-  if (typeof actionCreators === "function") {
+  if (typeof actionCreators === 'function') {
     return bindActionCreator(actionCreators, dispatch);
   }
-  if (typeof actionCreators !== "object" || actionCreators === null) {
+  if (typeof actionCreators !== 'object' || actionCreators === null) {
     throw new Error(
       false
         ? formatProdErrorMessage(16)
@@ -1344,7 +1344,7 @@ function bindActionCreators(actionCreators, dispatch) {
   var boundActionCreators = {};
   for (var key in actionCreators) {
     var actionCreator = actionCreators[key];
-    if (typeof actionCreator === "function") {
+    if (typeof actionCreator === 'function') {
       boundActionCreators[key] = bindActionCreator(actionCreator, dispatch);
     }
   }
@@ -1387,7 +1387,7 @@ function applyMiddleware() {
         throw new Error(
           false
             ? formatProdErrorMessage(15)
-            : "Dispatching while constructing your middleware is not allowed. Other middleware would not be applied to this dispatch.",
+            : 'Dispatching while constructing your middleware is not allowed. Other middleware would not be applied to this dispatch.',
         );
       };
       var middlewareAPI = {
@@ -1412,7 +1412,7 @@ function applyMiddleware() {
 }
 
 // node_modules/reselect/es/defaultMemoize.js
-var NOT_FOUND = "NOT_FOUND";
+var NOT_FOUND = 'NOT_FOUND';
 function createSingletonCache(equals) {
   var entry;
   return {
@@ -1495,7 +1495,7 @@ function createCacheKeyComparator(equalityCheck) {
 }
 function defaultMemoize(func, equalityCheckOrOptions) {
   var providedOptions =
-    typeof equalityCheckOrOptions === "object"
+    typeof equalityCheckOrOptions === 'object'
       ? equalityCheckOrOptions
       : {
           equalityCheck: equalityCheckOrOptions,
@@ -1541,20 +1541,20 @@ function getDependencies(funcs) {
   var dependencies = Array.isArray(funcs[0]) ? funcs[0] : funcs;
   if (
     !dependencies.every(function (dep) {
-      return typeof dep === "function";
+      return typeof dep === 'function';
     })
   ) {
     var dependencyTypes = dependencies
       .map(function (dep) {
-        return typeof dep === "function"
-          ? "function " + (dep.name || "unnamed") + "()"
+        return typeof dep === 'function'
+          ? 'function ' + (dep.name || 'unnamed') + '()'
           : typeof dep;
       })
-      .join(", ");
+      .join(', ');
     throw new Error(
-      "createSelector expects all input-selectors to be functions, but received the following types: [" +
+      'createSelector expects all input-selectors to be functions, but received the following types: [' +
         dependencyTypes +
-        "]",
+        ']',
     );
   }
   return dependencies;
@@ -1583,15 +1583,15 @@ function createSelectorCreator(memoize) {
       memoizeOptions: void 0,
     };
     var resultFunc = funcs.pop();
-    if (typeof resultFunc === "object") {
+    if (typeof resultFunc === 'object') {
       directlyPassedOptions = resultFunc;
       resultFunc = funcs.pop();
     }
-    if (typeof resultFunc !== "function") {
+    if (typeof resultFunc !== 'function') {
       throw new Error(
-        "createSelector expects an output function after the inputs, but received: [" +
+        'createSelector expects an output function after the inputs, but received: [' +
           typeof resultFunc +
-          "]",
+          ']',
       );
     }
     var _directlyPassedOption = directlyPassedOptions,
@@ -1649,7 +1649,7 @@ function createThunkMiddleware(extraArgument) {
       getState = _ref.getState;
     return function (next) {
       return function (action) {
-        if (typeof action === "function") {
+        if (typeof action === 'function') {
           return action(dispatch, getState, extraArgument);
         }
         return next(action);
@@ -1678,9 +1678,9 @@ var __extends = /* @__PURE__ */ (function () {
     return extendStatics(d2, b2);
   };
   return function (d2, b2) {
-    if (typeof b2 !== "function" && b2 !== null)
+    if (typeof b2 !== 'function' && b2 !== null)
       throw new TypeError(
-        "Class extends value " + String(b2) + " is not a constructor or null",
+        'Class extends value ' + String(b2) + ' is not a constructor or null',
       );
     extendStatics(d2, b2);
     function __() {
@@ -1708,7 +1708,7 @@ var __generator = function (thisArg, body) {
     g2;
   return (
     (g2 = { next: verb(0), throw: verb(1), return: verb(2) }),
-    typeof Symbol === "function" &&
+    typeof Symbol === 'function' &&
       (g2[Symbol.iterator] = function () {
         return this;
       }),
@@ -1720,7 +1720,7 @@ var __generator = function (thisArg, body) {
     };
   }
   function step(op) {
-    if (f2) throw new TypeError("Generator is already executing.");
+    if (f2) throw new TypeError('Generator is already executing.');
     while (_2)
       try {
         if (
@@ -1728,9 +1728,9 @@ var __generator = function (thisArg, body) {
           y2 &&
             (t2 =
               op[0] & 2
-                ? y2["return"]
+                ? y2['return']
                 : op[0]
-                  ? y2["throw"] || ((t2 = y2["return"]) && t2.call(y2), 0)
+                  ? y2['throw'] || ((t2 = y2['return']) && t2.call(y2), 0)
                   : y2.next) &&
             !(t2 = t2.call(y2, op[1])).done)
         )
@@ -1867,15 +1867,15 @@ var createDraftSafeSelector = function () {
   return wrappedSelector;
 };
 var composeWithDevTools =
-  typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     : function () {
         if (arguments.length === 0) return void 0;
-        if (typeof arguments[0] === "object") return compose;
+        if (typeof arguments[0] === 'object') return compose;
         return compose.apply(null, arguments);
       };
 var devToolsEnhancer =
-  typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__
+  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__
     ? window.__REDUX_DEVTOOLS_EXTENSION__
     : function () {
         return function (noop2) {
@@ -1883,7 +1883,7 @@ var devToolsEnhancer =
         };
       };
 function isPlainObject2(value) {
-  if (typeof value !== "object" || value === null) return false;
+  if (typeof value !== 'object' || value === null) return false;
   var proto = Object.getPrototypeOf(value);
   if (proto === null) return true;
   var baseProto = proto;
@@ -1893,7 +1893,7 @@ function isPlainObject2(value) {
   return proto === baseProto;
 }
 var hasMatchFunction = function (v2) {
-  return v2 && typeof v2.match === "function";
+  return v2 && typeof v2.match === 'function';
 };
 function createAction(type, prepareAction) {
   function actionCreator() {
@@ -1904,7 +1904,7 @@ function createAction(type, prepareAction) {
     if (prepareAction) {
       var prepared = prepareAction.apply(void 0, args);
       if (!prepared) {
-        throw new Error("prepareAction did not return an object");
+        throw new Error('prepareAction did not return an object');
       }
       return __spreadValues(
         __spreadValues(
@@ -1912,15 +1912,15 @@ function createAction(type, prepareAction) {
             type,
             payload: prepared.payload,
           },
-          "meta" in prepared && { meta: prepared.meta },
+          'meta' in prepared && { meta: prepared.meta },
         ),
-        "error" in prepared && { error: prepared.error },
+        'error' in prepared && { error: prepared.error },
       );
     }
     return { type, payload: args[0] };
   }
   actionCreator.toString = function () {
-    return "" + type;
+    return '' + type;
   };
   actionCreator.type = type;
   actionCreator.match = function (action) {
@@ -1929,37 +1929,37 @@ function createAction(type, prepareAction) {
   return actionCreator;
 }
 function isAction(action) {
-  return isPlainObject2(action) && "type" in action;
+  return isPlainObject2(action) && 'type' in action;
 }
 function isActionCreator(action) {
   return (
-    typeof action === "function" && "type" in action && hasMatchFunction(action)
+    typeof action === 'function' && 'type' in action && hasMatchFunction(action)
   );
 }
 function isFSA(action) {
   return (
     isAction(action) &&
-    typeof action.type === "string" &&
+    typeof action.type === 'string' &&
     Object.keys(action).every(isValidKey)
   );
 }
 function isValidKey(key) {
-  return ["type", "payload", "error", "meta"].indexOf(key) > -1;
+  return ['type', 'payload', 'error', 'meta'].indexOf(key) > -1;
 }
 function getType(actionCreator) {
-  return "" + actionCreator;
+  return '' + actionCreator;
 }
 function getMessage(type) {
-  var splitType = type ? ("" + type).split("/") : [];
-  var actionName = splitType[splitType.length - 1] || "actionCreator";
+  var splitType = type ? ('' + type).split('/') : [];
+  var actionName = splitType[splitType.length - 1] || 'actionCreator';
   return (
     'Detected an action creator with type "' +
-    (type || "unknown") +
-    "\" being dispatched. \nMake sure you're calling the action creator before dispatching, i.e. `dispatch(" +
+    (type || 'unknown') +
+    '" being dispatched. \nMake sure you\'re calling the action creator before dispatching, i.e. `dispatch(' +
     actionName +
-    "())` instead of `dispatch(" +
+    '())` instead of `dispatch(' +
     actionName +
-    ")`. This is necessary even if the action has no payload."
+    ')`. This is necessary even if the action has no payload.'
   );
 }
 function createActionCreatorInvariantMiddleware(options) {
@@ -2004,9 +2004,9 @@ function getTimeMeasureUtils(maxDelay, fnName) {
       if (elapsed > maxDelay) {
         console.warn(
           fnName +
-            " took " +
+            ' took ' +
             elapsed +
-            "ms, which is more than the warning threshold of " +
+            'ms, which is more than the warning threshold of ' +
             maxDelay +
             "ms. \nIf your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.\nIt is disabled in production builds, so you don't need to worry about that.",
         );
@@ -2108,7 +2108,7 @@ function freezeDraftable(val) {
   return t(val) ? immer_esm_default(val, function () {}) : val;
 }
 var isProduction = false;
-var prefix = "Invariant failed";
+var prefix = 'Invariant failed';
 function invariant(condition, message) {
   if (condition) {
     return;
@@ -2116,7 +2116,7 @@ function invariant(condition, message) {
   if (isProduction) {
     throw new Error(prefix);
   }
-  throw new Error(prefix + ": " + (message || ""));
+  throw new Error(prefix + ': ' + (message || ''));
 }
 function stringify(obj, serializer, indent, decycler) {
   return JSON.stringify(obj, getSerialize(serializer, decycler), indent);
@@ -2126,9 +2126,9 @@ function getSerialize(serializer, decycler) {
     keys = [];
   if (!decycler)
     decycler = function (_2, value) {
-      if (stack[0] === value) return "[Circular ~]";
+      if (stack[0] === value) return '[Circular ~]';
       return (
-        "[Circular ~." + keys.slice(0, stack.indexOf(value)).join(".") + "]"
+        '[Circular ~.' + keys.slice(0, stack.indexOf(value)).join('.') + ']'
       );
     };
   return function (key, value) {
@@ -2142,7 +2142,7 @@ function getSerialize(serializer, decycler) {
   };
 }
 function isImmutableDefault(value) {
-  return typeof value !== "object" || value == null || Object.isFrozen(value);
+  return typeof value !== 'object' || value == null || Object.isFrozen(value);
 }
 function trackForMutations(isImmutable, ignorePaths, obj) {
   var trackedProperties = trackProperties(isImmutable, ignorePaths, obj);
@@ -2157,7 +2157,7 @@ function trackProperties(isImmutable, ignorePaths, obj, path, checkedObjects) {
     ignorePaths = [];
   }
   if (path === void 0) {
-    path = "";
+    path = '';
   }
   if (checkedObjects === void 0) {
     checkedObjects = /* @__PURE__ */ new Set();
@@ -2167,7 +2167,7 @@ function trackProperties(isImmutable, ignorePaths, obj, path, checkedObjects) {
     checkedObjects.add(obj);
     tracked.children = {};
     for (var key in obj) {
-      var childPath = path ? path + "." + key : key;
+      var childPath = path ? path + '.' + key : key;
       if (ignorePaths.length && ignorePaths.indexOf(childPath) !== -1) {
         continue;
       }
@@ -2196,7 +2196,7 @@ function detectMutations(
     sameParentRef = false;
   }
   if (path === void 0) {
-    path = "";
+    path = '';
   }
   var prevObj = trackedProperty ? trackedProperty.value : void 0;
   var sameRef = prevObj === obj;
@@ -2215,7 +2215,7 @@ function detectMutations(
   }
   var hasIgnoredPaths = ignoredPaths.length > 0;
   var _loop_1 = function (key2) {
-    var nestedPath = path ? path + "." + key2 : key2;
+    var nestedPath = path ? path + '.' + key2 : key2;
     if (hasIgnoredPaths) {
       var hasMatches = ignoredPaths.some(function (ignored) {
         if (ignored instanceof RegExp) {
@@ -2224,7 +2224,7 @@ function detectMutations(
         return nestedPath === ignored;
       });
       if (hasMatches) {
-        return "continue";
+        return 'continue';
       }
     }
     var result = detectMutations(
@@ -2241,7 +2241,7 @@ function detectMutations(
   };
   for (var key in keysToDetect) {
     var state_1 = _loop_1(key);
-    if (typeof state_1 === "object") return state_1.value;
+    if (typeof state_1 === 'object') return state_1.value;
   }
   return { wasMutated: false };
 }
@@ -2275,7 +2275,7 @@ function createImmutableStateInvariantMiddleware(options) {
       return function (action) {
         var measureUtils = getTimeMeasureUtils(
           warnAfter,
-          "ImmutableStateInvariantMiddleware",
+          'ImmutableStateInvariantMiddleware',
         );
         measureUtils.measureTime(function () {
           state = getState();
@@ -2284,7 +2284,7 @@ function createImmutableStateInvariantMiddleware(options) {
           invariant(
             !result.wasMutated,
             "A state mutation was detected between dispatches, in the path '" +
-              (result.path || "") +
+              (result.path || '') +
               "'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)",
           );
         });
@@ -2296,11 +2296,11 @@ function createImmutableStateInvariantMiddleware(options) {
           result.wasMutated &&
             invariant(
               !result.wasMutated,
-              "A state mutation was detected inside a dispatch, in the path: " +
-                (result.path || "") +
-                ". Take a look at the reducer(s) handling the action " +
+              'A state mutation was detected inside a dispatch, in the path: ' +
+                (result.path || '') +
+                '. Take a look at the reducer(s) handling the action ' +
                 stringify(action) +
-                ". (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)",
+                '. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)',
             );
         });
         measureUtils.warnIfExceeded();
@@ -2313,9 +2313,9 @@ function isPlain(val) {
   var type = typeof val;
   return (
     val == null ||
-    type === "string" ||
-    type === "boolean" ||
-    type === "number" ||
+    type === 'string' ||
+    type === 'boolean' ||
+    type === 'number' ||
     Array.isArray(val) ||
     isPlainObject2(val)
   );
@@ -2329,7 +2329,7 @@ function findNonSerializableValue(
   cache,
 ) {
   if (path === void 0) {
-    path = "";
+    path = '';
   }
   if (isSerializable === void 0) {
     isSerializable = isPlain;
@@ -2340,18 +2340,18 @@ function findNonSerializableValue(
   var foundNestedSerializable;
   if (!isSerializable(value)) {
     return {
-      keyPath: path || "<root>",
+      keyPath: path || '<root>',
       value,
     };
   }
-  if (typeof value !== "object" || value === null) {
+  if (typeof value !== 'object' || value === null) {
     return false;
   }
   if (cache == null ? void 0 : cache.has(value)) return false;
   var entries = getEntries != null ? getEntries(value) : Object.entries(value);
   var hasIgnoredPaths = ignoredPaths.length > 0;
   var _loop_2 = function (key2, nestedValue2) {
-    var nestedPath = path ? path + "." + key2 : key2;
+    var nestedPath = path ? path + '.' + key2 : key2;
     if (hasIgnoredPaths) {
       var hasMatches = ignoredPaths.some(function (ignored) {
         if (ignored instanceof RegExp) {
@@ -2360,7 +2360,7 @@ function findNonSerializableValue(
         return nestedPath === ignored;
       });
       if (hasMatches) {
-        return "continue";
+        return 'continue';
       }
     }
     if (!isSerializable(nestedValue2)) {
@@ -2371,7 +2371,7 @@ function findNonSerializableValue(
         },
       };
     }
-    if (typeof nestedValue2 === "object") {
+    if (typeof nestedValue2 === 'object') {
       foundNestedSerializable = findNonSerializableValue(
         nestedValue2,
         nestedPath,
@@ -2390,7 +2390,7 @@ function findNonSerializableValue(
       key = _c[0],
       nestedValue = _c[1];
     var state_2 = _loop_2(key, nestedValue);
-    if (typeof state_2 === "object") return state_2.value;
+    if (typeof state_2 === 'object') return state_2.value;
   }
   if (cache && isNestedFrozen(value)) cache.add(value);
   return false;
@@ -2399,7 +2399,7 @@ function isNestedFrozen(value) {
   if (!Object.isFrozen(value)) return false;
   for (var _i = 0, _c = Object.values(value); _i < _c.length; _i++) {
     var nestedValue = _c[_i];
-    if (typeof nestedValue !== "object" || nestedValue === null) continue;
+    if (typeof nestedValue !== 'object' || nestedValue === null) continue;
     if (!isNestedFrozen(nestedValue)) return false;
   }
   return true;
@@ -2424,7 +2424,7 @@ function createSerializableStateInvariantMiddleware(options) {
     ignoredActions = _d === void 0 ? [] : _d,
     _e = options.ignoredActionPaths,
     ignoredActionPaths =
-      _e === void 0 ? ["meta.arg", "meta.baseQueryMeta"] : _e,
+      _e === void 0 ? ['meta.arg', 'meta.baseQueryMeta'] : _e,
     _f = options.ignoredPaths,
     ignoredPaths = _f === void 0 ? [] : _f,
     _g = options.warnAfter,
@@ -2442,7 +2442,7 @@ function createSerializableStateInvariantMiddleware(options) {
         var result = next(action);
         var measureUtils = getTimeMeasureUtils(
           warnAfter,
-          "SerializableStateInvariantMiddleware",
+          'SerializableStateInvariantMiddleware',
         );
         if (
           !ignoreActions &&
@@ -2451,7 +2451,7 @@ function createSerializableStateInvariantMiddleware(options) {
           measureUtils.measureTime(function () {
             var foundActionNonSerializableValue = findNonSerializableValue(
               action,
-              "",
+              '',
               isSerializable,
               getEntries,
               ignoredActionPaths,
@@ -2461,14 +2461,14 @@ function createSerializableStateInvariantMiddleware(options) {
               var keyPath = foundActionNonSerializableValue.keyPath,
                 value = foundActionNonSerializableValue.value;
               console.error(
-                "A non-serializable value was detected in an action, in the path: `" +
+                'A non-serializable value was detected in an action, in the path: `' +
                   keyPath +
-                  "`. Value:",
+                  '`. Value:',
                 value,
-                "\nTake a look at the logic that dispatched this action: ",
+                '\nTake a look at the logic that dispatched this action: ',
                 action,
-                "\n(See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)",
-                "\n(To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)",
+                '\n(See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)',
+                '\n(To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)',
               );
             }
           });
@@ -2478,7 +2478,7 @@ function createSerializableStateInvariantMiddleware(options) {
             var state = storeAPI.getState();
             var foundStateNonSerializableValue = findNonSerializableValue(
               state,
-              "",
+              '',
               isSerializable,
               getEntries,
               ignoredPaths,
@@ -2488,13 +2488,13 @@ function createSerializableStateInvariantMiddleware(options) {
               var keyPath = foundStateNonSerializableValue.keyPath,
                 value = foundStateNonSerializableValue.value;
               console.error(
-                "A non-serializable value was detected in the state, in the path: `" +
+                'A non-serializable value was detected in the state, in the path: `' +
                   keyPath +
-                  "`. Value:",
+                  '`. Value:',
                 value,
-                "\nTake a look at the reducer(s) handling this action type: " +
+                '\nTake a look at the reducer(s) handling this action type: ' +
                   action.type +
-                  ".\n(See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)",
+                  '.\n(See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)',
               );
             }
           });
@@ -2506,7 +2506,7 @@ function createSerializableStateInvariantMiddleware(options) {
   };
 }
 function isBoolean(x2) {
-  return typeof x2 === "boolean";
+  return typeof x2 === 'boolean';
 }
 function curryGetDefaultMiddleware() {
   return function curriedGetDefaultMiddleware(options) {
@@ -2579,7 +2579,7 @@ function configureStore(options) {
     _h = _c.enhancers,
     enhancers = _h === void 0 ? void 0 : _h;
   var rootReducer;
-  if (typeof reducer === "function") {
+  if (typeof reducer === 'function') {
     rootReducer = reducer;
   } else if (isPlainObject2(reducer)) {
     rootReducer = combineReducers(reducer);
@@ -2589,22 +2589,22 @@ function configureStore(options) {
     );
   }
   var finalMiddleware = middleware;
-  if (typeof finalMiddleware === "function") {
+  if (typeof finalMiddleware === 'function') {
     finalMiddleware = finalMiddleware(curriedGetDefaultMiddleware);
     if (!IS_PRODUCTION && !Array.isArray(finalMiddleware)) {
       throw new Error(
-        "when using a middleware builder function, an array of middleware must be returned",
+        'when using a middleware builder function, an array of middleware must be returned',
       );
     }
   }
   if (
     !IS_PRODUCTION &&
     finalMiddleware.some(function (item) {
-      return typeof item !== "function";
+      return typeof item !== 'function';
     })
   ) {
     throw new Error(
-      "each middleware provided to configureStore must be a function",
+      'each middleware provided to configureStore must be a function',
     );
   }
   var middlewareEnhancer = applyMiddleware.apply(void 0, finalMiddleware);
@@ -2615,7 +2615,7 @@ function configureStore(options) {
         {
           trace: !IS_PRODUCTION,
         },
-        typeof devTools === "object" && devTools,
+        typeof devTools === 'object' && devTools,
       ),
     );
   }
@@ -2623,7 +2623,7 @@ function configureStore(options) {
   var storeEnhancers = defaultEnhancers;
   if (Array.isArray(enhancers)) {
     storeEnhancers = __spreadArray([middlewareEnhancer], enhancers);
-  } else if (typeof enhancers === "function") {
+  } else if (typeof enhancers === 'function') {
     storeEnhancers = enhancers(defaultEnhancers);
   }
   var composedEnhancer = finalCompose.apply(void 0, storeEnhancers);
@@ -2638,27 +2638,27 @@ function executeReducerBuilderCallback(builderCallback) {
       if (true) {
         if (actionMatchers.length > 0) {
           throw new Error(
-            "`builder.addCase` should only be called before calling `builder.addMatcher`",
+            '`builder.addCase` should only be called before calling `builder.addMatcher`',
           );
         }
         if (defaultCaseReducer) {
           throw new Error(
-            "`builder.addCase` should only be called before calling `builder.addDefaultCase`",
+            '`builder.addCase` should only be called before calling `builder.addDefaultCase`',
           );
         }
       }
       var type =
-        typeof typeOrActionCreator === "string"
+        typeof typeOrActionCreator === 'string'
           ? typeOrActionCreator
           : typeOrActionCreator.type;
       if (!type) {
         throw new Error(
-          "`builder.addCase` cannot be called with an empty action type",
+          '`builder.addCase` cannot be called with an empty action type',
         );
       }
       if (type in actionsMap) {
         throw new Error(
-          "`builder.addCase` cannot be called with two reducers for the same action type",
+          '`builder.addCase` cannot be called with two reducers for the same action type',
         );
       }
       actionsMap[type] = reducer;
@@ -2668,7 +2668,7 @@ function executeReducerBuilderCallback(builderCallback) {
       if (true) {
         if (defaultCaseReducer) {
           throw new Error(
-            "`builder.addMatcher` should only be called before calling `builder.addDefaultCase`",
+            '`builder.addMatcher` should only be called before calling `builder.addDefaultCase`',
           );
         }
       }
@@ -2678,7 +2678,7 @@ function executeReducerBuilderCallback(builderCallback) {
     addDefaultCase: function (reducer) {
       if (true) {
         if (defaultCaseReducer) {
-          throw new Error("`builder.addDefaultCase` can only be called once");
+          throw new Error('`builder.addDefaultCase` can only be called once');
         }
       }
       defaultCaseReducer = reducer;
@@ -2689,7 +2689,7 @@ function executeReducerBuilderCallback(builderCallback) {
   return [actionsMap, actionMatchers, defaultCaseReducer];
 }
 function isStateFunction(x2) {
-  return typeof x2 === "function";
+  return typeof x2 === 'function';
 }
 var hasWarnedAboutObjectNotation = false;
 function createReducer(
@@ -2702,7 +2702,7 @@ function createReducer(
     actionMatchers = [];
   }
   if (true) {
-    if (typeof mapOrBuilderCallback === "object") {
+    if (typeof mapOrBuilderCallback === 'object') {
       if (!hasWarnedAboutObjectNotation) {
         hasWarnedAboutObjectNotation = true;
         console.warn(
@@ -2712,7 +2712,7 @@ function createReducer(
     }
   }
   var _c =
-      typeof mapOrBuilderCallback === "function"
+      typeof mapOrBuilderCallback === 'function'
         ? executeReducerBuilderCallback(mapOrBuilderCallback)
         : [mapOrBuilderCallback, actionMatchers, defaultCaseReducer],
     actionsMap = _c[0],
@@ -2768,7 +2768,7 @@ function createReducer(
               return previousState;
             }
             throw Error(
-              "A case reducer on a non-draftable value must not return undefined",
+              'A case reducer on a non-draftable value must not return undefined',
             );
           }
           return result;
@@ -2786,22 +2786,22 @@ function createReducer(
 }
 var hasWarnedAboutObjectNotation2 = false;
 function getType2(slice, actionKey) {
-  return slice + "/" + actionKey;
+  return slice + '/' + actionKey;
 }
 function createSlice(options) {
   var name = options.name;
   if (!name) {
-    throw new Error("`name` is a required option for createSlice");
+    throw new Error('`name` is a required option for createSlice');
   }
-  if (typeof process !== "undefined" && true) {
+  if (typeof process !== 'undefined' && true) {
     if (options.initialState === void 0) {
       console.error(
-        "You must provide an `initialState` value that is not `undefined`. You may have misspelled `initialState`",
+        'You must provide an `initialState` value that is not `undefined`. You may have misspelled `initialState`',
       );
     }
   }
   var initialState =
-    typeof options.initialState == "function"
+    typeof options.initialState == 'function'
       ? options.initialState
       : freezeDraftable(options.initialState);
   var reducers = options.reducers || {};
@@ -2814,7 +2814,7 @@ function createSlice(options) {
     var type = getType2(name, reducerName);
     var caseReducer;
     var prepareCallback;
-    if ("reducer" in maybeReducerWithPrepare) {
+    if ('reducer' in maybeReducerWithPrepare) {
       caseReducer = maybeReducerWithPrepare.reducer;
       prepareCallback = maybeReducerWithPrepare.prepare;
     } else {
@@ -2828,7 +2828,7 @@ function createSlice(options) {
   });
   function buildReducer() {
     if (true) {
-      if (typeof options.extraReducers === "object") {
+      if (typeof options.extraReducers === 'object') {
         if (!hasWarnedAboutObjectNotation2) {
           hasWarnedAboutObjectNotation2 = true;
           console.warn(
@@ -2838,7 +2838,7 @@ function createSlice(options) {
       }
     }
     var _c =
-        typeof options.extraReducers === "function"
+        typeof options.extraReducers === 'function'
           ? executeReducerBuilderCallback(options.extraReducers)
           : [options.extraReducers],
       _d = _c[0],
@@ -2987,11 +2987,11 @@ function selectIdValue(entity, selectId) {
   var key = selectId(entity);
   if (key === void 0) {
     console.warn(
-      "The entity passed to the `selectId` implementation returned undefined.",
-      "You should probably provide your own `selectId` implementation.",
-      "The entity that was passed:",
+      'The entity passed to the `selectId` implementation returned undefined.',
+      'You should probably provide your own `selectId` implementation.',
+      'The entity that was passed:',
       entity,
-      "The `selectId` implementation:",
+      'The `selectId` implementation:',
       selectId.toString(),
     );
   }
@@ -3302,19 +3302,19 @@ function createEntityAdapter(options) {
   );
 }
 var urlAlphabet =
-  "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXIjQW";
+  'ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXIjQW';
 var nanoid = function (size) {
   if (size === void 0) {
     size = 21;
   }
-  var id = "";
+  var id = '';
   var i2 = size;
   while (i2--) {
     id += urlAlphabet[(Math.random() * 64) | 0];
   }
   return id;
 };
-var commonProperties = ["name", "message", "stack", "code"];
+var commonProperties = ['name', 'message', 'stack', 'code'];
 var RejectWithValue =
   /** @class */
   /* @__PURE__ */ (function () {
@@ -3334,7 +3334,7 @@ var FulfillWithMeta =
     return FulfillWithMeta2;
   })();
 var miniSerializeError = function (value) {
-  if (typeof value === "object" && value !== null) {
+  if (typeof value === 'object' && value !== null) {
     var simpleError = {};
     for (
       var _i = 0, commonProperties_1 = commonProperties;
@@ -3342,7 +3342,7 @@ var miniSerializeError = function (value) {
       _i++
     ) {
       var property = commonProperties_1[_i];
-      if (typeof value[property] === "string") {
+      if (typeof value[property] === 'string') {
         simpleError[property] = value[property];
       }
     }
@@ -3353,54 +3353,54 @@ var miniSerializeError = function (value) {
 var createAsyncThunk = (function () {
   function createAsyncThunk2(typePrefix, payloadCreator, options) {
     var fulfilled = createAction(
-      typePrefix + "/fulfilled",
+      typePrefix + '/fulfilled',
       function (payload, requestId, arg, meta) {
         return {
           payload,
           meta: __spreadProps(__spreadValues({}, meta || {}), {
             arg,
             requestId,
-            requestStatus: "fulfilled",
+            requestStatus: 'fulfilled',
           }),
         };
       },
     );
     var pending = createAction(
-      typePrefix + "/pending",
+      typePrefix + '/pending',
       function (requestId, arg, meta) {
         return {
           payload: void 0,
           meta: __spreadProps(__spreadValues({}, meta || {}), {
             arg,
             requestId,
-            requestStatus: "pending",
+            requestStatus: 'pending',
           }),
         };
       },
     );
     var rejected = createAction(
-      typePrefix + "/rejected",
+      typePrefix + '/rejected',
       function (error, requestId, arg, payload, meta) {
         return {
           payload,
           error: ((options && options.serializeError) || miniSerializeError)(
-            error || "Rejected",
+            error || 'Rejected',
           ),
           meta: __spreadProps(__spreadValues({}, meta || {}), {
             arg,
             requestId,
             rejectedWithValue: !!payload,
-            requestStatus: "rejected",
-            aborted: (error == null ? void 0 : error.name) === "AbortError",
+            requestStatus: 'rejected',
+            aborted: (error == null ? void 0 : error.name) === 'AbortError',
             condition:
-              (error == null ? void 0 : error.name) === "ConditionError",
+              (error == null ? void 0 : error.name) === 'ConditionError',
           }),
         };
       },
     );
     var displayedWarning = false;
     var AC =
-      typeof AbortController !== "undefined"
+      typeof AbortController !== 'undefined'
         ? AbortController
         : /** @class */
           (function () {
@@ -3469,19 +3469,19 @@ var createAsyncThunk = (function () {
                     abortController.signal.aborted
                   ) {
                     throw {
-                      name: "ConditionError",
+                      name: 'ConditionError',
                       message:
-                        "Aborted due to condition callback returning false.",
+                        'Aborted due to condition callback returning false.',
                     };
                   }
                   started = true;
                   abortedPromise = new Promise(function (_2, reject) {
                     return abortController.signal.addEventListener(
-                      "abort",
+                      'abort',
                       function () {
                         return reject({
-                          name: "AbortError",
-                          message: abortReason || "Aborted",
+                          name: 'AbortError',
+                          message: abortReason || 'Aborted',
                         });
                       },
                     );
@@ -3600,8 +3600,8 @@ function unwrapResult(action) {
 function isThenable(value) {
   return (
     value !== null &&
-    typeof value === "object" &&
-    typeof value.then === "function"
+    typeof value === 'object' &&
+    typeof value.then === 'function'
   );
 }
 var matches = function (matcher, action) {
@@ -3635,17 +3635,17 @@ function isAllOf() {
 }
 function hasExpectedRequestMetadata(action, validStatus) {
   if (!action || !action.meta) return false;
-  var hasValidRequestId = typeof action.meta.requestId === "string";
+  var hasValidRequestId = typeof action.meta.requestId === 'string';
   var hasValidRequestStatus =
     validStatus.indexOf(action.meta.requestStatus) > -1;
   return hasValidRequestId && hasValidRequestStatus;
 }
 function isAsyncThunkArray(a2) {
   return (
-    typeof a2[0] === "function" &&
-    "pending" in a2[0] &&
-    "fulfilled" in a2[0] &&
-    "rejected" in a2[0]
+    typeof a2[0] === 'function' &&
+    'pending' in a2[0] &&
+    'fulfilled' in a2[0] &&
+    'rejected' in a2[0]
   );
 }
 function isPending() {
@@ -3655,7 +3655,7 @@ function isPending() {
   }
   if (asyncThunks.length === 0) {
     return function (action) {
-      return hasExpectedRequestMetadata(action, ["pending"]);
+      return hasExpectedRequestMetadata(action, ['pending']);
     };
   }
   if (!isAsyncThunkArray(asyncThunks)) {
@@ -3676,7 +3676,7 @@ function isRejected() {
   }
   if (asyncThunks.length === 0) {
     return function (action) {
-      return hasExpectedRequestMetadata(action, ["rejected"]);
+      return hasExpectedRequestMetadata(action, ['rejected']);
     };
   }
   if (!isAsyncThunkArray(asyncThunks)) {
@@ -3725,7 +3725,7 @@ function isFulfilled() {
   }
   if (asyncThunks.length === 0) {
     return function (action) {
-      return hasExpectedRequestMetadata(action, ["fulfilled"]);
+      return hasExpectedRequestMetadata(action, ['fulfilled']);
     };
   }
   if (!isAsyncThunkArray(asyncThunks)) {
@@ -3747,9 +3747,9 @@ function isAsyncThunkAction() {
   if (asyncThunks.length === 0) {
     return function (action) {
       return hasExpectedRequestMetadata(action, [
-        "pending",
-        "fulfilled",
-        "rejected",
+        'pending',
+        'fulfilled',
+        'rejected',
       ]);
     };
   }
@@ -3775,8 +3775,8 @@ function isAsyncThunkAction() {
   };
 }
 var assertFunction = function (func, expected) {
-  if (typeof func !== "function") {
-    throw new TypeError(expected + " is not a function");
+  if (typeof func !== 'function') {
+    throw new TypeError(expected + ' is not a function');
   }
 };
 var noop = function () {};
@@ -3788,9 +3788,9 @@ var catchRejection = function (promise2, onError) {
   return promise2;
 };
 var addAbortSignalListener = function (abortSignal, callback) {
-  abortSignal.addEventListener("abort", callback, { once: true });
+  abortSignal.addEventListener('abort', callback, { once: true });
   return function () {
-    return abortSignal.removeEventListener("abort", callback);
+    return abortSignal.removeEventListener('abort', callback);
   };
 };
 var abortControllerWithReason = function (abortController, reason) {
@@ -3798,8 +3798,8 @@ var abortControllerWithReason = function (abortController, reason) {
   if (signal.aborted) {
     return;
   }
-  if (!("reason" in signal)) {
-    Object.defineProperty(signal, "reason", {
+  if (!('reason' in signal)) {
+    Object.defineProperty(signal, 'reason', {
       enumerable: true,
       value: reason,
       configurable: true,
@@ -3808,21 +3808,21 @@ var abortControllerWithReason = function (abortController, reason) {
   }
   abortController.abort(reason);
 };
-var task = "task";
-var listener = "listener";
-var completed = "completed";
-var cancelled = "cancelled";
-var taskCancelled = "task-" + cancelled;
-var taskCompleted = "task-" + completed;
-var listenerCancelled = listener + "-" + cancelled;
-var listenerCompleted = listener + "-" + completed;
+var task = 'task';
+var listener = 'listener';
+var completed = 'completed';
+var cancelled = 'cancelled';
+var taskCancelled = 'task-' + cancelled;
+var taskCompleted = 'task-' + completed;
+var listenerCancelled = listener + '-' + cancelled;
+var listenerCompleted = listener + '-' + completed;
 var TaskAbortError =
   /** @class */
   /* @__PURE__ */ (function () {
     function TaskAbortError2(code) {
       this.code = code;
-      this.name = "TaskAbortError";
-      this.message = task + " " + cancelled + " (reason: " + code + ")";
+      this.name = 'TaskAbortError';
+      this.message = task + ' ' + cancelled + ' (reason: ' + code + ')';
     }
     return TaskAbortError2;
   })();
@@ -3867,7 +3867,7 @@ var runTask = function (task2, cleanUp) {
           return [
             2,
             {
-              status: "ok",
+              status: 'ok',
               value,
             },
           ];
@@ -3877,7 +3877,7 @@ var runTask = function (task2, cleanUp) {
             2,
             {
               status:
-                error_1 instanceof TaskAbortError ? "cancelled" : "rejected",
+                error_1 instanceof TaskAbortError ? 'cancelled' : 'rejected',
               error: error_1,
             },
           ];
@@ -3918,7 +3918,7 @@ var createDelay = function (signal) {
 };
 var assign = Object.assign;
 var INTERNAL_NIL_TOKEN = {};
-var alm = "listenerMiddleware";
+var alm = 'listenerMiddleware';
 var createFork = function (parentAbortSignal, parentBlockingPromises) {
   var linkControllers = function (controller) {
     return addAbortSignalListener(parentAbortSignal, function () {
@@ -3926,7 +3926,7 @@ var createFork = function (parentAbortSignal, parentBlockingPromises) {
     });
   };
   return function (taskExecutor, opts) {
-    assertFunction(taskExecutor, "taskExecutor");
+    assertFunction(taskExecutor, 'taskExecutor');
     var childAbortController = new AbortController();
     linkControllers(childAbortController);
     var result = runTask(
@@ -4046,10 +4046,10 @@ var getListenerEntryPropsFrom = function (options) {
   } else if (predicate) {
   } else {
     throw new Error(
-      "Creating or removing a listener requires one of the known fields for matching an action",
+      'Creating or removing a listener requires one of the known fields for matching an action',
     );
   }
-  assertFunction(effect, "options.listener");
+  assertFunction(effect, 'options.listener');
   return { predicate, type, effect };
 };
 var createListenerEntry = function (options) {
@@ -4065,7 +4065,7 @@ var createListenerEntry = function (options) {
     predicate,
     pending: /* @__PURE__ */ new Set(),
     unsubscribe: function () {
-      throw new Error("Unsubscribe not initialized");
+      throw new Error('Unsubscribe not initialized');
     },
   };
   return entry;
@@ -4090,15 +4090,15 @@ var safelyNotifyError = function (errorHandler, errorToNotify, errorInfo) {
     }, 0);
   }
 };
-var addListener = createAction(alm + "/add");
-var clearAllListeners = createAction(alm + "/removeAll");
-var removeListener = createAction(alm + "/remove");
+var addListener = createAction(alm + '/add');
+var clearAllListeners = createAction(alm + '/removeAll');
+var removeListener = createAction(alm + '/remove');
 var defaultErrorHandler = function () {
   var args = [];
   for (var _i = 0; _i < arguments.length; _i++) {
     args[_i] = arguments[_i];
   }
-  console.error.apply(console, __spreadArray([alm + "/error"], args));
+  console.error.apply(console, __spreadArray([alm + '/error'], args));
 };
 function createListenerMiddleware(middlewareOptions) {
   var _this = this;
@@ -4109,7 +4109,7 @@ function createListenerMiddleware(middlewareOptions) {
   var extra = middlewareOptions.extra,
     _c = middlewareOptions.onError,
     onError = _c === void 0 ? defaultErrorHandler : _c;
-  assertFunction(onError, "onError");
+  assertFunction(onError, 'onError');
   var insertEntry = function (entry) {
     entry.unsubscribe = function () {
       return listenerMap.delete(entry.id);
@@ -4151,7 +4151,7 @@ function createListenerMiddleware(middlewareOptions) {
       predicate = _c2.predicate;
     var entry = findListenerEntry(function (entry2) {
       var matchPredicateOrType =
-        typeof type === "string"
+        typeof type === 'string'
           ? entry2.type === type
           : entry2.predicate === predicate;
       return matchPredicateOrType && entry2.effect === effect;
@@ -4225,7 +4225,7 @@ function createListenerMiddleware(middlewareOptions) {
             listenerError_1 = _c2.sent();
             if (!(listenerError_1 instanceof TaskAbortError)) {
               safelyNotifyError(onError, listenerError_1, {
-                raisedBy: "effect",
+                raisedBy: 'effect',
               });
             }
             return [3, 6];
@@ -4272,7 +4272,7 @@ function createListenerMiddleware(middlewareOptions) {
         var getOriginalState = function () {
           if (originalState === INTERNAL_NIL_TOKEN) {
             throw new Error(
-              alm + ": getOriginalState can only be called synchronously",
+              alm + ': getOriginalState can only be called synchronously',
             );
           }
           return originalState;
@@ -4299,7 +4299,7 @@ function createListenerMiddleware(middlewareOptions) {
               } catch (predicateError) {
                 runListener = false;
                 safelyNotifyError(onError, predicateError, {
-                  raisedBy: "predicate",
+                  raisedBy: 'predicate',
                 });
               }
               if (!runListener) {
@@ -4322,7 +4322,7 @@ function createListenerMiddleware(middlewareOptions) {
     clearListeners: clearListenerMiddleware,
   };
 }
-var SHOULD_AUTOBATCH = "RTK_autoBatch";
+var SHOULD_AUTOBATCH = 'RTK_autoBatch';
 var prepareAutoBatched = function () {
   return function (payload) {
     var _c;
@@ -4334,11 +4334,11 @@ var prepareAutoBatched = function () {
 };
 var promise;
 var queueMicrotaskShim =
-  typeof queueMicrotask === "function"
+  typeof queueMicrotask === 'function'
     ? queueMicrotask.bind(
-        typeof window !== "undefined"
+        typeof window !== 'undefined'
           ? window
-          : typeof global !== "undefined"
+          : typeof global !== 'undefined'
             ? global
             : globalThis,
       )
@@ -4357,12 +4357,12 @@ var createQueueWithTimer = function (timeout) {
   };
 };
 var rAF =
-  typeof window !== "undefined" && window.requestAnimationFrame
+  typeof window !== 'undefined' && window.requestAnimationFrame
     ? window.requestAnimationFrame
     : createQueueWithTimer(10);
 var autoBatchEnhancer = function (options) {
   if (options === void 0) {
-    options = { type: "raf" };
+    options = { type: 'raf' };
   }
   return function (next) {
     return function () {
@@ -4376,11 +4376,11 @@ var autoBatchEnhancer = function (options) {
       var notificationQueued = false;
       var listeners = /* @__PURE__ */ new Set();
       var queueCallback =
-        options.type === "tick"
+        options.type === 'tick'
           ? queueMicrotaskShim
-          : options.type === "raf"
+          : options.type === 'raf'
             ? rAF
-            : options.type === "callback"
+            : options.type === 'callback'
               ? options.queueNotification
               : createQueueWithTimer(options.timeout);
       var notifyListeners = function () {

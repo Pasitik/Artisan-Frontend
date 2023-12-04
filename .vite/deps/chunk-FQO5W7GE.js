@@ -1,45 +1,45 @@
-import { __commonJS } from "./chunk-ZS7NZCD4.js";
+import { __commonJS } from './chunk-ZS7NZCD4.js';
 
 // node_modules/react/cjs/react.development.js
 var require_react_development = __commonJS({
-  "node_modules/react/cjs/react.development.js"(exports, module) {
-    "use strict";
+  'node_modules/react/cjs/react.development.js'(exports, module) {
+    'use strict';
     if (true) {
       (function () {
-        "use strict";
+        'use strict';
         if (
-          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" &&
+          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' &&
           typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart ===
-            "function"
+            'function'
         ) {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(
             new Error(),
           );
         }
-        var ReactVersion = "18.2.0";
-        var REACT_ELEMENT_TYPE = Symbol.for("react.element");
-        var REACT_PORTAL_TYPE = Symbol.for("react.portal");
-        var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
-        var REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode");
-        var REACT_PROFILER_TYPE = Symbol.for("react.profiler");
-        var REACT_PROVIDER_TYPE = Symbol.for("react.provider");
-        var REACT_CONTEXT_TYPE = Symbol.for("react.context");
-        var REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref");
-        var REACT_SUSPENSE_TYPE = Symbol.for("react.suspense");
-        var REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list");
-        var REACT_MEMO_TYPE = Symbol.for("react.memo");
-        var REACT_LAZY_TYPE = Symbol.for("react.lazy");
-        var REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen");
+        var ReactVersion = '18.2.0';
+        var REACT_ELEMENT_TYPE = Symbol.for('react.element');
+        var REACT_PORTAL_TYPE = Symbol.for('react.portal');
+        var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
+        var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
+        var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
+        var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
+        var REACT_CONTEXT_TYPE = Symbol.for('react.context');
+        var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
+        var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
+        var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
+        var REACT_MEMO_TYPE = Symbol.for('react.memo');
+        var REACT_LAZY_TYPE = Symbol.for('react.lazy');
+        var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
         var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
-        var FAUX_ITERATOR_SYMBOL = "@@iterator";
+        var FAUX_ITERATOR_SYMBOL = '@@iterator';
         function getIteratorFn(maybeIterable) {
-          if (maybeIterable === null || typeof maybeIterable !== "object") {
+          if (maybeIterable === null || typeof maybeIterable !== 'object') {
             return null;
           }
           var maybeIterator =
             (MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL]) ||
             maybeIterable[FAUX_ITERATOR_SYMBOL];
-          if (typeof maybeIterator === "function") {
+          if (typeof maybeIterator === 'function') {
             return maybeIterator;
           }
           return null;
@@ -82,13 +82,13 @@ var require_react_development = __commonJS({
           };
           ReactDebugCurrentFrame.getCurrentStack = null;
           ReactDebugCurrentFrame.getStackAddendum = function () {
-            var stack = "";
+            var stack = '';
             if (currentExtraStackFrame) {
               stack += currentExtraStackFrame;
             }
             var impl = ReactDebugCurrentFrame.getCurrentStack;
             if (impl) {
-              stack += impl() || "";
+              stack += impl() || '';
             }
             return stack;
           };
@@ -119,7 +119,7 @@ var require_react_development = __commonJS({
               ) {
                 args[_key - 1] = arguments[_key];
               }
-              printWarning("warn", format, args);
+              printWarning('warn', format, args);
             }
           }
         }
@@ -135,7 +135,7 @@ var require_react_development = __commonJS({
               ) {
                 args[_key2 - 1] = arguments[_key2];
               }
-              printWarning("error", format, args);
+              printWarning('error', format, args);
             }
           }
         }
@@ -144,14 +144,14 @@ var require_react_development = __commonJS({
             var ReactDebugCurrentFrame2 =
               ReactSharedInternals.ReactDebugCurrentFrame;
             var stack = ReactDebugCurrentFrame2.getStackAddendum();
-            if (stack !== "") {
-              format += "%s";
+            if (stack !== '') {
+              format += '%s';
               args = args.concat([stack]);
             }
             var argsWithFormat = args.map(function (item) {
               return String(item);
             });
-            argsWithFormat.unshift("Warning: " + format);
+            argsWithFormat.unshift('Warning: ' + format);
             Function.prototype.apply.call(
               console[level],
               console,
@@ -166,8 +166,8 @@ var require_react_development = __commonJS({
             var componentName =
               (_constructor &&
                 (_constructor.displayName || _constructor.name)) ||
-              "ReactClass";
-            var warningKey = componentName + "." + callerName;
+              'ReactClass';
+            var warningKey = componentName + '.' + callerName;
             if (didWarnStateUpdateForUnmountedComponent[warningKey]) {
               return;
             }
@@ -206,7 +206,7 @@ var require_react_development = __commonJS({
            * @internal
            */
           enqueueForceUpdate: function (publicInstance, callback, callerName) {
-            warnNoop(publicInstance, "forceUpdate");
+            warnNoop(publicInstance, 'forceUpdate');
           },
           /**
            * Replaces all of the state. Always use this or `setState` to mutate state.
@@ -227,7 +227,7 @@ var require_react_development = __commonJS({
             callback,
             callerName,
           ) {
-            warnNoop(publicInstance, "replaceState");
+            warnNoop(publicInstance, 'replaceState');
           },
           /**
            * Sets a subset of the state. This only exists because _pendingState is
@@ -247,7 +247,7 @@ var require_react_development = __commonJS({
             callback,
             callerName,
           ) {
-            warnNoop(publicInstance, "setState");
+            warnNoop(publicInstance, 'setState');
           },
         };
         var assign = Object.assign;
@@ -264,40 +264,40 @@ var require_react_development = __commonJS({
         Component.prototype.isReactComponent = {};
         Component.prototype.setState = function (partialState, callback) {
           if (
-            typeof partialState !== "object" &&
-            typeof partialState !== "function" &&
+            typeof partialState !== 'object' &&
+            typeof partialState !== 'function' &&
             partialState != null
           ) {
             throw new Error(
-              "setState(...): takes an object of state variables to update or a function which returns an object of state variables.",
+              'setState(...): takes an object of state variables to update or a function which returns an object of state variables.',
             );
           }
           this.updater.enqueueSetState(
             this,
             partialState,
             callback,
-            "setState",
+            'setState',
           );
         };
         Component.prototype.forceUpdate = function (callback) {
-          this.updater.enqueueForceUpdate(this, callback, "forceUpdate");
+          this.updater.enqueueForceUpdate(this, callback, 'forceUpdate');
         };
         {
           var deprecatedAPIs = {
             isMounted: [
-              "isMounted",
-              "Instead, make sure to clean up subscriptions and pending requests in componentWillUnmount to prevent memory leaks.",
+              'isMounted',
+              'Instead, make sure to clean up subscriptions and pending requests in componentWillUnmount to prevent memory leaks.',
             ],
             replaceState: [
-              "replaceState",
-              "Refactor your code to use setState instead (see https://github.com/facebook/react/issues/3236).",
+              'replaceState',
+              'Refactor your code to use setState instead (see https://github.com/facebook/react/issues/3236).',
             ],
           };
           var defineDeprecationWarning = function (methodName, info) {
             Object.defineProperty(Component.prototype, methodName, {
               get: function () {
                 warn(
-                  "%s(...) is deprecated in plain JavaScript React classes. %s",
+                  '%s(...) is deprecated in plain JavaScript React classes. %s',
                   info[0],
                   info[1],
                 );
@@ -340,11 +340,11 @@ var require_react_development = __commonJS({
         function typeName(value) {
           {
             var hasToStringTag =
-              typeof Symbol === "function" && Symbol.toStringTag;
+              typeof Symbol === 'function' && Symbol.toStringTag;
             var type =
               (hasToStringTag && value[Symbol.toStringTag]) ||
               value.constructor.name ||
-              "Object";
+              'Object';
             return type;
           }
         }
@@ -359,13 +359,13 @@ var require_react_development = __commonJS({
           }
         }
         function testStringCoercion(value) {
-          return "" + value;
+          return '' + value;
         }
         function checkKeyStringCoercion(value) {
           {
             if (willCoercionThrow(value)) {
               error(
-                "The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.",
+                'The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.',
                 typeName(value),
               );
               return testStringCoercion(value);
@@ -377,61 +377,61 @@ var require_react_development = __commonJS({
           if (displayName) {
             return displayName;
           }
-          var functionName = innerType.displayName || innerType.name || "";
-          return functionName !== ""
-            ? wrapperName + "(" + functionName + ")"
+          var functionName = innerType.displayName || innerType.name || '';
+          return functionName !== ''
+            ? wrapperName + '(' + functionName + ')'
             : wrapperName;
         }
         function getContextName(type) {
-          return type.displayName || "Context";
+          return type.displayName || 'Context';
         }
         function getComponentNameFromType(type) {
           if (type == null) {
             return null;
           }
           {
-            if (typeof type.tag === "number") {
+            if (typeof type.tag === 'number') {
               error(
-                "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue.",
+                'Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue.',
               );
             }
           }
-          if (typeof type === "function") {
+          if (typeof type === 'function') {
             return type.displayName || type.name || null;
           }
-          if (typeof type === "string") {
+          if (typeof type === 'string') {
             return type;
           }
           switch (type) {
             case REACT_FRAGMENT_TYPE:
-              return "Fragment";
+              return 'Fragment';
             case REACT_PORTAL_TYPE:
-              return "Portal";
+              return 'Portal';
             case REACT_PROFILER_TYPE:
-              return "Profiler";
+              return 'Profiler';
             case REACT_STRICT_MODE_TYPE:
-              return "StrictMode";
+              return 'StrictMode';
             case REACT_SUSPENSE_TYPE:
-              return "Suspense";
+              return 'Suspense';
             case REACT_SUSPENSE_LIST_TYPE:
-              return "SuspenseList";
+              return 'SuspenseList';
           }
-          if (typeof type === "object") {
+          if (typeof type === 'object') {
             switch (type.$$typeof) {
               case REACT_CONTEXT_TYPE:
                 var context = type;
-                return getContextName(context) + ".Consumer";
+                return getContextName(context) + '.Consumer';
               case REACT_PROVIDER_TYPE:
                 var provider = type;
-                return getContextName(provider._context) + ".Provider";
+                return getContextName(provider._context) + '.Provider';
               case REACT_FORWARD_REF_TYPE:
-                return getWrappedName(type, type.render, "ForwardRef");
+                return getWrappedName(type, type.render, 'ForwardRef');
               case REACT_MEMO_TYPE:
                 var outerName = type.displayName || null;
                 if (outerName !== null) {
                   return outerName;
                 }
-                return getComponentNameFromType(type.type) || "Memo";
+                return getComponentNameFromType(type.type) || 'Memo';
               case REACT_LAZY_TYPE: {
                 var lazyComponent = type;
                 var payload = lazyComponent._payload;
@@ -461,8 +461,8 @@ var require_react_development = __commonJS({
         }
         function hasValidRef(config) {
           {
-            if (hasOwnProperty.call(config, "ref")) {
-              var getter = Object.getOwnPropertyDescriptor(config, "ref").get;
+            if (hasOwnProperty.call(config, 'ref')) {
+              var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;
               if (getter && getter.isReactWarning) {
                 return false;
               }
@@ -472,8 +472,8 @@ var require_react_development = __commonJS({
         }
         function hasValidKey(config) {
           {
-            if (hasOwnProperty.call(config, "key")) {
-              var getter = Object.getOwnPropertyDescriptor(config, "key").get;
+            if (hasOwnProperty.call(config, 'key')) {
+              var getter = Object.getOwnPropertyDescriptor(config, 'key').get;
               if (getter && getter.isReactWarning) {
                 return false;
               }
@@ -487,14 +487,14 @@ var require_react_development = __commonJS({
               if (!specialPropKeyWarningShown) {
                 specialPropKeyWarningShown = true;
                 error(
-                  "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)",
+                  '%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)',
                   displayName,
                 );
               }
             }
           };
           warnAboutAccessingKey.isReactWarning = true;
-          Object.defineProperty(props, "key", {
+          Object.defineProperty(props, 'key', {
             get: warnAboutAccessingKey,
             configurable: true,
           });
@@ -505,14 +505,14 @@ var require_react_development = __commonJS({
               if (!specialPropRefWarningShown) {
                 specialPropRefWarningShown = true;
                 error(
-                  "%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)",
+                  '%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)',
                   displayName,
                 );
               }
             }
           };
           warnAboutAccessingRef.isReactWarning = true;
-          Object.defineProperty(props, "ref", {
+          Object.defineProperty(props, 'ref', {
             get: warnAboutAccessingRef,
             configurable: true,
           });
@@ -520,7 +520,7 @@ var require_react_development = __commonJS({
         function warnIfStringRefCannotBeAutoConverted(config) {
           {
             if (
-              typeof config.ref === "string" &&
+              typeof config.ref === 'string' &&
               ReactCurrentOwner.current &&
               config.__self &&
               ReactCurrentOwner.current.stateNode !== config.__self
@@ -561,19 +561,19 @@ var require_react_development = __commonJS({
           };
           {
             element._store = {};
-            Object.defineProperty(element._store, "validated", {
+            Object.defineProperty(element._store, 'validated', {
               configurable: false,
               enumerable: false,
               writable: true,
               value: false,
             });
-            Object.defineProperty(element, "_self", {
+            Object.defineProperty(element, '_self', {
               configurable: false,
               enumerable: false,
               writable: false,
               value: self,
             });
-            Object.defineProperty(element, "_source", {
+            Object.defineProperty(element, '_source', {
               configurable: false,
               enumerable: false,
               writable: false,
@@ -604,7 +604,7 @@ var require_react_development = __commonJS({
               {
                 checkKeyStringCoercion(config.key);
               }
-              key = "" + config.key;
+              key = '' + config.key;
             }
             self = config.__self === void 0 ? null : config.__self;
             source = config.__source === void 0 ? null : config.__source;
@@ -643,8 +643,8 @@ var require_react_development = __commonJS({
           {
             if (key || ref) {
               var displayName =
-                typeof type === "function"
-                  ? type.displayName || type.name || "Unknown"
+                typeof type === 'function'
+                  ? type.displayName || type.name || 'Unknown'
                   : type;
               if (key) {
                 defineKeyPropWarningGetter(props, displayName);
@@ -679,9 +679,9 @@ var require_react_development = __commonJS({
         function cloneElement(element, config, children) {
           if (element === null || element === void 0) {
             throw new Error(
-              "React.cloneElement(...): The argument must be a React element, but you passed " +
+              'React.cloneElement(...): The argument must be a React element, but you passed ' +
                 element +
-                ".",
+                '.',
             );
           }
           var propName;
@@ -700,7 +700,7 @@ var require_react_development = __commonJS({
               {
                 checkKeyStringCoercion(config.key);
               }
-              key = "" + config.key;
+              key = '' + config.key;
             }
             var defaultProps;
             if (element.type && element.type.defaultProps) {
@@ -741,39 +741,39 @@ var require_react_development = __commonJS({
         }
         function isValidElement(object) {
           return (
-            typeof object === "object" &&
+            typeof object === 'object' &&
             object !== null &&
             object.$$typeof === REACT_ELEMENT_TYPE
           );
         }
-        var SEPARATOR = ".";
-        var SUBSEPARATOR = ":";
+        var SEPARATOR = '.';
+        var SUBSEPARATOR = ':';
         function escape(key) {
           var escapeRegex = /[=:]/g;
           var escaperLookup = {
-            "=": "=0",
-            ":": "=2",
+            '=': '=0',
+            ':': '=2',
           };
           var escapedString = key.replace(escapeRegex, function (match) {
             return escaperLookup[match];
           });
-          return "$" + escapedString;
+          return '$' + escapedString;
         }
         var didWarnAboutMaps = false;
         var userProvidedKeyEscapeRegex = /\/+/g;
         function escapeUserProvidedKey(text) {
-          return text.replace(userProvidedKeyEscapeRegex, "$&/");
+          return text.replace(userProvidedKeyEscapeRegex, '$&/');
         }
         function getElementKey(element, index) {
           if (
-            typeof element === "object" &&
+            typeof element === 'object' &&
             element !== null &&
             element.key != null
           ) {
             {
               checkKeyStringCoercion(element.key);
             }
-            return escape("" + element.key);
+            return escape('' + element.key);
           }
           return index.toString(36);
         }
@@ -785,7 +785,7 @@ var require_react_development = __commonJS({
           callback,
         ) {
           var type = typeof children;
-          if (type === "undefined" || type === "boolean") {
+          if (type === 'undefined' || type === 'boolean') {
             children = null;
           }
           var invokeCallback = false;
@@ -793,11 +793,11 @@ var require_react_development = __commonJS({
             invokeCallback = true;
           } else {
             switch (type) {
-              case "string":
-              case "number":
+              case 'string':
+              case 'number':
                 invokeCallback = true;
                 break;
-              case "object":
+              case 'object':
                 switch (children.$$typeof) {
                   case REACT_ELEMENT_TYPE:
                   case REACT_PORTAL_TYPE:
@@ -809,19 +809,19 @@ var require_react_development = __commonJS({
             var _child = children;
             var mappedChild = callback(_child);
             var childKey =
-              nameSoFar === ""
+              nameSoFar === ''
                 ? SEPARATOR + getElementKey(_child, 0)
                 : nameSoFar;
             if (isArray(mappedChild)) {
-              var escapedChildKey = "";
+              var escapedChildKey = '';
               if (childKey != null) {
-                escapedChildKey = escapeUserProvidedKey(childKey) + "/";
+                escapedChildKey = escapeUserProvidedKey(childKey) + '/';
               }
               mapIntoArray(
                 mappedChild,
                 array,
                 escapedChildKey,
-                "",
+                '',
                 function (c) {
                   return c;
                 },
@@ -845,8 +845,8 @@ var require_react_development = __commonJS({
                     (!_child || _child.key !== mappedChild.key)
                       ? // $FlowFixMe Flow incorrectly thinks existing element's key can be a number
                         // eslint-disable-next-line react-internal/safe-string-coercion
-                        escapeUserProvidedKey("" + mappedChild.key) + "/"
-                      : "") +
+                        escapeUserProvidedKey('' + mappedChild.key) + '/'
+                      : '') +
                     childKey,
                 );
               }
@@ -858,7 +858,7 @@ var require_react_development = __commonJS({
           var nextName;
           var subtreeCount = 0;
           var nextNamePrefix =
-            nameSoFar === "" ? SEPARATOR : nameSoFar + SUBSEPARATOR;
+            nameSoFar === '' ? SEPARATOR : nameSoFar + SUBSEPARATOR;
           if (isArray(children)) {
             for (var i = 0; i < children.length; i++) {
               child = children[i];
@@ -873,13 +873,13 @@ var require_react_development = __commonJS({
             }
           } else {
             var iteratorFn = getIteratorFn(children);
-            if (typeof iteratorFn === "function") {
+            if (typeof iteratorFn === 'function') {
               var iterableChildren = children;
               {
                 if (iteratorFn === iterableChildren.entries) {
                   if (!didWarnAboutMaps) {
                     warn(
-                      "Using Maps as children is not supported. Use an array of keyed ReactElements instead.",
+                      'Using Maps as children is not supported. Use an array of keyed ReactElements instead.',
                     );
                   }
                   didWarnAboutMaps = true;
@@ -899,16 +899,16 @@ var require_react_development = __commonJS({
                   callback,
                 );
               }
-            } else if (type === "object") {
+            } else if (type === 'object') {
               var childrenString = String(children);
               throw new Error(
-                "Objects are not valid as a React child (found: " +
-                  (childrenString === "[object Object]"
-                    ? "object with keys {" +
-                      Object.keys(children).join(", ") +
-                      "}"
+                'Objects are not valid as a React child (found: ' +
+                  (childrenString === '[object Object]'
+                    ? 'object with keys {' +
+                      Object.keys(children).join(', ') +
+                      '}'
                     : childrenString) +
-                  "). If you meant to render a collection of children, use an array instead.",
+                  '). If you meant to render a collection of children, use an array instead.',
               );
             }
           }
@@ -920,7 +920,7 @@ var require_react_development = __commonJS({
           }
           var result = [];
           var count = 0;
-          mapIntoArray(children, result, "", "", function (child) {
+          mapIntoArray(children, result, '', '', function (child) {
             return func.call(context, child, count++);
           });
           return result;
@@ -951,7 +951,7 @@ var require_react_development = __commonJS({
         function onlyChild(children) {
           if (!isValidElement(children)) {
             throw new Error(
-              "React.Children.only expected to receive a single React element child.",
+              'React.Children.only expected to receive a single React element child.',
             );
           }
           return children;
@@ -994,7 +994,7 @@ var require_react_development = __commonJS({
                   if (!hasWarnedAboutUsingConsumerProvider) {
                     hasWarnedAboutUsingConsumerProvider = true;
                     error(
-                      "Rendering <Context.Consumer.Provider> is not supported and will be removed in a future major release. Did you mean to render <Context.Provider> instead?",
+                      'Rendering <Context.Consumer.Provider> is not supported and will be removed in a future major release. Did you mean to render <Context.Provider> instead?',
                     );
                   }
                   return context.Provider;
@@ -1032,7 +1032,7 @@ var require_react_development = __commonJS({
                   if (!hasWarnedAboutUsingNestedContextConsumers) {
                     hasWarnedAboutUsingNestedContextConsumers = true;
                     error(
-                      "Rendering <Context.Consumer.Consumer> is not supported and will be removed in a future major release. Did you mean to render <Context.Consumer> instead?",
+                      'Rendering <Context.Consumer.Consumer> is not supported and will be removed in a future major release. Did you mean to render <Context.Consumer> instead?',
                     );
                   }
                   return context.Consumer;
@@ -1108,7 +1108,7 @@ var require_react_development = __commonJS({
               }
             }
             {
-              if (!("default" in moduleObject)) {
+              if (!('default' in moduleObject)) {
                 error(
                   "lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))",
                   moduleObject,
@@ -1142,10 +1142,10 @@ var require_react_development = __commonJS({
                 },
                 set: function (newDefaultProps) {
                   error(
-                    "React.lazy(...): It is not supported to assign `defaultProps` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.",
+                    'React.lazy(...): It is not supported to assign `defaultProps` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.',
                   );
                   defaultProps = newDefaultProps;
-                  Object.defineProperty(lazyType, "defaultProps", {
+                  Object.defineProperty(lazyType, 'defaultProps', {
                     enumerable: true,
                   });
                 },
@@ -1157,10 +1157,10 @@ var require_react_development = __commonJS({
                 },
                 set: function (newPropTypes) {
                   error(
-                    "React.lazy(...): It is not supported to assign `propTypes` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.",
+                    'React.lazy(...): It is not supported to assign `propTypes` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.',
                   );
                   propTypes = newPropTypes;
-                  Object.defineProperty(lazyType, "propTypes", {
+                  Object.defineProperty(lazyType, 'propTypes', {
                     enumerable: true,
                   });
                 },
@@ -1173,27 +1173,27 @@ var require_react_development = __commonJS({
           {
             if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
               error(
-                "forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).",
+                'forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).',
               );
-            } else if (typeof render !== "function") {
+            } else if (typeof render !== 'function') {
               error(
-                "forwardRef requires a render function but was given %s.",
-                render === null ? "null" : typeof render,
+                'forwardRef requires a render function but was given %s.',
+                render === null ? 'null' : typeof render,
               );
             } else {
               if (render.length !== 0 && render.length !== 2) {
                 error(
-                  "forwardRef render functions accept exactly two parameters: props and ref. %s",
+                  'forwardRef render functions accept exactly two parameters: props and ref. %s',
                   render.length === 1
-                    ? "Did you forget to use the ref parameter?"
-                    : "Any additional parameter will be undefined.",
+                    ? 'Did you forget to use the ref parameter?'
+                    : 'Any additional parameter will be undefined.',
                 );
               }
             }
             if (render != null) {
               if (render.defaultProps != null || render.propTypes != null) {
                 error(
-                  "forwardRef render functions do not support propTypes or defaultProps. Did you accidentally pass a React component?",
+                  'forwardRef render functions do not support propTypes or defaultProps. Did you accidentally pass a React component?',
                 );
               }
             }
@@ -1204,7 +1204,7 @@ var require_react_development = __commonJS({
           };
           {
             var ownName;
-            Object.defineProperty(elementType, "displayName", {
+            Object.defineProperty(elementType, 'displayName', {
               enumerable: false,
               configurable: true,
               get: function () {
@@ -1222,10 +1222,10 @@ var require_react_development = __commonJS({
         }
         var REACT_MODULE_REFERENCE;
         {
-          REACT_MODULE_REFERENCE = Symbol.for("react.module.reference");
+          REACT_MODULE_REFERENCE = Symbol.for('react.module.reference');
         }
         function isValidElementType(type) {
-          if (typeof type === "string" || typeof type === "function") {
+          if (typeof type === 'string' || typeof type === 'function') {
             return true;
           }
           if (
@@ -1243,7 +1243,7 @@ var require_react_development = __commonJS({
           ) {
             return true;
           }
-          if (typeof type === "object" && type !== null) {
+          if (typeof type === 'object' && type !== null) {
             if (
               type.$$typeof === REACT_LAZY_TYPE ||
               type.$$typeof === REACT_MEMO_TYPE ||
@@ -1265,8 +1265,8 @@ var require_react_development = __commonJS({
           {
             if (!isValidElementType(type)) {
               error(
-                "memo: The first argument must be a component. Instead received: %s",
-                type === null ? "null" : typeof type,
+                'memo: The first argument must be a component. Instead received: %s',
+                type === null ? 'null' : typeof type,
               );
             }
           }
@@ -1277,7 +1277,7 @@ var require_react_development = __commonJS({
           };
           {
             var ownName;
-            Object.defineProperty(elementType, "displayName", {
+            Object.defineProperty(elementType, 'displayName', {
               enumerable: false,
               configurable: true,
               get: function () {
@@ -1298,7 +1298,7 @@ var require_react_development = __commonJS({
           {
             if (dispatcher === null) {
               error(
-                "Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.",
+                'Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.',
               );
             }
           }
@@ -1311,11 +1311,11 @@ var require_react_development = __commonJS({
               var realContext = Context._context;
               if (realContext.Consumer === Context) {
                 error(
-                  "Calling useContext(Context.Consumer) is not supported, may cause bugs, and will be removed in a future major release. Did you mean to call useContext(Context) instead?",
+                  'Calling useContext(Context.Consumer) is not supported, may cause bugs, and will be removed in a future major release. Did you mean to call useContext(Context) instead?',
                 );
               } else if (realContext.Provider === Context) {
                 error(
-                  "Calling useContext(Context.Provider) is not supported. Did you mean to call useContext(Context) instead?",
+                  'Calling useContext(Context.Provider) is not supported. Did you mean to call useContext(Context) instead?',
                 );
               }
             }
@@ -1462,7 +1462,7 @@ var require_react_development = __commonJS({
             }
             if (disabledDepth < 0) {
               error(
-                "disabledDepth fell below zero. This is a bug in React. Please file an issue.",
+                'disabledDepth fell below zero. This is a bug in React. Please file an issue.',
               );
             }
           }
@@ -1477,21 +1477,21 @@ var require_react_development = __commonJS({
                 throw Error();
               } catch (x) {
                 var match = x.stack.trim().match(/\n( *(at )?)/);
-                prefix = (match && match[1]) || "";
+                prefix = (match && match[1]) || '';
               }
             }
-            return "\n" + prefix + name;
+            return '\n' + prefix + name;
           }
         }
         var reentry = false;
         var componentFrameCache;
         {
-          var PossiblyWeakMap = typeof WeakMap === "function" ? WeakMap : Map;
+          var PossiblyWeakMap = typeof WeakMap === 'function' ? WeakMap : Map;
           componentFrameCache = new PossiblyWeakMap();
         }
         function describeNativeComponentFrame(fn, construct) {
           if (!fn || reentry) {
-            return "";
+            return '';
           }
           {
             var frame = componentFrameCache.get(fn);
@@ -1514,12 +1514,12 @@ var require_react_development = __commonJS({
               var Fake = function () {
                 throw Error();
               };
-              Object.defineProperty(Fake.prototype, "props", {
+              Object.defineProperty(Fake.prototype, 'props', {
                 set: function () {
                   throw Error();
                 },
               });
-              if (typeof Reflect === "object" && Reflect.construct) {
+              if (typeof Reflect === 'object' && Reflect.construct) {
                 try {
                   Reflect.construct(Fake, []);
                 } catch (x) {
@@ -1543,9 +1543,9 @@ var require_react_development = __commonJS({
               fn();
             }
           } catch (sample) {
-            if (sample && control && typeof sample.stack === "string") {
-              var sampleLines = sample.stack.split("\n");
-              var controlLines = control.stack.split("\n");
+            if (sample && control && typeof sample.stack === 'string') {
+              var sampleLines = sample.stack.split('\n');
+              var controlLines = control.stack.split('\n');
               var s = sampleLines.length - 1;
               var c = controlLines.length - 1;
               while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
@@ -1559,15 +1559,15 @@ var require_react_development = __commonJS({
                       c--;
                       if (c < 0 || sampleLines[s] !== controlLines[c]) {
                         var _frame =
-                          "\n" + sampleLines[s].replace(" at new ", " at ");
-                        if (fn.displayName && _frame.includes("<anonymous>")) {
+                          '\n' + sampleLines[s].replace(' at new ', ' at ');
+                        if (fn.displayName && _frame.includes('<anonymous>')) {
                           _frame = _frame.replace(
-                            "<anonymous>",
+                            '<anonymous>',
                             fn.displayName,
                           );
                         }
                         {
-                          if (typeof fn === "function") {
+                          if (typeof fn === 'function') {
                             componentFrameCache.set(fn, _frame);
                           }
                         }
@@ -1587,10 +1587,10 @@ var require_react_development = __commonJS({
             }
             Error.prepareStackTrace = previousPrepareStackTrace;
           }
-          var name = fn ? fn.displayName || fn.name : "";
-          var syntheticFrame = name ? describeBuiltInComponentFrame(name) : "";
+          var name = fn ? fn.displayName || fn.name : '';
+          var syntheticFrame = name ? describeBuiltInComponentFrame(name) : '';
           {
-            if (typeof fn === "function") {
+            if (typeof fn === 'function') {
               componentFrameCache.set(fn, syntheticFrame);
             }
           }
@@ -1607,23 +1607,23 @@ var require_react_development = __commonJS({
         }
         function describeUnknownElementTypeFrameInDEV(type, source, ownerFn) {
           if (type == null) {
-            return "";
+            return '';
           }
-          if (typeof type === "function") {
+          if (typeof type === 'function') {
             {
               return describeNativeComponentFrame(type, shouldConstruct(type));
             }
           }
-          if (typeof type === "string") {
+          if (typeof type === 'string') {
             return describeBuiltInComponentFrame(type);
           }
           switch (type) {
             case REACT_SUSPENSE_TYPE:
-              return describeBuiltInComponentFrame("Suspense");
+              return describeBuiltInComponentFrame('Suspense');
             case REACT_SUSPENSE_LIST_TYPE:
-              return describeBuiltInComponentFrame("SuspenseList");
+              return describeBuiltInComponentFrame('SuspenseList');
           }
-          if (typeof type === "object") {
+          if (typeof type === 'object') {
             switch (type.$$typeof) {
               case REACT_FORWARD_REF_TYPE:
                 return describeFunctionComponentFrame(type.render);
@@ -1647,7 +1647,7 @@ var require_react_development = __commonJS({
               }
             }
           }
-          return "";
+          return '';
         }
         var loggedTypeFailures = {};
         var ReactDebugCurrentFrame$1 =
@@ -1680,18 +1680,18 @@ var require_react_development = __commonJS({
               if (has(typeSpecs, typeSpecName)) {
                 var error$1 = void 0;
                 try {
-                  if (typeof typeSpecs[typeSpecName] !== "function") {
+                  if (typeof typeSpecs[typeSpecName] !== 'function') {
                     var err = Error(
-                      (componentName || "React class") +
-                        ": " +
+                      (componentName || 'React class') +
+                        ': ' +
                         location +
-                        " type `" +
+                        ' type `' +
                         typeSpecName +
-                        "` is invalid; it must be a function, usually from the `prop-types` package, but received `" +
+                        '` is invalid; it must be a function, usually from the `prop-types` package, but received `' +
                         typeof typeSpecs[typeSpecName] +
-                        "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.",
+                        '`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.',
                     );
-                    err.name = "Invariant Violation";
+                    err.name = 'Invariant Violation';
                     throw err;
                   }
                   error$1 = typeSpecs[typeSpecName](
@@ -1700,7 +1700,7 @@ var require_react_development = __commonJS({
                     componentName,
                     location,
                     null,
-                    "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",
+                    'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED',
                   );
                 } catch (ex) {
                   error$1 = ex;
@@ -1708,8 +1708,8 @@ var require_react_development = __commonJS({
                 if (error$1 && !(error$1 instanceof Error)) {
                   setCurrentlyValidatingElement(element);
                   error(
-                    "%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).",
-                    componentName || "React class",
+                    '%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).',
+                    componentName || 'React class',
                     location,
                     typeSpecName,
                     typeof error$1,
@@ -1722,7 +1722,7 @@ var require_react_development = __commonJS({
                 ) {
                   loggedTypeFailures[error$1.message] = true;
                   setCurrentlyValidatingElement(element);
-                  error("Failed %s type: %s", location, error$1.message);
+                  error('Failed %s type: %s', location, error$1.message);
                   setCurrentlyValidatingElement(null);
                 }
               }
@@ -1752,40 +1752,40 @@ var require_react_development = __commonJS({
           if (ReactCurrentOwner.current) {
             var name = getComponentNameFromType(ReactCurrentOwner.current.type);
             if (name) {
-              return "\n\nCheck the render method of `" + name + "`.";
+              return '\n\nCheck the render method of `' + name + '`.';
             }
           }
-          return "";
+          return '';
         }
         function getSourceInfoErrorAddendum(source) {
           if (source !== void 0) {
-            var fileName = source.fileName.replace(/^.*[\\\/]/, "");
+            var fileName = source.fileName.replace(/^.*[\\\/]/, '');
             var lineNumber = source.lineNumber;
             return (
-              "\n\nCheck your code at " + fileName + ":" + lineNumber + "."
+              '\n\nCheck your code at ' + fileName + ':' + lineNumber + '.'
             );
           }
-          return "";
+          return '';
         }
         function getSourceInfoErrorAddendumForProps(elementProps) {
           if (elementProps !== null && elementProps !== void 0) {
             return getSourceInfoErrorAddendum(elementProps.__source);
           }
-          return "";
+          return '';
         }
         var ownerHasKeyUseWarning = {};
         function getCurrentComponentErrorInfo(parentType) {
           var info = getDeclarationErrorAddendum();
           if (!info) {
             var parentName =
-              typeof parentType === "string"
+              typeof parentType === 'string'
                 ? parentType
                 : parentType.displayName || parentType.name;
             if (parentName) {
               info =
-                "\n\nCheck the top-level render call using <" +
+                '\n\nCheck the top-level render call using <' +
                 parentName +
-                ">.";
+                '>.';
             }
           }
           return info;
@@ -1805,16 +1805,16 @@ var require_react_development = __commonJS({
             return;
           }
           ownerHasKeyUseWarning[currentComponentErrorInfo] = true;
-          var childOwner = "";
+          var childOwner = '';
           if (
             element &&
             element._owner &&
             element._owner !== ReactCurrentOwner.current
           ) {
             childOwner =
-              " It was passed a child from " +
+              ' It was passed a child from ' +
               getComponentNameFromType(element._owner.type) +
-              ".";
+              '.';
           }
           {
             setCurrentlyValidatingElement$1(element);
@@ -1827,7 +1827,7 @@ var require_react_development = __commonJS({
           }
         }
         function validateChildKeys(node, parentType) {
-          if (typeof node !== "object") {
+          if (typeof node !== 'object') {
             return;
           }
           if (isArray(node)) {
@@ -1843,7 +1843,7 @@ var require_react_development = __commonJS({
             }
           } else if (node) {
             var iteratorFn = getIteratorFn(node);
-            if (typeof iteratorFn === "function") {
+            if (typeof iteratorFn === 'function') {
               if (iteratorFn !== node.entries) {
                 var iterator = iteratorFn.call(node);
                 var step;
@@ -1859,14 +1859,14 @@ var require_react_development = __commonJS({
         function validatePropTypes(element) {
           {
             var type = element.type;
-            if (type === null || type === void 0 || typeof type === "string") {
+            if (type === null || type === void 0 || typeof type === 'string') {
               return;
             }
             var propTypes;
-            if (typeof type === "function") {
+            if (typeof type === 'function') {
               propTypes = type.propTypes;
             } else if (
-              typeof type === "object" &&
+              typeof type === 'object' &&
               (type.$$typeof === REACT_FORWARD_REF_TYPE || // Note: Memo only checks outer props here.
                 // Inner props are checked in the reconciler.
                 type.$$typeof === REACT_MEMO_TYPE)
@@ -1877,7 +1877,7 @@ var require_react_development = __commonJS({
             }
             if (propTypes) {
               var name = getComponentNameFromType(type);
-              checkPropTypes(propTypes, element.props, "prop", name, element);
+              checkPropTypes(propTypes, element.props, 'prop', name, element);
             } else if (
               type.PropTypes !== void 0 &&
               !propTypesMisspellWarningShown
@@ -1885,16 +1885,16 @@ var require_react_development = __commonJS({
               propTypesMisspellWarningShown = true;
               var _name = getComponentNameFromType(type);
               error(
-                "Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?",
-                _name || "Unknown",
+                'Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?',
+                _name || 'Unknown',
               );
             }
             if (
-              typeof type.getDefaultProps === "function" &&
+              typeof type.getDefaultProps === 'function' &&
               !type.getDefaultProps.isReactClassApproved
             ) {
               error(
-                "getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.",
+                'getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.',
               );
             }
           }
@@ -1904,10 +1904,10 @@ var require_react_development = __commonJS({
             var keys = Object.keys(fragment.props);
             for (var i = 0; i < keys.length; i++) {
               var key = keys[i];
-              if (key !== "children" && key !== "key") {
+              if (key !== 'children' && key !== 'key') {
                 setCurrentlyValidatingElement$1(fragment);
                 error(
-                  "Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.",
+                  'Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.',
                   key,
                 );
                 setCurrentlyValidatingElement$1(null);
@@ -1916,7 +1916,7 @@ var require_react_development = __commonJS({
             }
             if (fragment.ref !== null) {
               setCurrentlyValidatingElement$1(fragment);
-              error("Invalid attribute `ref` supplied to `React.Fragment`.");
+              error('Invalid attribute `ref` supplied to `React.Fragment`.');
               setCurrentlyValidatingElement$1(null);
             }
           }
@@ -1924,10 +1924,10 @@ var require_react_development = __commonJS({
         function createElementWithValidation(type, props, children) {
           var validType = isValidElementType(type);
           if (!validType) {
-            var info = "";
+            var info = '';
             if (
               type === void 0 ||
-              (typeof type === "object" &&
+              (typeof type === 'object' &&
                 type !== null &&
                 Object.keys(type).length === 0)
             ) {
@@ -1942,25 +1942,25 @@ var require_react_development = __commonJS({
             }
             var typeString;
             if (type === null) {
-              typeString = "null";
+              typeString = 'null';
             } else if (isArray(type)) {
-              typeString = "array";
+              typeString = 'array';
             } else if (
               type !== void 0 &&
               type.$$typeof === REACT_ELEMENT_TYPE
             ) {
               typeString =
-                "<" +
-                (getComponentNameFromType(type.type) || "Unknown") +
-                " />";
+                '<' +
+                (getComponentNameFromType(type.type) || 'Unknown') +
+                ' />';
               info =
-                " Did you accidentally export a JSX literal instead of a component?";
+                ' Did you accidentally export a JSX literal instead of a component?';
             } else {
               typeString = typeof type;
             }
             {
               error(
-                "React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s",
+                'React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s',
                 typeString,
                 info,
               );
@@ -1990,16 +1990,16 @@ var require_react_development = __commonJS({
             if (!didWarnAboutDeprecatedCreateFactory) {
               didWarnAboutDeprecatedCreateFactory = true;
               warn(
-                "React.createFactory() is deprecated and will be removed in a future major release. Consider using JSX or use React.createElement() directly instead.",
+                'React.createFactory() is deprecated and will be removed in a future major release. Consider using JSX or use React.createElement() directly instead.',
               );
             }
-            Object.defineProperty(validatedFactory, "type", {
+            Object.defineProperty(validatedFactory, 'type', {
               enumerable: false,
               get: function () {
                 warn(
-                  "Factory.type is deprecated. Access the class directly before passing it to createFactory.",
+                  'Factory.type is deprecated. Access the class directly before passing it to createFactory.',
                 );
-                Object.defineProperty(this, "type", {
+                Object.defineProperty(this, 'type', {
                   value: type,
                 });
                 return type;
@@ -2033,7 +2033,7 @@ var require_react_development = __commonJS({
                 var updatedFibersCount = currentTransition._updatedFibers.size;
                 if (updatedFibersCount > 10) {
                   warn(
-                    "Detected a large number of updates inside startTransition. If this is due to a subscription please re-write it to use React provided hooks. Otherwise concurrent mode guarantees are off the table.",
+                    'Detected a large number of updates inside startTransition. If this is due to a subscription please re-write it to use React provided hooks. Otherwise concurrent mode guarantees are off the table.',
                   );
                 }
                 currentTransition._updatedFibers.clear();
@@ -2046,17 +2046,17 @@ var require_react_development = __commonJS({
         function enqueueTask(task) {
           if (enqueueTaskImpl === null) {
             try {
-              var requireString = ("require" + Math.random()).slice(0, 7);
+              var requireString = ('require' + Math.random()).slice(0, 7);
               var nodeRequire = module && module[requireString];
-              enqueueTaskImpl = nodeRequire.call(module, "timers").setImmediate;
+              enqueueTaskImpl = nodeRequire.call(module, 'timers').setImmediate;
             } catch (_err) {
               enqueueTaskImpl = function (callback) {
                 {
                   if (didWarnAboutMessageChannel === false) {
                     didWarnAboutMessageChannel = true;
-                    if (typeof MessageChannel === "undefined") {
+                    if (typeof MessageChannel === 'undefined') {
                       error(
-                        "This browser does not have a MessageChannel implementation, so enqueuing tasks via await act(async () => ...) will fail. Please file an issue at https://github.com/facebook/react/issues if you encounter this warning.",
+                        'This browser does not have a MessageChannel implementation, so enqueuing tasks via await act(async () => ...) will fail. Please file an issue at https://github.com/facebook/react/issues if you encounter this warning.',
                       );
                     }
                   }
@@ -2101,8 +2101,8 @@ var require_react_development = __commonJS({
             }
             if (
               result !== null &&
-              typeof result === "object" &&
-              typeof result.then === "function"
+              typeof result === 'object' &&
+              typeof result.then === 'function'
             ) {
               var thenableResult = result;
               var wasAwaited = false;
@@ -2130,14 +2130,14 @@ var require_react_development = __commonJS({
                 },
               };
               {
-                if (!didWarnNoAwaitAct && typeof Promise !== "undefined") {
+                if (!didWarnNoAwaitAct && typeof Promise !== 'undefined') {
                   Promise.resolve()
                     .then(function () {})
                     .then(function () {
                       if (!wasAwaited) {
                         didWarnNoAwaitAct = true;
                         error(
-                          "You called act(async () => ...) without await. This could lead to unexpected testing behaviour, interleaving multiple act calls and mixing their scopes. You should - await act(async () => ...);",
+                          'You called act(async () => ...) without await. This could lead to unexpected testing behaviour, interleaving multiple act calls and mixing their scopes. You should - await act(async () => ...);',
                         );
                       }
                     });
@@ -2183,7 +2183,7 @@ var require_react_development = __commonJS({
           {
             if (prevActScopeDepth !== actScopeDepth - 1) {
               error(
-                "You seem to have overlapping act() calls, this is not supported. Be sure to await previous act() calls before making a new one. ",
+                'You seem to have overlapping act() calls, this is not supported. Be sure to await previous act() calls before making a new one. ',
               );
             }
             actScopeDepth = prevActScopeDepth;
@@ -2281,9 +2281,9 @@ var require_react_development = __commonJS({
         exports.useTransition = useTransition;
         exports.version = ReactVersion;
         if (
-          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" &&
+          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' &&
           typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop ===
-            "function"
+            'function'
         ) {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(
             new Error(),
@@ -2296,7 +2296,7 @@ var require_react_development = __commonJS({
 
 // node_modules/react/index.js
 var require_react = __commonJS({
-  "node_modules/react/index.js"(exports, module) {
+  'node_modules/react/index.js'(exports, module) {
     if (false) {
       module.exports = null;
     } else {

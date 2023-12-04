@@ -1,19 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { loginUser } from "./loginSlice";
-import { useNavigate, Link } from "react-router-dom";
-import AuthSide from "../../components/AuthSide";
-import { useApi } from "../../data/ApiProvider";
+import { useEffect, useRef, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { loginUser } from './loginSlice';
+import { useNavigate, Link } from 'react-router-dom';
+import AuthSide from '../../components/AuthSide';
+import { useApi } from '../../data/ApiProvider';
 
 const LoginForm = () => {
   const [error, setError] = useState({
     hasError: false,
-    message: "",
+    message: '',
   });
 
   const [formError, setFormError] = useState({
-    message: "",
-    fieldname: "",
+    message: '',
+    fieldname: '',
   });
 
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const LoginForm = () => {
   useEffect(() => {
     usernameRef.current.focus();
     if (!usernameRef.current.value || !passwordRef.current.value) {
-      setError({ hasError: true, message: "" });
+      setError({ hasError: true, message: '' });
     }
   }, []);
 
@@ -39,21 +39,21 @@ const LoginForm = () => {
         message: `${e.target.name} is required`,
       });
     }
-    error.message = "";
+    error.message = '';
 
     if (!e.target.value) {
-      setError({ hasError: true, message: "" });
+      setError({ hasError: true, message: '' });
     }
   };
 
   const handleOnChange = (e) => {
     if (e.target.value.length > 0) {
       setFormError({
-        message: "",
+        message: '',
       });
     }
     if (e.target.value) {
-      setError({ hasError: false, message: "" });
+      setError({ hasError: false, message: '' });
     }
   };
 
@@ -65,12 +65,12 @@ const LoginForm = () => {
 
     dispatch(loginUser(async () => await api.login(username, password))).then(
       (result) => {
-        if (result.error && result.error.code === "ERR_BAD_REQUEST") {
-          setError({ hasError: true, message: "Invalid username or password" });
+        if (result.error && result.error.code === 'ERR_BAD_REQUEST') {
+          setError({ hasError: true, message: 'Invalid username or password' });
         } else {
-          console.log("we are in");
-          localStorage.setItem("authToken", result.payload.access);
-          navigate("/");
+          console.log('we are in');
+          localStorage.setItem('authToken', result.payload.access);
+          navigate('/');
         }
       },
     );
@@ -105,7 +105,7 @@ const LoginForm = () => {
                 className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
               />
               <p
-                hidden={!(formError.fieldname === "username")}
+                hidden={!(formError.fieldname === 'username')}
                 className="text-red-500 text-sm"
               >
                 {formError.message}
@@ -121,7 +121,7 @@ const LoginForm = () => {
                 className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
               />
               <p
-                hidden={!(formError.fieldname === "password")}
+                hidden={!(formError.fieldname === 'password')}
                 className="text-red-500 text-sm"
               >
                 {formError.message}
@@ -143,12 +143,12 @@ const LoginForm = () => {
               <div className="w-full flex flex-col my-4">
                 <button
                   onClick={handleLogin}
-                  disabled={status === "loading" || error.hasError}
+                  disabled={status === 'loading' || error.hasError}
                   className="w-full text-white my-2 font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >
                   Login
                 </button>
-                {status === "loading" ? "Loging in..." : ""}
+                {status === 'loading' ? 'Loging in...' : ''}
 
                 <Link to="/signup">
                   <button className="w-full text-[#060606] my-2 font-semibold bg-white border border-black/40 rounded-md p-4 text-center flex items-center justify-center">
@@ -174,9 +174,9 @@ const LoginForm = () => {
 
               <div className="w-full flex items-center justify-center">
                 <p className="text-sm mt-4">
-                  Don&apos;t have an account?{" "}
+                  Don&apos;t have an account?{' '}
                   <Link to="/signup">
-                    {" "}
+                    {' '}
                     <span className="font-semibold underline underline-offset-2 cursor-pointer">
                       Sign up for free
                     </span>

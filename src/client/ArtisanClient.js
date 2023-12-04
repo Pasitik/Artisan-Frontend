@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
@@ -15,15 +15,15 @@ export default class ArtisanClient {
     this.onError = onError;
 
     if (!BASE_API_URL) {
-      throw new "Base url is not provided"();
+      throw new 'Base url is not provided'();
     }
 
-    const accessToken = localStorage.getItem("authToken");
+    const accessToken = localStorage.getItem('authToken');
     this.httpClient = axios.create({
-      baseURL: BASE_API_URL + "/",
+      baseURL: BASE_API_URL + '/',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `JWT ${accessToken}`,
+        'Content-Type': 'application/json',
+        Authorization: accessToken ? `JWT ${accessToken}` : null,
       },
     });
 
@@ -33,9 +33,9 @@ export default class ArtisanClient {
     }, errorHandler);
 
     this.httpClient.interceptors.response.use((response) => {
-      if (response.statusText != "OK" && response.status >= 300) {
+      if (response.statusText != 'OK' && response.status >= 300) {
         if (response.status >= 500) {
-          throw new Error("Server failure");
+          throw new Error('Server failure');
         }
       }
       return response;
@@ -63,7 +63,7 @@ export default class ArtisanClient {
   }
 
   async login(username, password) {
-    const response = await this.post("auth/jwt/create", {
+    const response = await this.post('auth/jwt/create', {
       username,
       password,
     });
@@ -71,12 +71,12 @@ export default class ArtisanClient {
   }
 
   async signup(body) {
-    const response = await this.post("auth/users/", body);
+    const response = await this.post('auth/users/', body);
     return response.data;
   }
 
   async addAddress(body) {
-    const response = await this.post("business/address/profile/", {
+    const response = await this.post('business/address/profile/', {
       house_number: body.houseNo,
       street: body.street,
       city: body.city,
@@ -86,12 +86,21 @@ export default class ArtisanClient {
   }
 
   async getArtisanCategories() {
-    const response = await this.get("business/category");
+    const response = await this.get('business/category');
     return response.data;
   }
 
   async addArtisan(body) {
-    const response = await this.post("business/artisan/profile/", body);
+    const response = await this.post('business/artisan/profile/', body);
+    return response.data;
+  }
+
+  async fetchArtisan(searchParam) {
+    const response = await this.get(`business/artisan/?search=${searchParam}`);
+    return response.data;
+  }
+  async fetchAllArtisans() {
+    const response = await this.get('business/artisan/');
     return response.data;
   }
 }

@@ -1,17 +1,17 @@
-import { require_react } from "./chunk-FQO5W7GE.js";
-import { __commonJS } from "./chunk-ZS7NZCD4.js";
+import { require_react } from './chunk-FQO5W7GE.js';
+import { __commonJS } from './chunk-ZS7NZCD4.js';
 
 // node_modules/scheduler/cjs/scheduler.development.js
 var require_scheduler_development = __commonJS({
-  "node_modules/scheduler/cjs/scheduler.development.js"(exports) {
-    "use strict";
+  'node_modules/scheduler/cjs/scheduler.development.js'(exports) {
+    'use strict';
     if (true) {
       (function () {
-        "use strict";
+        'use strict';
         if (
-          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" &&
+          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' &&
           typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart ===
-            "function"
+            'function'
         ) {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(
             new Error(),
@@ -93,8 +93,8 @@ var require_scheduler_development = __commonJS({
         var IdlePriority = 5;
         function markTaskErrored(task, ms) {}
         var hasPerformanceNow =
-          typeof performance === "object" &&
-          typeof performance.now === "function";
+          typeof performance === 'object' &&
+          typeof performance.now === 'function';
         if (hasPerformanceNow) {
           var localPerformance = performance;
           exports.unstable_now = function () {
@@ -122,13 +122,13 @@ var require_scheduler_development = __commonJS({
         var isHostCallbackScheduled = false;
         var isHostTimeoutScheduled = false;
         var localSetTimeout =
-          typeof setTimeout === "function" ? setTimeout : null;
+          typeof setTimeout === 'function' ? setTimeout : null;
         var localClearTimeout =
-          typeof clearTimeout === "function" ? clearTimeout : null;
+          typeof clearTimeout === 'function' ? clearTimeout : null;
         var localSetImmediate =
-          typeof setImmediate !== "undefined" ? setImmediate : null;
+          typeof setImmediate !== 'undefined' ? setImmediate : null;
         var isInputPending =
-          typeof navigator !== "undefined" &&
+          typeof navigator !== 'undefined' &&
           navigator.scheduling !== void 0 &&
           navigator.scheduling.isInputPending !== void 0
             ? navigator.scheduling.isInputPending.bind(navigator.scheduling)
@@ -207,14 +207,14 @@ var require_scheduler_development = __commonJS({
               break;
             }
             var callback = currentTask.callback;
-            if (typeof callback === "function") {
+            if (typeof callback === 'function') {
               currentTask.callback = null;
               currentPriorityLevel = currentTask.priorityLevel;
               var didUserCallbackTimeout =
                 currentTask.expirationTime <= currentTime;
               var continuationCallback = callback(didUserCallbackTimeout);
               currentTime = exports.unstable_now();
-              if (typeof continuationCallback === "function") {
+              if (typeof continuationCallback === 'function') {
                 currentTask.callback = continuationCallback;
               } else {
                 if (currentTask === peek(taskQueue)) {
@@ -294,9 +294,9 @@ var require_scheduler_development = __commonJS({
         function unstable_scheduleCallback(priorityLevel, callback, options) {
           var currentTime = exports.unstable_now();
           var startTime2;
-          if (typeof options === "object" && options !== null) {
+          if (typeof options === 'object' && options !== null) {
             var delay = options.delay;
-            if (typeof delay === "number" && delay > 0) {
+            if (typeof delay === 'number' && delay > 0) {
               startTime2 = currentTime + delay;
             } else {
               startTime2 = currentTime;
@@ -384,8 +384,8 @@ var require_scheduler_development = __commonJS({
         function requestPaint() {}
         function forceFrameRate(fps) {
           if (fps < 0 || fps > 125) {
-            console["error"](
-              "forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported",
+            console['error'](
+              'forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported',
             );
             return;
           }
@@ -419,11 +419,11 @@ var require_scheduler_development = __commonJS({
           }
         };
         var schedulePerformWorkUntilDeadline;
-        if (typeof localSetImmediate === "function") {
+        if (typeof localSetImmediate === 'function') {
           schedulePerformWorkUntilDeadline = function () {
             localSetImmediate(performWorkUntilDeadline);
           };
-        } else if (typeof MessageChannel !== "undefined") {
+        } else if (typeof MessageChannel !== 'undefined') {
           var channel = new MessageChannel();
           var port = channel.port2;
           channel.port1.onmessage = performWorkUntilDeadline;
@@ -473,9 +473,9 @@ var require_scheduler_development = __commonJS({
         exports.unstable_shouldYield = shouldYieldToHost;
         exports.unstable_wrapCallback = unstable_wrapCallback;
         if (
-          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" &&
+          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' &&
           typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop ===
-            "function"
+            'function'
         ) {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(
             new Error(),
@@ -488,8 +488,8 @@ var require_scheduler_development = __commonJS({
 
 // node_modules/scheduler/index.js
 var require_scheduler = __commonJS({
-  "node_modules/scheduler/index.js"(exports, module) {
-    "use strict";
+  'node_modules/scheduler/index.js'(exports, module) {
+    'use strict';
     if (false) {
       module.exports = null;
     } else {
@@ -500,15 +500,15 @@ var require_scheduler = __commonJS({
 
 // node_modules/react-dom/cjs/react-dom.development.js
 var require_react_dom_development = __commonJS({
-  "node_modules/react-dom/cjs/react-dom.development.js"(exports) {
-    "use strict";
+  'node_modules/react-dom/cjs/react-dom.development.js'(exports) {
+    'use strict';
     if (true) {
       (function () {
-        "use strict";
+        'use strict';
         if (
-          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" &&
+          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' &&
           typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart ===
-            "function"
+            'function'
         ) {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(
             new Error(),
@@ -536,7 +536,7 @@ var require_react_dom_development = __commonJS({
               ) {
                 args[_key - 1] = arguments[_key];
               }
-              printWarning("warn", format, args);
+              printWarning('warn', format, args);
             }
           }
         }
@@ -552,7 +552,7 @@ var require_react_dom_development = __commonJS({
               ) {
                 args[_key2 - 1] = arguments[_key2];
               }
-              printWarning("error", format, args);
+              printWarning('error', format, args);
             }
           }
         }
@@ -561,14 +561,14 @@ var require_react_dom_development = __commonJS({
             var ReactDebugCurrentFrame2 =
               ReactSharedInternals.ReactDebugCurrentFrame;
             var stack = ReactDebugCurrentFrame2.getStackAddendum();
-            if (stack !== "") {
-              format += "%s";
+            if (stack !== '') {
+              format += '%s';
               args = args.concat([stack]);
             }
             var argsWithFormat = args.map(function (item) {
               return String(item);
             });
-            argsWithFormat.unshift("Warning: " + format);
+            argsWithFormat.unshift('Warning: ' + format);
             Function.prototype.apply.call(
               console[level],
               console,
@@ -617,13 +617,13 @@ var require_react_dom_development = __commonJS({
         var possibleRegistrationNames = {};
         function registerTwoPhaseEvent(registrationName, dependencies) {
           registerDirectEvent(registrationName, dependencies);
-          registerDirectEvent(registrationName + "Capture", dependencies);
+          registerDirectEvent(registrationName + 'Capture', dependencies);
         }
         function registerDirectEvent(registrationName, dependencies) {
           {
             if (registrationNameDependencies[registrationName]) {
               error(
-                "EventRegistry: More than one plugin attempted to publish the same registration name, `%s`.",
+                'EventRegistry: More than one plugin attempted to publish the same registration name, `%s`.',
                 registrationName,
               );
             }
@@ -632,7 +632,7 @@ var require_react_dom_development = __commonJS({
           {
             var lowerCasedName = registrationName.toLowerCase();
             possibleRegistrationNames[lowerCasedName] = registrationName;
-            if (registrationName === "onDoubleClick") {
+            if (registrationName === 'onDoubleClick') {
               possibleRegistrationNames.ondblclick = registrationName;
             }
           }
@@ -641,19 +641,19 @@ var require_react_dom_development = __commonJS({
           }
         }
         var canUseDOM = !!(
-          typeof window !== "undefined" &&
-          typeof window.document !== "undefined" &&
-          typeof window.document.createElement !== "undefined"
+          typeof window !== 'undefined' &&
+          typeof window.document !== 'undefined' &&
+          typeof window.document.createElement !== 'undefined'
         );
         var hasOwnProperty = Object.prototype.hasOwnProperty;
         function typeName(value) {
           {
             var hasToStringTag =
-              typeof Symbol === "function" && Symbol.toStringTag;
+              typeof Symbol === 'function' && Symbol.toStringTag;
             var type =
               (hasToStringTag && value[Symbol.toStringTag]) ||
               value.constructor.name ||
-              "Object";
+              'Object';
             return type;
           }
         }
@@ -668,13 +668,13 @@ var require_react_dom_development = __commonJS({
           }
         }
         function testStringCoercion(value) {
-          return "" + value;
+          return '' + value;
         }
         function checkAttributeStringCoercion(value, attributeName) {
           {
             if (willCoercionThrow(value)) {
               error(
-                "The provided `%s` attribute is an unsupported type %s. This value must be coerced to a string before before using it here.",
+                'The provided `%s` attribute is an unsupported type %s. This value must be coerced to a string before before using it here.',
                 attributeName,
                 typeName(value),
               );
@@ -686,7 +686,7 @@ var require_react_dom_development = __commonJS({
           {
             if (willCoercionThrow(value)) {
               error(
-                "The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.",
+                'The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.',
                 typeName(value),
               );
               return testStringCoercion(value);
@@ -697,7 +697,7 @@ var require_react_dom_development = __commonJS({
           {
             if (willCoercionThrow(value)) {
               error(
-                "The provided `%s` prop is an unsupported type %s. This value must be coerced to a string before before using it here.",
+                'The provided `%s` prop is an unsupported type %s. This value must be coerced to a string before before using it here.',
                 propName,
                 typeName(value),
               );
@@ -709,7 +709,7 @@ var require_react_dom_development = __commonJS({
           {
             if (willCoercionThrow(value)) {
               error(
-                "The provided `%s` CSS property is an unsupported type %s. This value must be coerced to a string before before using it here.",
+                'The provided `%s` CSS property is an unsupported type %s. This value must be coerced to a string before before using it here.',
                 propName,
                 typeName(value),
               );
@@ -721,7 +721,7 @@ var require_react_dom_development = __commonJS({
           {
             if (willCoercionThrow(value)) {
               error(
-                "The provided HTML markup uses a value of unsupported type %s. This value must be coerced to a string before before using it here.",
+                'The provided HTML markup uses a value of unsupported type %s. This value must be coerced to a string before before using it here.',
                 typeName(value),
               );
               return testStringCoercion(value);
@@ -732,7 +732,7 @@ var require_react_dom_development = __commonJS({
           {
             if (willCoercionThrow(value)) {
               error(
-                "Form field values (value, checked, defaultValue, or defaultChecked props) must be strings, not %s. This value must be coerced to a string before before using it here.",
+                'Form field values (value, checked, defaultValue, or defaultChecked props) must be strings, not %s. This value must be coerced to a string before before using it here.',
                 typeName(value),
               );
               return testStringCoercion(value);
@@ -747,12 +747,12 @@ var require_react_dom_development = __commonJS({
         var NUMERIC = 5;
         var POSITIVE_NUMERIC = 6;
         var ATTRIBUTE_NAME_START_CHAR =
-          ":A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD";
+          ':A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD';
         var ATTRIBUTE_NAME_CHAR =
           ATTRIBUTE_NAME_START_CHAR +
-          "\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040";
+          '\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040';
         var VALID_ATTRIBUTE_NAME_REGEX = new RegExp(
-          "^[" + ATTRIBUTE_NAME_START_CHAR + "][" + ATTRIBUTE_NAME_CHAR + "]*$",
+          '^[' + ATTRIBUTE_NAME_START_CHAR + '][' + ATTRIBUTE_NAME_CHAR + ']*$',
         );
         var illegalAttributeNameCache = {};
         var validatedAttributeNameCache = {};
@@ -769,7 +769,7 @@ var require_react_dom_development = __commonJS({
           }
           illegalAttributeNameCache[attributeName] = true;
           {
-            error("Invalid attribute name: `%s`", attributeName);
+            error('Invalid attribute name: `%s`', attributeName);
           }
           return false;
         }
@@ -786,8 +786,8 @@ var require_react_dom_development = __commonJS({
           }
           if (
             name.length > 2 &&
-            (name[0] === "o" || name[0] === "O") &&
-            (name[1] === "n" || name[1] === "N")
+            (name[0] === 'o' || name[0] === 'O') &&
+            (name[1] === 'n' || name[1] === 'N')
           ) {
             return true;
           }
@@ -803,10 +803,10 @@ var require_react_dom_development = __commonJS({
             return false;
           }
           switch (typeof value) {
-            case "function":
-            case "symbol":
+            case 'function':
+            case 'symbol':
               return true;
-            case "boolean": {
+            case 'boolean': {
               if (isCustomComponentTag) {
                 return false;
               }
@@ -814,7 +814,7 @@ var require_react_dom_development = __commonJS({
                 return !propertyInfo.acceptsBooleans;
               } else {
                 var prefix2 = name.toLowerCase().slice(0, 5);
-                return prefix2 !== "data-" && prefix2 !== "aria-";
+                return prefix2 !== 'data-' && prefix2 !== 'aria-';
               }
             }
             default:
@@ -827,7 +827,7 @@ var require_react_dom_development = __commonJS({
           propertyInfo,
           isCustomComponentTag,
         ) {
-          if (value === null || typeof value === "undefined") {
+          if (value === null || typeof value === 'undefined') {
             return true;
           }
           if (
@@ -883,17 +883,17 @@ var require_react_dom_development = __commonJS({
         }
         var properties = {};
         var reservedProps = [
-          "children",
-          "dangerouslySetInnerHTML",
+          'children',
+          'dangerouslySetInnerHTML',
           // TODO: This prevents the assignment of defaultValue to regular
           // elements (not just inputs). Now that ReactDOMInput assigns to the
           // defaultValue property -- do we need this?
-          "defaultValue",
-          "defaultChecked",
-          "innerHTML",
-          "suppressContentEditableWarning",
-          "suppressHydrationWarning",
-          "style",
+          'defaultValue',
+          'defaultChecked',
+          'innerHTML',
+          'suppressContentEditableWarning',
+          'suppressHydrationWarning',
+          'style',
         ];
         reservedProps.forEach(function (name) {
           properties[name] = new PropertyInfoRecord(
@@ -911,10 +911,10 @@ var require_react_dom_development = __commonJS({
           );
         });
         [
-          ["acceptCharset", "accept-charset"],
-          ["className", "class"],
-          ["htmlFor", "for"],
-          ["httpEquiv", "http-equiv"],
+          ['acceptCharset', 'accept-charset'],
+          ['className', 'class'],
+          ['htmlFor', 'for'],
+          ['httpEquiv', 'http-equiv'],
         ].forEach(function (_ref) {
           var name = _ref[0],
             attributeName = _ref[1];
@@ -932,7 +932,7 @@ var require_react_dom_development = __commonJS({
             false,
           );
         });
-        ["contentEditable", "draggable", "spellCheck", "value"].forEach(
+        ['contentEditable', 'draggable', 'spellCheck', 'value'].forEach(
           function (name) {
             properties[name] = new PropertyInfoRecord(
               name,
@@ -950,10 +950,10 @@ var require_react_dom_development = __commonJS({
           },
         );
         [
-          "autoReverse",
-          "externalResourcesRequired",
-          "focusable",
-          "preserveAlpha",
+          'autoReverse',
+          'externalResourcesRequired',
+          'focusable',
+          'preserveAlpha',
         ].forEach(function (name) {
           properties[name] = new PropertyInfoRecord(
             name,
@@ -970,32 +970,32 @@ var require_react_dom_development = __commonJS({
           );
         });
         [
-          "allowFullScreen",
-          "async",
+          'allowFullScreen',
+          'async',
           // Note: there is a special case that prevents it from being written to the DOM
           // on the client side because the browsers are inconsistent. Instead we call focus().
-          "autoFocus",
-          "autoPlay",
-          "controls",
-          "default",
-          "defer",
-          "disabled",
-          "disablePictureInPicture",
-          "disableRemotePlayback",
-          "formNoValidate",
-          "hidden",
-          "loop",
-          "noModule",
-          "noValidate",
-          "open",
-          "playsInline",
-          "readOnly",
-          "required",
-          "reversed",
-          "scoped",
-          "seamless",
+          'autoFocus',
+          'autoPlay',
+          'controls',
+          'default',
+          'defer',
+          'disabled',
+          'disablePictureInPicture',
+          'disableRemotePlayback',
+          'formNoValidate',
+          'hidden',
+          'loop',
+          'noModule',
+          'noValidate',
+          'open',
+          'playsInline',
+          'readOnly',
+          'required',
+          'reversed',
+          'scoped',
+          'seamless',
           // Microdata
-          "itemScope",
+          'itemScope',
         ].forEach(function (name) {
           properties[name] = new PropertyInfoRecord(
             name,
@@ -1012,12 +1012,12 @@ var require_react_dom_development = __commonJS({
           );
         });
         [
-          "checked",
+          'checked',
           // Note: `option.selected` is not updated if `select.multiple` is
           // disabled with `removeAttribute`. We have special logic for handling this.
-          "multiple",
-          "muted",
-          "selected",
+          'multiple',
+          'muted',
+          'selected',
           // NOTE: if you add a camelCased prop to this list,
           // you'll need to set attributeName to name.toLowerCase()
           // instead in the assignment below.
@@ -1037,8 +1037,8 @@ var require_react_dom_development = __commonJS({
           );
         });
         [
-          "capture",
-          "download",
+          'capture',
+          'download',
           // NOTE: if you add a camelCased prop to this list,
           // you'll need to set attributeName to name.toLowerCase()
           // instead in the assignment below.
@@ -1058,10 +1058,10 @@ var require_react_dom_development = __commonJS({
           );
         });
         [
-          "cols",
-          "rows",
-          "size",
-          "span",
+          'cols',
+          'rows',
+          'size',
+          'span',
           // NOTE: if you add a camelCased prop to this list,
           // you'll need to set attributeName to name.toLowerCase()
           // instead in the assignment below.
@@ -1080,7 +1080,7 @@ var require_react_dom_development = __commonJS({
             false,
           );
         });
-        ["rowSpan", "start"].forEach(function (name) {
+        ['rowSpan', 'start'].forEach(function (name) {
           properties[name] = new PropertyInfoRecord(
             name,
             NUMERIC,
@@ -1100,79 +1100,79 @@ var require_react_dom_development = __commonJS({
           return token[1].toUpperCase();
         };
         [
-          "accent-height",
-          "alignment-baseline",
-          "arabic-form",
-          "baseline-shift",
-          "cap-height",
-          "clip-path",
-          "clip-rule",
-          "color-interpolation",
-          "color-interpolation-filters",
-          "color-profile",
-          "color-rendering",
-          "dominant-baseline",
-          "enable-background",
-          "fill-opacity",
-          "fill-rule",
-          "flood-color",
-          "flood-opacity",
-          "font-family",
-          "font-size",
-          "font-size-adjust",
-          "font-stretch",
-          "font-style",
-          "font-variant",
-          "font-weight",
-          "glyph-name",
-          "glyph-orientation-horizontal",
-          "glyph-orientation-vertical",
-          "horiz-adv-x",
-          "horiz-origin-x",
-          "image-rendering",
-          "letter-spacing",
-          "lighting-color",
-          "marker-end",
-          "marker-mid",
-          "marker-start",
-          "overline-position",
-          "overline-thickness",
-          "paint-order",
-          "panose-1",
-          "pointer-events",
-          "rendering-intent",
-          "shape-rendering",
-          "stop-color",
-          "stop-opacity",
-          "strikethrough-position",
-          "strikethrough-thickness",
-          "stroke-dasharray",
-          "stroke-dashoffset",
-          "stroke-linecap",
-          "stroke-linejoin",
-          "stroke-miterlimit",
-          "stroke-opacity",
-          "stroke-width",
-          "text-anchor",
-          "text-decoration",
-          "text-rendering",
-          "underline-position",
-          "underline-thickness",
-          "unicode-bidi",
-          "unicode-range",
-          "units-per-em",
-          "v-alphabetic",
-          "v-hanging",
-          "v-ideographic",
-          "v-mathematical",
-          "vector-effect",
-          "vert-adv-y",
-          "vert-origin-x",
-          "vert-origin-y",
-          "word-spacing",
-          "writing-mode",
-          "xmlns:xlink",
-          "x-height",
+          'accent-height',
+          'alignment-baseline',
+          'arabic-form',
+          'baseline-shift',
+          'cap-height',
+          'clip-path',
+          'clip-rule',
+          'color-interpolation',
+          'color-interpolation-filters',
+          'color-profile',
+          'color-rendering',
+          'dominant-baseline',
+          'enable-background',
+          'fill-opacity',
+          'fill-rule',
+          'flood-color',
+          'flood-opacity',
+          'font-family',
+          'font-size',
+          'font-size-adjust',
+          'font-stretch',
+          'font-style',
+          'font-variant',
+          'font-weight',
+          'glyph-name',
+          'glyph-orientation-horizontal',
+          'glyph-orientation-vertical',
+          'horiz-adv-x',
+          'horiz-origin-x',
+          'image-rendering',
+          'letter-spacing',
+          'lighting-color',
+          'marker-end',
+          'marker-mid',
+          'marker-start',
+          'overline-position',
+          'overline-thickness',
+          'paint-order',
+          'panose-1',
+          'pointer-events',
+          'rendering-intent',
+          'shape-rendering',
+          'stop-color',
+          'stop-opacity',
+          'strikethrough-position',
+          'strikethrough-thickness',
+          'stroke-dasharray',
+          'stroke-dashoffset',
+          'stroke-linecap',
+          'stroke-linejoin',
+          'stroke-miterlimit',
+          'stroke-opacity',
+          'stroke-width',
+          'text-anchor',
+          'text-decoration',
+          'text-rendering',
+          'underline-position',
+          'underline-thickness',
+          'unicode-bidi',
+          'unicode-range',
+          'units-per-em',
+          'v-alphabetic',
+          'v-hanging',
+          'v-ideographic',
+          'v-mathematical',
+          'vector-effect',
+          'vert-adv-y',
+          'vert-origin-x',
+          'vert-origin-y',
+          'word-spacing',
+          'writing-mode',
+          'xmlns:xlink',
+          'x-height',
           // NOTE: if you add a camelCased prop to this list,
           // you'll need to set attributeName to name.toLowerCase()
           // instead in the assignment below.
@@ -1192,12 +1192,12 @@ var require_react_dom_development = __commonJS({
           );
         });
         [
-          "xlink:actuate",
-          "xlink:arcrole",
-          "xlink:role",
-          "xlink:show",
-          "xlink:title",
-          "xlink:type",
+          'xlink:actuate',
+          'xlink:arcrole',
+          'xlink:role',
+          'xlink:show',
+          'xlink:title',
+          'xlink:type',
           // NOTE: if you add a camelCased prop to this list,
           // you'll need to set attributeName to name.toLowerCase()
           // instead in the assignment below.
@@ -1209,16 +1209,16 @@ var require_react_dom_development = __commonJS({
             false,
             // mustUseProperty
             attributeName,
-            "http://www.w3.org/1999/xlink",
+            'http://www.w3.org/1999/xlink',
             false,
             // sanitizeURL
             false,
           );
         });
         [
-          "xml:base",
-          "xml:lang",
-          "xml:space",
+          'xml:base',
+          'xml:lang',
+          'xml:space',
           // NOTE: if you add a camelCased prop to this list,
           // you'll need to set attributeName to name.toLowerCase()
           // instead in the assignment below.
@@ -1230,13 +1230,13 @@ var require_react_dom_development = __commonJS({
             false,
             // mustUseProperty
             attributeName,
-            "http://www.w3.org/XML/1998/namespace",
+            'http://www.w3.org/XML/1998/namespace',
             false,
             // sanitizeURL
             false,
           );
         });
-        ["tabIndex", "crossOrigin"].forEach(function (attributeName) {
+        ['tabIndex', 'crossOrigin'].forEach(function (attributeName) {
           properties[attributeName] = new PropertyInfoRecord(
             attributeName,
             STRING,
@@ -1251,19 +1251,19 @@ var require_react_dom_development = __commonJS({
             false,
           );
         });
-        var xlinkHref = "xlinkHref";
+        var xlinkHref = 'xlinkHref';
         properties[xlinkHref] = new PropertyInfoRecord(
-          "xlinkHref",
+          'xlinkHref',
           STRING,
           false,
           // mustUseProperty
-          "xlink:href",
-          "http://www.w3.org/1999/xlink",
+          'xlink:href',
+          'http://www.w3.org/1999/xlink',
           true,
           // sanitizeURL
           false,
         );
-        ["src", "href", "action", "formAction"].forEach(
+        ['src', 'href', 'action', 'formAction'].forEach(
           function (attributeName) {
             properties[attributeName] = new PropertyInfoRecord(
               attributeName,
@@ -1288,7 +1288,7 @@ var require_react_dom_development = __commonJS({
             if (!didWarn && isJavaScriptProtocol.test(url)) {
               didWarn = true;
               error(
-                "A future version of React will block javascript: URLs as a security precaution. Use event handlers instead if you can. If you need to generate unsafe HTML try using dangerouslySetInnerHTML instead. React was passed %s.",
+                'A future version of React will block javascript: URLs as a security precaution. Use event handlers instead if you can. If you need to generate unsafe HTML try using dangerouslySetInnerHTML instead. React was passed %s.',
                 JSON.stringify(url),
               );
             }
@@ -1304,14 +1304,14 @@ var require_react_dom_development = __commonJS({
                 checkAttributeStringCoercion(expected, name);
               }
               if (propertyInfo.sanitizeURL) {
-                sanitizeURL("" + expected);
+                sanitizeURL('' + expected);
               }
               var attributeName = propertyInfo.attributeName;
               var stringValue = null;
               if (propertyInfo.type === OVERLOADED_BOOLEAN) {
                 if (node.hasAttribute(attributeName)) {
                   var value = node.getAttribute(attributeName);
-                  if (value === "") {
+                  if (value === '') {
                     return true;
                   }
                   if (
@@ -1319,7 +1319,7 @@ var require_react_dom_development = __commonJS({
                   ) {
                     return value;
                   }
-                  if (value === "" + expected) {
+                  if (value === '' + expected) {
                     return expected;
                   }
                   return value;
@@ -1337,7 +1337,7 @@ var require_react_dom_development = __commonJS({
               }
               if (shouldRemoveAttribute(name, expected, propertyInfo, false)) {
                 return stringValue === null ? expected : stringValue;
-              } else if (stringValue === "" + expected) {
+              } else if (stringValue === '' + expected) {
                 return expected;
               } else {
                 return stringValue;
@@ -1362,7 +1362,7 @@ var require_react_dom_development = __commonJS({
             {
               checkAttributeStringCoercion(expected, name);
             }
-            if (value === "" + expected) {
+            if (value === '' + expected) {
               return expected;
             }
             return value;
@@ -1392,7 +1392,7 @@ var require_react_dom_development = __commonJS({
                 {
                   checkAttributeStringCoercion(value, name);
                 }
-                node.setAttribute(_attributeName, "" + value);
+                node.setAttribute(_attributeName, '' + value);
               }
             }
             return;
@@ -1402,7 +1402,7 @@ var require_react_dom_development = __commonJS({
             var propertyName = propertyInfo.propertyName;
             if (value === null) {
               var type = propertyInfo.type;
-              node[propertyName] = type === BOOLEAN ? false : "";
+              node[propertyName] = type === BOOLEAN ? false : '';
             } else {
               node[propertyName] = value;
             }
@@ -1419,13 +1419,13 @@ var require_react_dom_development = __commonJS({
               _type === BOOLEAN ||
               (_type === OVERLOADED_BOOLEAN && value === true)
             ) {
-              attributeValue = "";
+              attributeValue = '';
             } else {
               {
                 {
                   checkAttributeStringCoercion(value, attributeName);
                 }
-                attributeValue = "" + value;
+                attributeValue = '' + value;
               }
               if (propertyInfo.sanitizeURL) {
                 sanitizeURL(attributeValue.toString());
@@ -1442,36 +1442,36 @@ var require_react_dom_development = __commonJS({
             }
           }
         }
-        var REACT_ELEMENT_TYPE = Symbol.for("react.element");
-        var REACT_PORTAL_TYPE = Symbol.for("react.portal");
-        var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
-        var REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode");
-        var REACT_PROFILER_TYPE = Symbol.for("react.profiler");
-        var REACT_PROVIDER_TYPE = Symbol.for("react.provider");
-        var REACT_CONTEXT_TYPE = Symbol.for("react.context");
-        var REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref");
-        var REACT_SUSPENSE_TYPE = Symbol.for("react.suspense");
-        var REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list");
-        var REACT_MEMO_TYPE = Symbol.for("react.memo");
-        var REACT_LAZY_TYPE = Symbol.for("react.lazy");
-        var REACT_SCOPE_TYPE = Symbol.for("react.scope");
+        var REACT_ELEMENT_TYPE = Symbol.for('react.element');
+        var REACT_PORTAL_TYPE = Symbol.for('react.portal');
+        var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
+        var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
+        var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
+        var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
+        var REACT_CONTEXT_TYPE = Symbol.for('react.context');
+        var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
+        var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
+        var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
+        var REACT_MEMO_TYPE = Symbol.for('react.memo');
+        var REACT_LAZY_TYPE = Symbol.for('react.lazy');
+        var REACT_SCOPE_TYPE = Symbol.for('react.scope');
         var REACT_DEBUG_TRACING_MODE_TYPE = Symbol.for(
-          "react.debug_trace_mode",
+          'react.debug_trace_mode',
         );
-        var REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen");
-        var REACT_LEGACY_HIDDEN_TYPE = Symbol.for("react.legacy_hidden");
-        var REACT_CACHE_TYPE = Symbol.for("react.cache");
-        var REACT_TRACING_MARKER_TYPE = Symbol.for("react.tracing_marker");
+        var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
+        var REACT_LEGACY_HIDDEN_TYPE = Symbol.for('react.legacy_hidden');
+        var REACT_CACHE_TYPE = Symbol.for('react.cache');
+        var REACT_TRACING_MARKER_TYPE = Symbol.for('react.tracing_marker');
         var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
-        var FAUX_ITERATOR_SYMBOL = "@@iterator";
+        var FAUX_ITERATOR_SYMBOL = '@@iterator';
         function getIteratorFn(maybeIterable) {
-          if (maybeIterable === null || typeof maybeIterable !== "object") {
+          if (maybeIterable === null || typeof maybeIterable !== 'object') {
             return null;
           }
           var maybeIterator =
             (MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL]) ||
             maybeIterable[FAUX_ITERATOR_SYMBOL];
-          if (typeof maybeIterator === "function") {
+          if (typeof maybeIterator === 'function') {
             return maybeIterator;
           }
           return null;
@@ -1551,7 +1551,7 @@ var require_react_dom_development = __commonJS({
             }
             if (disabledDepth < 0) {
               error(
-                "disabledDepth fell below zero. This is a bug in React. Please file an issue.",
+                'disabledDepth fell below zero. This is a bug in React. Please file an issue.',
               );
             }
           }
@@ -1566,21 +1566,21 @@ var require_react_dom_development = __commonJS({
                 throw Error();
               } catch (x) {
                 var match = x.stack.trim().match(/\n( *(at )?)/);
-                prefix = (match && match[1]) || "";
+                prefix = (match && match[1]) || '';
               }
             }
-            return "\n" + prefix + name;
+            return '\n' + prefix + name;
           }
         }
         var reentry = false;
         var componentFrameCache;
         {
-          var PossiblyWeakMap = typeof WeakMap === "function" ? WeakMap : Map;
+          var PossiblyWeakMap = typeof WeakMap === 'function' ? WeakMap : Map;
           componentFrameCache = new PossiblyWeakMap();
         }
         function describeNativeComponentFrame(fn, construct) {
           if (!fn || reentry) {
-            return "";
+            return '';
           }
           {
             var frame = componentFrameCache.get(fn);
@@ -1603,12 +1603,12 @@ var require_react_dom_development = __commonJS({
               var Fake = function () {
                 throw Error();
               };
-              Object.defineProperty(Fake.prototype, "props", {
+              Object.defineProperty(Fake.prototype, 'props', {
                 set: function () {
                   throw Error();
                 },
               });
-              if (typeof Reflect === "object" && Reflect.construct) {
+              if (typeof Reflect === 'object' && Reflect.construct) {
                 try {
                   Reflect.construct(Fake, []);
                 } catch (x) {
@@ -1632,9 +1632,9 @@ var require_react_dom_development = __commonJS({
               fn();
             }
           } catch (sample) {
-            if (sample && control && typeof sample.stack === "string") {
-              var sampleLines = sample.stack.split("\n");
-              var controlLines = control.stack.split("\n");
+            if (sample && control && typeof sample.stack === 'string') {
+              var sampleLines = sample.stack.split('\n');
+              var controlLines = control.stack.split('\n');
               var s = sampleLines.length - 1;
               var c = controlLines.length - 1;
               while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
@@ -1648,15 +1648,15 @@ var require_react_dom_development = __commonJS({
                       c--;
                       if (c < 0 || sampleLines[s] !== controlLines[c]) {
                         var _frame =
-                          "\n" + sampleLines[s].replace(" at new ", " at ");
-                        if (fn.displayName && _frame.includes("<anonymous>")) {
+                          '\n' + sampleLines[s].replace(' at new ', ' at ');
+                        if (fn.displayName && _frame.includes('<anonymous>')) {
                           _frame = _frame.replace(
-                            "<anonymous>",
+                            '<anonymous>',
                             fn.displayName,
                           );
                         }
                         {
-                          if (typeof fn === "function") {
+                          if (typeof fn === 'function') {
                             componentFrameCache.set(fn, _frame);
                           }
                         }
@@ -1676,10 +1676,10 @@ var require_react_dom_development = __commonJS({
             }
             Error.prepareStackTrace = previousPrepareStackTrace;
           }
-          var name = fn ? fn.displayName || fn.name : "";
-          var syntheticFrame = name ? describeBuiltInComponentFrame(name) : "";
+          var name = fn ? fn.displayName || fn.name : '';
+          var syntheticFrame = name ? describeBuiltInComponentFrame(name) : '';
           {
-            if (typeof fn === "function") {
+            if (typeof fn === 'function') {
               componentFrameCache.set(fn, syntheticFrame);
             }
           }
@@ -1701,23 +1701,23 @@ var require_react_dom_development = __commonJS({
         }
         function describeUnknownElementTypeFrameInDEV(type, source, ownerFn) {
           if (type == null) {
-            return "";
+            return '';
           }
-          if (typeof type === "function") {
+          if (typeof type === 'function') {
             {
               return describeNativeComponentFrame(type, shouldConstruct(type));
             }
           }
-          if (typeof type === "string") {
+          if (typeof type === 'string') {
             return describeBuiltInComponentFrame(type);
           }
           switch (type) {
             case REACT_SUSPENSE_TYPE:
-              return describeBuiltInComponentFrame("Suspense");
+              return describeBuiltInComponentFrame('Suspense');
             case REACT_SUSPENSE_LIST_TYPE:
-              return describeBuiltInComponentFrame("SuspenseList");
+              return describeBuiltInComponentFrame('SuspenseList');
           }
-          if (typeof type === "object") {
+          if (typeof type === 'object') {
             switch (type.$$typeof) {
               case REACT_FORWARD_REF_TYPE:
                 return describeFunctionComponentFrame(type.render);
@@ -1741,7 +1741,7 @@ var require_react_dom_development = __commonJS({
               }
             }
           }
-          return "";
+          return '';
         }
         function describeFiber(fiber) {
           var owner = fiber._debugOwner ? fiber._debugOwner.type : null;
@@ -1750,11 +1750,11 @@ var require_react_dom_development = __commonJS({
             case HostComponent:
               return describeBuiltInComponentFrame(fiber.type);
             case LazyComponent:
-              return describeBuiltInComponentFrame("Lazy");
+              return describeBuiltInComponentFrame('Lazy');
             case SuspenseComponent:
-              return describeBuiltInComponentFrame("Suspense");
+              return describeBuiltInComponentFrame('Suspense');
             case SuspenseListComponent:
-              return describeBuiltInComponentFrame("SuspenseList");
+              return describeBuiltInComponentFrame('SuspenseList');
             case FunctionComponent:
             case IndeterminateComponent:
             case SimpleMemoComponent:
@@ -1764,12 +1764,12 @@ var require_react_dom_development = __commonJS({
             case ClassComponent:
               return describeClassComponentFrame(fiber.type);
             default:
-              return "";
+              return '';
           }
         }
         function getStackByFiberInDevAndProd(workInProgress2) {
           try {
-            var info = "";
+            var info = '';
             var node = workInProgress2;
             do {
               info += describeFiber(node);
@@ -1777,7 +1777,7 @@ var require_react_dom_development = __commonJS({
             } while (node);
             return info;
           } catch (x) {
-            return "\nError generating stack: " + x.message + "\n" + x.stack;
+            return '\nError generating stack: ' + x.message + '\n' + x.stack;
           }
         }
         function getWrappedName(outerType, innerType, wrapperName) {
@@ -1785,61 +1785,61 @@ var require_react_dom_development = __commonJS({
           if (displayName) {
             return displayName;
           }
-          var functionName = innerType.displayName || innerType.name || "";
-          return functionName !== ""
-            ? wrapperName + "(" + functionName + ")"
+          var functionName = innerType.displayName || innerType.name || '';
+          return functionName !== ''
+            ? wrapperName + '(' + functionName + ')'
             : wrapperName;
         }
         function getContextName(type) {
-          return type.displayName || "Context";
+          return type.displayName || 'Context';
         }
         function getComponentNameFromType(type) {
           if (type == null) {
             return null;
           }
           {
-            if (typeof type.tag === "number") {
+            if (typeof type.tag === 'number') {
               error(
-                "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue.",
+                'Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue.',
               );
             }
           }
-          if (typeof type === "function") {
+          if (typeof type === 'function') {
             return type.displayName || type.name || null;
           }
-          if (typeof type === "string") {
+          if (typeof type === 'string') {
             return type;
           }
           switch (type) {
             case REACT_FRAGMENT_TYPE:
-              return "Fragment";
+              return 'Fragment';
             case REACT_PORTAL_TYPE:
-              return "Portal";
+              return 'Portal';
             case REACT_PROFILER_TYPE:
-              return "Profiler";
+              return 'Profiler';
             case REACT_STRICT_MODE_TYPE:
-              return "StrictMode";
+              return 'StrictMode';
             case REACT_SUSPENSE_TYPE:
-              return "Suspense";
+              return 'Suspense';
             case REACT_SUSPENSE_LIST_TYPE:
-              return "SuspenseList";
+              return 'SuspenseList';
           }
-          if (typeof type === "object") {
+          if (typeof type === 'object') {
             switch (type.$$typeof) {
               case REACT_CONTEXT_TYPE:
                 var context = type;
-                return getContextName(context) + ".Consumer";
+                return getContextName(context) + '.Consumer';
               case REACT_PROVIDER_TYPE:
                 var provider = type;
-                return getContextName(provider._context) + ".Provider";
+                return getContextName(provider._context) + '.Provider';
               case REACT_FORWARD_REF_TYPE:
-                return getWrappedName(type, type.render, "ForwardRef");
+                return getWrappedName(type, type.render, 'ForwardRef');
               case REACT_MEMO_TYPE:
                 var outerName = type.displayName || null;
                 if (outerName !== null) {
                   return outerName;
                 }
-                return getComponentNameFromType(type.type) || "Memo";
+                return getComponentNameFromType(type.type) || 'Memo';
               case REACT_LAZY_TYPE: {
                 var lazyComponent = type;
                 var payload = lazyComponent._payload;
@@ -1855,72 +1855,72 @@ var require_react_dom_development = __commonJS({
           return null;
         }
         function getWrappedName$1(outerType, innerType, wrapperName) {
-          var functionName = innerType.displayName || innerType.name || "";
+          var functionName = innerType.displayName || innerType.name || '';
           return (
             outerType.displayName ||
-            (functionName !== ""
-              ? wrapperName + "(" + functionName + ")"
+            (functionName !== ''
+              ? wrapperName + '(' + functionName + ')'
               : wrapperName)
           );
         }
         function getContextName$1(type) {
-          return type.displayName || "Context";
+          return type.displayName || 'Context';
         }
         function getComponentNameFromFiber(fiber) {
           var tag = fiber.tag,
             type = fiber.type;
           switch (tag) {
             case CacheComponent:
-              return "Cache";
+              return 'Cache';
             case ContextConsumer:
               var context = type;
-              return getContextName$1(context) + ".Consumer";
+              return getContextName$1(context) + '.Consumer';
             case ContextProvider:
               var provider = type;
-              return getContextName$1(provider._context) + ".Provider";
+              return getContextName$1(provider._context) + '.Provider';
             case DehydratedFragment:
-              return "DehydratedFragment";
+              return 'DehydratedFragment';
             case ForwardRef:
-              return getWrappedName$1(type, type.render, "ForwardRef");
+              return getWrappedName$1(type, type.render, 'ForwardRef');
             case Fragment:
-              return "Fragment";
+              return 'Fragment';
             case HostComponent:
               return type;
             case HostPortal:
-              return "Portal";
+              return 'Portal';
             case HostRoot:
-              return "Root";
+              return 'Root';
             case HostText:
-              return "Text";
+              return 'Text';
             case LazyComponent:
               return getComponentNameFromType(type);
             case Mode:
               if (type === REACT_STRICT_MODE_TYPE) {
-                return "StrictMode";
+                return 'StrictMode';
               }
-              return "Mode";
+              return 'Mode';
             case OffscreenComponent:
-              return "Offscreen";
+              return 'Offscreen';
             case Profiler:
-              return "Profiler";
+              return 'Profiler';
             case ScopeComponent:
-              return "Scope";
+              return 'Scope';
             case SuspenseComponent:
-              return "Suspense";
+              return 'Suspense';
             case SuspenseListComponent:
-              return "SuspenseList";
+              return 'SuspenseList';
             case TracingMarkerComponent:
-              return "TracingMarker";
+              return 'TracingMarker';
             case ClassComponent:
             case FunctionComponent:
             case IncompleteClassComponent:
             case IndeterminateComponent:
             case MemoComponent:
             case SimpleMemoComponent:
-              if (typeof type === "function") {
+              if (typeof type === 'function') {
                 return type.displayName || type.name || null;
               }
-              if (typeof type === "string") {
+              if (typeof type === 'string') {
                 return type;
               }
               break;
@@ -1937,7 +1937,7 @@ var require_react_dom_development = __commonJS({
               return null;
             }
             var owner = current._debugOwner;
-            if (owner !== null && typeof owner !== "undefined") {
+            if (owner !== null && typeof owner !== 'undefined') {
               return getComponentNameFromFiber(owner);
             }
           }
@@ -1946,7 +1946,7 @@ var require_react_dom_development = __commonJS({
         function getCurrentFiberStackInDev() {
           {
             if (current === null) {
-              return "";
+              return '';
             }
             return getStackByFiberInDevAndProd(current);
           }
@@ -1977,22 +1977,22 @@ var require_react_dom_development = __commonJS({
           }
         }
         function toString(value) {
-          return "" + value;
+          return '' + value;
         }
         function getToStringValue(value) {
           switch (typeof value) {
-            case "boolean":
-            case "number":
-            case "string":
-            case "undefined":
+            case 'boolean':
+            case 'number':
+            case 'string':
+            case 'undefined':
               return value;
-            case "object":
+            case 'object':
               {
                 checkFormFieldValueStringCoercion(value);
               }
               return value;
             default:
-              return "";
+              return '';
           }
         }
         var hasReadOnlyValue = {
@@ -2017,7 +2017,7 @@ var require_react_dom_development = __commonJS({
               )
             ) {
               error(
-                "You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.",
+                'You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.',
               );
             }
             if (
@@ -2029,7 +2029,7 @@ var require_react_dom_development = __commonJS({
               )
             ) {
               error(
-                "You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`.",
+                'You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`.',
               );
             }
           }
@@ -2039,8 +2039,8 @@ var require_react_dom_development = __commonJS({
           var nodeName = elem.nodeName;
           return (
             nodeName &&
-            nodeName.toLowerCase() === "input" &&
-            (type === "checkbox" || type === "radio")
+            nodeName.toLowerCase() === 'input' &&
+            (type === 'checkbox' || type === 'radio')
           );
         }
         function getTracker(node) {
@@ -2050,19 +2050,19 @@ var require_react_dom_development = __commonJS({
           node._valueTracker = null;
         }
         function getValueFromNode(node) {
-          var value = "";
+          var value = '';
           if (!node) {
             return value;
           }
           if (isCheckable(node)) {
-            value = node.checked ? "true" : "false";
+            value = node.checked ? 'true' : 'false';
           } else {
             value = node.value;
           }
           return value;
         }
         function trackValueOnNode(node) {
-          var valueField = isCheckable(node) ? "checked" : "value";
+          var valueField = isCheckable(node) ? 'checked' : 'value';
           var descriptor = Object.getOwnPropertyDescriptor(
             node.constructor.prototype,
             valueField,
@@ -2070,12 +2070,12 @@ var require_react_dom_development = __commonJS({
           {
             checkFormFieldValueStringCoercion(node[valueField]);
           }
-          var currentValue = "" + node[valueField];
+          var currentValue = '' + node[valueField];
           if (
             node.hasOwnProperty(valueField) ||
-            typeof descriptor === "undefined" ||
-            typeof descriptor.get !== "function" ||
-            typeof descriptor.set !== "function"
+            typeof descriptor === 'undefined' ||
+            typeof descriptor.get !== 'function' ||
+            typeof descriptor.set !== 'function'
           ) {
             return;
           }
@@ -2090,7 +2090,7 @@ var require_react_dom_development = __commonJS({
               {
                 checkFormFieldValueStringCoercion(value);
               }
-              currentValue = "" + value;
+              currentValue = '' + value;
               set2.call(this, value);
             },
           });
@@ -2105,7 +2105,7 @@ var require_react_dom_development = __commonJS({
               {
                 checkFormFieldValueStringCoercion(value);
               }
-              currentValue = "" + value;
+              currentValue = '' + value;
             },
             stopTracking: function () {
               detachTracker(node);
@@ -2137,8 +2137,8 @@ var require_react_dom_development = __commonJS({
           return false;
         }
         function getActiveElement(doc) {
-          doc = doc || (typeof document !== "undefined" ? document : void 0);
-          if (typeof doc === "undefined") {
+          doc = doc || (typeof document !== 'undefined' ? document : void 0);
+          if (typeof doc === 'undefined') {
             return null;
           }
           try {
@@ -2152,7 +2152,7 @@ var require_react_dom_development = __commonJS({
         var didWarnControlledToUncontrolled = false;
         var didWarnUncontrolledToControlled = false;
         function isControlled(props) {
-          var usesChecked = props.type === "checkbox" || props.type === "radio";
+          var usesChecked = props.type === 'checkbox' || props.type === 'radio';
           return usesChecked ? props.checked != null : props.value != null;
         }
         function getHostProps(element, props) {
@@ -2169,15 +2169,15 @@ var require_react_dom_development = __commonJS({
         }
         function initWrapperState(element, props) {
           {
-            checkControlledValueProps("input", props);
+            checkControlledValueProps('input', props);
             if (
               props.checked !== void 0 &&
               props.defaultChecked !== void 0 &&
               !didWarnCheckedDefaultChecked
             ) {
               error(
-                "%s contains an input of type %s with both checked and defaultChecked props. Input elements must be either controlled or uncontrolled (specify either the checked prop, or the defaultChecked prop, but not both). Decide between using a controlled or uncontrolled input element and remove one of these props. More info: https://reactjs.org/link/controlled-components",
-                getCurrentFiberOwnerNameInDevOrNull() || "A component",
+                '%s contains an input of type %s with both checked and defaultChecked props. Input elements must be either controlled or uncontrolled (specify either the checked prop, or the defaultChecked prop, but not both). Decide between using a controlled or uncontrolled input element and remove one of these props. More info: https://reactjs.org/link/controlled-components',
+                getCurrentFiberOwnerNameInDevOrNull() || 'A component',
                 props.type,
               );
               didWarnCheckedDefaultChecked = true;
@@ -2188,8 +2188,8 @@ var require_react_dom_development = __commonJS({
               !didWarnValueDefaultValue
             ) {
               error(
-                "%s contains an input of type %s with both value and defaultValue props. Input elements must be either controlled or uncontrolled (specify either the value prop, or the defaultValue prop, but not both). Decide between using a controlled or uncontrolled input element and remove one of these props. More info: https://reactjs.org/link/controlled-components",
-                getCurrentFiberOwnerNameInDevOrNull() || "A component",
+                '%s contains an input of type %s with both value and defaultValue props. Input elements must be either controlled or uncontrolled (specify either the value prop, or the defaultValue prop, but not both). Decide between using a controlled or uncontrolled input element and remove one of these props. More info: https://reactjs.org/link/controlled-components',
+                getCurrentFiberOwnerNameInDevOrNull() || 'A component',
                 props.type,
               );
               didWarnValueDefaultValue = true;
@@ -2197,7 +2197,7 @@ var require_react_dom_development = __commonJS({
           }
           var node = element;
           var defaultValue =
-            props.defaultValue == null ? "" : props.defaultValue;
+            props.defaultValue == null ? '' : props.defaultValue;
           node._wrapperState = {
             initialChecked:
               props.checked != null ? props.checked : props.defaultChecked,
@@ -2211,7 +2211,7 @@ var require_react_dom_development = __commonJS({
           var node = element;
           var checked = props.checked;
           if (checked != null) {
-            setValueForProperty(node, "checked", checked, false);
+            setValueForProperty(node, 'checked', checked, false);
           }
         }
         function updateWrapper(element, props) {
@@ -2224,7 +2224,7 @@ var require_react_dom_development = __commonJS({
               !didWarnUncontrolledToControlled
             ) {
               error(
-                "A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components",
+                'A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components',
               );
               didWarnUncontrolledToControlled = true;
             }
@@ -2234,7 +2234,7 @@ var require_react_dom_development = __commonJS({
               !didWarnControlledToUncontrolled
             ) {
               error(
-                "A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components",
+                'A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components',
               );
               didWarnControlledToUncontrolled = true;
             }
@@ -2243,9 +2243,9 @@ var require_react_dom_development = __commonJS({
           var value = getToStringValue(props.value);
           var type = props.type;
           if (value != null) {
-            if (type === "number") {
+            if (type === 'number') {
               if (
-                (value === 0 && node.value === "") || // We explicitly want to coerce to number here if possible.
+                (value === 0 && node.value === '') || // We explicitly want to coerce to number here if possible.
                 // eslint-disable-next-line
                 node.value != value
               ) {
@@ -2254,14 +2254,14 @@ var require_react_dom_development = __commonJS({
             } else if (node.value !== toString(value)) {
               node.value = toString(value);
             }
-          } else if (type === "submit" || type === "reset") {
-            node.removeAttribute("value");
+          } else if (type === 'submit' || type === 'reset') {
+            node.removeAttribute('value');
             return;
           }
           {
-            if (props.hasOwnProperty("value")) {
+            if (props.hasOwnProperty('value')) {
               setDefaultValue(node, props.type, value);
-            } else if (props.hasOwnProperty("defaultValue")) {
+            } else if (props.hasOwnProperty('defaultValue')) {
               setDefaultValue(
                 node,
                 props.type,
@@ -2278,11 +2278,11 @@ var require_react_dom_development = __commonJS({
         function postMountWrapper(element, props, isHydrating2) {
           var node = element;
           if (
-            props.hasOwnProperty("value") ||
-            props.hasOwnProperty("defaultValue")
+            props.hasOwnProperty('value') ||
+            props.hasOwnProperty('defaultValue')
           ) {
             var type = props.type;
-            var isButton = type === "submit" || type === "reset";
+            var isButton = type === 'submit' || type === 'reset';
             if (isButton && (props.value === void 0 || props.value === null)) {
               return;
             }
@@ -2299,14 +2299,14 @@ var require_react_dom_development = __commonJS({
             }
           }
           var name = node.name;
-          if (name !== "") {
-            node.name = "";
+          if (name !== '') {
+            node.name = '';
           }
           {
             node.defaultChecked = !node.defaultChecked;
             node.defaultChecked = !!node._wrapperState.initialChecked;
           }
-          if (name !== "") {
+          if (name !== '') {
             node.name = name;
           }
         }
@@ -2317,16 +2317,16 @@ var require_react_dom_development = __commonJS({
         }
         function updateNamedCousins(rootNode, props) {
           var name = props.name;
-          if (props.type === "radio" && name != null) {
+          if (props.type === 'radio' && name != null) {
             var queryRoot = rootNode;
             while (queryRoot.parentNode) {
               queryRoot = queryRoot.parentNode;
             }
             {
-              checkAttributeStringCoercion(name, "name");
+              checkAttributeStringCoercion(name, 'name');
             }
             var group = queryRoot.querySelectorAll(
-              "input[name=" + JSON.stringify("" + name) + '][type="radio"]',
+              'input[name=' + JSON.stringify('' + name) + '][type="radio"]',
             );
             for (var i = 0; i < group.length; i++) {
               var otherNode = group[i];
@@ -2336,7 +2336,7 @@ var require_react_dom_development = __commonJS({
               var otherProps = getFiberCurrentPropsFromNode(otherNode);
               if (!otherProps) {
                 throw new Error(
-                  "ReactDOMInput: Mixing React and non-React radio inputs with the same `name` is not supported.",
+                  'ReactDOMInput: Mixing React and non-React radio inputs with the same `name` is not supported.',
                 );
               }
               updateValueIfChanged(otherNode);
@@ -2347,7 +2347,7 @@ var require_react_dom_development = __commonJS({
         function setDefaultValue(node, type, value) {
           if (
             // Focused number inputs synchronize on blur. See ChangeEventPlugin.js
-            type !== "number" ||
+            type !== 'number' ||
             getActiveElement(node.ownerDocument) !== node
           ) {
             if (value == null) {
@@ -2364,20 +2364,20 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (
-                typeof props.children === "object" &&
+                typeof props.children === 'object' &&
                 props.children !== null
               ) {
                 React.Children.forEach(props.children, function (child) {
                   if (child == null) {
                     return;
                   }
-                  if (typeof child === "string" || typeof child === "number") {
+                  if (typeof child === 'string' || typeof child === 'number') {
                     return;
                   }
                   if (!didWarnInvalidChild) {
                     didWarnInvalidChild = true;
                     error(
-                      "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.",
+                      'Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.',
                     );
                   }
                 });
@@ -2385,14 +2385,14 @@ var require_react_dom_development = __commonJS({
                 if (!didWarnInvalidInnerHTML) {
                   didWarnInvalidInnerHTML = true;
                   error(
-                    "Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.",
+                    'Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.',
                   );
                 }
               }
             }
             if (props.selected != null && !didWarnSelectedSetOnOption) {
               error(
-                "Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>.",
+                'Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>.',
               );
               didWarnSelectedSetOnOption = true;
             }
@@ -2401,7 +2401,7 @@ var require_react_dom_development = __commonJS({
         function postMountWrapper$1(element, props) {
           if (props.value != null) {
             element.setAttribute(
-              "value",
+              'value',
               toString(getToStringValue(props.value)),
             );
           }
@@ -2417,14 +2417,14 @@ var require_react_dom_development = __commonJS({
         function getDeclarationErrorAddendum() {
           var ownerName = getCurrentFiberOwnerNameInDevOrNull();
           if (ownerName) {
-            return "\n\nCheck the render method of `" + ownerName + "`.";
+            return '\n\nCheck the render method of `' + ownerName + '`.';
           }
-          return "";
+          return '';
         }
-        var valuePropNames = ["value", "defaultValue"];
+        var valuePropNames = ['value', 'defaultValue'];
         function checkSelectPropTypes(props) {
           {
-            checkControlledValueProps("select", props);
+            checkControlledValueProps('select', props);
             for (var i = 0; i < valuePropNames.length; i++) {
               var propName = valuePropNames[i];
               if (props[propName] == null) {
@@ -2433,13 +2433,13 @@ var require_react_dom_development = __commonJS({
               var propNameIsArray = isArray(props[propName]);
               if (props.multiple && !propNameIsArray) {
                 error(
-                  "The `%s` prop supplied to <select> must be an array if `multiple` is true.%s",
+                  'The `%s` prop supplied to <select> must be an array if `multiple` is true.%s',
                   propName,
                   getDeclarationErrorAddendum(),
                 );
               } else if (!props.multiple && propNameIsArray) {
                 error(
-                  "The `%s` prop supplied to <select> must be a scalar value if `multiple` is false.%s",
+                  'The `%s` prop supplied to <select> must be a scalar value if `multiple` is false.%s',
                   propName,
                   getDeclarationErrorAddendum(),
                 );
@@ -2453,11 +2453,11 @@ var require_react_dom_development = __commonJS({
             var selectedValues = propValue;
             var selectedValue = {};
             for (var i = 0; i < selectedValues.length; i++) {
-              selectedValue["$" + selectedValues[i]] = true;
+              selectedValue['$' + selectedValues[i]] = true;
             }
             for (var _i = 0; _i < options2.length; _i++) {
               var selected = selectedValue.hasOwnProperty(
-                "$" + options2[_i].value,
+                '$' + options2[_i].value,
               );
               if (options2[_i].selected !== selected) {
                 options2[_i].selected = selected;
@@ -2506,7 +2506,7 @@ var require_react_dom_development = __commonJS({
               !didWarnValueDefaultValue$1
             ) {
               error(
-                "Select elements must be either controlled or uncontrolled (specify either the value prop, or the defaultValue prop, but not both). Decide between using a controlled or uncontrolled select element and remove one of these props. More info: https://reactjs.org/link/controlled-components",
+                'Select elements must be either controlled or uncontrolled (specify either the value prop, or the defaultValue prop, but not both). Decide between using a controlled or uncontrolled select element and remove one of these props. More info: https://reactjs.org/link/controlled-components',
               );
               didWarnValueDefaultValue$1 = true;
             }
@@ -2536,7 +2536,7 @@ var require_react_dom_development = __commonJS({
               updateOptions(
                 node,
                 !!props.multiple,
-                props.multiple ? [] : "",
+                props.multiple ? [] : '',
                 false,
               );
             }
@@ -2554,7 +2554,7 @@ var require_react_dom_development = __commonJS({
           var node = element;
           if (props.dangerouslySetInnerHTML != null) {
             throw new Error(
-              "`dangerouslySetInnerHTML` does not make sense on <textarea>.",
+              '`dangerouslySetInnerHTML` does not make sense on <textarea>.',
             );
           }
           var hostProps = assign({}, props, {
@@ -2567,15 +2567,15 @@ var require_react_dom_development = __commonJS({
         function initWrapperState$2(element, props) {
           var node = element;
           {
-            checkControlledValueProps("textarea", props);
+            checkControlledValueProps('textarea', props);
             if (
               props.value !== void 0 &&
               props.defaultValue !== void 0 &&
               !didWarnValDefaultVal
             ) {
               error(
-                "%s contains a textarea with both value and defaultValue props. Textarea elements must be either controlled or uncontrolled (specify either the value prop, or the defaultValue prop, but not both). Decide between using a controlled or uncontrolled textarea and remove one of these props. More info: https://reactjs.org/link/controlled-components",
-                getCurrentFiberOwnerNameInDevOrNull() || "A component",
+                '%s contains a textarea with both value and defaultValue props. Textarea elements must be either controlled or uncontrolled (specify either the value prop, or the defaultValue prop, but not both). Decide between using a controlled or uncontrolled textarea and remove one of these props. More info: https://reactjs.org/link/controlled-components',
+                getCurrentFiberOwnerNameInDevOrNull() || 'A component',
               );
               didWarnValDefaultVal = true;
             }
@@ -2587,19 +2587,19 @@ var require_react_dom_development = __commonJS({
             if (children != null) {
               {
                 error(
-                  "Use the `defaultValue` or `value` props instead of setting children on <textarea>.",
+                  'Use the `defaultValue` or `value` props instead of setting children on <textarea>.',
                 );
               }
               {
                 if (defaultValue != null) {
                   throw new Error(
-                    "If you supply `defaultValue` on a <textarea>, do not pass children.",
+                    'If you supply `defaultValue` on a <textarea>, do not pass children.',
                   );
                 }
                 if (isArray(children)) {
                   if (children.length > 1) {
                     throw new Error(
-                      "<textarea> can only have at most one child.",
+                      '<textarea> can only have at most one child.',
                     );
                   }
                   children = children[0];
@@ -2608,7 +2608,7 @@ var require_react_dom_development = __commonJS({
               }
             }
             if (defaultValue == null) {
-              defaultValue = "";
+              defaultValue = '';
             }
             initialValue = defaultValue;
           }
@@ -2637,7 +2637,7 @@ var require_react_dom_development = __commonJS({
           var node = element;
           var textContent = node.textContent;
           if (textContent === node._wrapperState.initialValue) {
-            if (textContent !== "" && textContent !== null) {
+            if (textContent !== '' && textContent !== null) {
               node.value = textContent;
             }
           }
@@ -2645,14 +2645,14 @@ var require_react_dom_development = __commonJS({
         function restoreControlledState$2(element, props) {
           updateWrapper$1(element, props);
         }
-        var HTML_NAMESPACE = "http://www.w3.org/1999/xhtml";
-        var MATH_NAMESPACE = "http://www.w3.org/1998/Math/MathML";
-        var SVG_NAMESPACE = "http://www.w3.org/2000/svg";
+        var HTML_NAMESPACE = 'http://www.w3.org/1999/xhtml';
+        var MATH_NAMESPACE = 'http://www.w3.org/1998/Math/MathML';
+        var SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
         function getIntrinsicNamespace(type) {
           switch (type) {
-            case "svg":
+            case 'svg':
               return SVG_NAMESPACE;
-            case "math":
+            case 'math':
               return MATH_NAMESPACE;
             default:
               return HTML_NAMESPACE;
@@ -2662,13 +2662,13 @@ var require_react_dom_development = __commonJS({
           if (parentNamespace == null || parentNamespace === HTML_NAMESPACE) {
             return getIntrinsicNamespace(type);
           }
-          if (parentNamespace === SVG_NAMESPACE && type === "foreignObject") {
+          if (parentNamespace === SVG_NAMESPACE && type === 'foreignObject') {
             return HTML_NAMESPACE;
           }
           return parentNamespace;
         }
         var createMicrosoftUnsafeLocalFunction = function (func) {
-          if (typeof MSApp !== "undefined" && MSApp.execUnsafeLocalFunction) {
+          if (typeof MSApp !== 'undefined' && MSApp.execUnsafeLocalFunction) {
             return function (arg0, arg1, arg2, arg3) {
               MSApp.execUnsafeLocalFunction(function () {
                 return func(arg0, arg1, arg2, arg3);
@@ -2682,11 +2682,11 @@ var require_react_dom_development = __commonJS({
         var setInnerHTML = createMicrosoftUnsafeLocalFunction(
           function (node, html) {
             if (node.namespaceURI === SVG_NAMESPACE) {
-              if (!("innerHTML" in node)) {
+              if (!('innerHTML' in node)) {
                 reusableSVGContainer =
-                  reusableSVGContainer || document.createElement("div");
+                  reusableSVGContainer || document.createElement('div');
                 reusableSVGContainer.innerHTML =
-                  "<svg>" + html.valueOf().toString() + "</svg>";
+                  '<svg>' + html.valueOf().toString() + '</svg>';
                 var svgNode = reusableSVGContainer.firstChild;
                 while (node.firstChild) {
                   node.removeChild(node.firstChild);
@@ -2721,204 +2721,204 @@ var require_react_dom_development = __commonJS({
         };
         var shorthandToLonghand = {
           animation: [
-            "animationDelay",
-            "animationDirection",
-            "animationDuration",
-            "animationFillMode",
-            "animationIterationCount",
-            "animationName",
-            "animationPlayState",
-            "animationTimingFunction",
+            'animationDelay',
+            'animationDirection',
+            'animationDuration',
+            'animationFillMode',
+            'animationIterationCount',
+            'animationName',
+            'animationPlayState',
+            'animationTimingFunction',
           ],
           background: [
-            "backgroundAttachment",
-            "backgroundClip",
-            "backgroundColor",
-            "backgroundImage",
-            "backgroundOrigin",
-            "backgroundPositionX",
-            "backgroundPositionY",
-            "backgroundRepeat",
-            "backgroundSize",
+            'backgroundAttachment',
+            'backgroundClip',
+            'backgroundColor',
+            'backgroundImage',
+            'backgroundOrigin',
+            'backgroundPositionX',
+            'backgroundPositionY',
+            'backgroundRepeat',
+            'backgroundSize',
           ],
-          backgroundPosition: ["backgroundPositionX", "backgroundPositionY"],
+          backgroundPosition: ['backgroundPositionX', 'backgroundPositionY'],
           border: [
-            "borderBottomColor",
-            "borderBottomStyle",
-            "borderBottomWidth",
-            "borderImageOutset",
-            "borderImageRepeat",
-            "borderImageSlice",
-            "borderImageSource",
-            "borderImageWidth",
-            "borderLeftColor",
-            "borderLeftStyle",
-            "borderLeftWidth",
-            "borderRightColor",
-            "borderRightStyle",
-            "borderRightWidth",
-            "borderTopColor",
-            "borderTopStyle",
-            "borderTopWidth",
+            'borderBottomColor',
+            'borderBottomStyle',
+            'borderBottomWidth',
+            'borderImageOutset',
+            'borderImageRepeat',
+            'borderImageSlice',
+            'borderImageSource',
+            'borderImageWidth',
+            'borderLeftColor',
+            'borderLeftStyle',
+            'borderLeftWidth',
+            'borderRightColor',
+            'borderRightStyle',
+            'borderRightWidth',
+            'borderTopColor',
+            'borderTopStyle',
+            'borderTopWidth',
           ],
           borderBlockEnd: [
-            "borderBlockEndColor",
-            "borderBlockEndStyle",
-            "borderBlockEndWidth",
+            'borderBlockEndColor',
+            'borderBlockEndStyle',
+            'borderBlockEndWidth',
           ],
           borderBlockStart: [
-            "borderBlockStartColor",
-            "borderBlockStartStyle",
-            "borderBlockStartWidth",
+            'borderBlockStartColor',
+            'borderBlockStartStyle',
+            'borderBlockStartWidth',
           ],
           borderBottom: [
-            "borderBottomColor",
-            "borderBottomStyle",
-            "borderBottomWidth",
+            'borderBottomColor',
+            'borderBottomStyle',
+            'borderBottomWidth',
           ],
           borderColor: [
-            "borderBottomColor",
-            "borderLeftColor",
-            "borderRightColor",
-            "borderTopColor",
+            'borderBottomColor',
+            'borderLeftColor',
+            'borderRightColor',
+            'borderTopColor',
           ],
           borderImage: [
-            "borderImageOutset",
-            "borderImageRepeat",
-            "borderImageSlice",
-            "borderImageSource",
-            "borderImageWidth",
+            'borderImageOutset',
+            'borderImageRepeat',
+            'borderImageSlice',
+            'borderImageSource',
+            'borderImageWidth',
           ],
           borderInlineEnd: [
-            "borderInlineEndColor",
-            "borderInlineEndStyle",
-            "borderInlineEndWidth",
+            'borderInlineEndColor',
+            'borderInlineEndStyle',
+            'borderInlineEndWidth',
           ],
           borderInlineStart: [
-            "borderInlineStartColor",
-            "borderInlineStartStyle",
-            "borderInlineStartWidth",
+            'borderInlineStartColor',
+            'borderInlineStartStyle',
+            'borderInlineStartWidth',
           ],
-          borderLeft: ["borderLeftColor", "borderLeftStyle", "borderLeftWidth"],
+          borderLeft: ['borderLeftColor', 'borderLeftStyle', 'borderLeftWidth'],
           borderRadius: [
-            "borderBottomLeftRadius",
-            "borderBottomRightRadius",
-            "borderTopLeftRadius",
-            "borderTopRightRadius",
+            'borderBottomLeftRadius',
+            'borderBottomRightRadius',
+            'borderTopLeftRadius',
+            'borderTopRightRadius',
           ],
           borderRight: [
-            "borderRightColor",
-            "borderRightStyle",
-            "borderRightWidth",
+            'borderRightColor',
+            'borderRightStyle',
+            'borderRightWidth',
           ],
           borderStyle: [
-            "borderBottomStyle",
-            "borderLeftStyle",
-            "borderRightStyle",
-            "borderTopStyle",
+            'borderBottomStyle',
+            'borderLeftStyle',
+            'borderRightStyle',
+            'borderTopStyle',
           ],
-          borderTop: ["borderTopColor", "borderTopStyle", "borderTopWidth"],
+          borderTop: ['borderTopColor', 'borderTopStyle', 'borderTopWidth'],
           borderWidth: [
-            "borderBottomWidth",
-            "borderLeftWidth",
-            "borderRightWidth",
-            "borderTopWidth",
+            'borderBottomWidth',
+            'borderLeftWidth',
+            'borderRightWidth',
+            'borderTopWidth',
           ],
-          columnRule: ["columnRuleColor", "columnRuleStyle", "columnRuleWidth"],
-          columns: ["columnCount", "columnWidth"],
-          flex: ["flexBasis", "flexGrow", "flexShrink"],
-          flexFlow: ["flexDirection", "flexWrap"],
+          columnRule: ['columnRuleColor', 'columnRuleStyle', 'columnRuleWidth'],
+          columns: ['columnCount', 'columnWidth'],
+          flex: ['flexBasis', 'flexGrow', 'flexShrink'],
+          flexFlow: ['flexDirection', 'flexWrap'],
           font: [
-            "fontFamily",
-            "fontFeatureSettings",
-            "fontKerning",
-            "fontLanguageOverride",
-            "fontSize",
-            "fontSizeAdjust",
-            "fontStretch",
-            "fontStyle",
-            "fontVariant",
-            "fontVariantAlternates",
-            "fontVariantCaps",
-            "fontVariantEastAsian",
-            "fontVariantLigatures",
-            "fontVariantNumeric",
-            "fontVariantPosition",
-            "fontWeight",
-            "lineHeight",
+            'fontFamily',
+            'fontFeatureSettings',
+            'fontKerning',
+            'fontLanguageOverride',
+            'fontSize',
+            'fontSizeAdjust',
+            'fontStretch',
+            'fontStyle',
+            'fontVariant',
+            'fontVariantAlternates',
+            'fontVariantCaps',
+            'fontVariantEastAsian',
+            'fontVariantLigatures',
+            'fontVariantNumeric',
+            'fontVariantPosition',
+            'fontWeight',
+            'lineHeight',
           ],
           fontVariant: [
-            "fontVariantAlternates",
-            "fontVariantCaps",
-            "fontVariantEastAsian",
-            "fontVariantLigatures",
-            "fontVariantNumeric",
-            "fontVariantPosition",
+            'fontVariantAlternates',
+            'fontVariantCaps',
+            'fontVariantEastAsian',
+            'fontVariantLigatures',
+            'fontVariantNumeric',
+            'fontVariantPosition',
           ],
-          gap: ["columnGap", "rowGap"],
+          gap: ['columnGap', 'rowGap'],
           grid: [
-            "gridAutoColumns",
-            "gridAutoFlow",
-            "gridAutoRows",
-            "gridTemplateAreas",
-            "gridTemplateColumns",
-            "gridTemplateRows",
+            'gridAutoColumns',
+            'gridAutoFlow',
+            'gridAutoRows',
+            'gridTemplateAreas',
+            'gridTemplateColumns',
+            'gridTemplateRows',
           ],
           gridArea: [
-            "gridColumnEnd",
-            "gridColumnStart",
-            "gridRowEnd",
-            "gridRowStart",
+            'gridColumnEnd',
+            'gridColumnStart',
+            'gridRowEnd',
+            'gridRowStart',
           ],
-          gridColumn: ["gridColumnEnd", "gridColumnStart"],
-          gridColumnGap: ["columnGap"],
-          gridGap: ["columnGap", "rowGap"],
-          gridRow: ["gridRowEnd", "gridRowStart"],
-          gridRowGap: ["rowGap"],
+          gridColumn: ['gridColumnEnd', 'gridColumnStart'],
+          gridColumnGap: ['columnGap'],
+          gridGap: ['columnGap', 'rowGap'],
+          gridRow: ['gridRowEnd', 'gridRowStart'],
+          gridRowGap: ['rowGap'],
           gridTemplate: [
-            "gridTemplateAreas",
-            "gridTemplateColumns",
-            "gridTemplateRows",
+            'gridTemplateAreas',
+            'gridTemplateColumns',
+            'gridTemplateRows',
           ],
-          listStyle: ["listStyleImage", "listStylePosition", "listStyleType"],
-          margin: ["marginBottom", "marginLeft", "marginRight", "marginTop"],
-          marker: ["markerEnd", "markerMid", "markerStart"],
+          listStyle: ['listStyleImage', 'listStylePosition', 'listStyleType'],
+          margin: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],
+          marker: ['markerEnd', 'markerMid', 'markerStart'],
           mask: [
-            "maskClip",
-            "maskComposite",
-            "maskImage",
-            "maskMode",
-            "maskOrigin",
-            "maskPositionX",
-            "maskPositionY",
-            "maskRepeat",
-            "maskSize",
+            'maskClip',
+            'maskComposite',
+            'maskImage',
+            'maskMode',
+            'maskOrigin',
+            'maskPositionX',
+            'maskPositionY',
+            'maskRepeat',
+            'maskSize',
           ],
-          maskPosition: ["maskPositionX", "maskPositionY"],
-          outline: ["outlineColor", "outlineStyle", "outlineWidth"],
-          overflow: ["overflowX", "overflowY"],
+          maskPosition: ['maskPositionX', 'maskPositionY'],
+          outline: ['outlineColor', 'outlineStyle', 'outlineWidth'],
+          overflow: ['overflowX', 'overflowY'],
           padding: [
-            "paddingBottom",
-            "paddingLeft",
-            "paddingRight",
-            "paddingTop",
+            'paddingBottom',
+            'paddingLeft',
+            'paddingRight',
+            'paddingTop',
           ],
-          placeContent: ["alignContent", "justifyContent"],
-          placeItems: ["alignItems", "justifyItems"],
-          placeSelf: ["alignSelf", "justifySelf"],
+          placeContent: ['alignContent', 'justifyContent'],
+          placeItems: ['alignItems', 'justifyItems'],
+          placeSelf: ['alignSelf', 'justifySelf'],
           textDecoration: [
-            "textDecorationColor",
-            "textDecorationLine",
-            "textDecorationStyle",
+            'textDecorationColor',
+            'textDecorationLine',
+            'textDecorationStyle',
           ],
-          textEmphasis: ["textEmphasisColor", "textEmphasisStyle"],
+          textEmphasis: ['textEmphasisColor', 'textEmphasisStyle'],
           transition: [
-            "transitionDelay",
-            "transitionDuration",
-            "transitionProperty",
-            "transitionTimingFunction",
+            'transitionDelay',
+            'transitionDuration',
+            'transitionProperty',
+            'transitionTimingFunction',
           ],
-          wordWrap: ["overflowWrap"],
+          wordWrap: ['overflowWrap'],
         };
         var isUnitlessNumber = {
           animationIterationCount: true,
@@ -2969,7 +2969,7 @@ var require_react_dom_development = __commonJS({
         function prefixKey(prefix2, key) {
           return prefix2 + key.charAt(0).toUpperCase() + key.substring(1);
         }
-        var prefixes = ["Webkit", "ms", "Moz", "O"];
+        var prefixes = ['Webkit', 'ms', 'Moz', 'O'];
         Object.keys(isUnitlessNumber).forEach(function (prop) {
           prefixes.forEach(function (prefix2) {
             isUnitlessNumber[prefixKey(prefix2, prop)] = isUnitlessNumber[prop];
@@ -2977,30 +2977,30 @@ var require_react_dom_development = __commonJS({
         });
         function dangerousStyleValue(name, value, isCustomProperty) {
           var isEmpty =
-            value == null || typeof value === "boolean" || value === "";
+            value == null || typeof value === 'boolean' || value === '';
           if (isEmpty) {
-            return "";
+            return '';
           }
           if (
             !isCustomProperty &&
-            typeof value === "number" &&
+            typeof value === 'number' &&
             value !== 0 &&
             !(isUnitlessNumber.hasOwnProperty(name) && isUnitlessNumber[name])
           ) {
-            return value + "px";
+            return value + 'px';
           }
           {
             checkCSSPropertyStringCoercion(value, name);
           }
-          return ("" + value).trim();
+          return ('' + value).trim();
         }
         var uppercasePattern = /([A-Z])/g;
         var msPattern = /^ms-/;
         function hyphenateStyleName(name) {
           return name
-            .replace(uppercasePattern, "-$1")
+            .replace(uppercasePattern, '-$1')
             .toLowerCase()
-            .replace(msPattern, "-ms-");
+            .replace(msPattern, '-ms-');
         }
         var warnValidStyle = function () {};
         {
@@ -3026,12 +3026,12 @@ var require_react_dom_development = __commonJS({
             }
             warnedStyleNames[name] = true;
             error(
-              "Unsupported style property %s. Did you mean %s?",
+              'Unsupported style property %s. Did you mean %s?',
               name,
               // As Andi Smith suggests
               // (http://www.andismith.com/blog/2012/02/modernizr-prefixed/), an `-ms` prefix
               // is converted to lowercase `ms`.
-              camelize(name.replace(msPattern$1, "ms-")),
+              camelize(name.replace(msPattern$1, 'ms-')),
             );
           };
           var warnBadVendoredStyleName = function (name) {
@@ -3043,7 +3043,7 @@ var require_react_dom_development = __commonJS({
             }
             warnedStyleNames[name] = true;
             error(
-              "Unsupported vendor-prefixed style property %s. Did you mean %s?",
+              'Unsupported vendor-prefixed style property %s. Did you mean %s?',
               name,
               name.charAt(0).toUpperCase() + name.slice(1),
             );
@@ -3059,7 +3059,7 @@ var require_react_dom_development = __commonJS({
             error(
               `Style property values shouldn't contain a semicolon. Try "%s: %s" instead.`,
               name,
-              value.replace(badStyleValueWithSemicolonPattern, ""),
+              value.replace(badStyleValueWithSemicolonPattern, ''),
             );
           };
           var warnStyleValueIsNaN = function (name, value) {
@@ -3068,7 +3068,7 @@ var require_react_dom_development = __commonJS({
             }
             warnedForNaNValue = true;
             error(
-              "`NaN` is an invalid value for the `%s` css style property.",
+              '`NaN` is an invalid value for the `%s` css style property.',
               name,
             );
           };
@@ -3078,19 +3078,19 @@ var require_react_dom_development = __commonJS({
             }
             warnedForInfinityValue = true;
             error(
-              "`Infinity` is an invalid value for the `%s` css style property.",
+              '`Infinity` is an invalid value for the `%s` css style property.',
               name,
             );
           };
           warnValidStyle = function (name, value) {
-            if (name.indexOf("-") > -1) {
+            if (name.indexOf('-') > -1) {
               warnHyphenatedStyleName(name);
             } else if (badVendoredStyleNamePattern.test(name)) {
               warnBadVendoredStyleName(name);
             } else if (badStyleValueWithSemicolonPattern.test(value)) {
               warnStyleValueWithSemicolon(name, value);
             }
-            if (typeof value === "number") {
+            if (typeof value === 'number') {
               if (isNaN(value)) {
                 warnStyleValueIsNaN(name, value);
               } else if (!isFinite(value)) {
@@ -3102,27 +3102,27 @@ var require_react_dom_development = __commonJS({
         var warnValidStyle$1 = warnValidStyle;
         function createDangerousStringForStyles(styles) {
           {
-            var serialized = "";
-            var delimiter = "";
+            var serialized = '';
+            var delimiter = '';
             for (var styleName in styles) {
               if (!styles.hasOwnProperty(styleName)) {
                 continue;
               }
               var styleValue = styles[styleName];
               if (styleValue != null) {
-                var isCustomProperty = styleName.indexOf("--") === 0;
+                var isCustomProperty = styleName.indexOf('--') === 0;
                 serialized +=
                   delimiter +
                   (isCustomProperty
                     ? styleName
                     : hyphenateStyleName(styleName)) +
-                  ":";
+                  ':';
                 serialized += dangerousStyleValue(
                   styleName,
                   styleValue,
                   isCustomProperty,
                 );
-                delimiter = ";";
+                delimiter = ';';
               }
             }
             return serialized || null;
@@ -3134,7 +3134,7 @@ var require_react_dom_development = __commonJS({
             if (!styles.hasOwnProperty(styleName)) {
               continue;
             }
-            var isCustomProperty = styleName.indexOf("--") === 0;
+            var isCustomProperty = styleName.indexOf('--') === 0;
             {
               if (!isCustomProperty) {
                 warnValidStyle$1(styleName, styles[styleName]);
@@ -3145,8 +3145,8 @@ var require_react_dom_development = __commonJS({
               styles[styleName],
               isCustomProperty,
             );
-            if (styleName === "float") {
-              styleName = "cssFloat";
+            if (styleName === 'float') {
+              styleName = 'cssFloat';
             }
             if (isCustomProperty) {
               style2.setProperty(styleName, styleValue);
@@ -3156,7 +3156,7 @@ var require_react_dom_development = __commonJS({
           }
         }
         function isValueEmpty(value) {
-          return value == null || typeof value === "boolean" || value === "";
+          return value == null || typeof value === 'boolean' || value === '';
         }
         function expandShorthandMap(styles) {
           var expanded = {};
@@ -3183,7 +3183,7 @@ var require_react_dom_development = __commonJS({
               var originalKey = expandedUpdates[key];
               var correctOriginalKey = expandedStyles[key];
               if (correctOriginalKey && originalKey !== correctOriginalKey) {
-                var warningKey = originalKey + "," + correctOriginalKey;
+                var warningKey = originalKey + ',' + correctOriginalKey;
                 if (warnedAbout[warningKey]) {
                   continue;
                 }
@@ -3191,8 +3191,8 @@ var require_react_dom_development = __commonJS({
                 error(
                   "%s a style property during rerender (%s) when a conflicting property is set (%s) can lead to styling bugs. To avoid this, don't mix shorthand and non-shorthand properties for the same value; instead, replace the shorthand with separate values.",
                   isValueEmpty(styleUpdates[originalKey])
-                    ? "Removing"
-                    : "Updating",
+                    ? 'Removing'
+                    : 'Updating',
                   originalKey,
                   correctOriginalKey,
                 );
@@ -3224,7 +3224,7 @@ var require_react_dom_development = __commonJS({
           },
           omittedCloseTags,
         );
-        var HTML = "__html";
+        var HTML = '__html';
         function assertValidProps(tag, props) {
           if (!props) {
             return;
@@ -3236,22 +3236,22 @@ var require_react_dom_development = __commonJS({
             ) {
               throw new Error(
                 tag +
-                  " is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.",
+                  ' is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.',
               );
             }
           }
           if (props.dangerouslySetInnerHTML != null) {
             if (props.children != null) {
               throw new Error(
-                "Can only set one of `children` or `props.dangerouslySetInnerHTML`.",
+                'Can only set one of `children` or `props.dangerouslySetInnerHTML`.',
               );
             }
             if (
-              typeof props.dangerouslySetInnerHTML !== "object" ||
+              typeof props.dangerouslySetInnerHTML !== 'object' ||
               !(HTML in props.dangerouslySetInnerHTML)
             ) {
               throw new Error(
-                "`props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`. Please visit https://reactjs.org/link/dangerously-set-inner-html for more information.",
+                '`props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`. Please visit https://reactjs.org/link/dangerously-set-inner-html for more information.',
               );
             }
           }
@@ -3262,29 +3262,29 @@ var require_react_dom_development = __commonJS({
               props.children != null
             ) {
               error(
-                "A component is `contentEditable` and contains `children` managed by React. It is now your responsibility to guarantee that none of those nodes are unexpectedly modified or duplicated. This is probably not intentional.",
+                'A component is `contentEditable` and contains `children` managed by React. It is now your responsibility to guarantee that none of those nodes are unexpectedly modified or duplicated. This is probably not intentional.',
               );
             }
           }
-          if (props.style != null && typeof props.style !== "object") {
+          if (props.style != null && typeof props.style !== 'object') {
             throw new Error(
               "The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + 'em'}} when using JSX.",
             );
           }
         }
         function isCustomComponent(tagName, props) {
-          if (tagName.indexOf("-") === -1) {
-            return typeof props.is === "string";
+          if (tagName.indexOf('-') === -1) {
+            return typeof props.is === 'string';
           }
           switch (tagName) {
-            case "annotation-xml":
-            case "color-profile":
-            case "font-face":
-            case "font-face-src":
-            case "font-face-uri":
-            case "font-face-format":
-            case "font-face-name":
-            case "missing-glyph":
+            case 'annotation-xml':
+            case 'color-profile':
+            case 'font-face':
+            case 'font-face-src':
+            case 'font-face-uri':
+            case 'font-face-format':
+            case 'font-face-name':
+            case 'missing-glyph':
               return false;
             default:
               return true;
@@ -3292,556 +3292,556 @@ var require_react_dom_development = __commonJS({
         }
         var possibleStandardNames = {
           // HTML
-          accept: "accept",
-          acceptcharset: "acceptCharset",
-          "accept-charset": "acceptCharset",
-          accesskey: "accessKey",
-          action: "action",
-          allowfullscreen: "allowFullScreen",
-          alt: "alt",
-          as: "as",
-          async: "async",
-          autocapitalize: "autoCapitalize",
-          autocomplete: "autoComplete",
-          autocorrect: "autoCorrect",
-          autofocus: "autoFocus",
-          autoplay: "autoPlay",
-          autosave: "autoSave",
-          capture: "capture",
-          cellpadding: "cellPadding",
-          cellspacing: "cellSpacing",
-          challenge: "challenge",
-          charset: "charSet",
-          checked: "checked",
-          children: "children",
-          cite: "cite",
-          class: "className",
-          classid: "classID",
-          classname: "className",
-          cols: "cols",
-          colspan: "colSpan",
-          content: "content",
-          contenteditable: "contentEditable",
-          contextmenu: "contextMenu",
-          controls: "controls",
-          controlslist: "controlsList",
-          coords: "coords",
-          crossorigin: "crossOrigin",
-          dangerouslysetinnerhtml: "dangerouslySetInnerHTML",
-          data: "data",
-          datetime: "dateTime",
-          default: "default",
-          defaultchecked: "defaultChecked",
-          defaultvalue: "defaultValue",
-          defer: "defer",
-          dir: "dir",
-          disabled: "disabled",
-          disablepictureinpicture: "disablePictureInPicture",
-          disableremoteplayback: "disableRemotePlayback",
-          download: "download",
-          draggable: "draggable",
-          enctype: "encType",
-          enterkeyhint: "enterKeyHint",
-          for: "htmlFor",
-          form: "form",
-          formmethod: "formMethod",
-          formaction: "formAction",
-          formenctype: "formEncType",
-          formnovalidate: "formNoValidate",
-          formtarget: "formTarget",
-          frameborder: "frameBorder",
-          headers: "headers",
-          height: "height",
-          hidden: "hidden",
-          high: "high",
-          href: "href",
-          hreflang: "hrefLang",
-          htmlfor: "htmlFor",
-          httpequiv: "httpEquiv",
-          "http-equiv": "httpEquiv",
-          icon: "icon",
-          id: "id",
-          imagesizes: "imageSizes",
-          imagesrcset: "imageSrcSet",
-          innerhtml: "innerHTML",
-          inputmode: "inputMode",
-          integrity: "integrity",
-          is: "is",
-          itemid: "itemID",
-          itemprop: "itemProp",
-          itemref: "itemRef",
-          itemscope: "itemScope",
-          itemtype: "itemType",
-          keyparams: "keyParams",
-          keytype: "keyType",
-          kind: "kind",
-          label: "label",
-          lang: "lang",
-          list: "list",
-          loop: "loop",
-          low: "low",
-          manifest: "manifest",
-          marginwidth: "marginWidth",
-          marginheight: "marginHeight",
-          max: "max",
-          maxlength: "maxLength",
-          media: "media",
-          mediagroup: "mediaGroup",
-          method: "method",
-          min: "min",
-          minlength: "minLength",
-          multiple: "multiple",
-          muted: "muted",
-          name: "name",
-          nomodule: "noModule",
-          nonce: "nonce",
-          novalidate: "noValidate",
-          open: "open",
-          optimum: "optimum",
-          pattern: "pattern",
-          placeholder: "placeholder",
-          playsinline: "playsInline",
-          poster: "poster",
-          preload: "preload",
-          profile: "profile",
-          radiogroup: "radioGroup",
-          readonly: "readOnly",
-          referrerpolicy: "referrerPolicy",
-          rel: "rel",
-          required: "required",
-          reversed: "reversed",
-          role: "role",
-          rows: "rows",
-          rowspan: "rowSpan",
-          sandbox: "sandbox",
-          scope: "scope",
-          scoped: "scoped",
-          scrolling: "scrolling",
-          seamless: "seamless",
-          selected: "selected",
-          shape: "shape",
-          size: "size",
-          sizes: "sizes",
-          span: "span",
-          spellcheck: "spellCheck",
-          src: "src",
-          srcdoc: "srcDoc",
-          srclang: "srcLang",
-          srcset: "srcSet",
-          start: "start",
-          step: "step",
-          style: "style",
-          summary: "summary",
-          tabindex: "tabIndex",
-          target: "target",
-          title: "title",
-          type: "type",
-          usemap: "useMap",
-          value: "value",
-          width: "width",
-          wmode: "wmode",
-          wrap: "wrap",
+          accept: 'accept',
+          acceptcharset: 'acceptCharset',
+          'accept-charset': 'acceptCharset',
+          accesskey: 'accessKey',
+          action: 'action',
+          allowfullscreen: 'allowFullScreen',
+          alt: 'alt',
+          as: 'as',
+          async: 'async',
+          autocapitalize: 'autoCapitalize',
+          autocomplete: 'autoComplete',
+          autocorrect: 'autoCorrect',
+          autofocus: 'autoFocus',
+          autoplay: 'autoPlay',
+          autosave: 'autoSave',
+          capture: 'capture',
+          cellpadding: 'cellPadding',
+          cellspacing: 'cellSpacing',
+          challenge: 'challenge',
+          charset: 'charSet',
+          checked: 'checked',
+          children: 'children',
+          cite: 'cite',
+          class: 'className',
+          classid: 'classID',
+          classname: 'className',
+          cols: 'cols',
+          colspan: 'colSpan',
+          content: 'content',
+          contenteditable: 'contentEditable',
+          contextmenu: 'contextMenu',
+          controls: 'controls',
+          controlslist: 'controlsList',
+          coords: 'coords',
+          crossorigin: 'crossOrigin',
+          dangerouslysetinnerhtml: 'dangerouslySetInnerHTML',
+          data: 'data',
+          datetime: 'dateTime',
+          default: 'default',
+          defaultchecked: 'defaultChecked',
+          defaultvalue: 'defaultValue',
+          defer: 'defer',
+          dir: 'dir',
+          disabled: 'disabled',
+          disablepictureinpicture: 'disablePictureInPicture',
+          disableremoteplayback: 'disableRemotePlayback',
+          download: 'download',
+          draggable: 'draggable',
+          enctype: 'encType',
+          enterkeyhint: 'enterKeyHint',
+          for: 'htmlFor',
+          form: 'form',
+          formmethod: 'formMethod',
+          formaction: 'formAction',
+          formenctype: 'formEncType',
+          formnovalidate: 'formNoValidate',
+          formtarget: 'formTarget',
+          frameborder: 'frameBorder',
+          headers: 'headers',
+          height: 'height',
+          hidden: 'hidden',
+          high: 'high',
+          href: 'href',
+          hreflang: 'hrefLang',
+          htmlfor: 'htmlFor',
+          httpequiv: 'httpEquiv',
+          'http-equiv': 'httpEquiv',
+          icon: 'icon',
+          id: 'id',
+          imagesizes: 'imageSizes',
+          imagesrcset: 'imageSrcSet',
+          innerhtml: 'innerHTML',
+          inputmode: 'inputMode',
+          integrity: 'integrity',
+          is: 'is',
+          itemid: 'itemID',
+          itemprop: 'itemProp',
+          itemref: 'itemRef',
+          itemscope: 'itemScope',
+          itemtype: 'itemType',
+          keyparams: 'keyParams',
+          keytype: 'keyType',
+          kind: 'kind',
+          label: 'label',
+          lang: 'lang',
+          list: 'list',
+          loop: 'loop',
+          low: 'low',
+          manifest: 'manifest',
+          marginwidth: 'marginWidth',
+          marginheight: 'marginHeight',
+          max: 'max',
+          maxlength: 'maxLength',
+          media: 'media',
+          mediagroup: 'mediaGroup',
+          method: 'method',
+          min: 'min',
+          minlength: 'minLength',
+          multiple: 'multiple',
+          muted: 'muted',
+          name: 'name',
+          nomodule: 'noModule',
+          nonce: 'nonce',
+          novalidate: 'noValidate',
+          open: 'open',
+          optimum: 'optimum',
+          pattern: 'pattern',
+          placeholder: 'placeholder',
+          playsinline: 'playsInline',
+          poster: 'poster',
+          preload: 'preload',
+          profile: 'profile',
+          radiogroup: 'radioGroup',
+          readonly: 'readOnly',
+          referrerpolicy: 'referrerPolicy',
+          rel: 'rel',
+          required: 'required',
+          reversed: 'reversed',
+          role: 'role',
+          rows: 'rows',
+          rowspan: 'rowSpan',
+          sandbox: 'sandbox',
+          scope: 'scope',
+          scoped: 'scoped',
+          scrolling: 'scrolling',
+          seamless: 'seamless',
+          selected: 'selected',
+          shape: 'shape',
+          size: 'size',
+          sizes: 'sizes',
+          span: 'span',
+          spellcheck: 'spellCheck',
+          src: 'src',
+          srcdoc: 'srcDoc',
+          srclang: 'srcLang',
+          srcset: 'srcSet',
+          start: 'start',
+          step: 'step',
+          style: 'style',
+          summary: 'summary',
+          tabindex: 'tabIndex',
+          target: 'target',
+          title: 'title',
+          type: 'type',
+          usemap: 'useMap',
+          value: 'value',
+          width: 'width',
+          wmode: 'wmode',
+          wrap: 'wrap',
           // SVG
-          about: "about",
-          accentheight: "accentHeight",
-          "accent-height": "accentHeight",
-          accumulate: "accumulate",
-          additive: "additive",
-          alignmentbaseline: "alignmentBaseline",
-          "alignment-baseline": "alignmentBaseline",
-          allowreorder: "allowReorder",
-          alphabetic: "alphabetic",
-          amplitude: "amplitude",
-          arabicform: "arabicForm",
-          "arabic-form": "arabicForm",
-          ascent: "ascent",
-          attributename: "attributeName",
-          attributetype: "attributeType",
-          autoreverse: "autoReverse",
-          azimuth: "azimuth",
-          basefrequency: "baseFrequency",
-          baselineshift: "baselineShift",
-          "baseline-shift": "baselineShift",
-          baseprofile: "baseProfile",
-          bbox: "bbox",
-          begin: "begin",
-          bias: "bias",
-          by: "by",
-          calcmode: "calcMode",
-          capheight: "capHeight",
-          "cap-height": "capHeight",
-          clip: "clip",
-          clippath: "clipPath",
-          "clip-path": "clipPath",
-          clippathunits: "clipPathUnits",
-          cliprule: "clipRule",
-          "clip-rule": "clipRule",
-          color: "color",
-          colorinterpolation: "colorInterpolation",
-          "color-interpolation": "colorInterpolation",
-          colorinterpolationfilters: "colorInterpolationFilters",
-          "color-interpolation-filters": "colorInterpolationFilters",
-          colorprofile: "colorProfile",
-          "color-profile": "colorProfile",
-          colorrendering: "colorRendering",
-          "color-rendering": "colorRendering",
-          contentscripttype: "contentScriptType",
-          contentstyletype: "contentStyleType",
-          cursor: "cursor",
-          cx: "cx",
-          cy: "cy",
-          d: "d",
-          datatype: "datatype",
-          decelerate: "decelerate",
-          descent: "descent",
-          diffuseconstant: "diffuseConstant",
-          direction: "direction",
-          display: "display",
-          divisor: "divisor",
-          dominantbaseline: "dominantBaseline",
-          "dominant-baseline": "dominantBaseline",
-          dur: "dur",
-          dx: "dx",
-          dy: "dy",
-          edgemode: "edgeMode",
-          elevation: "elevation",
-          enablebackground: "enableBackground",
-          "enable-background": "enableBackground",
-          end: "end",
-          exponent: "exponent",
-          externalresourcesrequired: "externalResourcesRequired",
-          fill: "fill",
-          fillopacity: "fillOpacity",
-          "fill-opacity": "fillOpacity",
-          fillrule: "fillRule",
-          "fill-rule": "fillRule",
-          filter: "filter",
-          filterres: "filterRes",
-          filterunits: "filterUnits",
-          floodopacity: "floodOpacity",
-          "flood-opacity": "floodOpacity",
-          floodcolor: "floodColor",
-          "flood-color": "floodColor",
-          focusable: "focusable",
-          fontfamily: "fontFamily",
-          "font-family": "fontFamily",
-          fontsize: "fontSize",
-          "font-size": "fontSize",
-          fontsizeadjust: "fontSizeAdjust",
-          "font-size-adjust": "fontSizeAdjust",
-          fontstretch: "fontStretch",
-          "font-stretch": "fontStretch",
-          fontstyle: "fontStyle",
-          "font-style": "fontStyle",
-          fontvariant: "fontVariant",
-          "font-variant": "fontVariant",
-          fontweight: "fontWeight",
-          "font-weight": "fontWeight",
-          format: "format",
-          from: "from",
-          fx: "fx",
-          fy: "fy",
-          g1: "g1",
-          g2: "g2",
-          glyphname: "glyphName",
-          "glyph-name": "glyphName",
-          glyphorientationhorizontal: "glyphOrientationHorizontal",
-          "glyph-orientation-horizontal": "glyphOrientationHorizontal",
-          glyphorientationvertical: "glyphOrientationVertical",
-          "glyph-orientation-vertical": "glyphOrientationVertical",
-          glyphref: "glyphRef",
-          gradienttransform: "gradientTransform",
-          gradientunits: "gradientUnits",
-          hanging: "hanging",
-          horizadvx: "horizAdvX",
-          "horiz-adv-x": "horizAdvX",
-          horizoriginx: "horizOriginX",
-          "horiz-origin-x": "horizOriginX",
-          ideographic: "ideographic",
-          imagerendering: "imageRendering",
-          "image-rendering": "imageRendering",
-          in2: "in2",
-          in: "in",
-          inlist: "inlist",
-          intercept: "intercept",
-          k1: "k1",
-          k2: "k2",
-          k3: "k3",
-          k4: "k4",
-          k: "k",
-          kernelmatrix: "kernelMatrix",
-          kernelunitlength: "kernelUnitLength",
-          kerning: "kerning",
-          keypoints: "keyPoints",
-          keysplines: "keySplines",
-          keytimes: "keyTimes",
-          lengthadjust: "lengthAdjust",
-          letterspacing: "letterSpacing",
-          "letter-spacing": "letterSpacing",
-          lightingcolor: "lightingColor",
-          "lighting-color": "lightingColor",
-          limitingconeangle: "limitingConeAngle",
-          local: "local",
-          markerend: "markerEnd",
-          "marker-end": "markerEnd",
-          markerheight: "markerHeight",
-          markermid: "markerMid",
-          "marker-mid": "markerMid",
-          markerstart: "markerStart",
-          "marker-start": "markerStart",
-          markerunits: "markerUnits",
-          markerwidth: "markerWidth",
-          mask: "mask",
-          maskcontentunits: "maskContentUnits",
-          maskunits: "maskUnits",
-          mathematical: "mathematical",
-          mode: "mode",
-          numoctaves: "numOctaves",
-          offset: "offset",
-          opacity: "opacity",
-          operator: "operator",
-          order: "order",
-          orient: "orient",
-          orientation: "orientation",
-          origin: "origin",
-          overflow: "overflow",
-          overlineposition: "overlinePosition",
-          "overline-position": "overlinePosition",
-          overlinethickness: "overlineThickness",
-          "overline-thickness": "overlineThickness",
-          paintorder: "paintOrder",
-          "paint-order": "paintOrder",
-          panose1: "panose1",
-          "panose-1": "panose1",
-          pathlength: "pathLength",
-          patterncontentunits: "patternContentUnits",
-          patterntransform: "patternTransform",
-          patternunits: "patternUnits",
-          pointerevents: "pointerEvents",
-          "pointer-events": "pointerEvents",
-          points: "points",
-          pointsatx: "pointsAtX",
-          pointsaty: "pointsAtY",
-          pointsatz: "pointsAtZ",
-          prefix: "prefix",
-          preservealpha: "preserveAlpha",
-          preserveaspectratio: "preserveAspectRatio",
-          primitiveunits: "primitiveUnits",
-          property: "property",
-          r: "r",
-          radius: "radius",
-          refx: "refX",
-          refy: "refY",
-          renderingintent: "renderingIntent",
-          "rendering-intent": "renderingIntent",
-          repeatcount: "repeatCount",
-          repeatdur: "repeatDur",
-          requiredextensions: "requiredExtensions",
-          requiredfeatures: "requiredFeatures",
-          resource: "resource",
-          restart: "restart",
-          result: "result",
-          results: "results",
-          rotate: "rotate",
-          rx: "rx",
-          ry: "ry",
-          scale: "scale",
-          security: "security",
-          seed: "seed",
-          shaperendering: "shapeRendering",
-          "shape-rendering": "shapeRendering",
-          slope: "slope",
-          spacing: "spacing",
-          specularconstant: "specularConstant",
-          specularexponent: "specularExponent",
-          speed: "speed",
-          spreadmethod: "spreadMethod",
-          startoffset: "startOffset",
-          stddeviation: "stdDeviation",
-          stemh: "stemh",
-          stemv: "stemv",
-          stitchtiles: "stitchTiles",
-          stopcolor: "stopColor",
-          "stop-color": "stopColor",
-          stopopacity: "stopOpacity",
-          "stop-opacity": "stopOpacity",
-          strikethroughposition: "strikethroughPosition",
-          "strikethrough-position": "strikethroughPosition",
-          strikethroughthickness: "strikethroughThickness",
-          "strikethrough-thickness": "strikethroughThickness",
-          string: "string",
-          stroke: "stroke",
-          strokedasharray: "strokeDasharray",
-          "stroke-dasharray": "strokeDasharray",
-          strokedashoffset: "strokeDashoffset",
-          "stroke-dashoffset": "strokeDashoffset",
-          strokelinecap: "strokeLinecap",
-          "stroke-linecap": "strokeLinecap",
-          strokelinejoin: "strokeLinejoin",
-          "stroke-linejoin": "strokeLinejoin",
-          strokemiterlimit: "strokeMiterlimit",
-          "stroke-miterlimit": "strokeMiterlimit",
-          strokewidth: "strokeWidth",
-          "stroke-width": "strokeWidth",
-          strokeopacity: "strokeOpacity",
-          "stroke-opacity": "strokeOpacity",
-          suppresscontenteditablewarning: "suppressContentEditableWarning",
-          suppresshydrationwarning: "suppressHydrationWarning",
-          surfacescale: "surfaceScale",
-          systemlanguage: "systemLanguage",
-          tablevalues: "tableValues",
-          targetx: "targetX",
-          targety: "targetY",
-          textanchor: "textAnchor",
-          "text-anchor": "textAnchor",
-          textdecoration: "textDecoration",
-          "text-decoration": "textDecoration",
-          textlength: "textLength",
-          textrendering: "textRendering",
-          "text-rendering": "textRendering",
-          to: "to",
-          transform: "transform",
-          typeof: "typeof",
-          u1: "u1",
-          u2: "u2",
-          underlineposition: "underlinePosition",
-          "underline-position": "underlinePosition",
-          underlinethickness: "underlineThickness",
-          "underline-thickness": "underlineThickness",
-          unicode: "unicode",
-          unicodebidi: "unicodeBidi",
-          "unicode-bidi": "unicodeBidi",
-          unicoderange: "unicodeRange",
-          "unicode-range": "unicodeRange",
-          unitsperem: "unitsPerEm",
-          "units-per-em": "unitsPerEm",
-          unselectable: "unselectable",
-          valphabetic: "vAlphabetic",
-          "v-alphabetic": "vAlphabetic",
-          values: "values",
-          vectoreffect: "vectorEffect",
-          "vector-effect": "vectorEffect",
-          version: "version",
-          vertadvy: "vertAdvY",
-          "vert-adv-y": "vertAdvY",
-          vertoriginx: "vertOriginX",
-          "vert-origin-x": "vertOriginX",
-          vertoriginy: "vertOriginY",
-          "vert-origin-y": "vertOriginY",
-          vhanging: "vHanging",
-          "v-hanging": "vHanging",
-          videographic: "vIdeographic",
-          "v-ideographic": "vIdeographic",
-          viewbox: "viewBox",
-          viewtarget: "viewTarget",
-          visibility: "visibility",
-          vmathematical: "vMathematical",
-          "v-mathematical": "vMathematical",
-          vocab: "vocab",
-          widths: "widths",
-          wordspacing: "wordSpacing",
-          "word-spacing": "wordSpacing",
-          writingmode: "writingMode",
-          "writing-mode": "writingMode",
-          x1: "x1",
-          x2: "x2",
-          x: "x",
-          xchannelselector: "xChannelSelector",
-          xheight: "xHeight",
-          "x-height": "xHeight",
-          xlinkactuate: "xlinkActuate",
-          "xlink:actuate": "xlinkActuate",
-          xlinkarcrole: "xlinkArcrole",
-          "xlink:arcrole": "xlinkArcrole",
-          xlinkhref: "xlinkHref",
-          "xlink:href": "xlinkHref",
-          xlinkrole: "xlinkRole",
-          "xlink:role": "xlinkRole",
-          xlinkshow: "xlinkShow",
-          "xlink:show": "xlinkShow",
-          xlinktitle: "xlinkTitle",
-          "xlink:title": "xlinkTitle",
-          xlinktype: "xlinkType",
-          "xlink:type": "xlinkType",
-          xmlbase: "xmlBase",
-          "xml:base": "xmlBase",
-          xmllang: "xmlLang",
-          "xml:lang": "xmlLang",
-          xmlns: "xmlns",
-          "xml:space": "xmlSpace",
-          xmlnsxlink: "xmlnsXlink",
-          "xmlns:xlink": "xmlnsXlink",
-          xmlspace: "xmlSpace",
-          y1: "y1",
-          y2: "y2",
-          y: "y",
-          ychannelselector: "yChannelSelector",
-          z: "z",
-          zoomandpan: "zoomAndPan",
+          about: 'about',
+          accentheight: 'accentHeight',
+          'accent-height': 'accentHeight',
+          accumulate: 'accumulate',
+          additive: 'additive',
+          alignmentbaseline: 'alignmentBaseline',
+          'alignment-baseline': 'alignmentBaseline',
+          allowreorder: 'allowReorder',
+          alphabetic: 'alphabetic',
+          amplitude: 'amplitude',
+          arabicform: 'arabicForm',
+          'arabic-form': 'arabicForm',
+          ascent: 'ascent',
+          attributename: 'attributeName',
+          attributetype: 'attributeType',
+          autoreverse: 'autoReverse',
+          azimuth: 'azimuth',
+          basefrequency: 'baseFrequency',
+          baselineshift: 'baselineShift',
+          'baseline-shift': 'baselineShift',
+          baseprofile: 'baseProfile',
+          bbox: 'bbox',
+          begin: 'begin',
+          bias: 'bias',
+          by: 'by',
+          calcmode: 'calcMode',
+          capheight: 'capHeight',
+          'cap-height': 'capHeight',
+          clip: 'clip',
+          clippath: 'clipPath',
+          'clip-path': 'clipPath',
+          clippathunits: 'clipPathUnits',
+          cliprule: 'clipRule',
+          'clip-rule': 'clipRule',
+          color: 'color',
+          colorinterpolation: 'colorInterpolation',
+          'color-interpolation': 'colorInterpolation',
+          colorinterpolationfilters: 'colorInterpolationFilters',
+          'color-interpolation-filters': 'colorInterpolationFilters',
+          colorprofile: 'colorProfile',
+          'color-profile': 'colorProfile',
+          colorrendering: 'colorRendering',
+          'color-rendering': 'colorRendering',
+          contentscripttype: 'contentScriptType',
+          contentstyletype: 'contentStyleType',
+          cursor: 'cursor',
+          cx: 'cx',
+          cy: 'cy',
+          d: 'd',
+          datatype: 'datatype',
+          decelerate: 'decelerate',
+          descent: 'descent',
+          diffuseconstant: 'diffuseConstant',
+          direction: 'direction',
+          display: 'display',
+          divisor: 'divisor',
+          dominantbaseline: 'dominantBaseline',
+          'dominant-baseline': 'dominantBaseline',
+          dur: 'dur',
+          dx: 'dx',
+          dy: 'dy',
+          edgemode: 'edgeMode',
+          elevation: 'elevation',
+          enablebackground: 'enableBackground',
+          'enable-background': 'enableBackground',
+          end: 'end',
+          exponent: 'exponent',
+          externalresourcesrequired: 'externalResourcesRequired',
+          fill: 'fill',
+          fillopacity: 'fillOpacity',
+          'fill-opacity': 'fillOpacity',
+          fillrule: 'fillRule',
+          'fill-rule': 'fillRule',
+          filter: 'filter',
+          filterres: 'filterRes',
+          filterunits: 'filterUnits',
+          floodopacity: 'floodOpacity',
+          'flood-opacity': 'floodOpacity',
+          floodcolor: 'floodColor',
+          'flood-color': 'floodColor',
+          focusable: 'focusable',
+          fontfamily: 'fontFamily',
+          'font-family': 'fontFamily',
+          fontsize: 'fontSize',
+          'font-size': 'fontSize',
+          fontsizeadjust: 'fontSizeAdjust',
+          'font-size-adjust': 'fontSizeAdjust',
+          fontstretch: 'fontStretch',
+          'font-stretch': 'fontStretch',
+          fontstyle: 'fontStyle',
+          'font-style': 'fontStyle',
+          fontvariant: 'fontVariant',
+          'font-variant': 'fontVariant',
+          fontweight: 'fontWeight',
+          'font-weight': 'fontWeight',
+          format: 'format',
+          from: 'from',
+          fx: 'fx',
+          fy: 'fy',
+          g1: 'g1',
+          g2: 'g2',
+          glyphname: 'glyphName',
+          'glyph-name': 'glyphName',
+          glyphorientationhorizontal: 'glyphOrientationHorizontal',
+          'glyph-orientation-horizontal': 'glyphOrientationHorizontal',
+          glyphorientationvertical: 'glyphOrientationVertical',
+          'glyph-orientation-vertical': 'glyphOrientationVertical',
+          glyphref: 'glyphRef',
+          gradienttransform: 'gradientTransform',
+          gradientunits: 'gradientUnits',
+          hanging: 'hanging',
+          horizadvx: 'horizAdvX',
+          'horiz-adv-x': 'horizAdvX',
+          horizoriginx: 'horizOriginX',
+          'horiz-origin-x': 'horizOriginX',
+          ideographic: 'ideographic',
+          imagerendering: 'imageRendering',
+          'image-rendering': 'imageRendering',
+          in2: 'in2',
+          in: 'in',
+          inlist: 'inlist',
+          intercept: 'intercept',
+          k1: 'k1',
+          k2: 'k2',
+          k3: 'k3',
+          k4: 'k4',
+          k: 'k',
+          kernelmatrix: 'kernelMatrix',
+          kernelunitlength: 'kernelUnitLength',
+          kerning: 'kerning',
+          keypoints: 'keyPoints',
+          keysplines: 'keySplines',
+          keytimes: 'keyTimes',
+          lengthadjust: 'lengthAdjust',
+          letterspacing: 'letterSpacing',
+          'letter-spacing': 'letterSpacing',
+          lightingcolor: 'lightingColor',
+          'lighting-color': 'lightingColor',
+          limitingconeangle: 'limitingConeAngle',
+          local: 'local',
+          markerend: 'markerEnd',
+          'marker-end': 'markerEnd',
+          markerheight: 'markerHeight',
+          markermid: 'markerMid',
+          'marker-mid': 'markerMid',
+          markerstart: 'markerStart',
+          'marker-start': 'markerStart',
+          markerunits: 'markerUnits',
+          markerwidth: 'markerWidth',
+          mask: 'mask',
+          maskcontentunits: 'maskContentUnits',
+          maskunits: 'maskUnits',
+          mathematical: 'mathematical',
+          mode: 'mode',
+          numoctaves: 'numOctaves',
+          offset: 'offset',
+          opacity: 'opacity',
+          operator: 'operator',
+          order: 'order',
+          orient: 'orient',
+          orientation: 'orientation',
+          origin: 'origin',
+          overflow: 'overflow',
+          overlineposition: 'overlinePosition',
+          'overline-position': 'overlinePosition',
+          overlinethickness: 'overlineThickness',
+          'overline-thickness': 'overlineThickness',
+          paintorder: 'paintOrder',
+          'paint-order': 'paintOrder',
+          panose1: 'panose1',
+          'panose-1': 'panose1',
+          pathlength: 'pathLength',
+          patterncontentunits: 'patternContentUnits',
+          patterntransform: 'patternTransform',
+          patternunits: 'patternUnits',
+          pointerevents: 'pointerEvents',
+          'pointer-events': 'pointerEvents',
+          points: 'points',
+          pointsatx: 'pointsAtX',
+          pointsaty: 'pointsAtY',
+          pointsatz: 'pointsAtZ',
+          prefix: 'prefix',
+          preservealpha: 'preserveAlpha',
+          preserveaspectratio: 'preserveAspectRatio',
+          primitiveunits: 'primitiveUnits',
+          property: 'property',
+          r: 'r',
+          radius: 'radius',
+          refx: 'refX',
+          refy: 'refY',
+          renderingintent: 'renderingIntent',
+          'rendering-intent': 'renderingIntent',
+          repeatcount: 'repeatCount',
+          repeatdur: 'repeatDur',
+          requiredextensions: 'requiredExtensions',
+          requiredfeatures: 'requiredFeatures',
+          resource: 'resource',
+          restart: 'restart',
+          result: 'result',
+          results: 'results',
+          rotate: 'rotate',
+          rx: 'rx',
+          ry: 'ry',
+          scale: 'scale',
+          security: 'security',
+          seed: 'seed',
+          shaperendering: 'shapeRendering',
+          'shape-rendering': 'shapeRendering',
+          slope: 'slope',
+          spacing: 'spacing',
+          specularconstant: 'specularConstant',
+          specularexponent: 'specularExponent',
+          speed: 'speed',
+          spreadmethod: 'spreadMethod',
+          startoffset: 'startOffset',
+          stddeviation: 'stdDeviation',
+          stemh: 'stemh',
+          stemv: 'stemv',
+          stitchtiles: 'stitchTiles',
+          stopcolor: 'stopColor',
+          'stop-color': 'stopColor',
+          stopopacity: 'stopOpacity',
+          'stop-opacity': 'stopOpacity',
+          strikethroughposition: 'strikethroughPosition',
+          'strikethrough-position': 'strikethroughPosition',
+          strikethroughthickness: 'strikethroughThickness',
+          'strikethrough-thickness': 'strikethroughThickness',
+          string: 'string',
+          stroke: 'stroke',
+          strokedasharray: 'strokeDasharray',
+          'stroke-dasharray': 'strokeDasharray',
+          strokedashoffset: 'strokeDashoffset',
+          'stroke-dashoffset': 'strokeDashoffset',
+          strokelinecap: 'strokeLinecap',
+          'stroke-linecap': 'strokeLinecap',
+          strokelinejoin: 'strokeLinejoin',
+          'stroke-linejoin': 'strokeLinejoin',
+          strokemiterlimit: 'strokeMiterlimit',
+          'stroke-miterlimit': 'strokeMiterlimit',
+          strokewidth: 'strokeWidth',
+          'stroke-width': 'strokeWidth',
+          strokeopacity: 'strokeOpacity',
+          'stroke-opacity': 'strokeOpacity',
+          suppresscontenteditablewarning: 'suppressContentEditableWarning',
+          suppresshydrationwarning: 'suppressHydrationWarning',
+          surfacescale: 'surfaceScale',
+          systemlanguage: 'systemLanguage',
+          tablevalues: 'tableValues',
+          targetx: 'targetX',
+          targety: 'targetY',
+          textanchor: 'textAnchor',
+          'text-anchor': 'textAnchor',
+          textdecoration: 'textDecoration',
+          'text-decoration': 'textDecoration',
+          textlength: 'textLength',
+          textrendering: 'textRendering',
+          'text-rendering': 'textRendering',
+          to: 'to',
+          transform: 'transform',
+          typeof: 'typeof',
+          u1: 'u1',
+          u2: 'u2',
+          underlineposition: 'underlinePosition',
+          'underline-position': 'underlinePosition',
+          underlinethickness: 'underlineThickness',
+          'underline-thickness': 'underlineThickness',
+          unicode: 'unicode',
+          unicodebidi: 'unicodeBidi',
+          'unicode-bidi': 'unicodeBidi',
+          unicoderange: 'unicodeRange',
+          'unicode-range': 'unicodeRange',
+          unitsperem: 'unitsPerEm',
+          'units-per-em': 'unitsPerEm',
+          unselectable: 'unselectable',
+          valphabetic: 'vAlphabetic',
+          'v-alphabetic': 'vAlphabetic',
+          values: 'values',
+          vectoreffect: 'vectorEffect',
+          'vector-effect': 'vectorEffect',
+          version: 'version',
+          vertadvy: 'vertAdvY',
+          'vert-adv-y': 'vertAdvY',
+          vertoriginx: 'vertOriginX',
+          'vert-origin-x': 'vertOriginX',
+          vertoriginy: 'vertOriginY',
+          'vert-origin-y': 'vertOriginY',
+          vhanging: 'vHanging',
+          'v-hanging': 'vHanging',
+          videographic: 'vIdeographic',
+          'v-ideographic': 'vIdeographic',
+          viewbox: 'viewBox',
+          viewtarget: 'viewTarget',
+          visibility: 'visibility',
+          vmathematical: 'vMathematical',
+          'v-mathematical': 'vMathematical',
+          vocab: 'vocab',
+          widths: 'widths',
+          wordspacing: 'wordSpacing',
+          'word-spacing': 'wordSpacing',
+          writingmode: 'writingMode',
+          'writing-mode': 'writingMode',
+          x1: 'x1',
+          x2: 'x2',
+          x: 'x',
+          xchannelselector: 'xChannelSelector',
+          xheight: 'xHeight',
+          'x-height': 'xHeight',
+          xlinkactuate: 'xlinkActuate',
+          'xlink:actuate': 'xlinkActuate',
+          xlinkarcrole: 'xlinkArcrole',
+          'xlink:arcrole': 'xlinkArcrole',
+          xlinkhref: 'xlinkHref',
+          'xlink:href': 'xlinkHref',
+          xlinkrole: 'xlinkRole',
+          'xlink:role': 'xlinkRole',
+          xlinkshow: 'xlinkShow',
+          'xlink:show': 'xlinkShow',
+          xlinktitle: 'xlinkTitle',
+          'xlink:title': 'xlinkTitle',
+          xlinktype: 'xlinkType',
+          'xlink:type': 'xlinkType',
+          xmlbase: 'xmlBase',
+          'xml:base': 'xmlBase',
+          xmllang: 'xmlLang',
+          'xml:lang': 'xmlLang',
+          xmlns: 'xmlns',
+          'xml:space': 'xmlSpace',
+          xmlnsxlink: 'xmlnsXlink',
+          'xmlns:xlink': 'xmlnsXlink',
+          xmlspace: 'xmlSpace',
+          y1: 'y1',
+          y2: 'y2',
+          y: 'y',
+          ychannelselector: 'yChannelSelector',
+          z: 'z',
+          zoomandpan: 'zoomAndPan',
         };
         var ariaProperties = {
-          "aria-current": 0,
+          'aria-current': 0,
           // state
-          "aria-description": 0,
-          "aria-details": 0,
-          "aria-disabled": 0,
+          'aria-description': 0,
+          'aria-details': 0,
+          'aria-disabled': 0,
           // state
-          "aria-hidden": 0,
+          'aria-hidden': 0,
           // state
-          "aria-invalid": 0,
+          'aria-invalid': 0,
           // state
-          "aria-keyshortcuts": 0,
-          "aria-label": 0,
-          "aria-roledescription": 0,
+          'aria-keyshortcuts': 0,
+          'aria-label': 0,
+          'aria-roledescription': 0,
           // Widget Attributes
-          "aria-autocomplete": 0,
-          "aria-checked": 0,
-          "aria-expanded": 0,
-          "aria-haspopup": 0,
-          "aria-level": 0,
-          "aria-modal": 0,
-          "aria-multiline": 0,
-          "aria-multiselectable": 0,
-          "aria-orientation": 0,
-          "aria-placeholder": 0,
-          "aria-pressed": 0,
-          "aria-readonly": 0,
-          "aria-required": 0,
-          "aria-selected": 0,
-          "aria-sort": 0,
-          "aria-valuemax": 0,
-          "aria-valuemin": 0,
-          "aria-valuenow": 0,
-          "aria-valuetext": 0,
+          'aria-autocomplete': 0,
+          'aria-checked': 0,
+          'aria-expanded': 0,
+          'aria-haspopup': 0,
+          'aria-level': 0,
+          'aria-modal': 0,
+          'aria-multiline': 0,
+          'aria-multiselectable': 0,
+          'aria-orientation': 0,
+          'aria-placeholder': 0,
+          'aria-pressed': 0,
+          'aria-readonly': 0,
+          'aria-required': 0,
+          'aria-selected': 0,
+          'aria-sort': 0,
+          'aria-valuemax': 0,
+          'aria-valuemin': 0,
+          'aria-valuenow': 0,
+          'aria-valuetext': 0,
           // Live Region Attributes
-          "aria-atomic": 0,
-          "aria-busy": 0,
-          "aria-live": 0,
-          "aria-relevant": 0,
+          'aria-atomic': 0,
+          'aria-busy': 0,
+          'aria-live': 0,
+          'aria-relevant': 0,
           // Drag-and-Drop Attributes
-          "aria-dropeffect": 0,
-          "aria-grabbed": 0,
+          'aria-dropeffect': 0,
+          'aria-grabbed': 0,
           // Relationship Attributes
-          "aria-activedescendant": 0,
-          "aria-colcount": 0,
-          "aria-colindex": 0,
-          "aria-colspan": 0,
-          "aria-controls": 0,
-          "aria-describedby": 0,
-          "aria-errormessage": 0,
-          "aria-flowto": 0,
-          "aria-labelledby": 0,
-          "aria-owns": 0,
-          "aria-posinset": 0,
-          "aria-rowcount": 0,
-          "aria-rowindex": 0,
-          "aria-rowspan": 0,
-          "aria-setsize": 0,
+          'aria-activedescendant': 0,
+          'aria-colcount': 0,
+          'aria-colindex': 0,
+          'aria-colspan': 0,
+          'aria-controls': 0,
+          'aria-describedby': 0,
+          'aria-errormessage': 0,
+          'aria-flowto': 0,
+          'aria-labelledby': 0,
+          'aria-owns': 0,
+          'aria-posinset': 0,
+          'aria-rowcount': 0,
+          'aria-rowindex': 0,
+          'aria-rowspan': 0,
+          'aria-setsize': 0,
         };
         var warnedProperties = {};
-        var rARIA = new RegExp("^(aria)-[" + ATTRIBUTE_NAME_CHAR + "]*$");
+        var rARIA = new RegExp('^(aria)-[' + ATTRIBUTE_NAME_CHAR + ']*$');
         var rARIACamel = new RegExp(
-          "^(aria)[A-Z][" + ATTRIBUTE_NAME_CHAR + "]*$",
+          '^(aria)[A-Z][' + ATTRIBUTE_NAME_CHAR + ']*$',
         );
         function validateProperty(tagName, name) {
           {
@@ -3852,13 +3852,13 @@ var require_react_dom_development = __commonJS({
               return true;
             }
             if (rARIACamel.test(name)) {
-              var ariaName = "aria-" + name.slice(4).toLowerCase();
+              var ariaName = 'aria-' + name.slice(4).toLowerCase();
               var correctName = ariaProperties.hasOwnProperty(ariaName)
                 ? ariaName
                 : null;
               if (correctName == null) {
                 error(
-                  "Invalid ARIA attribute `%s`. ARIA attributes follow the pattern aria-* and must be lowercase.",
+                  'Invalid ARIA attribute `%s`. ARIA attributes follow the pattern aria-* and must be lowercase.',
                   name,
                 );
                 warnedProperties[name] = true;
@@ -3866,7 +3866,7 @@ var require_react_dom_development = __commonJS({
               }
               if (name !== correctName) {
                 error(
-                  "Invalid ARIA attribute `%s`. Did you mean `%s`?",
+                  'Invalid ARIA attribute `%s`. Did you mean `%s`?',
                   name,
                   correctName,
                 );
@@ -3885,7 +3885,7 @@ var require_react_dom_development = __commonJS({
               }
               if (name !== standardName) {
                 error(
-                  "Unknown ARIA attribute `%s`. Did you mean `%s`?",
+                  'Unknown ARIA attribute `%s`. Did you mean `%s`?',
                   name,
                   standardName,
                 );
@@ -3907,18 +3907,18 @@ var require_react_dom_development = __commonJS({
             }
             var unknownPropString = invalidProps
               .map(function (prop) {
-                return "`" + prop + "`";
+                return '`' + prop + '`';
               })
-              .join(", ");
+              .join(', ');
             if (invalidProps.length === 1) {
               error(
-                "Invalid aria prop %s on <%s> tag. For details, see https://reactjs.org/link/invalid-aria-props",
+                'Invalid aria prop %s on <%s> tag. For details, see https://reactjs.org/link/invalid-aria-props',
                 unknownPropString,
                 type,
               );
             } else if (invalidProps.length > 1) {
               error(
-                "Invalid aria props %s on <%s> tag. For details, see https://reactjs.org/link/invalid-aria-props",
+                'Invalid aria props %s on <%s> tag. For details, see https://reactjs.org/link/invalid-aria-props',
                 unknownPropString,
                 type,
               );
@@ -3934,19 +3934,19 @@ var require_react_dom_development = __commonJS({
         var didWarnValueNull = false;
         function validateProperties$1(type, props) {
           {
-            if (type !== "input" && type !== "textarea" && type !== "select") {
+            if (type !== 'input' && type !== 'textarea' && type !== 'select') {
               return;
             }
             if (props != null && props.value === null && !didWarnValueNull) {
               didWarnValueNull = true;
-              if (type === "select" && props.multiple) {
+              if (type === 'select' && props.multiple) {
                 error(
-                  "`value` prop on `%s` should not be null. Consider using an empty array when `multiple` is set to `true` to clear the component or `undefined` for uncontrolled components.",
+                  '`value` prop on `%s` should not be null. Consider using an empty array when `multiple` is set to `true` to clear the component or `undefined` for uncontrolled components.',
                   type,
                 );
               } else {
                 error(
-                  "`value` prop on `%s` should not be null. Consider using an empty string to clear the component or `undefined` for uncontrolled components.",
+                  '`value` prop on `%s` should not be null. Consider using an empty string to clear the component or `undefined` for uncontrolled components.',
                   type,
                 );
               }
@@ -3958,9 +3958,9 @@ var require_react_dom_development = __commonJS({
           var warnedProperties$1 = {};
           var EVENT_NAME_REGEX = /^on./;
           var INVALID_EVENT_NAME_REGEX = /^on[^A-Z]/;
-          var rARIA$1 = new RegExp("^(aria)-[" + ATTRIBUTE_NAME_CHAR + "]*$");
+          var rARIA$1 = new RegExp('^(aria)-[' + ATTRIBUTE_NAME_CHAR + ']*$');
           var rARIACamel$1 = new RegExp(
-            "^(aria)[A-Z][" + ATTRIBUTE_NAME_CHAR + "]*$",
+            '^(aria)[A-Z][' + ATTRIBUTE_NAME_CHAR + ']*$',
           );
           validateProperty$1 = function (tagName, name, value, eventRegistry) {
             if (
@@ -3971,11 +3971,11 @@ var require_react_dom_development = __commonJS({
             }
             var lowerCasedName = name.toLowerCase();
             if (
-              lowerCasedName === "onfocusin" ||
-              lowerCasedName === "onfocusout"
+              lowerCasedName === 'onfocusin' ||
+              lowerCasedName === 'onfocusout'
             ) {
               error(
-                "React uses onFocus and onBlur instead of onFocusIn and onFocusOut. All React events are normalized to bubble, so onFocusIn and onFocusOut are not needed/supported by React.",
+                'React uses onFocus and onBlur instead of onFocusIn and onFocusOut. All React events are normalized to bubble, so onFocusIn and onFocusOut are not needed/supported by React.',
               );
               warnedProperties$1[name] = true;
               return true;
@@ -3995,7 +3995,7 @@ var require_react_dom_development = __commonJS({
                 : null;
               if (registrationName != null) {
                 error(
-                  "Invalid event handler property `%s`. Did you mean `%s`?",
+                  'Invalid event handler property `%s`. Did you mean `%s`?',
                   name,
                   registrationName,
                 );
@@ -4004,7 +4004,7 @@ var require_react_dom_development = __commonJS({
               }
               if (EVENT_NAME_REGEX.test(name)) {
                 error(
-                  "Unknown event handler property `%s`. It will be ignored.",
+                  'Unknown event handler property `%s`. It will be ignored.',
                   name,
                 );
                 warnedProperties$1[name] = true;
@@ -4013,7 +4013,7 @@ var require_react_dom_development = __commonJS({
             } else if (EVENT_NAME_REGEX.test(name)) {
               if (INVALID_EVENT_NAME_REGEX.test(name)) {
                 error(
-                  "Invalid event handler property `%s`. React events use the camelCase naming convention, for example `onClick`.",
+                  'Invalid event handler property `%s`. React events use the camelCase naming convention, for example `onClick`.',
                   name,
                 );
               }
@@ -4023,36 +4023,36 @@ var require_react_dom_development = __commonJS({
             if (rARIA$1.test(name) || rARIACamel$1.test(name)) {
               return true;
             }
-            if (lowerCasedName === "innerhtml") {
+            if (lowerCasedName === 'innerhtml') {
               error(
-                "Directly setting property `innerHTML` is not permitted. For more information, lookup documentation on `dangerouslySetInnerHTML`.",
+                'Directly setting property `innerHTML` is not permitted. For more information, lookup documentation on `dangerouslySetInnerHTML`.',
               );
               warnedProperties$1[name] = true;
               return true;
             }
-            if (lowerCasedName === "aria") {
+            if (lowerCasedName === 'aria') {
               error(
-                "The `aria` attribute is reserved for future use in React. Pass individual `aria-` attributes instead.",
+                'The `aria` attribute is reserved for future use in React. Pass individual `aria-` attributes instead.',
               );
               warnedProperties$1[name] = true;
               return true;
             }
             if (
-              lowerCasedName === "is" &&
+              lowerCasedName === 'is' &&
               value !== null &&
               value !== void 0 &&
-              typeof value !== "string"
+              typeof value !== 'string'
             ) {
               error(
-                "Received a `%s` for a string attribute `is`. If this is expected, cast the value to a string.",
+                'Received a `%s` for a string attribute `is`. If this is expected, cast the value to a string.',
                 typeof value,
               );
               warnedProperties$1[name] = true;
               return true;
             }
-            if (typeof value === "number" && isNaN(value)) {
+            if (typeof value === 'number' && isNaN(value)) {
               error(
-                "Received NaN for the `%s` attribute. If this is expected, cast the value to a string.",
+                'Received NaN for the `%s` attribute. If this is expected, cast the value to a string.',
                 name,
               );
               warnedProperties$1[name] = true;
@@ -4065,7 +4065,7 @@ var require_react_dom_development = __commonJS({
               var standardName = possibleStandardNames[lowerCasedName];
               if (standardName !== name) {
                 error(
-                  "Invalid DOM property `%s`. Did you mean `%s`?",
+                  'Invalid DOM property `%s`. Did you mean `%s`?',
                   name,
                   standardName,
                 );
@@ -4074,7 +4074,7 @@ var require_react_dom_development = __commonJS({
               }
             } else if (!isReserved && name !== lowerCasedName) {
               error(
-                "React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.",
+                'React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.',
                 name,
                 lowerCasedName,
               );
@@ -4082,7 +4082,7 @@ var require_react_dom_development = __commonJS({
               return true;
             }
             if (
-              typeof value === "boolean" &&
+              typeof value === 'boolean' &&
               shouldRemoveAttributeWithWarning(name, value, propertyInfo, false)
             ) {
               if (value) {
@@ -4119,16 +4119,16 @@ var require_react_dom_development = __commonJS({
               return false;
             }
             if (
-              (value === "false" || value === "true") &&
+              (value === 'false' || value === 'true') &&
               propertyInfo !== null &&
               propertyInfo.type === BOOLEAN
             ) {
               error(
-                "Received the string `%s` for the boolean attribute `%s`. %s Did you mean %s={%s}?",
+                'Received the string `%s` for the boolean attribute `%s`. %s Did you mean %s={%s}?',
                 value,
                 name,
-                value === "false"
-                  ? "The browser will interpret it as a truthy value."
+                value === 'false'
+                  ? 'The browser will interpret it as a truthy value.'
                   : 'Although this works, it will not work as expected if you pass the string "false".',
                 name,
                 value,
@@ -4155,18 +4155,18 @@ var require_react_dom_development = __commonJS({
             }
             var unknownPropString = unknownProps
               .map(function (prop) {
-                return "`" + prop + "`";
+                return '`' + prop + '`';
               })
-              .join(", ");
+              .join(', ');
             if (unknownProps.length === 1) {
               error(
-                "Invalid value for prop %s on <%s> tag. Either remove it from the element, or pass a string or number value to keep it in the DOM. For details, see https://reactjs.org/link/attribute-behavior ",
+                'Invalid value for prop %s on <%s> tag. Either remove it from the element, or pass a string or number value to keep it in the DOM. For details, see https://reactjs.org/link/attribute-behavior ',
                 unknownPropString,
                 type,
               );
             } else if (unknownProps.length > 1) {
               error(
-                "Invalid values for props %s on <%s> tag. Either remove them from the element, or pass a string or number value to keep them in the DOM. For details, see https://reactjs.org/link/attribute-behavior ",
+                'Invalid values for props %s on <%s> tag. Either remove them from the element, or pass a string or number value to keep them in the DOM. For details, see https://reactjs.org/link/attribute-behavior ',
                 unknownPropString,
                 type,
               );
@@ -4191,7 +4191,7 @@ var require_react_dom_development = __commonJS({
           {
             if (currentReplayingEvent !== null) {
               error(
-                "Expected currently replaying event to be null. This error is likely caused by a bug in React. Please file an issue.",
+                'Expected currently replaying event to be null. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
           }
@@ -4201,7 +4201,7 @@ var require_react_dom_development = __commonJS({
           {
             if (currentReplayingEvent === null) {
               error(
-                "Expected currently replaying event to not be null. This error is likely caused by a bug in React. Please file an issue.",
+                'Expected currently replaying event to not be null. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
           }
@@ -4225,9 +4225,9 @@ var require_react_dom_development = __commonJS({
           if (!internalInstance) {
             return;
           }
-          if (typeof restoreImpl !== "function") {
+          if (typeof restoreImpl !== 'function') {
             throw new Error(
-              "setRestoreImplementation() needs to be called to handle a target for controlled events. This error is likely caused by a bug in React. Please file an issue.",
+              'setRestoreImplementation() needs to be called to handle a target for controlled events. This error is likely caused by a bug in React. Please file an issue.',
             );
           }
           var stateNode = internalInstance.stateNode;
@@ -4306,25 +4306,25 @@ var require_react_dom_development = __commonJS({
         }
         function isInteractive(tag) {
           return (
-            tag === "button" ||
-            tag === "input" ||
-            tag === "select" ||
-            tag === "textarea"
+            tag === 'button' ||
+            tag === 'input' ||
+            tag === 'select' ||
+            tag === 'textarea'
           );
         }
         function shouldPreventMouseEvent(name, type, props) {
           switch (name) {
-            case "onClick":
-            case "onClickCapture":
-            case "onDoubleClick":
-            case "onDoubleClickCapture":
-            case "onMouseDown":
-            case "onMouseDownCapture":
-            case "onMouseMove":
-            case "onMouseMoveCapture":
-            case "onMouseUp":
-            case "onMouseUpCapture":
-            case "onMouseEnter":
+            case 'onClick':
+            case 'onClickCapture':
+            case 'onDoubleClick':
+            case 'onDoubleClickCapture':
+            case 'onMouseDown':
+            case 'onMouseDownCapture':
+            case 'onMouseMove':
+            case 'onMouseMoveCapture':
+            case 'onMouseUp':
+            case 'onMouseUpCapture':
+            case 'onMouseEnter':
               return !!(props.disabled && isInteractive(type));
             default:
               return false;
@@ -4343,13 +4343,13 @@ var require_react_dom_development = __commonJS({
           if (shouldPreventMouseEvent(registrationName, inst.type, props)) {
             return null;
           }
-          if (listener && typeof listener !== "function") {
+          if (listener && typeof listener !== 'function') {
             throw new Error(
-              "Expected `" +
+              'Expected `' +
                 registrationName +
-                "` listener to be a function, instead got a value of `" +
+                '` listener to be a function, instead got a value of `' +
                 typeof listener +
-                "` type.",
+                '` type.',
             );
           }
           return listener;
@@ -4358,13 +4358,13 @@ var require_react_dom_development = __commonJS({
         if (canUseDOM) {
           try {
             var options = {};
-            Object.defineProperty(options, "passive", {
+            Object.defineProperty(options, 'passive', {
               get: function () {
                 passiveBrowserEventsSupported = true;
               },
             });
-            window.addEventListener("test", options, options);
-            window.removeEventListener("test", options, options);
+            window.addEventListener('test', options, options);
+            window.removeEventListener('test', options, options);
           } catch (e) {
             passiveBrowserEventsSupported = false;
           }
@@ -4390,12 +4390,12 @@ var require_react_dom_development = __commonJS({
         var invokeGuardedCallbackImpl = invokeGuardedCallbackProd;
         {
           if (
-            typeof window !== "undefined" &&
-            typeof window.dispatchEvent === "function" &&
-            typeof document !== "undefined" &&
-            typeof document.createEvent === "function"
+            typeof window !== 'undefined' &&
+            typeof window.dispatchEvent === 'function' &&
+            typeof document !== 'undefined' &&
+            typeof document.createEvent === 'function'
           ) {
-            var fakeNode = document.createElement("react");
+            var fakeNode = document.createElement('react');
             invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(
               name,
               func,
@@ -4407,24 +4407,24 @@ var require_react_dom_development = __commonJS({
               e,
               f,
             ) {
-              if (typeof document === "undefined" || document === null) {
+              if (typeof document === 'undefined' || document === null) {
                 throw new Error(
-                  "The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.",
+                  'The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.',
                 );
               }
-              var evt = document.createEvent("Event");
+              var evt = document.createEvent('Event');
               var didCall = false;
               var didError = true;
               var windowEvent = window.event;
               var windowEventDescriptor = Object.getOwnPropertyDescriptor(
                 window,
-                "event",
+                'event',
               );
               function restoreAfterDispatch() {
                 fakeNode.removeEventListener(evtType, callCallback2, false);
                 if (
-                  typeof window.event !== "undefined" &&
-                  window.hasOwnProperty("event")
+                  typeof window.event !== 'undefined' &&
+                  window.hasOwnProperty('event')
                 ) {
                   window.event = windowEvent;
                 }
@@ -4450,20 +4450,20 @@ var require_react_dom_development = __commonJS({
                   isCrossOriginError = true;
                 }
                 if (event.defaultPrevented) {
-                  if (error2 != null && typeof error2 === "object") {
+                  if (error2 != null && typeof error2 === 'object') {
                     try {
                       error2._suppressLogging = true;
                     } catch (inner) {}
                   }
                 }
               }
-              var evtType = "react-" + (name ? name : "invokeguardedcallback");
-              window.addEventListener("error", handleWindowError);
+              var evtType = 'react-' + (name ? name : 'invokeguardedcallback');
+              window.addEventListener('error', handleWindowError);
               fakeNode.addEventListener(evtType, callCallback2, false);
               evt.initEvent(evtType, false, false);
               fakeNode.dispatchEvent(evt);
               if (windowEventDescriptor) {
-                Object.defineProperty(window, "event", windowEventDescriptor);
+                Object.defineProperty(window, 'event', windowEventDescriptor);
               }
               if (didCall && didError) {
                 if (!didSetError) {
@@ -4477,7 +4477,7 @@ var require_react_dom_development = __commonJS({
                 }
                 this.onError(error2);
               }
-              window.removeEventListener("error", handleWindowError);
+              window.removeEventListener('error', handleWindowError);
               if (!didCall) {
                 restoreAfterDispatch();
                 return invokeGuardedCallbackProd.apply(this, arguments);
@@ -4540,7 +4540,7 @@ var require_react_dom_development = __commonJS({
             return error2;
           } else {
             throw new Error(
-              "clearCaughtError was called but no error was captured. This error is likely caused by a bug in React. Please file an issue.",
+              'clearCaughtError was called but no error was captured. This error is likely caused by a bug in React. Please file an issue.',
             );
           }
         }
@@ -4697,8 +4697,8 @@ var require_react_dom_development = __commonJS({
               var instance = ownerFiber.stateNode;
               if (!instance._warnedAboutRefsInRender) {
                 error(
-                  "%s is accessing isMounted inside its render() function. render() should be a pure function of props and state. It should never access something that requires stale data from the previous render, such as refs. Move this logic to componentDidMount and componentDidUpdate instead.",
-                  getComponentNameFromFiber(ownerFiber) || "A component",
+                  '%s is accessing isMounted inside its render() function. render() should be a pure function of props and state. It should never access something that requires stale data from the previous render, such as refs. Move this logic to componentDidMount and componentDidUpdate instead.',
+                  getComponentNameFromFiber(ownerFiber) || 'A component',
                 );
               }
               instance._warnedAboutRefsInRender = true;
@@ -4712,7 +4712,7 @@ var require_react_dom_development = __commonJS({
         }
         function assertIsMounted(fiber) {
           if (getNearestMountedFiber(fiber) !== fiber) {
-            throw new Error("Unable to find node on an unmounted component.");
+            throw new Error('Unable to find node on an unmounted component.');
           }
         }
         function findCurrentFiberUsingSlowPath(fiber) {
@@ -4720,7 +4720,7 @@ var require_react_dom_development = __commonJS({
           if (!alternate) {
             var nearestMounted = getNearestMountedFiber(fiber);
             if (nearestMounted === null) {
-              throw new Error("Unable to find node on an unmounted component.");
+              throw new Error('Unable to find node on an unmounted component.');
             }
             if (nearestMounted !== fiber) {
               return null;
@@ -4756,7 +4756,7 @@ var require_react_dom_development = __commonJS({
                 }
                 child = child.sibling;
               }
-              throw new Error("Unable to find node on an unmounted component.");
+              throw new Error('Unable to find node on an unmounted component.');
             }
             if (a.return !== b.return) {
               a = parentA;
@@ -4798,7 +4798,7 @@ var require_react_dom_development = __commonJS({
                 }
                 if (!didFindChild) {
                   throw new Error(
-                    "Child was not found in either parent set. This indicates a bug in React related to the return pointer. Please file an issue.",
+                    'Child was not found in either parent set. This indicates a bug in React related to the return pointer. Please file an issue.',
                   );
                 }
               }
@@ -4810,7 +4810,7 @@ var require_react_dom_development = __commonJS({
             }
           }
           if (a.tag !== HostRoot) {
-            throw new Error("Unable to find node on an unmounted component.");
+            throw new Error('Unable to find node on an unmounted component.');
           }
           if (a.stateNode.current === a) {
             return fiber;
@@ -4879,9 +4879,9 @@ var require_react_dom_development = __commonJS({
         var injectedProfilingHooks = null;
         var hasLoggedError = false;
         var isDevToolsPresent =
-          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined";
+          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined';
         function injectInternals(internals) {
-          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined") {
+          if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
             return false;
           }
           var hook = __REACT_DEVTOOLS_GLOBAL_HOOK__;
@@ -4891,7 +4891,7 @@ var require_react_dom_development = __commonJS({
           if (!hook.supportsFiber) {
             {
               error(
-                "The installed version of React DevTools is too old and will not work with the current version of React. Please update React DevTools. https://reactjs.org/link/react-devtools",
+                'The installed version of React DevTools is too old and will not work with the current version of React. Please update React DevTools. https://reactjs.org/link/react-devtools',
               );
             }
             return true;
@@ -4907,7 +4907,7 @@ var require_react_dom_development = __commonJS({
             injectedHook = hook;
           } catch (err) {
             {
-              error("React instrumentation encountered an error: %s.", err);
+              error('React instrumentation encountered an error: %s.', err);
             }
           }
           if (hook.checkDCE) {
@@ -4920,14 +4920,14 @@ var require_react_dom_development = __commonJS({
           {
             if (
               injectedHook &&
-              typeof injectedHook.onScheduleFiberRoot === "function"
+              typeof injectedHook.onScheduleFiberRoot === 'function'
             ) {
               try {
                 injectedHook.onScheduleFiberRoot(rendererID, root2, children);
               } catch (err) {
                 if (!hasLoggedError) {
                   hasLoggedError = true;
-                  error("React instrumentation encountered an error: %s", err);
+                  error('React instrumentation encountered an error: %s', err);
                 }
               }
             }
@@ -4936,7 +4936,7 @@ var require_react_dom_development = __commonJS({
         function onCommitRoot(root2, eventPriority) {
           if (
             injectedHook &&
-            typeof injectedHook.onCommitFiberRoot === "function"
+            typeof injectedHook.onCommitFiberRoot === 'function'
           ) {
             try {
               var didError = (root2.current.flags & DidCapture) === DidCapture;
@@ -4977,7 +4977,7 @@ var require_react_dom_development = __commonJS({
               {
                 if (!hasLoggedError) {
                   hasLoggedError = true;
-                  error("React instrumentation encountered an error: %s", err);
+                  error('React instrumentation encountered an error: %s', err);
                 }
               }
             }
@@ -4986,7 +4986,7 @@ var require_react_dom_development = __commonJS({
         function onPostCommitRoot(root2) {
           if (
             injectedHook &&
-            typeof injectedHook.onPostCommitFiberRoot === "function"
+            typeof injectedHook.onPostCommitFiberRoot === 'function'
           ) {
             try {
               injectedHook.onPostCommitFiberRoot(rendererID, root2);
@@ -4994,7 +4994,7 @@ var require_react_dom_development = __commonJS({
               {
                 if (!hasLoggedError) {
                   hasLoggedError = true;
-                  error("React instrumentation encountered an error: %s", err);
+                  error('React instrumentation encountered an error: %s', err);
                 }
               }
             }
@@ -5003,7 +5003,7 @@ var require_react_dom_development = __commonJS({
         function onCommitUnmount(fiber) {
           if (
             injectedHook &&
-            typeof injectedHook.onCommitFiberUnmount === "function"
+            typeof injectedHook.onCommitFiberUnmount === 'function'
           ) {
             try {
               injectedHook.onCommitFiberUnmount(rendererID, fiber);
@@ -5011,7 +5011,7 @@ var require_react_dom_development = __commonJS({
               {
                 if (!hasLoggedError) {
                   hasLoggedError = true;
-                  error("React instrumentation encountered an error: %s", err);
+                  error('React instrumentation encountered an error: %s', err);
                 }
               }
             }
@@ -5019,13 +5019,13 @@ var require_react_dom_development = __commonJS({
         }
         function setIsStrictModeForDevtools(newIsStrictMode) {
           {
-            if (typeof unstable_yieldValue === "function") {
+            if (typeof unstable_yieldValue === 'function') {
               unstable_setDisableYieldValue(newIsStrictMode);
               setSuppressWarning(newIsStrictMode);
             }
             if (
               injectedHook &&
-              typeof injectedHook.setStrictMode === "function"
+              typeof injectedHook.setStrictMode === 'function'
             ) {
               try {
                 injectedHook.setStrictMode(rendererID, newIsStrictMode);
@@ -5034,7 +5034,7 @@ var require_react_dom_development = __commonJS({
                   if (!hasLoggedError) {
                     hasLoggedError = true;
                     error(
-                      "React instrumentation encountered an error: %s",
+                      'React instrumentation encountered an error: %s',
                       err,
                     );
                   }
@@ -5062,7 +5062,7 @@ var require_react_dom_development = __commonJS({
           {
             if (
               injectedProfilingHooks !== null &&
-              typeof injectedProfilingHooks.markCommitStarted === "function"
+              typeof injectedProfilingHooks.markCommitStarted === 'function'
             ) {
               injectedProfilingHooks.markCommitStarted(lanes);
             }
@@ -5072,7 +5072,7 @@ var require_react_dom_development = __commonJS({
           {
             if (
               injectedProfilingHooks !== null &&
-              typeof injectedProfilingHooks.markCommitStopped === "function"
+              typeof injectedProfilingHooks.markCommitStopped === 'function'
             ) {
               injectedProfilingHooks.markCommitStopped();
             }
@@ -5083,7 +5083,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentRenderStarted ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentRenderStarted(fiber);
             }
@@ -5094,7 +5094,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentRenderStopped ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentRenderStopped();
             }
@@ -5105,7 +5105,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentPassiveEffectMountStarted ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentPassiveEffectMountStarted(
                 fiber,
@@ -5118,7 +5118,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentPassiveEffectMountStopped ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentPassiveEffectMountStopped();
             }
@@ -5129,7 +5129,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentPassiveEffectUnmountStarted ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentPassiveEffectUnmountStarted(
                 fiber,
@@ -5142,7 +5142,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentPassiveEffectUnmountStopped ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentPassiveEffectUnmountStopped();
             }
@@ -5153,7 +5153,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentLayoutEffectMountStarted ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentLayoutEffectMountStarted(
                 fiber,
@@ -5166,7 +5166,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentLayoutEffectMountStopped ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentLayoutEffectMountStopped();
             }
@@ -5177,7 +5177,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentLayoutEffectUnmountStarted ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentLayoutEffectUnmountStarted(
                 fiber,
@@ -5190,7 +5190,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentLayoutEffectUnmountStopped ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentLayoutEffectUnmountStopped();
             }
@@ -5200,7 +5200,7 @@ var require_react_dom_development = __commonJS({
           {
             if (
               injectedProfilingHooks !== null &&
-              typeof injectedProfilingHooks.markComponentErrored === "function"
+              typeof injectedProfilingHooks.markComponentErrored === 'function'
             ) {
               injectedProfilingHooks.markComponentErrored(
                 fiber,
@@ -5215,7 +5215,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markComponentSuspended ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markComponentSuspended(
                 fiber,
@@ -5230,7 +5230,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markLayoutEffectsStarted ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markLayoutEffectsStarted(lanes);
             }
@@ -5241,7 +5241,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markLayoutEffectsStopped ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markLayoutEffectsStopped();
             }
@@ -5252,7 +5252,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markPassiveEffectsStarted ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markPassiveEffectsStarted(lanes);
             }
@@ -5263,7 +5263,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markPassiveEffectsStopped ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markPassiveEffectsStopped();
             }
@@ -5273,7 +5273,7 @@ var require_react_dom_development = __commonJS({
           {
             if (
               injectedProfilingHooks !== null &&
-              typeof injectedProfilingHooks.markRenderStarted === "function"
+              typeof injectedProfilingHooks.markRenderStarted === 'function'
             ) {
               injectedProfilingHooks.markRenderStarted(lanes);
             }
@@ -5283,7 +5283,7 @@ var require_react_dom_development = __commonJS({
           {
             if (
               injectedProfilingHooks !== null &&
-              typeof injectedProfilingHooks.markRenderYielded === "function"
+              typeof injectedProfilingHooks.markRenderYielded === 'function'
             ) {
               injectedProfilingHooks.markRenderYielded();
             }
@@ -5293,7 +5293,7 @@ var require_react_dom_development = __commonJS({
           {
             if (
               injectedProfilingHooks !== null &&
-              typeof injectedProfilingHooks.markRenderStopped === "function"
+              typeof injectedProfilingHooks.markRenderStopped === 'function'
             ) {
               injectedProfilingHooks.markRenderStopped();
             }
@@ -5303,7 +5303,7 @@ var require_react_dom_development = __commonJS({
           {
             if (
               injectedProfilingHooks !== null &&
-              typeof injectedProfilingHooks.markRenderScheduled === "function"
+              typeof injectedProfilingHooks.markRenderScheduled === 'function'
             ) {
               injectedProfilingHooks.markRenderScheduled(lane);
             }
@@ -5314,7 +5314,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markForceUpdateScheduled ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markForceUpdateScheduled(fiber, lane);
             }
@@ -5325,7 +5325,7 @@ var require_react_dom_development = __commonJS({
             if (
               injectedProfilingHooks !== null &&
               typeof injectedProfilingHooks.markStateUpdateScheduled ===
-                "function"
+                'function'
             ) {
               injectedProfilingHooks.markStateUpdateScheduled(fiber, lane);
             }
@@ -5469,40 +5469,40 @@ var require_react_dom_development = __commonJS({
         function getLabelForLane(lane) {
           {
             if (lane & SyncLane) {
-              return "Sync";
+              return 'Sync';
             }
             if (lane & InputContinuousHydrationLane) {
-              return "InputContinuousHydration";
+              return 'InputContinuousHydration';
             }
             if (lane & InputContinuousLane) {
-              return "InputContinuous";
+              return 'InputContinuous';
             }
             if (lane & DefaultHydrationLane) {
-              return "DefaultHydration";
+              return 'DefaultHydration';
             }
             if (lane & DefaultLane) {
-              return "Default";
+              return 'Default';
             }
             if (lane & TransitionHydrationLane) {
-              return "TransitionHydration";
+              return 'TransitionHydration';
             }
             if (lane & TransitionLanes) {
-              return "Transition";
+              return 'Transition';
             }
             if (lane & RetryLanes) {
-              return "Retry";
+              return 'Retry';
             }
             if (lane & SelectiveHydrationLane) {
-              return "SelectiveHydration";
+              return 'SelectiveHydration';
             }
             if (lane & IdleHydrationLane) {
-              return "IdleHydration";
+              return 'IdleHydration';
             }
             if (lane & IdleLane) {
-              return "Idle";
+              return 'Idle';
             }
             if (lane & OffscreenLane) {
-              return "Offscreen";
+              return 'Offscreen';
             }
           }
         }
@@ -5557,7 +5557,7 @@ var require_react_dom_development = __commonJS({
             default:
               {
                 error(
-                  "Should have found matching lanes. This is a bug in React.",
+                  'Should have found matching lanes. This is a bug in React.',
                 );
               }
               return lanes;
@@ -5685,7 +5685,7 @@ var require_react_dom_development = __commonJS({
             default:
               {
                 error(
-                  "Should have found matching lanes. This is a bug in React.",
+                  'Should have found matching lanes. This is a bug in React.',
                 );
               }
               return NoTimestamp;
@@ -6042,35 +6042,35 @@ var require_react_dom_development = __commonJS({
         var queuedPointerCaptures = /* @__PURE__ */ new Map();
         var queuedExplicitHydrationTargets = [];
         var discreteReplayableEvents = [
-          "mousedown",
-          "mouseup",
-          "touchcancel",
-          "touchend",
-          "touchstart",
-          "auxclick",
-          "dblclick",
-          "pointercancel",
-          "pointerdown",
-          "pointerup",
-          "dragend",
-          "dragstart",
-          "drop",
-          "compositionend",
-          "compositionstart",
-          "keydown",
-          "keypress",
-          "keyup",
-          "input",
-          "textInput",
+          'mousedown',
+          'mouseup',
+          'touchcancel',
+          'touchend',
+          'touchstart',
+          'auxclick',
+          'dblclick',
+          'pointercancel',
+          'pointerdown',
+          'pointerup',
+          'dragend',
+          'dragstart',
+          'drop',
+          'compositionend',
+          'compositionstart',
+          'keydown',
+          'keypress',
+          'keyup',
+          'input',
+          'textInput',
           // Intentionally camelCase
-          "copy",
-          "cut",
-          "paste",
-          "click",
-          "change",
-          "contextmenu",
-          "reset",
-          "submit",
+          'copy',
+          'cut',
+          'paste',
+          'click',
+          'change',
+          'contextmenu',
+          'reset',
+          'submit',
         ];
         function isDiscreteEventThatRequiresHydration(eventType) {
           return discreteReplayableEvents.indexOf(eventType) > -1;
@@ -6092,26 +6092,26 @@ var require_react_dom_development = __commonJS({
         }
         function clearIfContinuousEvent(domEventName, nativeEvent) {
           switch (domEventName) {
-            case "focusin":
-            case "focusout":
+            case 'focusin':
+            case 'focusout':
               queuedFocus = null;
               break;
-            case "dragenter":
-            case "dragleave":
+            case 'dragenter':
+            case 'dragleave':
               queuedDrag = null;
               break;
-            case "mouseover":
-            case "mouseout":
+            case 'mouseover':
+            case 'mouseout':
               queuedMouse = null;
               break;
-            case "pointerover":
-            case "pointerout": {
+            case 'pointerover':
+            case 'pointerout': {
               var pointerId = nativeEvent.pointerId;
               queuedPointers.delete(pointerId);
               break;
             }
-            case "gotpointercapture":
-            case "lostpointercapture": {
+            case 'gotpointercapture':
+            case 'lostpointercapture': {
               var _pointerId = nativeEvent.pointerId;
               queuedPointerCaptures.delete(_pointerId);
               break;
@@ -6163,7 +6163,7 @@ var require_react_dom_development = __commonJS({
           nativeEvent,
         ) {
           switch (domEventName) {
-            case "focusin": {
+            case 'focusin': {
               var focusEvent = nativeEvent;
               queuedFocus = accumulateOrCreateContinuousQueuedReplayableEvent(
                 queuedFocus,
@@ -6175,7 +6175,7 @@ var require_react_dom_development = __commonJS({
               );
               return true;
             }
-            case "dragenter": {
+            case 'dragenter': {
               var dragEvent = nativeEvent;
               queuedDrag = accumulateOrCreateContinuousQueuedReplayableEvent(
                 queuedDrag,
@@ -6187,7 +6187,7 @@ var require_react_dom_development = __commonJS({
               );
               return true;
             }
-            case "mouseover": {
+            case 'mouseover': {
               var mouseEvent = nativeEvent;
               queuedMouse = accumulateOrCreateContinuousQueuedReplayableEvent(
                 queuedMouse,
@@ -6199,7 +6199,7 @@ var require_react_dom_development = __commonJS({
               );
               return true;
             }
-            case "pointerover": {
+            case 'pointerover': {
               var pointerEvent = nativeEvent;
               var pointerId = pointerEvent.pointerId;
               queuedPointers.set(
@@ -6215,7 +6215,7 @@ var require_react_dom_development = __commonJS({
               );
               return true;
             }
-            case "gotpointercapture": {
+            case 'gotpointercapture': {
               var _pointerEvent = nativeEvent;
               var _pointerId2 = _pointerEvent.pointerId;
               queuedPointerCaptures.set(
@@ -6624,79 +6624,79 @@ var require_react_dom_development = __commonJS({
         }
         function getEventPriority(domEventName) {
           switch (domEventName) {
-            case "cancel":
-            case "click":
-            case "close":
-            case "contextmenu":
-            case "copy":
-            case "cut":
-            case "auxclick":
-            case "dblclick":
-            case "dragend":
-            case "dragstart":
-            case "drop":
-            case "focusin":
-            case "focusout":
-            case "input":
-            case "invalid":
-            case "keydown":
-            case "keypress":
-            case "keyup":
-            case "mousedown":
-            case "mouseup":
-            case "paste":
-            case "pause":
-            case "play":
-            case "pointercancel":
-            case "pointerdown":
-            case "pointerup":
-            case "ratechange":
-            case "reset":
-            case "resize":
-            case "seeked":
-            case "submit":
-            case "touchcancel":
-            case "touchend":
-            case "touchstart":
-            case "volumechange":
-            case "change":
-            case "selectionchange":
-            case "textInput":
-            case "compositionstart":
-            case "compositionend":
-            case "compositionupdate":
-            case "beforeblur":
-            case "afterblur":
-            case "beforeinput":
-            case "blur":
-            case "fullscreenchange":
-            case "focus":
-            case "hashchange":
-            case "popstate":
-            case "select":
-            case "selectstart":
+            case 'cancel':
+            case 'click':
+            case 'close':
+            case 'contextmenu':
+            case 'copy':
+            case 'cut':
+            case 'auxclick':
+            case 'dblclick':
+            case 'dragend':
+            case 'dragstart':
+            case 'drop':
+            case 'focusin':
+            case 'focusout':
+            case 'input':
+            case 'invalid':
+            case 'keydown':
+            case 'keypress':
+            case 'keyup':
+            case 'mousedown':
+            case 'mouseup':
+            case 'paste':
+            case 'pause':
+            case 'play':
+            case 'pointercancel':
+            case 'pointerdown':
+            case 'pointerup':
+            case 'ratechange':
+            case 'reset':
+            case 'resize':
+            case 'seeked':
+            case 'submit':
+            case 'touchcancel':
+            case 'touchend':
+            case 'touchstart':
+            case 'volumechange':
+            case 'change':
+            case 'selectionchange':
+            case 'textInput':
+            case 'compositionstart':
+            case 'compositionend':
+            case 'compositionupdate':
+            case 'beforeblur':
+            case 'afterblur':
+            case 'beforeinput':
+            case 'blur':
+            case 'fullscreenchange':
+            case 'focus':
+            case 'hashchange':
+            case 'popstate':
+            case 'select':
+            case 'selectstart':
               return DiscreteEventPriority;
-            case "drag":
-            case "dragenter":
-            case "dragexit":
-            case "dragleave":
-            case "dragover":
-            case "mousemove":
-            case "mouseout":
-            case "mouseover":
-            case "pointermove":
-            case "pointerout":
-            case "pointerover":
-            case "scroll":
-            case "toggle":
-            case "touchmove":
-            case "wheel":
-            case "mouseenter":
-            case "mouseleave":
-            case "pointerenter":
-            case "pointerleave":
+            case 'drag':
+            case 'dragenter':
+            case 'dragexit':
+            case 'dragleave':
+            case 'dragover':
+            case 'mousemove':
+            case 'mouseout':
+            case 'mouseover':
+            case 'pointermove':
+            case 'pointerout':
+            case 'pointerover':
+            case 'scroll':
+            case 'toggle':
+            case 'touchmove':
+            case 'wheel':
+            case 'mouseenter':
+            case 'mouseleave':
+            case 'pointerenter':
+            case 'pointerleave':
               return ContinuousEventPriority;
-            case "message": {
+            case 'message': {
               var schedulerPriority = getCurrentPriorityLevel();
               switch (schedulerPriority) {
                 case ImmediatePriority:
@@ -6786,7 +6786,7 @@ var require_react_dom_development = __commonJS({
           return fallbackText;
         }
         function getText() {
-          if ("value" in root) {
+          if ('value' in root) {
             return root.value;
           }
           return root.textContent;
@@ -6794,7 +6794,7 @@ var require_react_dom_development = __commonJS({
         function getEventCharCode(nativeEvent) {
           var charCode;
           var keyCode = nativeEvent.keyCode;
-          if ("charCode" in nativeEvent) {
+          if ('charCode' in nativeEvent) {
             charCode = nativeEvent.charCode;
             if (charCode === 0 && keyCode === 13) {
               charCode = 13;
@@ -6862,7 +6862,7 @@ var require_react_dom_development = __commonJS({
               }
               if (event.preventDefault) {
                 event.preventDefault();
-              } else if (typeof event.returnValue !== "unknown") {
+              } else if (typeof event.returnValue !== 'unknown') {
                 event.returnValue = false;
               }
               this.isDefaultPrevented = functionThatReturnsTrue;
@@ -6874,7 +6874,7 @@ var require_react_dom_development = __commonJS({
               }
               if (event.stopPropagation) {
                 event.stopPropagation();
-              } else if (typeof event.cancelBubble !== "unknown") {
+              } else if (typeof event.cancelBubble !== 'unknown') {
                 event.cancelBubble = true;
               }
               this.isPropagationStopped = functionThatReturnsTrue;
@@ -6915,7 +6915,7 @@ var require_react_dom_development = __commonJS({
         var lastMouseEvent;
         function updateMouseMovementPolyfillState(event) {
           if (event !== lastMouseEvent) {
-            if (lastMouseEvent && event.type === "mousemove") {
+            if (lastMouseEvent && event.type === 'mousemove') {
               lastMovementX = event.screenX - lastMouseEvent.screenX;
               lastMovementY = event.screenY - lastMouseEvent.screenY;
             } else {
@@ -6947,14 +6947,14 @@ var require_react_dom_development = __commonJS({
             return event.relatedTarget;
           },
           movementX: function (event) {
-            if ("movementX" in event) {
+            if ('movementX' in event) {
               return event.movementX;
             }
             updateMouseMovementPolyfillState(event);
             return lastMovementX;
           },
           movementY: function (event) {
-            if ("movementY" in event) {
+            if ('movementY' in event) {
               return event.movementY;
             }
             return lastMovementY;
@@ -6979,7 +6979,7 @@ var require_react_dom_development = __commonJS({
         );
         var ClipboardEventInterface = assign({}, EventInterface, {
           clipboardData: function (event) {
-            return "clipboardData" in event
+            return 'clipboardData' in event
               ? event.clipboardData
               : window.clipboardData;
           },
@@ -6995,78 +6995,78 @@ var require_react_dom_development = __commonJS({
         );
         var SyntheticInputEvent = SyntheticCompositionEvent;
         var normalizeKey = {
-          Esc: "Escape",
-          Spacebar: " ",
-          Left: "ArrowLeft",
-          Up: "ArrowUp",
-          Right: "ArrowRight",
-          Down: "ArrowDown",
-          Del: "Delete",
-          Win: "OS",
-          Menu: "ContextMenu",
-          Apps: "ContextMenu",
-          Scroll: "ScrollLock",
-          MozPrintableKey: "Unidentified",
+          Esc: 'Escape',
+          Spacebar: ' ',
+          Left: 'ArrowLeft',
+          Up: 'ArrowUp',
+          Right: 'ArrowRight',
+          Down: 'ArrowDown',
+          Del: 'Delete',
+          Win: 'OS',
+          Menu: 'ContextMenu',
+          Apps: 'ContextMenu',
+          Scroll: 'ScrollLock',
+          MozPrintableKey: 'Unidentified',
         };
         var translateToKey = {
-          8: "Backspace",
-          9: "Tab",
-          12: "Clear",
-          13: "Enter",
-          16: "Shift",
-          17: "Control",
-          18: "Alt",
-          19: "Pause",
-          20: "CapsLock",
-          27: "Escape",
-          32: " ",
-          33: "PageUp",
-          34: "PageDown",
-          35: "End",
-          36: "Home",
-          37: "ArrowLeft",
-          38: "ArrowUp",
-          39: "ArrowRight",
-          40: "ArrowDown",
-          45: "Insert",
-          46: "Delete",
-          112: "F1",
-          113: "F2",
-          114: "F3",
-          115: "F4",
-          116: "F5",
-          117: "F6",
-          118: "F7",
-          119: "F8",
-          120: "F9",
-          121: "F10",
-          122: "F11",
-          123: "F12",
-          144: "NumLock",
-          145: "ScrollLock",
-          224: "Meta",
+          8: 'Backspace',
+          9: 'Tab',
+          12: 'Clear',
+          13: 'Enter',
+          16: 'Shift',
+          17: 'Control',
+          18: 'Alt',
+          19: 'Pause',
+          20: 'CapsLock',
+          27: 'Escape',
+          32: ' ',
+          33: 'PageUp',
+          34: 'PageDown',
+          35: 'End',
+          36: 'Home',
+          37: 'ArrowLeft',
+          38: 'ArrowUp',
+          39: 'ArrowRight',
+          40: 'ArrowDown',
+          45: 'Insert',
+          46: 'Delete',
+          112: 'F1',
+          113: 'F2',
+          114: 'F3',
+          115: 'F4',
+          116: 'F5',
+          117: 'F6',
+          118: 'F7',
+          119: 'F8',
+          120: 'F9',
+          121: 'F10',
+          122: 'F11',
+          123: 'F12',
+          144: 'NumLock',
+          145: 'ScrollLock',
+          224: 'Meta',
         };
         function getEventKey(nativeEvent) {
           if (nativeEvent.key) {
             var key = normalizeKey[nativeEvent.key] || nativeEvent.key;
-            if (key !== "Unidentified") {
+            if (key !== 'Unidentified') {
               return key;
             }
           }
-          if (nativeEvent.type === "keypress") {
+          if (nativeEvent.type === 'keypress') {
             var charCode = getEventCharCode(nativeEvent);
-            return charCode === 13 ? "Enter" : String.fromCharCode(charCode);
+            return charCode === 13 ? 'Enter' : String.fromCharCode(charCode);
           }
-          if (nativeEvent.type === "keydown" || nativeEvent.type === "keyup") {
-            return translateToKey[nativeEvent.keyCode] || "Unidentified";
+          if (nativeEvent.type === 'keydown' || nativeEvent.type === 'keyup') {
+            return translateToKey[nativeEvent.keyCode] || 'Unidentified';
           }
-          return "";
+          return '';
         }
         var modifierKeyToProp = {
-          Alt: "altKey",
-          Control: "ctrlKey",
-          Meta: "metaKey",
-          Shift: "shiftKey",
+          Alt: 'altKey',
+          Control: 'ctrlKey',
+          Meta: 'metaKey',
+          Shift: 'shiftKey',
         };
         function modifierStateGetter(keyArg) {
           var syntheticEvent = this;
@@ -7093,22 +7093,22 @@ var require_react_dom_development = __commonJS({
           getModifierState: getEventModifierState,
           // Legacy Interface
           charCode: function (event) {
-            if (event.type === "keypress") {
+            if (event.type === 'keypress') {
               return getEventCharCode(event);
             }
             return 0;
           },
           keyCode: function (event) {
-            if (event.type === "keydown" || event.type === "keyup") {
+            if (event.type === 'keydown' || event.type === 'keyup') {
               return event.keyCode;
             }
             return 0;
           },
           which: function (event) {
-            if (event.type === "keypress") {
+            if (event.type === 'keypress') {
               return getEventCharCode(event);
             }
-            if (event.type === "keydown" || event.type === "keyup") {
+            if (event.type === 'keydown' || event.type === 'keyup') {
               return event.keyCode;
             }
             return 0;
@@ -7151,21 +7151,21 @@ var require_react_dom_development = __commonJS({
         );
         var WheelEventInterface = assign({}, MouseEventInterface, {
           deltaX: function (event) {
-            return "deltaX" in event
+            return 'deltaX' in event
               ? event.deltaX
               : // Fallback to `wheelDeltaX` for Webkit and normalize (right is positive).
-                "wheelDeltaX" in event
+                'wheelDeltaX' in event
                 ? -event.wheelDeltaX
                 : 0;
           },
           deltaY: function (event) {
-            return "deltaY" in event
+            return 'deltaY' in event
               ? event.deltaY
               : // Fallback to `wheelDeltaY` for Webkit and normalize (down is positive).
-                "wheelDeltaY" in event
+                'wheelDeltaY' in event
                 ? -event.wheelDeltaY
                 : // Fallback to `wheelDelta` for IE<9 and normalize (down is positive).
-                  "wheelDelta" in event
+                  'wheelDelta' in event
                   ? -event.wheelDelta
                   : 0;
           },
@@ -7179,13 +7179,13 @@ var require_react_dom_development = __commonJS({
         var SyntheticWheelEvent = createSyntheticEvent(WheelEventInterface);
         var END_KEYCODES = [9, 13, 27, 32];
         var START_KEYCODE = 229;
-        var canUseCompositionEvent = canUseDOM && "CompositionEvent" in window;
+        var canUseCompositionEvent = canUseDOM && 'CompositionEvent' in window;
         var documentMode = null;
-        if (canUseDOM && "documentMode" in document) {
+        if (canUseDOM && 'documentMode' in document) {
           documentMode = document.documentMode;
         }
         var canUseTextInputEvent =
-          canUseDOM && "TextEvent" in window && !documentMode;
+          canUseDOM && 'TextEvent' in window && !documentMode;
         var useFallbackCompositionData =
           canUseDOM &&
           (!canUseCompositionEvent ||
@@ -7193,35 +7193,35 @@ var require_react_dom_development = __commonJS({
         var SPACEBAR_CODE = 32;
         var SPACEBAR_CHAR = String.fromCharCode(SPACEBAR_CODE);
         function registerEvents() {
-          registerTwoPhaseEvent("onBeforeInput", [
-            "compositionend",
-            "keypress",
-            "textInput",
-            "paste",
+          registerTwoPhaseEvent('onBeforeInput', [
+            'compositionend',
+            'keypress',
+            'textInput',
+            'paste',
           ]);
-          registerTwoPhaseEvent("onCompositionEnd", [
-            "compositionend",
-            "focusout",
-            "keydown",
-            "keypress",
-            "keyup",
-            "mousedown",
+          registerTwoPhaseEvent('onCompositionEnd', [
+            'compositionend',
+            'focusout',
+            'keydown',
+            'keypress',
+            'keyup',
+            'mousedown',
           ]);
-          registerTwoPhaseEvent("onCompositionStart", [
-            "compositionstart",
-            "focusout",
-            "keydown",
-            "keypress",
-            "keyup",
-            "mousedown",
+          registerTwoPhaseEvent('onCompositionStart', [
+            'compositionstart',
+            'focusout',
+            'keydown',
+            'keypress',
+            'keyup',
+            'mousedown',
           ]);
-          registerTwoPhaseEvent("onCompositionUpdate", [
-            "compositionupdate",
-            "focusout",
-            "keydown",
-            "keypress",
-            "keyup",
-            "mousedown",
+          registerTwoPhaseEvent('onCompositionUpdate', [
+            'compositionupdate',
+            'focusout',
+            'keydown',
+            'keypress',
+            'keyup',
+            'mousedown',
           ]);
         }
         var hasSpaceKeypress = false;
@@ -7235,28 +7235,28 @@ var require_react_dom_development = __commonJS({
         }
         function getCompositionEventType(domEventName) {
           switch (domEventName) {
-            case "compositionstart":
-              return "onCompositionStart";
-            case "compositionend":
-              return "onCompositionEnd";
-            case "compositionupdate":
-              return "onCompositionUpdate";
+            case 'compositionstart':
+              return 'onCompositionStart';
+            case 'compositionend':
+              return 'onCompositionEnd';
+            case 'compositionupdate':
+              return 'onCompositionUpdate';
           }
         }
         function isFallbackCompositionStart(domEventName, nativeEvent) {
           return (
-            domEventName === "keydown" && nativeEvent.keyCode === START_KEYCODE
+            domEventName === 'keydown' && nativeEvent.keyCode === START_KEYCODE
           );
         }
         function isFallbackCompositionEnd(domEventName, nativeEvent) {
           switch (domEventName) {
-            case "keyup":
+            case 'keyup':
               return END_KEYCODES.indexOf(nativeEvent.keyCode) !== -1;
-            case "keydown":
+            case 'keydown':
               return nativeEvent.keyCode !== START_KEYCODE;
-            case "keypress":
-            case "mousedown":
-            case "focusout":
+            case 'keypress':
+            case 'mousedown':
+            case 'focusout':
               return true;
             default:
               return false;
@@ -7264,13 +7264,13 @@ var require_react_dom_development = __commonJS({
         }
         function getDataFromCustomEvent(nativeEvent) {
           var detail = nativeEvent.detail;
-          if (typeof detail === "object" && "data" in detail) {
+          if (typeof detail === 'object' && 'data' in detail) {
             return detail.data;
           }
           return null;
         }
         function isUsingKoreanIME(nativeEvent) {
-          return nativeEvent.locale === "ko";
+          return nativeEvent.locale === 'ko';
         }
         var isComposing = false;
         function extractCompositionEvent(
@@ -7286,18 +7286,18 @@ var require_react_dom_development = __commonJS({
             eventType = getCompositionEventType(domEventName);
           } else if (!isComposing) {
             if (isFallbackCompositionStart(domEventName, nativeEvent)) {
-              eventType = "onCompositionStart";
+              eventType = 'onCompositionStart';
             }
           } else if (isFallbackCompositionEnd(domEventName, nativeEvent)) {
-            eventType = "onCompositionEnd";
+            eventType = 'onCompositionEnd';
           }
           if (!eventType) {
             return null;
           }
           if (useFallbackCompositionData && !isUsingKoreanIME(nativeEvent)) {
-            if (!isComposing && eventType === "onCompositionStart") {
+            if (!isComposing && eventType === 'onCompositionStart') {
               isComposing = initialize(nativeEventTarget);
-            } else if (eventType === "onCompositionEnd") {
+            } else if (eventType === 'onCompositionEnd') {
               if (isComposing) {
                 fallbackData = getData();
               }
@@ -7328,16 +7328,16 @@ var require_react_dom_development = __commonJS({
         }
         function getNativeBeforeInputChars(domEventName, nativeEvent) {
           switch (domEventName) {
-            case "compositionend":
+            case 'compositionend':
               return getDataFromCustomEvent(nativeEvent);
-            case "keypress":
+            case 'keypress':
               var which = nativeEvent.which;
               if (which !== SPACEBAR_CODE) {
                 return null;
               }
               hasSpaceKeypress = true;
               return SPACEBAR_CHAR;
-            case "textInput":
+            case 'textInput':
               var chars = nativeEvent.data;
               if (chars === SPACEBAR_CHAR && hasSpaceKeypress) {
                 return null;
@@ -7350,7 +7350,7 @@ var require_react_dom_development = __commonJS({
         function getFallbackBeforeInputChars(domEventName, nativeEvent) {
           if (isComposing) {
             if (
-              domEventName === "compositionend" ||
+              domEventName === 'compositionend' ||
               (!canUseCompositionEvent &&
                 isFallbackCompositionEnd(domEventName, nativeEvent))
             ) {
@@ -7362,9 +7362,9 @@ var require_react_dom_development = __commonJS({
             return null;
           }
           switch (domEventName) {
-            case "paste":
+            case 'paste':
               return null;
-            case "keypress":
+            case 'keypress':
               if (!isKeypressCommand(nativeEvent)) {
                 if (nativeEvent.char && nativeEvent.char.length > 1) {
                   return nativeEvent.char;
@@ -7373,7 +7373,7 @@ var require_react_dom_development = __commonJS({
                 }
               }
               return null;
-            case "compositionend":
+            case 'compositionend':
               return useFallbackCompositionData &&
                 !isUsingKoreanIME(nativeEvent)
                 ? null
@@ -7400,12 +7400,12 @@ var require_react_dom_development = __commonJS({
           }
           var listeners = accumulateTwoPhaseListeners(
             targetInst,
-            "onBeforeInput",
+            'onBeforeInput',
           );
           if (listeners.length > 0) {
             var event = new SyntheticInputEvent(
-              "onBeforeInput",
-              "beforeinput",
+              'onBeforeInput',
+              'beforeinput',
               null,
               nativeEvent,
               nativeEventTarget,
@@ -7445,7 +7445,7 @@ var require_react_dom_development = __commonJS({
           color: true,
           date: true,
           datetime: true,
-          "datetime-local": true,
+          'datetime-local': true,
           email: true,
           month: true,
           number: true,
@@ -7460,10 +7460,10 @@ var require_react_dom_development = __commonJS({
         };
         function isTextInputElement(elem) {
           var nodeName = elem && elem.nodeName && elem.nodeName.toLowerCase();
-          if (nodeName === "input") {
+          if (nodeName === 'input') {
             return !!supportedInputTypes[elem.type];
           }
-          if (nodeName === "textarea") {
+          if (nodeName === 'textarea') {
             return true;
           }
           return false;
@@ -7472,25 +7472,25 @@ var require_react_dom_development = __commonJS({
           if (!canUseDOM) {
             return false;
           }
-          var eventName = "on" + eventNameSuffix;
+          var eventName = 'on' + eventNameSuffix;
           var isSupported = eventName in document;
           if (!isSupported) {
-            var element = document.createElement("div");
-            element.setAttribute(eventName, "return;");
-            isSupported = typeof element[eventName] === "function";
+            var element = document.createElement('div');
+            element.setAttribute(eventName, 'return;');
+            isSupported = typeof element[eventName] === 'function';
           }
           return isSupported;
         }
         function registerEvents$1() {
-          registerTwoPhaseEvent("onChange", [
-            "change",
-            "click",
-            "focusin",
-            "focusout",
-            "input",
-            "keydown",
-            "keyup",
-            "selectionchange",
+          registerTwoPhaseEvent('onChange', [
+            'change',
+            'click',
+            'focusin',
+            'focusout',
+            'input',
+            'keydown',
+            'keyup',
+            'selectionchange',
           ]);
         }
         function createAndAccumulateChangeEvent(
@@ -7500,11 +7500,11 @@ var require_react_dom_development = __commonJS({
           target,
         ) {
           enqueueStateRestore(target);
-          var listeners = accumulateTwoPhaseListeners(inst, "onChange");
+          var listeners = accumulateTwoPhaseListeners(inst, 'onChange');
           if (listeners.length > 0) {
             var event = new SyntheticEvent(
-              "onChange",
-              "change",
+              'onChange',
+              'change',
               null,
               nativeEvent,
               target,
@@ -7520,8 +7520,8 @@ var require_react_dom_development = __commonJS({
         function shouldUseChangeEvent(elem) {
           var nodeName = elem.nodeName && elem.nodeName.toLowerCase();
           return (
-            nodeName === "select" ||
-            (nodeName === "input" && elem.type === "file")
+            nodeName === 'select' ||
+            (nodeName === 'input' && elem.type === 'file')
           );
         }
         function manualDispatchChangeEvent(nativeEvent) {
@@ -7544,31 +7544,31 @@ var require_react_dom_development = __commonJS({
           }
         }
         function getTargetInstForChangeEvent(domEventName, targetInst) {
-          if (domEventName === "change") {
+          if (domEventName === 'change') {
             return targetInst;
           }
         }
         var isInputEventSupported = false;
         if (canUseDOM) {
           isInputEventSupported =
-            isEventSupported("input") &&
+            isEventSupported('input') &&
             (!document.documentMode || document.documentMode > 9);
         }
         function startWatchingForValueChange(target, targetInst) {
           activeElement = target;
           activeElementInst = targetInst;
-          activeElement.attachEvent("onpropertychange", handlePropertyChange);
+          activeElement.attachEvent('onpropertychange', handlePropertyChange);
         }
         function stopWatchingForValueChange() {
           if (!activeElement) {
             return;
           }
-          activeElement.detachEvent("onpropertychange", handlePropertyChange);
+          activeElement.detachEvent('onpropertychange', handlePropertyChange);
           activeElement = null;
           activeElementInst = null;
         }
         function handlePropertyChange(nativeEvent) {
-          if (nativeEvent.propertyName !== "value") {
+          if (nativeEvent.propertyName !== 'value') {
             return;
           }
           if (getInstIfValueChanged(activeElementInst)) {
@@ -7580,18 +7580,18 @@ var require_react_dom_development = __commonJS({
           target,
           targetInst,
         ) {
-          if (domEventName === "focusin") {
+          if (domEventName === 'focusin') {
             stopWatchingForValueChange();
             startWatchingForValueChange(target, targetInst);
-          } else if (domEventName === "focusout") {
+          } else if (domEventName === 'focusout') {
             stopWatchingForValueChange();
           }
         }
         function getTargetInstForInputEventPolyfill(domEventName, targetInst) {
           if (
-            domEventName === "selectionchange" ||
-            domEventName === "keyup" ||
-            domEventName === "keydown"
+            domEventName === 'selectionchange' ||
+            domEventName === 'keyup' ||
+            domEventName === 'keydown'
           ) {
             return getInstIfValueChanged(activeElementInst);
           }
@@ -7600,27 +7600,27 @@ var require_react_dom_development = __commonJS({
           var nodeName = elem.nodeName;
           return (
             nodeName &&
-            nodeName.toLowerCase() === "input" &&
-            (elem.type === "checkbox" || elem.type === "radio")
+            nodeName.toLowerCase() === 'input' &&
+            (elem.type === 'checkbox' || elem.type === 'radio')
           );
         }
         function getTargetInstForClickEvent(domEventName, targetInst) {
-          if (domEventName === "click") {
+          if (domEventName === 'click') {
             return getInstIfValueChanged(targetInst);
           }
         }
         function getTargetInstForInputOrChangeEvent(domEventName, targetInst) {
-          if (domEventName === "input" || domEventName === "change") {
+          if (domEventName === 'input' || domEventName === 'change') {
             return getInstIfValueChanged(targetInst);
           }
         }
         function handleControlledInputBlur(node) {
           var state = node._wrapperState;
-          if (!state || !state.controlled || node.type !== "number") {
+          if (!state || !state.controlled || node.type !== 'number') {
             return;
           }
           {
-            setDefaultValue(node, "number", node.value);
+            setDefaultValue(node, 'number', node.value);
           }
         }
         function extractEvents$1(
@@ -7663,15 +7663,15 @@ var require_react_dom_development = __commonJS({
           if (handleEventFunc) {
             handleEventFunc(domEventName, targetNode, targetInst);
           }
-          if (domEventName === "focusout") {
+          if (domEventName === 'focusout') {
             handleControlledInputBlur(targetNode);
           }
         }
         function registerEvents$2() {
-          registerDirectEvent("onMouseEnter", ["mouseout", "mouseover"]);
-          registerDirectEvent("onMouseLeave", ["mouseout", "mouseover"]);
-          registerDirectEvent("onPointerEnter", ["pointerout", "pointerover"]);
-          registerDirectEvent("onPointerLeave", ["pointerout", "pointerover"]);
+          registerDirectEvent('onMouseEnter', ['mouseout', 'mouseover']);
+          registerDirectEvent('onMouseLeave', ['mouseout', 'mouseover']);
+          registerDirectEvent('onPointerEnter', ['pointerout', 'pointerover']);
+          registerDirectEvent('onPointerLeave', ['pointerout', 'pointerover']);
         }
         function extractEvents$2(
           dispatchQueue,
@@ -7683,9 +7683,9 @@ var require_react_dom_development = __commonJS({
           targetContainer,
         ) {
           var isOverEvent =
-            domEventName === "mouseover" || domEventName === "pointerover";
+            domEventName === 'mouseover' || domEventName === 'pointerover';
           var isOutEvent =
-            domEventName === "mouseout" || domEventName === "pointerout";
+            domEventName === 'mouseout' || domEventName === 'pointerout';
           if (isOverEvent && !isReplayingEvent(nativeEvent)) {
             var related = nativeEvent.relatedTarget || nativeEvent.fromElement;
             if (related) {
@@ -7734,20 +7734,20 @@ var require_react_dom_development = __commonJS({
             return;
           }
           var SyntheticEventCtor = SyntheticMouseEvent;
-          var leaveEventType = "onMouseLeave";
-          var enterEventType = "onMouseEnter";
-          var eventTypePrefix = "mouse";
-          if (domEventName === "pointerout" || domEventName === "pointerover") {
+          var leaveEventType = 'onMouseLeave';
+          var enterEventType = 'onMouseEnter';
+          var eventTypePrefix = 'mouse';
+          if (domEventName === 'pointerout' || domEventName === 'pointerover') {
             SyntheticEventCtor = SyntheticPointerEvent;
-            leaveEventType = "onPointerLeave";
-            enterEventType = "onPointerEnter";
-            eventTypePrefix = "pointer";
+            leaveEventType = 'onPointerLeave';
+            enterEventType = 'onPointerEnter';
+            eventTypePrefix = 'pointer';
           }
           var fromNode = from == null ? win : getNodeFromInstance(from);
           var toNode = to == null ? win : getNodeFromInstance(to);
           var leave = new SyntheticEventCtor(
             leaveEventType,
-            eventTypePrefix + "leave",
+            eventTypePrefix + 'leave',
             from,
             nativeEvent,
             nativeEventTarget,
@@ -7759,7 +7759,7 @@ var require_react_dom_development = __commonJS({
           if (nativeTargetInst === targetInst) {
             var enterEvent = new SyntheticEventCtor(
               enterEventType,
-              eventTypePrefix + "enter",
+              eventTypePrefix + 'enter',
               to,
               nativeEvent,
               nativeEventTarget,
@@ -7781,15 +7781,15 @@ var require_react_dom_development = __commonJS({
             (x === y && (x !== 0 || 1 / x === 1 / y)) || (x !== x && y !== y)
           );
         }
-        var objectIs = typeof Object.is === "function" ? Object.is : is;
+        var objectIs = typeof Object.is === 'function' ? Object.is : is;
         function shallowEqual(objA, objB) {
           if (objectIs(objA, objB)) {
             return true;
           }
           if (
-            typeof objA !== "object" ||
+            typeof objA !== 'object' ||
             objA === null ||
-            typeof objB !== "object" ||
+            typeof objB !== 'object' ||
             objB === null
           ) {
             return false;
@@ -7989,7 +7989,7 @@ var require_react_dom_development = __commonJS({
             return false;
           } else if (isTextNode(innerNode)) {
             return containsNode(outerNode, innerNode.parentNode);
-          } else if ("contains" in outerNode) {
+          } else if ('contains' in outerNode) {
             return outerNode.contains(innerNode);
           } else if (outerNode.compareDocumentPosition) {
             return !!(outerNode.compareDocumentPosition(innerNode) & 16);
@@ -8006,7 +8006,7 @@ var require_react_dom_development = __commonJS({
         }
         function isSameOriginFrame(iframe) {
           try {
-            return typeof iframe.contentWindow.location.href === "string";
+            return typeof iframe.contentWindow.location.href === 'string';
           } catch (err) {
             return false;
           }
@@ -8028,14 +8028,14 @@ var require_react_dom_development = __commonJS({
           var nodeName = elem && elem.nodeName && elem.nodeName.toLowerCase();
           return (
             nodeName &&
-            ((nodeName === "input" &&
-              (elem.type === "text" ||
-                elem.type === "search" ||
-                elem.type === "tel" ||
-                elem.type === "url" ||
-                elem.type === "password")) ||
-              nodeName === "textarea" ||
-              elem.contentEditable === "true")
+            ((nodeName === 'input' &&
+              (elem.type === 'text' ||
+                elem.type === 'search' ||
+                elem.type === 'tel' ||
+                elem.type === 'url' ||
+                elem.type === 'password')) ||
+              nodeName === 'textarea' ||
+              elem.contentEditable === 'true')
           );
         }
         function getSelectionInformation() {
@@ -8072,7 +8072,7 @@ var require_react_dom_development = __commonJS({
                 });
               }
             }
-            if (typeof priorFocusedElem.focus === "function") {
+            if (typeof priorFocusedElem.focus === 'function') {
               priorFocusedElem.focus();
             }
             for (var i = 0; i < ancestors.length; i++) {
@@ -8084,7 +8084,7 @@ var require_react_dom_development = __commonJS({
         }
         function getSelection(input) {
           var selection;
-          if ("selectionStart" in input) {
+          if ('selectionStart' in input) {
             selection = {
               start: input.selectionStart,
               end: input.selectionEnd,
@@ -8105,7 +8105,7 @@ var require_react_dom_development = __commonJS({
           if (end === void 0) {
             end = start;
           }
-          if ("selectionStart" in input) {
+          if ('selectionStart' in input) {
             input.selectionStart = start;
             input.selectionEnd = Math.min(end, input.value.length);
           } else {
@@ -8114,19 +8114,19 @@ var require_react_dom_development = __commonJS({
         }
         var skipSelectionChangeEvent =
           canUseDOM &&
-          "documentMode" in document &&
+          'documentMode' in document &&
           document.documentMode <= 11;
         function registerEvents$3() {
-          registerTwoPhaseEvent("onSelect", [
-            "focusout",
-            "contextmenu",
-            "dragend",
-            "focusin",
-            "keydown",
-            "keyup",
-            "mousedown",
-            "mouseup",
-            "selectionchange",
+          registerTwoPhaseEvent('onSelect', [
+            'focusout',
+            'contextmenu',
+            'dragend',
+            'focusin',
+            'keydown',
+            'keyup',
+            'mousedown',
+            'mouseup',
+            'selectionchange',
           ]);
         }
         var activeElement$1 = null;
@@ -8134,7 +8134,7 @@ var require_react_dom_development = __commonJS({
         var lastSelection = null;
         var mouseDown = false;
         function getSelection$1(node) {
-          if ("selectionStart" in node && hasSelectionCapabilities(node)) {
+          if ('selectionStart' in node && hasSelectionCapabilities(node)) {
             return {
               start: node.selectionStart,
               end: node.selectionEnd,
@@ -8179,12 +8179,12 @@ var require_react_dom_development = __commonJS({
             lastSelection = currentSelection;
             var listeners = accumulateTwoPhaseListeners(
               activeElementInst$1,
-              "onSelect",
+              'onSelect',
             );
             if (listeners.length > 0) {
               var event = new SyntheticEvent(
-                "onSelect",
-                "select",
+                'onSelect',
+                'select',
                 null,
                 nativeEvent,
                 nativeEventTarget,
@@ -8210,27 +8210,27 @@ var require_react_dom_development = __commonJS({
             ? getNodeFromInstance(targetInst)
             : window;
           switch (domEventName) {
-            case "focusin":
+            case 'focusin':
               if (
                 isTextInputElement(targetNode) ||
-                targetNode.contentEditable === "true"
+                targetNode.contentEditable === 'true'
               ) {
                 activeElement$1 = targetNode;
                 activeElementInst$1 = targetInst;
                 lastSelection = null;
               }
               break;
-            case "focusout":
+            case 'focusout':
               activeElement$1 = null;
               activeElementInst$1 = null;
               lastSelection = null;
               break;
-            case "mousedown":
+            case 'mousedown':
               mouseDown = true;
               break;
-            case "contextmenu":
-            case "mouseup":
-            case "dragend":
+            case 'contextmenu':
+            case 'mouseup':
+            case 'dragend':
               mouseDown = false;
               constructSelectEvent(
                 dispatchQueue,
@@ -8238,12 +8238,12 @@ var require_react_dom_development = __commonJS({
                 nativeEventTarget,
               );
               break;
-            case "selectionchange":
+            case 'selectionchange':
               if (skipSelectionChangeEvent) {
                 break;
               }
-            case "keydown":
-            case "keyup":
+            case 'keydown':
+            case 'keyup':
               constructSelectEvent(
                 dispatchQueue,
                 nativeEvent,
@@ -8254,26 +8254,26 @@ var require_react_dom_development = __commonJS({
         function makePrefixMap(styleProp, eventName) {
           var prefixes2 = {};
           prefixes2[styleProp.toLowerCase()] = eventName.toLowerCase();
-          prefixes2["Webkit" + styleProp] = "webkit" + eventName;
-          prefixes2["Moz" + styleProp] = "moz" + eventName;
+          prefixes2['Webkit' + styleProp] = 'webkit' + eventName;
+          prefixes2['Moz' + styleProp] = 'moz' + eventName;
           return prefixes2;
         }
         var vendorPrefixes = {
-          animationend: makePrefixMap("Animation", "AnimationEnd"),
-          animationiteration: makePrefixMap("Animation", "AnimationIteration"),
-          animationstart: makePrefixMap("Animation", "AnimationStart"),
-          transitionend: makePrefixMap("Transition", "TransitionEnd"),
+          animationend: makePrefixMap('Animation', 'AnimationEnd'),
+          animationiteration: makePrefixMap('Animation', 'AnimationIteration'),
+          animationstart: makePrefixMap('Animation', 'AnimationStart'),
+          transitionend: makePrefixMap('Transition', 'TransitionEnd'),
         };
         var prefixedEventNames = {};
         var style = {};
         if (canUseDOM) {
-          style = document.createElement("div").style;
-          if (!("AnimationEvent" in window)) {
+          style = document.createElement('div').style;
+          if (!('AnimationEvent' in window)) {
             delete vendorPrefixes.animationend.animation;
             delete vendorPrefixes.animationiteration.animation;
             delete vendorPrefixes.animationstart.animation;
           }
-          if (!("TransitionEvent" in window)) {
+          if (!('TransitionEvent' in window)) {
             delete vendorPrefixes.transitionend.transition;
           }
         }
@@ -8291,81 +8291,81 @@ var require_react_dom_development = __commonJS({
           }
           return eventName;
         }
-        var ANIMATION_END = getVendorPrefixedEventName("animationend");
+        var ANIMATION_END = getVendorPrefixedEventName('animationend');
         var ANIMATION_ITERATION =
-          getVendorPrefixedEventName("animationiteration");
-        var ANIMATION_START = getVendorPrefixedEventName("animationstart");
-        var TRANSITION_END = getVendorPrefixedEventName("transitionend");
+          getVendorPrefixedEventName('animationiteration');
+        var ANIMATION_START = getVendorPrefixedEventName('animationstart');
+        var TRANSITION_END = getVendorPrefixedEventName('transitionend');
         var topLevelEventsToReactNames = /* @__PURE__ */ new Map();
         var simpleEventPluginEvents = [
-          "abort",
-          "auxClick",
-          "cancel",
-          "canPlay",
-          "canPlayThrough",
-          "click",
-          "close",
-          "contextMenu",
-          "copy",
-          "cut",
-          "drag",
-          "dragEnd",
-          "dragEnter",
-          "dragExit",
-          "dragLeave",
-          "dragOver",
-          "dragStart",
-          "drop",
-          "durationChange",
-          "emptied",
-          "encrypted",
-          "ended",
-          "error",
-          "gotPointerCapture",
-          "input",
-          "invalid",
-          "keyDown",
-          "keyPress",
-          "keyUp",
-          "load",
-          "loadedData",
-          "loadedMetadata",
-          "loadStart",
-          "lostPointerCapture",
-          "mouseDown",
-          "mouseMove",
-          "mouseOut",
-          "mouseOver",
-          "mouseUp",
-          "paste",
-          "pause",
-          "play",
-          "playing",
-          "pointerCancel",
-          "pointerDown",
-          "pointerMove",
-          "pointerOut",
-          "pointerOver",
-          "pointerUp",
-          "progress",
-          "rateChange",
-          "reset",
-          "resize",
-          "seeked",
-          "seeking",
-          "stalled",
-          "submit",
-          "suspend",
-          "timeUpdate",
-          "touchCancel",
-          "touchEnd",
-          "touchStart",
-          "volumeChange",
-          "scroll",
-          "toggle",
-          "touchMove",
-          "waiting",
-          "wheel",
+          'abort',
+          'auxClick',
+          'cancel',
+          'canPlay',
+          'canPlayThrough',
+          'click',
+          'close',
+          'contextMenu',
+          'copy',
+          'cut',
+          'drag',
+          'dragEnd',
+          'dragEnter',
+          'dragExit',
+          'dragLeave',
+          'dragOver',
+          'dragStart',
+          'drop',
+          'durationChange',
+          'emptied',
+          'encrypted',
+          'ended',
+          'error',
+          'gotPointerCapture',
+          'input',
+          'invalid',
+          'keyDown',
+          'keyPress',
+          'keyUp',
+          'load',
+          'loadedData',
+          'loadedMetadata',
+          'loadStart',
+          'lostPointerCapture',
+          'mouseDown',
+          'mouseMove',
+          'mouseOut',
+          'mouseOver',
+          'mouseUp',
+          'paste',
+          'pause',
+          'play',
+          'playing',
+          'pointerCancel',
+          'pointerDown',
+          'pointerMove',
+          'pointerOut',
+          'pointerOver',
+          'pointerUp',
+          'progress',
+          'rateChange',
+          'reset',
+          'resize',
+          'seeked',
+          'seeking',
+          'stalled',
+          'submit',
+          'suspend',
+          'timeUpdate',
+          'touchCancel',
+          'touchEnd',
+          'touchStart',
+          'volumeChange',
+          'scroll',
+          'toggle',
+          'touchMove',
+          'waiting',
+          'wheel',
         ];
         function registerSimpleEvent(domEventName, reactName) {
           topLevelEventsToReactNames.set(domEventName, reactName);
@@ -8377,15 +8377,15 @@ var require_react_dom_development = __commonJS({
             var domEventName = eventName.toLowerCase();
             var capitalizedEvent =
               eventName[0].toUpperCase() + eventName.slice(1);
-            registerSimpleEvent(domEventName, "on" + capitalizedEvent);
+            registerSimpleEvent(domEventName, 'on' + capitalizedEvent);
           }
-          registerSimpleEvent(ANIMATION_END, "onAnimationEnd");
-          registerSimpleEvent(ANIMATION_ITERATION, "onAnimationIteration");
-          registerSimpleEvent(ANIMATION_START, "onAnimationStart");
-          registerSimpleEvent("dblclick", "onDoubleClick");
-          registerSimpleEvent("focusin", "onFocus");
-          registerSimpleEvent("focusout", "onBlur");
-          registerSimpleEvent(TRANSITION_END, "onTransitionEnd");
+          registerSimpleEvent(ANIMATION_END, 'onAnimationEnd');
+          registerSimpleEvent(ANIMATION_ITERATION, 'onAnimationIteration');
+          registerSimpleEvent(ANIMATION_START, 'onAnimationStart');
+          registerSimpleEvent('dblclick', 'onDoubleClick');
+          registerSimpleEvent('focusin', 'onFocus');
+          registerSimpleEvent('focusout', 'onBlur');
+          registerSimpleEvent(TRANSITION_END, 'onTransitionEnd');
         }
         function extractEvents$4(
           dispatchQueue,
@@ -8403,54 +8403,54 @@ var require_react_dom_development = __commonJS({
           var SyntheticEventCtor = SyntheticEvent;
           var reactEventType = domEventName;
           switch (domEventName) {
-            case "keypress":
+            case 'keypress':
               if (getEventCharCode(nativeEvent) === 0) {
                 return;
               }
-            case "keydown":
-            case "keyup":
+            case 'keydown':
+            case 'keyup':
               SyntheticEventCtor = SyntheticKeyboardEvent;
               break;
-            case "focusin":
-              reactEventType = "focus";
+            case 'focusin':
+              reactEventType = 'focus';
               SyntheticEventCtor = SyntheticFocusEvent;
               break;
-            case "focusout":
-              reactEventType = "blur";
+            case 'focusout':
+              reactEventType = 'blur';
               SyntheticEventCtor = SyntheticFocusEvent;
               break;
-            case "beforeblur":
-            case "afterblur":
+            case 'beforeblur':
+            case 'afterblur':
               SyntheticEventCtor = SyntheticFocusEvent;
               break;
-            case "click":
+            case 'click':
               if (nativeEvent.button === 2) {
                 return;
               }
-            case "auxclick":
-            case "dblclick":
-            case "mousedown":
-            case "mousemove":
-            case "mouseup":
-            case "mouseout":
-            case "mouseover":
-            case "contextmenu":
+            case 'auxclick':
+            case 'dblclick':
+            case 'mousedown':
+            case 'mousemove':
+            case 'mouseup':
+            case 'mouseout':
+            case 'mouseover':
+            case 'contextmenu':
               SyntheticEventCtor = SyntheticMouseEvent;
               break;
-            case "drag":
-            case "dragend":
-            case "dragenter":
-            case "dragexit":
-            case "dragleave":
-            case "dragover":
-            case "dragstart":
-            case "drop":
+            case 'drag':
+            case 'dragend':
+            case 'dragenter':
+            case 'dragexit':
+            case 'dragleave':
+            case 'dragover':
+            case 'dragstart':
+            case 'drop':
               SyntheticEventCtor = SyntheticDragEvent;
               break;
-            case "touchcancel":
-            case "touchend":
-            case "touchmove":
-            case "touchstart":
+            case 'touchcancel':
+            case 'touchend':
+            case 'touchmove':
+            case 'touchstart':
               SyntheticEventCtor = SyntheticTouchEvent;
               break;
             case ANIMATION_END:
@@ -8461,25 +8461,25 @@ var require_react_dom_development = __commonJS({
             case TRANSITION_END:
               SyntheticEventCtor = SyntheticTransitionEvent;
               break;
-            case "scroll":
+            case 'scroll':
               SyntheticEventCtor = SyntheticUIEvent;
               break;
-            case "wheel":
+            case 'wheel':
               SyntheticEventCtor = SyntheticWheelEvent;
               break;
-            case "copy":
-            case "cut":
-            case "paste":
+            case 'copy':
+            case 'cut':
+            case 'paste':
               SyntheticEventCtor = SyntheticClipboardEvent;
               break;
-            case "gotpointercapture":
-            case "lostpointercapture":
-            case "pointercancel":
-            case "pointerdown":
-            case "pointermove":
-            case "pointerout":
-            case "pointerover":
-            case "pointerup":
+            case 'gotpointercapture':
+            case 'lostpointercapture':
+            case 'pointercancel':
+            case 'pointerdown':
+            case 'pointermove':
+            case 'pointerout':
+            case 'pointerover':
+            case 'pointerup':
               SyntheticEventCtor = SyntheticPointerEvent;
               break;
           }
@@ -8490,7 +8490,7 @@ var require_react_dom_development = __commonJS({
               // nonDelegatedEvents list in DOMPluginEventSystem.
               // Then we can remove this special list.
               // This is a breaking change that can wait until React 18.
-              domEventName === "scroll";
+              domEventName === 'scroll';
             var _listeners = accumulateSinglePhaseListeners(
               targetInst,
               reactName,
@@ -8570,38 +8570,38 @@ var require_react_dom_development = __commonJS({
           }
         }
         var mediaEventTypes = [
-          "abort",
-          "canplay",
-          "canplaythrough",
-          "durationchange",
-          "emptied",
-          "encrypted",
-          "ended",
-          "error",
-          "loadeddata",
-          "loadedmetadata",
-          "loadstart",
-          "pause",
-          "play",
-          "playing",
-          "progress",
-          "ratechange",
-          "resize",
-          "seeked",
-          "seeking",
-          "stalled",
-          "suspend",
-          "timeupdate",
-          "volumechange",
-          "waiting",
+          'abort',
+          'canplay',
+          'canplaythrough',
+          'durationchange',
+          'emptied',
+          'encrypted',
+          'ended',
+          'error',
+          'loadeddata',
+          'loadedmetadata',
+          'loadstart',
+          'pause',
+          'play',
+          'playing',
+          'progress',
+          'ratechange',
+          'resize',
+          'seeked',
+          'seeking',
+          'stalled',
+          'suspend',
+          'timeupdate',
+          'volumechange',
+          'waiting',
         ];
         var nonDelegatedEvents = new Set(
-          ["cancel", "close", "invalid", "load", "scroll", "toggle"].concat(
+          ['cancel', 'close', 'invalid', 'load', 'scroll', 'toggle'].concat(
             mediaEventTypes,
           ),
         );
         function executeDispatch(event, listener, currentTarget) {
-          var type = event.type || "unknown-event";
+          var type = event.type || 'unknown-event';
           event.currentTarget = currentTarget;
           invokeGuardedCallbackAndCatchFirstError(
             type,
@@ -8731,12 +8731,12 @@ var require_react_dom_development = __commonJS({
           );
         }
         var listeningMarker =
-          "_reactListening" + Math.random().toString(36).slice(2);
+          '_reactListening' + Math.random().toString(36).slice(2);
         function listenToAllSupportedEvents(rootContainerElement) {
           if (!rootContainerElement[listeningMarker]) {
             rootContainerElement[listeningMarker] = true;
             allNativeEvents.forEach(function (domEventName) {
-              if (domEventName !== "selectionchange") {
+              if (domEventName !== 'selectionchange') {
                 if (!nonDelegatedEvents.has(domEventName)) {
                   listenToNativeEvent(
                     domEventName,
@@ -8754,7 +8754,7 @@ var require_react_dom_development = __commonJS({
             if (ownerDocument !== null) {
               if (!ownerDocument[listeningMarker]) {
                 ownerDocument[listeningMarker] = true;
-                listenToNativeEvent("selectionchange", false, ownerDocument);
+                listenToNativeEvent('selectionchange', false, ownerDocument);
               }
             }
           }
@@ -8774,9 +8774,9 @@ var require_react_dom_development = __commonJS({
           var isPassiveListener = void 0;
           if (passiveBrowserEventsSupported) {
             if (
-              domEventName === "touchstart" ||
-              domEventName === "touchmove" ||
-              domEventName === "wheel"
+              domEventName === 'touchstart' ||
+              domEventName === 'touchmove' ||
+              domEventName === 'wheel'
             ) {
               isPassiveListener = true;
             }
@@ -8906,7 +8906,7 @@ var require_react_dom_development = __commonJS({
           accumulateTargetOnly,
           nativeEvent,
         ) {
-          var captureName = reactName !== null ? reactName + "Capture" : null;
+          var captureName = reactName !== null ? reactName + 'Capture' : null;
           var reactEventName = inCapturePhase ? captureName : reactName;
           var listeners = [];
           var instance = targetFiber;
@@ -8938,7 +8938,7 @@ var require_react_dom_development = __commonJS({
           return listeners;
         }
         function accumulateTwoPhaseListeners(targetFiber, reactName) {
-          var captureName = reactName + "Capture";
+          var captureName = reactName + 'Capture';
           var listeners = [];
           var instance = targetFiber;
           while (instance !== null) {
@@ -9100,17 +9100,17 @@ var require_react_dom_development = __commonJS({
           }
         }
         function getListenerSetKey(domEventName, capture) {
-          return domEventName + "__" + (capture ? "capture" : "bubble");
+          return domEventName + '__' + (capture ? 'capture' : 'bubble');
         }
         var didWarnInvalidHydration = false;
-        var DANGEROUSLY_SET_INNER_HTML = "dangerouslySetInnerHTML";
+        var DANGEROUSLY_SET_INNER_HTML = 'dangerouslySetInnerHTML';
         var SUPPRESS_CONTENT_EDITABLE_WARNING =
-          "suppressContentEditableWarning";
-        var SUPPRESS_HYDRATION_WARNING = "suppressHydrationWarning";
-        var AUTOFOCUS = "autoFocus";
-        var CHILDREN = "children";
-        var STYLE = "style";
-        var HTML$1 = "__html";
+          'suppressContentEditableWarning';
+        var SUPPRESS_HYDRATION_WARNING = 'suppressHydrationWarning';
+        var AUTOFOCUS = 'autoFocus';
+        var CHILDREN = 'children';
+        var STYLE = 'style';
+        var HTML$1 = '__html';
         var warnedUnknownTags;
         var validatePropertiesInDevelopment;
         var warnForPropDifference;
@@ -9155,7 +9155,7 @@ var require_react_dom_development = __commonJS({
             }
             didWarnInvalidHydration = true;
             error(
-              "Prop `%s` did not match. Server: %s Client: %s",
+              'Prop `%s` did not match. Server: %s Client: %s',
               propName,
               JSON.stringify(normalizedServerValue),
               JSON.stringify(normalizedClientValue),
@@ -9170,19 +9170,19 @@ var require_react_dom_development = __commonJS({
             attributeNames.forEach(function (name) {
               names.push(name);
             });
-            error("Extra attributes from the server: %s", names);
+            error('Extra attributes from the server: %s', names);
           };
           warnForInvalidEventListener = function (registrationName, listener) {
             if (listener === false) {
               error(
-                "Expected `%s` listener to be a function, instead got `false`.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.",
+                'Expected `%s` listener to be a function, instead got `false`.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.',
                 registrationName,
                 registrationName,
                 registrationName,
               );
             } else {
               error(
-                "Expected `%s` listener to be a function, instead got a value of `%s` type.",
+                'Expected `%s` listener to be a function, instead got a value of `%s` type.',
                 registrationName,
                 typeof listener,
               );
@@ -9206,10 +9206,10 @@ var require_react_dom_development = __commonJS({
           {
             checkHtmlStringCoercion(markup);
           }
-          var markupString = typeof markup === "string" ? markup : "" + markup;
+          var markupString = typeof markup === 'string' ? markup : '' + markup;
           return markupString
-            .replace(NORMALIZE_NEWLINES_REGEX, "\n")
-            .replace(NORMALIZE_NULL_AND_REPLACEMENT_REGEX, "");
+            .replace(NORMALIZE_NEWLINES_REGEX, '\n')
+            .replace(NORMALIZE_NULL_AND_REPLACEMENT_REGEX, '');
         }
         function checkForUnmatchedText(
           serverText,
@@ -9238,7 +9238,7 @@ var require_react_dom_development = __commonJS({
           }
           if (isConcurrentMode && enableClientRenderFallbackOnTextMismatch) {
             throw new Error(
-              "Text content does not match server-rendered HTML.",
+              'Text content does not match server-rendered HTML.',
             );
           }
         }
@@ -9276,13 +9276,13 @@ var require_react_dom_development = __commonJS({
                 setInnerHTML(domElement, nextHtml);
               }
             } else if (propKey === CHILDREN) {
-              if (typeof nextProp === "string") {
-                var canSetTextContent = tag !== "textarea" || nextProp !== "";
+              if (typeof nextProp === 'string') {
+                var canSetTextContent = tag !== 'textarea' || nextProp !== '';
                 if (canSetTextContent) {
                   setTextContent(domElement, nextProp);
                 }
-              } else if (typeof nextProp === "number") {
-                setTextContent(domElement, "" + nextProp);
+              } else if (typeof nextProp === 'number') {
+                setTextContent(domElement, '' + nextProp);
               }
             } else if (
               propKey === SUPPRESS_CONTENT_EDITABLE_WARNING ||
@@ -9291,11 +9291,11 @@ var require_react_dom_development = __commonJS({
             else if (propKey === AUTOFOCUS);
             else if (registrationNameDependencies.hasOwnProperty(propKey)) {
               if (nextProp != null) {
-                if (typeof nextProp !== "function") {
+                if (typeof nextProp !== 'function') {
                   warnForInvalidEventListener(propKey, nextProp);
                 }
-                if (propKey === "onScroll") {
-                  listenToNonDelegatedEvent("scroll", domElement);
+                if (propKey === 'onScroll') {
+                  listenToNonDelegatedEvent('scroll', domElement);
                 }
               }
             } else if (nextProp != null) {
@@ -9352,23 +9352,23 @@ var require_react_dom_development = __commonJS({
               isCustomComponentTag = isCustomComponent(type, props);
               if (!isCustomComponentTag && type !== type.toLowerCase()) {
                 error(
-                  "<%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.",
+                  '<%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.',
                   type,
                 );
               }
             }
-            if (type === "script") {
-              var div = ownerDocument.createElement("div");
-              div.innerHTML = "<script></script>";
+            if (type === 'script') {
+              var div = ownerDocument.createElement('div');
+              div.innerHTML = '<script></script>';
               var firstChild = div.firstChild;
               domElement = div.removeChild(firstChild);
-            } else if (typeof props.is === "string") {
+            } else if (typeof props.is === 'string') {
               domElement = ownerDocument.createElement(type, {
                 is: props.is,
               });
             } else {
               domElement = ownerDocument.createElement(type);
-              if (type === "select") {
+              if (type === 'select') {
                 var node = domElement;
                 if (props.multiple) {
                   node.multiple = true;
@@ -9385,12 +9385,12 @@ var require_react_dom_development = __commonJS({
               if (
                 !isCustomComponentTag &&
                 Object.prototype.toString.call(domElement) ===
-                  "[object HTMLUnknownElement]" &&
+                  '[object HTMLUnknownElement]' &&
                 !hasOwnProperty.call(warnedUnknownTags, type)
               ) {
                 warnedUnknownTags[type] = true;
                 error(
-                  "The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.",
+                  'The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.',
                   type,
                 );
               }
@@ -9415,57 +9415,57 @@ var require_react_dom_development = __commonJS({
           }
           var props;
           switch (tag) {
-            case "dialog":
-              listenToNonDelegatedEvent("cancel", domElement);
-              listenToNonDelegatedEvent("close", domElement);
+            case 'dialog':
+              listenToNonDelegatedEvent('cancel', domElement);
+              listenToNonDelegatedEvent('close', domElement);
               props = rawProps;
               break;
-            case "iframe":
-            case "object":
-            case "embed":
-              listenToNonDelegatedEvent("load", domElement);
+            case 'iframe':
+            case 'object':
+            case 'embed':
+              listenToNonDelegatedEvent('load', domElement);
               props = rawProps;
               break;
-            case "video":
-            case "audio":
+            case 'video':
+            case 'audio':
               for (var i = 0; i < mediaEventTypes.length; i++) {
                 listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
               }
               props = rawProps;
               break;
-            case "source":
-              listenToNonDelegatedEvent("error", domElement);
+            case 'source':
+              listenToNonDelegatedEvent('error', domElement);
               props = rawProps;
               break;
-            case "img":
-            case "image":
-            case "link":
-              listenToNonDelegatedEvent("error", domElement);
-              listenToNonDelegatedEvent("load", domElement);
+            case 'img':
+            case 'image':
+            case 'link':
+              listenToNonDelegatedEvent('error', domElement);
+              listenToNonDelegatedEvent('load', domElement);
               props = rawProps;
               break;
-            case "details":
-              listenToNonDelegatedEvent("toggle", domElement);
+            case 'details':
+              listenToNonDelegatedEvent('toggle', domElement);
               props = rawProps;
               break;
-            case "input":
+            case 'input':
               initWrapperState(domElement, rawProps);
               props = getHostProps(domElement, rawProps);
-              listenToNonDelegatedEvent("invalid", domElement);
+              listenToNonDelegatedEvent('invalid', domElement);
               break;
-            case "option":
+            case 'option':
               validateProps(domElement, rawProps);
               props = rawProps;
               break;
-            case "select":
+            case 'select':
               initWrapperState$1(domElement, rawProps);
               props = getHostProps$1(domElement, rawProps);
-              listenToNonDelegatedEvent("invalid", domElement);
+              listenToNonDelegatedEvent('invalid', domElement);
               break;
-            case "textarea":
+            case 'textarea':
               initWrapperState$2(domElement, rawProps);
               props = getHostProps$2(domElement, rawProps);
-              listenToNonDelegatedEvent("invalid", domElement);
+              listenToNonDelegatedEvent('invalid', domElement);
               break;
             default:
               props = rawProps;
@@ -9479,22 +9479,22 @@ var require_react_dom_development = __commonJS({
             isCustomComponentTag,
           );
           switch (tag) {
-            case "input":
+            case 'input':
               track(domElement);
               postMountWrapper(domElement, rawProps, false);
               break;
-            case "textarea":
+            case 'textarea':
               track(domElement);
               postMountWrapper$3(domElement);
               break;
-            case "option":
+            case 'option':
               postMountWrapper$1(domElement, rawProps);
               break;
-            case "select":
+            case 'select':
               postMountWrapper$2(domElement, rawProps);
               break;
             default:
-              if (typeof props.onClick === "function") {
+              if (typeof props.onClick === 'function') {
                 trapClickOnNonInteractiveElement(domElement);
               }
               break;
@@ -9514,17 +9514,17 @@ var require_react_dom_development = __commonJS({
           var lastProps;
           var nextProps;
           switch (tag) {
-            case "input":
+            case 'input':
               lastProps = getHostProps(domElement, lastRawProps);
               nextProps = getHostProps(domElement, nextRawProps);
               updatePayload = [];
               break;
-            case "select":
+            case 'select':
               lastProps = getHostProps$1(domElement, lastRawProps);
               nextProps = getHostProps$1(domElement, nextRawProps);
               updatePayload = [];
               break;
-            case "textarea":
+            case 'textarea':
               lastProps = getHostProps$2(domElement, lastRawProps);
               nextProps = getHostProps$2(domElement, nextRawProps);
               updatePayload = [];
@@ -9533,8 +9533,8 @@ var require_react_dom_development = __commonJS({
               lastProps = lastRawProps;
               nextProps = nextRawProps;
               if (
-                typeof lastProps.onClick !== "function" &&
-                typeof nextProps.onClick === "function"
+                typeof lastProps.onClick !== 'function' &&
+                typeof nextProps.onClick === 'function'
               ) {
                 trapClickOnNonInteractiveElement(domElement);
               }
@@ -9559,7 +9559,7 @@ var require_react_dom_development = __commonJS({
                   if (!styleUpdates) {
                     styleUpdates = {};
                   }
-                  styleUpdates[styleName] = "";
+                  styleUpdates[styleName] = '';
                 }
               }
             } else if (
@@ -9604,7 +9604,7 @@ var require_react_dom_development = __commonJS({
                     if (!styleUpdates) {
                       styleUpdates = {};
                     }
-                    styleUpdates[styleName] = "";
+                    styleUpdates[styleName] = '';
                   }
                 }
                 for (styleName in nextProp) {
@@ -9637,12 +9637,12 @@ var require_react_dom_development = __commonJS({
               }
             } else if (propKey === CHILDREN) {
               if (
-                typeof nextProp === "string" ||
-                typeof nextProp === "number"
+                typeof nextProp === 'string' ||
+                typeof nextProp === 'number'
               ) {
                 (updatePayload = updatePayload || []).push(
                   propKey,
-                  "" + nextProp,
+                  '' + nextProp,
                 );
               }
             } else if (
@@ -9651,11 +9651,11 @@ var require_react_dom_development = __commonJS({
             );
             else if (registrationNameDependencies.hasOwnProperty(propKey)) {
               if (nextProp != null) {
-                if (typeof nextProp !== "function") {
+                if (typeof nextProp !== 'function') {
                   warnForInvalidEventListener(propKey, nextProp);
                 }
-                if (propKey === "onScroll") {
-                  listenToNonDelegatedEvent("scroll", domElement);
+                if (propKey === 'onScroll') {
+                  listenToNonDelegatedEvent('scroll', domElement);
                 }
               }
               if (!updatePayload && lastProp !== nextProp) {
@@ -9684,8 +9684,8 @@ var require_react_dom_development = __commonJS({
           nextRawProps,
         ) {
           if (
-            tag === "input" &&
-            nextRawProps.type === "radio" &&
+            tag === 'input' &&
+            nextRawProps.type === 'radio' &&
             nextRawProps.name != null
           ) {
             updateChecked(domElement, nextRawProps);
@@ -9699,13 +9699,13 @@ var require_react_dom_development = __commonJS({
             isCustomComponentTag,
           );
           switch (tag) {
-            case "input":
+            case 'input':
               updateWrapper(domElement, nextRawProps);
               break;
-            case "textarea":
+            case 'textarea':
               updateWrapper$1(domElement, nextRawProps);
               break;
-            case "select":
+            case 'select':
               postUpdateWrapper(domElement, nextRawProps);
               break;
           }
@@ -9735,47 +9735,47 @@ var require_react_dom_development = __commonJS({
             validatePropertiesInDevelopment(tag, rawProps);
           }
           switch (tag) {
-            case "dialog":
-              listenToNonDelegatedEvent("cancel", domElement);
-              listenToNonDelegatedEvent("close", domElement);
+            case 'dialog':
+              listenToNonDelegatedEvent('cancel', domElement);
+              listenToNonDelegatedEvent('close', domElement);
               break;
-            case "iframe":
-            case "object":
-            case "embed":
-              listenToNonDelegatedEvent("load", domElement);
+            case 'iframe':
+            case 'object':
+            case 'embed':
+              listenToNonDelegatedEvent('load', domElement);
               break;
-            case "video":
-            case "audio":
+            case 'video':
+            case 'audio':
               for (var i = 0; i < mediaEventTypes.length; i++) {
                 listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
               }
               break;
-            case "source":
-              listenToNonDelegatedEvent("error", domElement);
+            case 'source':
+              listenToNonDelegatedEvent('error', domElement);
               break;
-            case "img":
-            case "image":
-            case "link":
-              listenToNonDelegatedEvent("error", domElement);
-              listenToNonDelegatedEvent("load", domElement);
+            case 'img':
+            case 'image':
+            case 'link':
+              listenToNonDelegatedEvent('error', domElement);
+              listenToNonDelegatedEvent('load', domElement);
               break;
-            case "details":
-              listenToNonDelegatedEvent("toggle", domElement);
+            case 'details':
+              listenToNonDelegatedEvent('toggle', domElement);
               break;
-            case "input":
+            case 'input':
               initWrapperState(domElement, rawProps);
-              listenToNonDelegatedEvent("invalid", domElement);
+              listenToNonDelegatedEvent('invalid', domElement);
               break;
-            case "option":
+            case 'option':
               validateProps(domElement, rawProps);
               break;
-            case "select":
+            case 'select':
               initWrapperState$1(domElement, rawProps);
-              listenToNonDelegatedEvent("invalid", domElement);
+              listenToNonDelegatedEvent('invalid', domElement);
               break;
-            case "textarea":
+            case 'textarea':
               initWrapperState$2(domElement, rawProps);
-              listenToNonDelegatedEvent("invalid", domElement);
+              listenToNonDelegatedEvent('invalid', domElement);
               break;
           }
           assertValidProps(tag, rawProps);
@@ -9785,11 +9785,11 @@ var require_react_dom_development = __commonJS({
             for (var _i = 0; _i < attributes.length; _i++) {
               var name = attributes[_i].name.toLowerCase();
               switch (name) {
-                case "value":
+                case 'value':
                   break;
-                case "checked":
+                case 'checked':
                   break;
-                case "selected":
+                case 'selected':
                   break;
                 default:
                   extraAttributeNames.add(attributes[_i].name);
@@ -9803,7 +9803,7 @@ var require_react_dom_development = __commonJS({
             }
             var nextProp = rawProps[propKey];
             if (propKey === CHILDREN) {
-              if (typeof nextProp === "string") {
+              if (typeof nextProp === 'string') {
                 if (domElement.textContent !== nextProp) {
                   if (rawProps[SUPPRESS_HYDRATION_WARNING] !== true) {
                     checkForUnmatchedText(
@@ -9815,8 +9815,8 @@ var require_react_dom_development = __commonJS({
                   }
                   updatePayload = [CHILDREN, nextProp];
                 }
-              } else if (typeof nextProp === "number") {
-                if (domElement.textContent !== "" + nextProp) {
+              } else if (typeof nextProp === 'number') {
+                if (domElement.textContent !== '' + nextProp) {
                   if (rawProps[SUPPRESS_HYDRATION_WARNING] !== true) {
                     checkForUnmatchedText(
                       domElement.textContent,
@@ -9825,22 +9825,22 @@ var require_react_dom_development = __commonJS({
                       shouldWarnDev,
                     );
                   }
-                  updatePayload = [CHILDREN, "" + nextProp];
+                  updatePayload = [CHILDREN, '' + nextProp];
                 }
               }
             } else if (registrationNameDependencies.hasOwnProperty(propKey)) {
               if (nextProp != null) {
-                if (typeof nextProp !== "function") {
+                if (typeof nextProp !== 'function') {
                   warnForInvalidEventListener(propKey, nextProp);
                 }
-                if (propKey === "onScroll") {
-                  listenToNonDelegatedEvent("scroll", domElement);
+                if (propKey === 'onScroll') {
+                  listenToNonDelegatedEvent('scroll', domElement);
                 }
               }
             } else if (
               shouldWarnDev &&
               true && // Convince Flow we've calculated it (it's DEV-only in this method.)
-              typeof isCustomComponentTag === "boolean"
+              typeof isCustomComponentTag === 'boolean'
             ) {
               var serverValue = void 0;
               var propertyInfo =
@@ -9852,9 +9852,9 @@ var require_react_dom_development = __commonJS({
                 propKey === SUPPRESS_CONTENT_EDITABLE_WARNING ||
                 propKey === SUPPRESS_HYDRATION_WARNING || // Controlled attributes are not validated
                 // TODO: Only ignore them on controlled tags.
-                propKey === "value" ||
-                propKey === "checked" ||
-                propKey === "selected"
+                propKey === 'value' ||
+                propKey === 'checked' ||
+                propKey === 'selected'
               );
               else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
                 var serverHTML = domElement.innerHTML;
@@ -9869,7 +9869,7 @@ var require_react_dom_development = __commonJS({
                 extraAttributeNames.delete(propKey);
                 if (canDiffStyleForHydrationWarning) {
                   var expectedStyle = createDangerousStringForStyles(nextProp);
-                  serverValue = domElement.getAttribute("style");
+                  serverValue = domElement.getAttribute('style');
                   if (expectedStyle !== serverValue) {
                     warnForPropDifference(propKey, serverValue, expectedStyle);
                   }
@@ -9953,19 +9953,19 @@ var require_react_dom_development = __commonJS({
             }
           }
           switch (tag) {
-            case "input":
+            case 'input':
               track(domElement);
               postMountWrapper(domElement, rawProps, true);
               break;
-            case "textarea":
+            case 'textarea':
               track(domElement);
               postMountWrapper$3(domElement);
               break;
-            case "select":
-            case "option":
+            case 'select':
+            case 'option':
               break;
             default:
-              if (typeof rawProps.onClick === "function") {
+              if (typeof rawProps.onClick === 'function') {
                 trapClickOnNonInteractiveElement(domElement);
               }
               break;
@@ -9983,7 +9983,7 @@ var require_react_dom_development = __commonJS({
             }
             didWarnInvalidHydration = true;
             error(
-              "Did not expect server HTML to contain a <%s> in <%s>.",
+              'Did not expect server HTML to contain a <%s> in <%s>.',
               child.nodeName.toLowerCase(),
               parentNode.nodeName.toLowerCase(),
             );
@@ -10009,7 +10009,7 @@ var require_react_dom_development = __commonJS({
             }
             didWarnInvalidHydration = true;
             error(
-              "Expected server HTML to contain a matching <%s> in <%s>.",
+              'Expected server HTML to contain a matching <%s> in <%s>.',
               tag,
               parentNode.nodeName.toLowerCase(),
             );
@@ -10017,7 +10017,7 @@ var require_react_dom_development = __commonJS({
         }
         function warnForInsertedHydratedText(parentNode, text) {
           {
-            if (text === "") {
+            if (text === '') {
               return;
             }
             if (didWarnInvalidHydration) {
@@ -10033,13 +10033,13 @@ var require_react_dom_development = __commonJS({
         }
         function restoreControlledState$3(domElement, tag, props) {
           switch (tag) {
-            case "input":
+            case 'input':
               restoreControlledState(domElement, props);
               return;
-            case "textarea":
+            case 'textarea':
               restoreControlledState$2(domElement, props);
               return;
-            case "select":
+            case 'select':
               restoreControlledState$1(domElement, props);
               return;
           }
@@ -10048,117 +10048,117 @@ var require_react_dom_development = __commonJS({
         var updatedAncestorInfo = function () {};
         {
           var specialTags = [
-            "address",
-            "applet",
-            "area",
-            "article",
-            "aside",
-            "base",
-            "basefont",
-            "bgsound",
-            "blockquote",
-            "body",
-            "br",
-            "button",
-            "caption",
-            "center",
-            "col",
-            "colgroup",
-            "dd",
-            "details",
-            "dir",
-            "div",
-            "dl",
-            "dt",
-            "embed",
-            "fieldset",
-            "figcaption",
-            "figure",
-            "footer",
-            "form",
-            "frame",
-            "frameset",
-            "h1",
-            "h2",
-            "h3",
-            "h4",
-            "h5",
-            "h6",
-            "head",
-            "header",
-            "hgroup",
-            "hr",
-            "html",
-            "iframe",
-            "img",
-            "input",
-            "isindex",
-            "li",
-            "link",
-            "listing",
-            "main",
-            "marquee",
-            "menu",
-            "menuitem",
-            "meta",
-            "nav",
-            "noembed",
-            "noframes",
-            "noscript",
-            "object",
-            "ol",
-            "p",
-            "param",
-            "plaintext",
-            "pre",
-            "script",
-            "section",
-            "select",
-            "source",
-            "style",
-            "summary",
-            "table",
-            "tbody",
-            "td",
-            "template",
-            "textarea",
-            "tfoot",
-            "th",
-            "thead",
-            "title",
-            "tr",
-            "track",
-            "ul",
-            "wbr",
-            "xmp",
+            'address',
+            'applet',
+            'area',
+            'article',
+            'aside',
+            'base',
+            'basefont',
+            'bgsound',
+            'blockquote',
+            'body',
+            'br',
+            'button',
+            'caption',
+            'center',
+            'col',
+            'colgroup',
+            'dd',
+            'details',
+            'dir',
+            'div',
+            'dl',
+            'dt',
+            'embed',
+            'fieldset',
+            'figcaption',
+            'figure',
+            'footer',
+            'form',
+            'frame',
+            'frameset',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'head',
+            'header',
+            'hgroup',
+            'hr',
+            'html',
+            'iframe',
+            'img',
+            'input',
+            'isindex',
+            'li',
+            'link',
+            'listing',
+            'main',
+            'marquee',
+            'menu',
+            'menuitem',
+            'meta',
+            'nav',
+            'noembed',
+            'noframes',
+            'noscript',
+            'object',
+            'ol',
+            'p',
+            'param',
+            'plaintext',
+            'pre',
+            'script',
+            'section',
+            'select',
+            'source',
+            'style',
+            'summary',
+            'table',
+            'tbody',
+            'td',
+            'template',
+            'textarea',
+            'tfoot',
+            'th',
+            'thead',
+            'title',
+            'tr',
+            'track',
+            'ul',
+            'wbr',
+            'xmp',
           ];
           var inScopeTags = [
-            "applet",
-            "caption",
-            "html",
-            "table",
-            "td",
-            "th",
-            "marquee",
-            "object",
-            "template",
+            'applet',
+            'caption',
+            'html',
+            'table',
+            'td',
+            'th',
+            'marquee',
+            'object',
+            'template',
             // https://html.spec.whatwg.org/multipage/syntax.html#html-integration-point
             // TODO: Distinguish by namespace here -- for <title>, including it here
             // errs on the side of fewer warnings
-            "foreignObject",
-            "desc",
-            "title",
+            'foreignObject',
+            'desc',
+            'title',
           ];
-          var buttonScopeTags = inScopeTags.concat(["button"]);
+          var buttonScopeTags = inScopeTags.concat(['button']);
           var impliedEndTags = [
-            "dd",
-            "dt",
-            "li",
-            "option",
-            "optgroup",
-            "p",
-            "rp",
-            "rt",
+            'dd',
+            'dt',
+            'li',
+            'option',
+            'optgroup',
+            'p',
+            'rp',
+            'rt',
           ];
           var emptyAncestorInfo = {
             current: null,
@@ -10185,184 +10185,184 @@ var require_react_dom_development = __commonJS({
             }
             if (
               specialTags.indexOf(tag) !== -1 &&
-              tag !== "address" &&
-              tag !== "div" &&
-              tag !== "p"
+              tag !== 'address' &&
+              tag !== 'div' &&
+              tag !== 'p'
             ) {
               ancestorInfo.listItemTagAutoclosing = null;
               ancestorInfo.dlItemTagAutoclosing = null;
             }
             ancestorInfo.current = info;
-            if (tag === "form") {
+            if (tag === 'form') {
               ancestorInfo.formTag = info;
             }
-            if (tag === "a") {
+            if (tag === 'a') {
               ancestorInfo.aTagInScope = info;
             }
-            if (tag === "button") {
+            if (tag === 'button') {
               ancestorInfo.buttonTagInScope = info;
             }
-            if (tag === "nobr") {
+            if (tag === 'nobr') {
               ancestorInfo.nobrTagInScope = info;
             }
-            if (tag === "p") {
+            if (tag === 'p') {
               ancestorInfo.pTagInButtonScope = info;
             }
-            if (tag === "li") {
+            if (tag === 'li') {
               ancestorInfo.listItemTagAutoclosing = info;
             }
-            if (tag === "dd" || tag === "dt") {
+            if (tag === 'dd' || tag === 'dt') {
               ancestorInfo.dlItemTagAutoclosing = info;
             }
             return ancestorInfo;
           };
           var isTagValidWithParent = function (tag, parentTag) {
             switch (parentTag) {
-              case "select":
+              case 'select':
                 return (
-                  tag === "option" || tag === "optgroup" || tag === "#text"
+                  tag === 'option' || tag === 'optgroup' || tag === '#text'
                 );
-              case "optgroup":
-                return tag === "option" || tag === "#text";
-              case "option":
-                return tag === "#text";
-              case "tr":
+              case 'optgroup':
+                return tag === 'option' || tag === '#text';
+              case 'option':
+                return tag === '#text';
+              case 'tr':
                 return (
-                  tag === "th" ||
-                  tag === "td" ||
-                  tag === "style" ||
-                  tag === "script" ||
-                  tag === "template"
+                  tag === 'th' ||
+                  tag === 'td' ||
+                  tag === 'style' ||
+                  tag === 'script' ||
+                  tag === 'template'
                 );
-              case "tbody":
-              case "thead":
-              case "tfoot":
+              case 'tbody':
+              case 'thead':
+              case 'tfoot':
                 return (
-                  tag === "tr" ||
-                  tag === "style" ||
-                  tag === "script" ||
-                  tag === "template"
+                  tag === 'tr' ||
+                  tag === 'style' ||
+                  tag === 'script' ||
+                  tag === 'template'
                 );
-              case "colgroup":
-                return tag === "col" || tag === "template";
-              case "table":
+              case 'colgroup':
+                return tag === 'col' || tag === 'template';
+              case 'table':
                 return (
-                  tag === "caption" ||
-                  tag === "colgroup" ||
-                  tag === "tbody" ||
-                  tag === "tfoot" ||
-                  tag === "thead" ||
-                  tag === "style" ||
-                  tag === "script" ||
-                  tag === "template"
+                  tag === 'caption' ||
+                  tag === 'colgroup' ||
+                  tag === 'tbody' ||
+                  tag === 'tfoot' ||
+                  tag === 'thead' ||
+                  tag === 'style' ||
+                  tag === 'script' ||
+                  tag === 'template'
                 );
-              case "head":
+              case 'head':
                 return (
-                  tag === "base" ||
-                  tag === "basefont" ||
-                  tag === "bgsound" ||
-                  tag === "link" ||
-                  tag === "meta" ||
-                  tag === "title" ||
-                  tag === "noscript" ||
-                  tag === "noframes" ||
-                  tag === "style" ||
-                  tag === "script" ||
-                  tag === "template"
+                  tag === 'base' ||
+                  tag === 'basefont' ||
+                  tag === 'bgsound' ||
+                  tag === 'link' ||
+                  tag === 'meta' ||
+                  tag === 'title' ||
+                  tag === 'noscript' ||
+                  tag === 'noframes' ||
+                  tag === 'style' ||
+                  tag === 'script' ||
+                  tag === 'template'
                 );
-              case "html":
-                return tag === "head" || tag === "body" || tag === "frameset";
-              case "frameset":
-                return tag === "frame";
-              case "#document":
-                return tag === "html";
+              case 'html':
+                return tag === 'head' || tag === 'body' || tag === 'frameset';
+              case 'frameset':
+                return tag === 'frame';
+              case '#document':
+                return tag === 'html';
             }
             switch (tag) {
-              case "h1":
-              case "h2":
-              case "h3":
-              case "h4":
-              case "h5":
-              case "h6":
+              case 'h1':
+              case 'h2':
+              case 'h3':
+              case 'h4':
+              case 'h5':
+              case 'h6':
                 return (
-                  parentTag !== "h1" &&
-                  parentTag !== "h2" &&
-                  parentTag !== "h3" &&
-                  parentTag !== "h4" &&
-                  parentTag !== "h5" &&
-                  parentTag !== "h6"
+                  parentTag !== 'h1' &&
+                  parentTag !== 'h2' &&
+                  parentTag !== 'h3' &&
+                  parentTag !== 'h4' &&
+                  parentTag !== 'h5' &&
+                  parentTag !== 'h6'
                 );
-              case "rp":
-              case "rt":
+              case 'rp':
+              case 'rt':
                 return impliedEndTags.indexOf(parentTag) === -1;
-              case "body":
-              case "caption":
-              case "col":
-              case "colgroup":
-              case "frameset":
-              case "frame":
-              case "head":
-              case "html":
-              case "tbody":
-              case "td":
-              case "tfoot":
-              case "th":
-              case "thead":
-              case "tr":
+              case 'body':
+              case 'caption':
+              case 'col':
+              case 'colgroup':
+              case 'frameset':
+              case 'frame':
+              case 'head':
+              case 'html':
+              case 'tbody':
+              case 'td':
+              case 'tfoot':
+              case 'th':
+              case 'thead':
+              case 'tr':
                 return parentTag == null;
             }
             return true;
           };
           var findInvalidAncestorForTag = function (tag, ancestorInfo) {
             switch (tag) {
-              case "address":
-              case "article":
-              case "aside":
-              case "blockquote":
-              case "center":
-              case "details":
-              case "dialog":
-              case "dir":
-              case "div":
-              case "dl":
-              case "fieldset":
-              case "figcaption":
-              case "figure":
-              case "footer":
-              case "header":
-              case "hgroup":
-              case "main":
-              case "menu":
-              case "nav":
-              case "ol":
-              case "p":
-              case "section":
-              case "summary":
-              case "ul":
-              case "pre":
-              case "listing":
-              case "table":
-              case "hr":
-              case "xmp":
-              case "h1":
-              case "h2":
-              case "h3":
-              case "h4":
-              case "h5":
-              case "h6":
+              case 'address':
+              case 'article':
+              case 'aside':
+              case 'blockquote':
+              case 'center':
+              case 'details':
+              case 'dialog':
+              case 'dir':
+              case 'div':
+              case 'dl':
+              case 'fieldset':
+              case 'figcaption':
+              case 'figure':
+              case 'footer':
+              case 'header':
+              case 'hgroup':
+              case 'main':
+              case 'menu':
+              case 'nav':
+              case 'ol':
+              case 'p':
+              case 'section':
+              case 'summary':
+              case 'ul':
+              case 'pre':
+              case 'listing':
+              case 'table':
+              case 'hr':
+              case 'xmp':
+              case 'h1':
+              case 'h2':
+              case 'h3':
+              case 'h4':
+              case 'h5':
+              case 'h6':
                 return ancestorInfo.pTagInButtonScope;
-              case "form":
+              case 'form':
                 return ancestorInfo.formTag || ancestorInfo.pTagInButtonScope;
-              case "li":
+              case 'li':
                 return ancestorInfo.listItemTagAutoclosing;
-              case "dd":
-              case "dt":
+              case 'dd':
+              case 'dt':
                 return ancestorInfo.dlItemTagAutoclosing;
-              case "button":
+              case 'button':
                 return ancestorInfo.buttonTagInScope;
-              case "a":
+              case 'a':
                 return ancestorInfo.aTagInScope;
-              case "nobr":
+              case 'nobr':
                 return ancestorInfo.nobrTagInScope;
             }
             return null;
@@ -10375,10 +10375,10 @@ var require_react_dom_development = __commonJS({
             if (childText != null) {
               if (childTag != null) {
                 error(
-                  "validateDOMNesting: when childText is passed, childTag should be null",
+                  'validateDOMNesting: when childText is passed, childTag should be null',
                 );
               }
-              childTag = "#text";
+              childTag = '#text';
             }
             var invalidParent = isTagValidWithParent(childTag, parentTag)
               ? null
@@ -10391,32 +10391,32 @@ var require_react_dom_development = __commonJS({
               return;
             }
             var ancestorTag = invalidParentOrAncestor.tag;
-            var warnKey = !!invalidParent + "|" + childTag + "|" + ancestorTag;
+            var warnKey = !!invalidParent + '|' + childTag + '|' + ancestorTag;
             if (didWarn$1[warnKey]) {
               return;
             }
             didWarn$1[warnKey] = true;
             var tagDisplayName = childTag;
-            var whitespaceInfo = "";
-            if (childTag === "#text") {
+            var whitespaceInfo = '';
+            if (childTag === '#text') {
               if (/\S/.test(childText)) {
-                tagDisplayName = "Text nodes";
+                tagDisplayName = 'Text nodes';
               } else {
-                tagDisplayName = "Whitespace text nodes";
+                tagDisplayName = 'Whitespace text nodes';
                 whitespaceInfo =
                   " Make sure you don't have any extra whitespace between tags on each line of your source code.";
               }
             } else {
-              tagDisplayName = "<" + childTag + ">";
+              tagDisplayName = '<' + childTag + '>';
             }
             if (invalidParent) {
-              var info = "";
-              if (ancestorTag === "table" && childTag === "tr") {
+              var info = '';
+              if (ancestorTag === 'table' && childTag === 'tr') {
                 info +=
-                  " Add a <tbody>, <thead> or <tfoot> to your code to match the DOM tree generated by the browser.";
+                  ' Add a <tbody>, <thead> or <tfoot> to your code to match the DOM tree generated by the browser.';
               }
               error(
-                "validateDOMNesting(...): %s cannot appear as a child of <%s>.%s%s",
+                'validateDOMNesting(...): %s cannot appear as a child of <%s>.%s%s',
                 tagDisplayName,
                 ancestorTag,
                 whitespaceInfo,
@@ -10424,19 +10424,19 @@ var require_react_dom_development = __commonJS({
               );
             } else {
               error(
-                "validateDOMNesting(...): %s cannot appear as a descendant of <%s>.",
+                'validateDOMNesting(...): %s cannot appear as a descendant of <%s>.',
                 tagDisplayName,
                 ancestorTag,
               );
             }
           };
         }
-        var SUPPRESS_HYDRATION_WARNING$1 = "suppressHydrationWarning";
-        var SUSPENSE_START_DATA = "$";
-        var SUSPENSE_END_DATA = "/$";
-        var SUSPENSE_PENDING_START_DATA = "$?";
-        var SUSPENSE_FALLBACK_START_DATA = "$!";
-        var STYLE$1 = "style";
+        var SUPPRESS_HYDRATION_WARNING$1 = 'suppressHydrationWarning';
+        var SUSPENSE_START_DATA = '$';
+        var SUSPENSE_END_DATA = '/$';
+        var SUSPENSE_PENDING_START_DATA = '$?';
+        var SUSPENSE_FALLBACK_START_DATA = '$!';
+        var STYLE$1 = 'style';
         var eventsEnabled = null;
         var selectionInformation = null;
         function getRootHostContext(rootContainerInstance) {
@@ -10446,11 +10446,11 @@ var require_react_dom_development = __commonJS({
           switch (nodeType) {
             case DOCUMENT_NODE:
             case DOCUMENT_FRAGMENT_NODE: {
-              type = nodeType === DOCUMENT_NODE ? "#document" : "#fragment";
+              type = nodeType === DOCUMENT_NODE ? '#document' : '#fragment';
               var root2 = rootContainerInstance.documentElement;
               namespace = root2
                 ? root2.namespaceURI
-                : getChildNamespace(null, "");
+                : getChildNamespace(null, '');
               break;
             }
             default: {
@@ -10522,10 +10522,10 @@ var require_react_dom_development = __commonJS({
             var hostContextDev = hostContext;
             validateDOMNesting(type, null, hostContextDev.ancestorInfo);
             if (
-              typeof props.children === "string" ||
-              typeof props.children === "number"
+              typeof props.children === 'string' ||
+              typeof props.children === 'number'
             ) {
-              var string = "" + props.children;
+              var string = '' + props.children;
               var ownAncestorInfo = updatedAncestorInfo(
                 hostContextDev.ancestorInfo,
                 type,
@@ -10556,12 +10556,12 @@ var require_react_dom_development = __commonJS({
         ) {
           setInitialProperties(domElement, type, props, rootContainerInstance);
           switch (type) {
-            case "button":
-            case "input":
-            case "select":
-            case "textarea":
+            case 'button':
+            case 'input':
+            case 'select':
+            case 'textarea':
               return !!props.autoFocus;
-            case "img":
+            case 'img':
               return true;
             default:
               return false;
@@ -10579,10 +10579,10 @@ var require_react_dom_development = __commonJS({
             var hostContextDev = hostContext;
             if (
               typeof newProps.children !== typeof oldProps.children &&
-              (typeof newProps.children === "string" ||
-                typeof newProps.children === "number")
+              (typeof newProps.children === 'string' ||
+                typeof newProps.children === 'number')
             ) {
-              var string = "" + newProps.children;
+              var string = '' + newProps.children;
               var ownAncestorInfo = updatedAncestorInfo(
                 hostContextDev.ancestorInfo,
                 type,
@@ -10594,11 +10594,11 @@ var require_react_dom_development = __commonJS({
         }
         function shouldSetTextContent(type, props) {
           return (
-            type === "textarea" ||
-            type === "noscript" ||
-            typeof props.children === "string" ||
-            typeof props.children === "number" ||
-            (typeof props.dangerouslySetInnerHTML === "object" &&
+            type === 'textarea' ||
+            type === 'noscript' ||
+            typeof props.children === 'string' ||
+            typeof props.children === 'number' ||
+            (typeof props.dangerouslySetInnerHTML === 'object' &&
               props.dangerouslySetInnerHTML !== null &&
               props.dangerouslySetInnerHTML.__html != null)
           );
@@ -10625,15 +10625,15 @@ var require_react_dom_development = __commonJS({
           return getEventPriority(currentEvent.type);
         }
         var scheduleTimeout =
-          typeof setTimeout === "function" ? setTimeout : void 0;
+          typeof setTimeout === 'function' ? setTimeout : void 0;
         var cancelTimeout =
-          typeof clearTimeout === "function" ? clearTimeout : void 0;
+          typeof clearTimeout === 'function' ? clearTimeout : void 0;
         var noTimeout = -1;
-        var localPromise = typeof Promise === "function" ? Promise : void 0;
+        var localPromise = typeof Promise === 'function' ? Promise : void 0;
         var scheduleMicrotask =
-          typeof queueMicrotask === "function"
+          typeof queueMicrotask === 'function'
             ? queueMicrotask
-            : typeof localPromise !== "undefined"
+            : typeof localPromise !== 'undefined'
               ? function (callback) {
                   return localPromise
                     .resolve(null)
@@ -10653,15 +10653,15 @@ var require_react_dom_development = __commonJS({
           internalInstanceHandle,
         ) {
           switch (type) {
-            case "button":
-            case "input":
-            case "select":
-            case "textarea":
+            case 'button':
+            case 'input':
+            case 'select':
+            case 'textarea':
               if (newProps.autoFocus) {
                 domElement.focus();
               }
               return;
-            case "img": {
+            case 'img': {
               if (newProps.src) {
                 domElement.src = newProps.src;
               }
@@ -10681,7 +10681,7 @@ var require_react_dom_development = __commonJS({
           updateFiberProps(domElement, newProps);
         }
         function resetTextContent(domElement) {
-          setTextContent(domElement, "");
+          setTextContent(domElement, '');
         }
         function commitTextUpdate(textInstance, oldText, newText) {
           textInstance.nodeValue = newText;
@@ -10768,14 +10768,14 @@ var require_react_dom_development = __commonJS({
         function hideInstance(instance) {
           instance = instance;
           var style2 = instance.style;
-          if (typeof style2.setProperty === "function") {
-            style2.setProperty("display", "none", "important");
+          if (typeof style2.setProperty === 'function') {
+            style2.setProperty('display', 'none', 'important');
           } else {
-            style2.display = "none";
+            style2.display = 'none';
           }
         }
         function hideTextInstance(textInstance) {
-          textInstance.nodeValue = "";
+          textInstance.nodeValue = '';
         }
         function unhideInstance(instance, props) {
           instance = instance;
@@ -10783,17 +10783,17 @@ var require_react_dom_development = __commonJS({
           var display =
             styleProp !== void 0 &&
             styleProp !== null &&
-            styleProp.hasOwnProperty("display")
+            styleProp.hasOwnProperty('display')
               ? styleProp.display
               : null;
-          instance.style.display = dangerousStyleValue("display", display);
+          instance.style.display = dangerousStyleValue('display', display);
         }
         function unhideTextInstance(textInstance, text) {
           textInstance.nodeValue = text;
         }
         function clearContainer(container) {
           if (container.nodeType === ELEMENT_NODE) {
-            container.textContent = "";
+            container.textContent = '';
           } else if (container.nodeType === DOCUMENT_NODE) {
             if (container.documentElement) {
               container.removeChild(container.documentElement);
@@ -10810,7 +10810,7 @@ var require_react_dom_development = __commonJS({
           return instance;
         }
         function canHydrateTextInstance(instance, text) {
-          if (text === "" || instance.nodeType !== TEXT_NODE) {
+          if (text === '' || instance.nodeType !== TEXT_NODE) {
             return null;
           }
           return instance;
@@ -10984,7 +10984,7 @@ var require_react_dom_development = __commonJS({
           retryIfBlockedOn(suspenseInstance);
         }
         function shouldDeleteUnhydratedTailInstances(parentType) {
-          return parentType !== "head" && parentType !== "body";
+          return parentType !== 'head' && parentType !== 'body';
         }
         function didNotMatchHydratedContainerTextInstance(
           parentContainer,
@@ -11142,7 +11142,7 @@ var require_react_dom_development = __commonJS({
         function errorHydratingContainer(parentContainer) {
           {
             error(
-              "An error occurred during hydration. The server HTML was replaced with client content in <%s>.",
+              'An error occurred during hydration. The server HTML was replaced with client content in <%s>.',
               parentContainer.nodeName.toLowerCase(),
             );
           }
@@ -11151,12 +11151,12 @@ var require_react_dom_development = __commonJS({
           listenToAllSupportedEvents(portalInstance);
         }
         var randomKey = Math.random().toString(36).slice(2);
-        var internalInstanceKey = "__reactFiber$" + randomKey;
-        var internalPropsKey = "__reactProps$" + randomKey;
-        var internalContainerInstanceKey = "__reactContainer$" + randomKey;
-        var internalEventHandlersKey = "__reactEvents$" + randomKey;
-        var internalEventHandlerListenersKey = "__reactListeners$" + randomKey;
-        var internalEventHandlesSetKey = "__reactHandles$" + randomKey;
+        var internalInstanceKey = '__reactFiber$' + randomKey;
+        var internalPropsKey = '__reactProps$' + randomKey;
+        var internalContainerInstanceKey = '__reactContainer$' + randomKey;
+        var internalEventHandlersKey = '__reactEvents$' + randomKey;
+        var internalEventHandlerListenersKey = '__reactListeners$' + randomKey;
+        var internalEventHandlesSetKey = '__reactHandles$' + randomKey;
         function detachDeletedInstance(node) {
           delete node[internalInstanceKey];
           delete node[internalPropsKey];
@@ -11231,7 +11231,7 @@ var require_react_dom_development = __commonJS({
           if (inst.tag === HostComponent || inst.tag === HostText) {
             return inst.stateNode;
           }
-          throw new Error("getNodeFromInstance: Invalid argument.");
+          throw new Error('getNodeFromInstance: Invalid argument.');
         }
         function getFiberCurrentPropsFromNode(node) {
           return node[internalPropsKey] || null;
@@ -11278,18 +11278,18 @@ var require_react_dom_development = __commonJS({
               if (has2(typeSpecs, typeSpecName)) {
                 var error$1 = void 0;
                 try {
-                  if (typeof typeSpecs[typeSpecName] !== "function") {
+                  if (typeof typeSpecs[typeSpecName] !== 'function') {
                     var err = Error(
-                      (componentName || "React class") +
-                        ": " +
+                      (componentName || 'React class') +
+                        ': ' +
                         location +
-                        " type `" +
+                        ' type `' +
                         typeSpecName +
-                        "` is invalid; it must be a function, usually from the `prop-types` package, but received `" +
+                        '` is invalid; it must be a function, usually from the `prop-types` package, but received `' +
                         typeof typeSpecs[typeSpecName] +
-                        "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.",
+                        '`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.',
                     );
-                    err.name = "Invariant Violation";
+                    err.name = 'Invariant Violation';
                     throw err;
                   }
                   error$1 = typeSpecs[typeSpecName](
@@ -11298,7 +11298,7 @@ var require_react_dom_development = __commonJS({
                     componentName,
                     location,
                     null,
-                    "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",
+                    'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED',
                   );
                 } catch (ex) {
                   error$1 = ex;
@@ -11306,8 +11306,8 @@ var require_react_dom_development = __commonJS({
                 if (error$1 && !(error$1 instanceof Error)) {
                   setCurrentlyValidatingElement(element);
                   error(
-                    "%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).",
-                    componentName || "React class",
+                    '%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).',
+                    componentName || 'React class',
                     location,
                     typeSpecName,
                     typeof error$1,
@@ -11320,7 +11320,7 @@ var require_react_dom_development = __commonJS({
                 ) {
                   loggedTypeFailures[error$1.message] = true;
                   setCurrentlyValidatingElement(element);
-                  error("Failed %s type: %s", location, error$1.message);
+                  error('Failed %s type: %s', location, error$1.message);
                   setCurrentlyValidatingElement(null);
                 }
               }
@@ -11341,13 +11341,13 @@ var require_react_dom_development = __commonJS({
         function pop(cursor, fiber) {
           if (index < 0) {
             {
-              error("Unexpected pop.");
+              error('Unexpected pop.');
             }
             return;
           }
           {
             if (fiber !== fiberStack[index]) {
-              error("Unexpected Fiber popped.");
+              error('Unexpected Fiber popped.');
             }
           }
           cursor.current = valueStack[index];
@@ -11417,8 +11417,8 @@ var require_react_dom_development = __commonJS({
             }
             {
               var name =
-                getComponentNameFromFiber(workInProgress2) || "Unknown";
-              checkPropTypes(contextTypes, context, "context", name);
+                getComponentNameFromFiber(workInProgress2) || 'Unknown';
+              checkPropTypes(contextTypes, context, 'context', name);
             }
             if (instance) {
               cacheContext(workInProgress2, unmaskedContext, context);
@@ -11453,7 +11453,7 @@ var require_react_dom_development = __commonJS({
           {
             if (contextStackCursor.current !== emptyContextObject) {
               throw new Error(
-                "Unexpected context found on stack. This error is likely caused by a bug in React. Please file an issue.",
+                'Unexpected context found on stack. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
             push(contextStackCursor, context, fiber);
@@ -11464,14 +11464,14 @@ var require_react_dom_development = __commonJS({
           {
             var instance = fiber.stateNode;
             var childContextTypes = type.childContextTypes;
-            if (typeof instance.getChildContext !== "function") {
+            if (typeof instance.getChildContext !== 'function') {
               {
                 var componentName =
-                  getComponentNameFromFiber(fiber) || "Unknown";
+                  getComponentNameFromFiber(fiber) || 'Unknown';
                 if (!warnedAboutMissingGetChildContext[componentName]) {
                   warnedAboutMissingGetChildContext[componentName] = true;
                   error(
-                    "%s.childContextTypes is specified but there is no getChildContext() method on the instance. You can either define getChildContext() on %s or remove childContextTypes from it.",
+                    '%s.childContextTypes is specified but there is no getChildContext() method on the instance. You can either define getChildContext() on %s or remove childContextTypes from it.',
                     componentName,
                     componentName,
                   );
@@ -11483,7 +11483,7 @@ var require_react_dom_development = __commonJS({
             for (var contextKey in childContext) {
               if (!(contextKey in childContextTypes)) {
                 throw new Error(
-                  (getComponentNameFromFiber(fiber) || "Unknown") +
+                  (getComponentNameFromFiber(fiber) || 'Unknown') +
                     '.getChildContext(): key "' +
                     contextKey +
                     '" is not defined in childContextTypes.',
@@ -11491,11 +11491,11 @@ var require_react_dom_development = __commonJS({
               }
             }
             {
-              var name = getComponentNameFromFiber(fiber) || "Unknown";
+              var name = getComponentNameFromFiber(fiber) || 'Unknown';
               checkPropTypes(
                 childContextTypes,
                 childContext,
-                "child context",
+                'child context',
                 name,
               );
             }
@@ -11528,7 +11528,7 @@ var require_react_dom_development = __commonJS({
             var instance = workInProgress2.stateNode;
             if (!instance) {
               throw new Error(
-                "Expected to have an instance by this point. This error is likely caused by a bug in React. Please file an issue.",
+                'Expected to have an instance by this point. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
             if (didChange) {
@@ -11553,7 +11553,7 @@ var require_react_dom_development = __commonJS({
           {
             if (!isFiberMounted(fiber) || fiber.tag !== ClassComponent) {
               throw new Error(
-                "Expected subtree parent to be a mounted class component. This error is likely caused by a bug in React. Please file an issue.",
+                'Expected subtree parent to be a mounted class component. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
             var node = fiber;
@@ -11573,7 +11573,7 @@ var require_react_dom_development = __commonJS({
               node = node.return;
             } while (node !== null);
             throw new Error(
-              "Found unexpected detached subtree parent. This error is likely caused by a bug in React. Please file an issue.",
+              'Found unexpected detached subtree parent. This error is likely caused by a bug in React. Please file an issue.',
             );
           }
         }
@@ -11636,7 +11636,7 @@ var require_react_dom_development = __commonJS({
         var idStackIndex = 0;
         var treeContextProvider = null;
         var treeContextId = 1;
-        var treeContextOverflow = "";
+        var treeContextOverflow = '';
         function isForkedChild(workInProgress2) {
           warnIfNotHydrating();
           return (workInProgress2.flags & Forked) !== NoFlags;
@@ -11749,7 +11749,7 @@ var require_react_dom_development = __commonJS({
           {
             if (!getIsHydrating()) {
               error(
-                "Expected to be hydrating. This is a bug in React. Please file an issue.",
+                'Expected to be hydrating. This is a bug in React. Please file an issue.',
               );
             }
           }
@@ -11763,7 +11763,7 @@ var require_react_dom_development = __commonJS({
           {
             if (isHydrating) {
               error(
-                "We should not be hydrating here. This is a bug in React. Please file a bug.",
+                'We should not be hydrating here. This is a bug in React. Please file a bug.',
               );
             }
           }
@@ -12005,7 +12005,7 @@ var require_react_dom_development = __commonJS({
         }
         function throwOnHydrationMismatch(fiber) {
           throw new Error(
-            "Hydration failed because the initial UI does not match what was rendered on the server.",
+            'Hydration failed because the initial UI does not match what was rendered on the server.',
           );
         }
         function tryToClaimNextHydratableInstance(fiber) {
@@ -12118,7 +12118,7 @@ var require_react_dom_development = __commonJS({
             suspenseState !== null ? suspenseState.dehydrated : null;
           if (!suspenseInstance) {
             throw new Error(
-              "Expected to have a hydrated suspense instance. This error is likely caused by a bug in React. Please file an issue.",
+              'Expected to have a hydrated suspense instance. This error is likely caused by a bug in React. Please file an issue.',
             );
           }
           hydrateSuspenseInstance(suspenseInstance, fiber);
@@ -12129,7 +12129,7 @@ var require_react_dom_development = __commonJS({
             suspenseState !== null ? suspenseState.dehydrated : null;
           if (!suspenseInstance) {
             throw new Error(
-              "Expected to have a hydrated suspense instance. This error is likely caused by a bug in React. Please file an issue.",
+              'Expected to have a hydrated suspense instance. This error is likely caused by a bug in React. Please file an issue.',
             );
           }
           return getNextHydratableInstanceAfterSuspenseInstance(
@@ -12248,7 +12248,7 @@ var require_react_dom_development = __commonJS({
             set2.forEach(function (value) {
               array.push(value);
             });
-            return array.sort().join(", ");
+            return array.sort().join(', ');
           };
           var pendingComponentWillMountWarnings = [];
           var pendingUNSAFE_ComponentWillMountWarnings = [];
@@ -12265,19 +12265,19 @@ var require_react_dom_development = __commonJS({
               return;
             }
             if (
-              typeof instance.componentWillMount === "function" && // Don't warn about react-lifecycles-compat polyfilled components.
+              typeof instance.componentWillMount === 'function' && // Don't warn about react-lifecycles-compat polyfilled components.
               instance.componentWillMount.__suppressDeprecationWarning !== true
             ) {
               pendingComponentWillMountWarnings.push(fiber);
             }
             if (
               fiber.mode & StrictLegacyMode &&
-              typeof instance.UNSAFE_componentWillMount === "function"
+              typeof instance.UNSAFE_componentWillMount === 'function'
             ) {
               pendingUNSAFE_ComponentWillMountWarnings.push(fiber);
             }
             if (
-              typeof instance.componentWillReceiveProps === "function" &&
+              typeof instance.componentWillReceiveProps === 'function' &&
               instance.componentWillReceiveProps
                 .__suppressDeprecationWarning !== true
             ) {
@@ -12285,19 +12285,19 @@ var require_react_dom_development = __commonJS({
             }
             if (
               fiber.mode & StrictLegacyMode &&
-              typeof instance.UNSAFE_componentWillReceiveProps === "function"
+              typeof instance.UNSAFE_componentWillReceiveProps === 'function'
             ) {
               pendingUNSAFE_ComponentWillReceivePropsWarnings.push(fiber);
             }
             if (
-              typeof instance.componentWillUpdate === "function" &&
+              typeof instance.componentWillUpdate === 'function' &&
               instance.componentWillUpdate.__suppressDeprecationWarning !== true
             ) {
               pendingComponentWillUpdateWarnings.push(fiber);
             }
             if (
               fiber.mode & StrictLegacyMode &&
-              typeof instance.UNSAFE_componentWillUpdate === "function"
+              typeof instance.UNSAFE_componentWillUpdate === 'function'
             ) {
               pendingUNSAFE_ComponentWillUpdateWarnings.push(fiber);
             }
@@ -12308,7 +12308,7 @@ var require_react_dom_development = __commonJS({
               if (pendingComponentWillMountWarnings.length > 0) {
                 pendingComponentWillMountWarnings.forEach(function (fiber) {
                   componentWillMountUniqueNames.add(
-                    getComponentNameFromFiber(fiber) || "Component",
+                    getComponentNameFromFiber(fiber) || 'Component',
                   );
                   didWarnAboutUnsafeLifecycles.add(fiber.type);
                 });
@@ -12320,7 +12320,7 @@ var require_react_dom_development = __commonJS({
                 pendingUNSAFE_ComponentWillMountWarnings.forEach(
                   function (fiber) {
                     UNSAFE_componentWillMountUniqueNames.add(
-                      getComponentNameFromFiber(fiber) || "Component",
+                      getComponentNameFromFiber(fiber) || 'Component',
                     );
                     didWarnAboutUnsafeLifecycles.add(fiber.type);
                   },
@@ -12333,7 +12333,7 @@ var require_react_dom_development = __commonJS({
                 pendingComponentWillReceivePropsWarnings.forEach(
                   function (fiber) {
                     componentWillReceivePropsUniqueNames.add(
-                      getComponentNameFromFiber(fiber) || "Component",
+                      getComponentNameFromFiber(fiber) || 'Component',
                     );
                     didWarnAboutUnsafeLifecycles.add(fiber.type);
                   },
@@ -12346,7 +12346,7 @@ var require_react_dom_development = __commonJS({
                 pendingUNSAFE_ComponentWillReceivePropsWarnings.forEach(
                   function (fiber) {
                     UNSAFE_componentWillReceivePropsUniqueNames.add(
-                      getComponentNameFromFiber(fiber) || "Component",
+                      getComponentNameFromFiber(fiber) || 'Component',
                     );
                     didWarnAboutUnsafeLifecycles.add(fiber.type);
                   },
@@ -12357,7 +12357,7 @@ var require_react_dom_development = __commonJS({
               if (pendingComponentWillUpdateWarnings.length > 0) {
                 pendingComponentWillUpdateWarnings.forEach(function (fiber) {
                   componentWillUpdateUniqueNames.add(
-                    getComponentNameFromFiber(fiber) || "Component",
+                    getComponentNameFromFiber(fiber) || 'Component',
                   );
                   didWarnAboutUnsafeLifecycles.add(fiber.type);
                 });
@@ -12369,7 +12369,7 @@ var require_react_dom_development = __commonJS({
                 pendingUNSAFE_ComponentWillUpdateWarnings.forEach(
                   function (fiber) {
                     UNSAFE_componentWillUpdateUniqueNames.add(
-                      getComponentNameFromFiber(fiber) || "Component",
+                      getComponentNameFromFiber(fiber) || 'Component',
                     );
                     didWarnAboutUnsafeLifecycles.add(fiber.type);
                   },
@@ -12381,7 +12381,7 @@ var require_react_dom_development = __commonJS({
                   UNSAFE_componentWillMountUniqueNames,
                 );
                 error(
-                  "Using UNSAFE_componentWillMount in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move code with side effects to componentDidMount, and set initial state in the constructor.\n\nPlease update the following components: %s",
+                  'Using UNSAFE_componentWillMount in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move code with side effects to componentDidMount, and set initial state in the constructor.\n\nPlease update the following components: %s',
                   sortedNames,
                 );
               }
@@ -12399,7 +12399,7 @@ var require_react_dom_development = __commonJS({
                   UNSAFE_componentWillUpdateUniqueNames,
                 );
                 error(
-                  "Using UNSAFE_componentWillUpdate in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move data fetching code or side effects to componentDidUpdate.\n\nPlease update the following components: %s",
+                  'Using UNSAFE_componentWillUpdate in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move data fetching code or side effects to componentDidUpdate.\n\nPlease update the following components: %s',
                   _sortedNames2,
                 );
               }
@@ -12408,7 +12408,7 @@ var require_react_dom_development = __commonJS({
                   componentWillMountUniqueNames,
                 );
                 warn(
-                  "componentWillMount has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move code with side effects to componentDidMount, and set initial state in the constructor.\n* Rename componentWillMount to UNSAFE_componentWillMount to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run `npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n\nPlease update the following components: %s",
+                  'componentWillMount has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move code with side effects to componentDidMount, and set initial state in the constructor.\n* Rename componentWillMount to UNSAFE_componentWillMount to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run `npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n\nPlease update the following components: %s',
                   _sortedNames3,
                 );
               }
@@ -12426,7 +12426,7 @@ var require_react_dom_development = __commonJS({
                   componentWillUpdateUniqueNames,
                 );
                 warn(
-                  "componentWillUpdate has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move data fetching code or side effects to componentDidUpdate.\n* Rename componentWillUpdate to UNSAFE_componentWillUpdate to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run `npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n\nPlease update the following components: %s",
+                  'componentWillUpdate has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move data fetching code or side effects to componentDidUpdate.\n* Rename componentWillUpdate to UNSAFE_componentWillUpdate to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run `npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n\nPlease update the following components: %s',
                   _sortedNames5,
                 );
               }
@@ -12440,7 +12440,7 @@ var require_react_dom_development = __commonJS({
             var strictRoot = findStrictRoot(fiber);
             if (strictRoot === null) {
               error(
-                "Expected to find a StrictMode component in a strict mode tree. This error is likely caused by a bug in React. Please file an issue.",
+                'Expected to find a StrictMode component in a strict mode tree. This error is likely caused by a bug in React. Please file an issue.',
               );
               return;
             }
@@ -12452,7 +12452,7 @@ var require_react_dom_development = __commonJS({
               fiber.type.contextTypes != null ||
               fiber.type.childContextTypes != null ||
               (instance !== null &&
-                typeof instance.getChildContext === "function")
+                typeof instance.getChildContext === 'function')
             ) {
               if (warningsForRoot === void 0) {
                 warningsForRoot = [];
@@ -12471,7 +12471,7 @@ var require_react_dom_development = __commonJS({
                 var uniqueNames = /* @__PURE__ */ new Set();
                 fiberArray.forEach(function (fiber) {
                   uniqueNames.add(
-                    getComponentNameFromFiber(fiber) || "Component",
+                    getComponentNameFromFiber(fiber) || 'Component',
                   );
                   didWarnAboutLegacyContext.add(fiber.type);
                 });
@@ -12479,7 +12479,7 @@ var require_react_dom_development = __commonJS({
                 try {
                   setCurrentFiber(firstFiber);
                   error(
-                    "Legacy context API has been detected within a strict-mode tree.\n\nThe old API will be supported in all 16.x releases, but applications using it should migrate to the new version.\n\nPlease update the following components: %s\n\nLearn more about this warning here: https://reactjs.org/link/legacy-context",
+                    'Legacy context API has been detected within a strict-mode tree.\n\nThe old API will be supported in all 16.x releases, but applications using it should migrate to the new version.\n\nPlease update the following components: %s\n\nLearn more about this warning here: https://reactjs.org/link/legacy-context',
                     sortedNames,
                   );
                 } finally {
@@ -12549,7 +12549,7 @@ var require_react_dom_development = __commonJS({
                 context._currentRenderer !== rendererSigil
               ) {
                 error(
-                  "Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.",
+                  'Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.',
                 );
               }
               context._currentRenderer = rendererSigil;
@@ -12598,7 +12598,7 @@ var require_react_dom_development = __commonJS({
           {
             if (node !== propagationRoot) {
               error(
-                "Expected to find the propagation root when scheduling context work. This error is likely caused by a bug in React. Please file an issue.",
+                'Expected to find the propagation root when scheduling context work. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
           }
@@ -12673,7 +12673,7 @@ var require_react_dom_development = __commonJS({
               var parentSuspense = fiber.return;
               if (parentSuspense === null) {
                 throw new Error(
-                  "We just came from a parent so we must have had a parent. This is a bug in React.",
+                  'We just came from a parent so we must have had a parent. This is a bug in React.',
                 );
               }
               parentSuspense.lanes = mergeLanes(
@@ -12735,7 +12735,7 @@ var require_react_dom_development = __commonJS({
           {
             if (isDisallowedContextReadInDEV) {
               error(
-                "Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().",
+                'Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().',
               );
             }
           }
@@ -12750,7 +12750,7 @@ var require_react_dom_development = __commonJS({
             if (lastContextDependency === null) {
               if (currentlyRenderingFiber === null) {
                 throw new Error(
-                  "Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().",
+                  'Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().',
                 );
               }
               lastContextDependency = contextItem;
@@ -12937,7 +12937,7 @@ var require_react_dom_development = __commonJS({
               !didWarnUpdateInsideUpdate
             ) {
               error(
-                "An update (setState, replaceState, or forceUpdate) was scheduled from inside an update function. Update functions should be pure, with zero side-effects. Consider using componentDidUpdate or a callback.",
+                'An update (setState, replaceState, or forceUpdate) was scheduled from inside an update function. Update functions should be pure, with zero side-effects. Consider using componentDidUpdate or a callback.',
               );
               didWarnUpdateInsideUpdate = true;
             }
@@ -13042,7 +13042,7 @@ var require_react_dom_development = __commonJS({
           switch (update.tag) {
             case ReplaceState: {
               var payload = update.payload;
-              if (typeof payload === "function") {
+              if (typeof payload === 'function') {
                 {
                   enterDisallowedContextReadInDEV();
                 }
@@ -13069,7 +13069,7 @@ var require_react_dom_development = __commonJS({
             case UpdateState: {
               var _payload = update.payload;
               var partialState;
-              if (typeof _payload === "function") {
+              if (typeof _payload === 'function') {
                 {
                   enterDisallowedContextReadInDEV();
                 }
@@ -13243,10 +13243,10 @@ var require_react_dom_development = __commonJS({
           }
         }
         function callCallback(callback, context) {
-          if (typeof callback !== "function") {
+          if (typeof callback !== 'function') {
             throw new Error(
-              "Invalid argument passed as callback. Expected a function. Instead " +
-                ("received: " + callback),
+              'Invalid argument passed as callback. Expected a function. Instead ' +
+                ('received: ' + callback),
             );
           }
           callback.call(context);
@@ -13296,14 +13296,14 @@ var require_react_dom_development = __commonJS({
           didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
           var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
           warnOnInvalidCallback = function (callback, callerName) {
-            if (callback === null || typeof callback === "function") {
+            if (callback === null || typeof callback === 'function') {
               return;
             }
-            var key = callerName + "_" + callback;
+            var key = callerName + '_' + callback;
             if (!didWarnOnInvalidCallback.has(key)) {
               didWarnOnInvalidCallback.add(key);
               error(
-                "%s(...): Expected the last optional `callback` argument to be a function. Instead received: %s.",
+                '%s(...): Expected the last optional `callback` argument to be a function. Instead received: %s.',
                 callerName,
                 callback,
               );
@@ -13311,17 +13311,17 @@ var require_react_dom_development = __commonJS({
           };
           warnOnUndefinedDerivedState = function (type, partialState) {
             if (partialState === void 0) {
-              var componentName = getComponentNameFromType(type) || "Component";
+              var componentName = getComponentNameFromType(type) || 'Component';
               if (!didWarnAboutUndefinedDerivedState.has(componentName)) {
                 didWarnAboutUndefinedDerivedState.add(componentName);
                 error(
-                  "%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. You have returned undefined.",
+                  '%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. You have returned undefined.',
                   componentName,
                 );
               }
             }
           };
-          Object.defineProperty(fakeInternalInstance, "_processChildContext", {
+          Object.defineProperty(fakeInternalInstance, '_processChildContext', {
             enumerable: false,
             value: function () {
               throw new Error(
@@ -13370,7 +13370,7 @@ var require_react_dom_development = __commonJS({
             update.payload = payload;
             if (callback !== void 0 && callback !== null) {
               {
-                warnOnInvalidCallback(callback, "setState");
+                warnOnInvalidCallback(callback, 'setState');
               }
               update.callback = callback;
             }
@@ -13392,7 +13392,7 @@ var require_react_dom_development = __commonJS({
             update.payload = payload;
             if (callback !== void 0 && callback !== null) {
               {
-                warnOnInvalidCallback(callback, "replaceState");
+                warnOnInvalidCallback(callback, 'replaceState');
               }
               update.callback = callback;
             }
@@ -13413,7 +13413,7 @@ var require_react_dom_development = __commonJS({
             update.tag = ForceUpdate;
             if (callback !== void 0 && callback !== null) {
               {
-                warnOnInvalidCallback(callback, "forceUpdate");
+                warnOnInvalidCallback(callback, 'forceUpdate');
               }
               update.callback = callback;
             }
@@ -13437,7 +13437,7 @@ var require_react_dom_development = __commonJS({
           nextContext,
         ) {
           var instance = workInProgress2.stateNode;
-          if (typeof instance.shouldComponentUpdate === "function") {
+          if (typeof instance.shouldComponentUpdate === 'function') {
             var shouldUpdate = instance.shouldComponentUpdate(
               newProps,
               newState,
@@ -13458,8 +13458,8 @@ var require_react_dom_development = __commonJS({
               }
               if (shouldUpdate === void 0) {
                 error(
-                  "%s.shouldComponentUpdate(): Returned undefined instead of a boolean value. Make sure to return true or false.",
-                  getComponentNameFromType(ctor) || "Component",
+                  '%s.shouldComponentUpdate(): Returned undefined instead of a boolean value. Make sure to return true or false.',
+                  getComponentNameFromType(ctor) || 'Component',
                 );
               }
             }
@@ -13476,20 +13476,20 @@ var require_react_dom_development = __commonJS({
         function checkClassInstance(workInProgress2, ctor, newProps) {
           var instance = workInProgress2.stateNode;
           {
-            var name = getComponentNameFromType(ctor) || "Component";
+            var name = getComponentNameFromType(ctor) || 'Component';
             var renderPresent = instance.render;
             if (!renderPresent) {
               if (
                 ctor.prototype &&
-                typeof ctor.prototype.render === "function"
+                typeof ctor.prototype.render === 'function'
               ) {
                 error(
-                  "%s(...): No `render` method found on the returned component instance: did you accidentally return an object from the constructor?",
+                  '%s(...): No `render` method found on the returned component instance: did you accidentally return an object from the constructor?',
                   name,
                 );
               } else {
                 error(
-                  "%s(...): No `render` method found on the returned component instance: you may have forgotten to define `render`.",
+                  '%s(...): No `render` method found on the returned component instance: you may have forgotten to define `render`.',
                   name,
                 );
               }
@@ -13500,7 +13500,7 @@ var require_react_dom_development = __commonJS({
               !instance.state
             ) {
               error(
-                "getInitialState was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Did you mean to define a state property instead?",
+                'getInitialState was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Did you mean to define a state property instead?',
                 name,
               );
             }
@@ -13509,26 +13509,26 @@ var require_react_dom_development = __commonJS({
               !instance.getDefaultProps.isReactClassApproved
             ) {
               error(
-                "getDefaultProps was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Use a static property to define defaultProps instead.",
+                'getDefaultProps was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Use a static property to define defaultProps instead.',
                 name,
               );
             }
             if (instance.propTypes) {
               error(
-                "propTypes was defined as an instance property on %s. Use a static property to define propTypes instead.",
+                'propTypes was defined as an instance property on %s. Use a static property to define propTypes instead.',
                 name,
               );
             }
             if (instance.contextType) {
               error(
-                "contextType was defined as an instance property on %s. Use a static property to define contextType instead.",
+                'contextType was defined as an instance property on %s. Use a static property to define contextType instead.',
                 name,
               );
             }
             {
               if (instance.contextTypes) {
                 error(
-                  "contextTypes was defined as an instance property on %s. Use a static property to define contextTypes instead.",
+                  'contextTypes was defined as an instance property on %s. Use a static property to define contextTypes instead.',
                   name,
                 );
               }
@@ -13539,50 +13539,50 @@ var require_react_dom_development = __commonJS({
               ) {
                 didWarnAboutContextTypeAndContextTypes.add(ctor);
                 error(
-                  "%s declares both contextTypes and contextType static properties. The legacy contextTypes property will be ignored.",
+                  '%s declares both contextTypes and contextType static properties. The legacy contextTypes property will be ignored.',
                   name,
                 );
               }
             }
-            if (typeof instance.componentShouldUpdate === "function") {
+            if (typeof instance.componentShouldUpdate === 'function') {
               error(
-                "%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.",
+                '%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.',
                 name,
               );
             }
             if (
               ctor.prototype &&
               ctor.prototype.isPureReactComponent &&
-              typeof instance.shouldComponentUpdate !== "undefined"
+              typeof instance.shouldComponentUpdate !== 'undefined'
             ) {
               error(
-                "%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.",
-                getComponentNameFromType(ctor) || "A pure component",
+                '%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.',
+                getComponentNameFromType(ctor) || 'A pure component',
               );
             }
-            if (typeof instance.componentDidUnmount === "function") {
+            if (typeof instance.componentDidUnmount === 'function') {
               error(
-                "%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?",
+                '%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?',
                 name,
               );
             }
-            if (typeof instance.componentDidReceiveProps === "function") {
+            if (typeof instance.componentDidReceiveProps === 'function') {
               error(
-                "%s has a method called componentDidReceiveProps(). But there is no such lifecycle method. If you meant to update the state in response to changing props, use componentWillReceiveProps(). If you meant to fetch data or run side-effects or mutations after React has updated the UI, use componentDidUpdate().",
+                '%s has a method called componentDidReceiveProps(). But there is no such lifecycle method. If you meant to update the state in response to changing props, use componentWillReceiveProps(). If you meant to fetch data or run side-effects or mutations after React has updated the UI, use componentDidUpdate().',
                 name,
               );
             }
-            if (typeof instance.componentWillRecieveProps === "function") {
+            if (typeof instance.componentWillRecieveProps === 'function') {
               error(
-                "%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?",
+                '%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?',
                 name,
               );
             }
             if (
-              typeof instance.UNSAFE_componentWillRecieveProps === "function"
+              typeof instance.UNSAFE_componentWillRecieveProps === 'function'
             ) {
               error(
-                "%s has a method called UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?",
+                '%s has a method called UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?',
                 name,
               );
             }
@@ -13596,50 +13596,50 @@ var require_react_dom_development = __commonJS({
             }
             if (instance.defaultProps) {
               error(
-                "Setting defaultProps as an instance property on %s is not supported and will be ignored. Instead, define defaultProps as a static property on %s.",
+                'Setting defaultProps as an instance property on %s is not supported and will be ignored. Instead, define defaultProps as a static property on %s.',
                 name,
                 name,
               );
             }
             if (
-              typeof instance.getSnapshotBeforeUpdate === "function" &&
-              typeof instance.componentDidUpdate !== "function" &&
+              typeof instance.getSnapshotBeforeUpdate === 'function' &&
+              typeof instance.componentDidUpdate !== 'function' &&
               !didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(ctor)
             ) {
               didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(ctor);
               error(
-                "%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.",
+                '%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.',
                 getComponentNameFromType(ctor),
               );
             }
-            if (typeof instance.getDerivedStateFromProps === "function") {
+            if (typeof instance.getDerivedStateFromProps === 'function') {
               error(
-                "%s: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.",
+                '%s: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.',
                 name,
               );
             }
-            if (typeof instance.getDerivedStateFromError === "function") {
+            if (typeof instance.getDerivedStateFromError === 'function') {
               error(
-                "%s: getDerivedStateFromError() is defined as an instance method and will be ignored. Instead, declare it as a static method.",
+                '%s: getDerivedStateFromError() is defined as an instance method and will be ignored. Instead, declare it as a static method.',
                 name,
               );
             }
-            if (typeof ctor.getSnapshotBeforeUpdate === "function") {
+            if (typeof ctor.getSnapshotBeforeUpdate === 'function') {
               error(
-                "%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.",
+                '%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.',
                 name,
               );
             }
             var _state = instance.state;
-            if (_state && (typeof _state !== "object" || isArray(_state))) {
-              error("%s.state: must be set to an object or null", name);
+            if (_state && (typeof _state !== 'object' || isArray(_state))) {
+              error('%s.state: must be set to an object or null', name);
             }
             if (
-              typeof instance.getChildContext === "function" &&
-              typeof ctor.childContextTypes !== "object"
+              typeof instance.getChildContext === 'function' &&
+              typeof ctor.childContextTypes !== 'object'
             ) {
               error(
-                "%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().",
+                '%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().',
                 name,
               );
             }
@@ -13659,7 +13659,7 @@ var require_react_dom_development = __commonJS({
           var context = emptyContextObject;
           var contextType = ctor.contextType;
           {
-            if ("contextType" in ctor) {
+            if ('contextType' in ctor) {
               var isValid =
                 // Allow null for conditional declaration
                 contextType === null ||
@@ -13668,34 +13668,34 @@ var require_react_dom_development = __commonJS({
                   contextType._context === void 0);
               if (!isValid && !didWarnAboutInvalidateContextType.has(ctor)) {
                 didWarnAboutInvalidateContextType.add(ctor);
-                var addendum = "";
+                var addendum = '';
                 if (contextType === void 0) {
                   addendum =
-                    " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file.";
-                } else if (typeof contextType !== "object") {
+                    ' However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file.';
+                } else if (typeof contextType !== 'object') {
                   addendum =
-                    " However, it is set to a " + typeof contextType + ".";
+                    ' However, it is set to a ' + typeof contextType + '.';
                 } else if (contextType.$$typeof === REACT_PROVIDER_TYPE) {
                   addendum =
-                    " Did you accidentally pass the Context.Provider instead?";
+                    ' Did you accidentally pass the Context.Provider instead?';
                 } else if (contextType._context !== void 0) {
                   addendum =
-                    " Did you accidentally pass the Context.Consumer instead?";
+                    ' Did you accidentally pass the Context.Consumer instead?';
                 } else {
                   addendum =
-                    " However, it is set to an object with keys {" +
-                    Object.keys(contextType).join(", ") +
-                    "}.";
+                    ' However, it is set to an object with keys {' +
+                    Object.keys(contextType).join(', ') +
+                    '}.';
                 }
                 error(
-                  "%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s",
-                  getComponentNameFromType(ctor) || "Component",
+                  '%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s',
+                  getComponentNameFromType(ctor) || 'Component',
                   addendum,
                 );
               }
             }
           }
-          if (typeof contextType === "object" && contextType !== null) {
+          if (typeof contextType === 'object' && contextType !== null) {
             context = readContext(contextType);
           } else {
             unmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
@@ -13724,59 +13724,59 @@ var require_react_dom_development = __commonJS({
           adoptClassInstance(workInProgress2, instance);
           {
             if (
-              typeof ctor.getDerivedStateFromProps === "function" &&
+              typeof ctor.getDerivedStateFromProps === 'function' &&
               state === null
             ) {
-              var componentName = getComponentNameFromType(ctor) || "Component";
+              var componentName = getComponentNameFromType(ctor) || 'Component';
               if (!didWarnAboutUninitializedState.has(componentName)) {
                 didWarnAboutUninitializedState.add(componentName);
                 error(
-                  "`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.",
+                  '`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.',
                   componentName,
-                  instance.state === null ? "null" : "undefined",
+                  instance.state === null ? 'null' : 'undefined',
                   componentName,
                 );
               }
             }
             if (
-              typeof ctor.getDerivedStateFromProps === "function" ||
-              typeof instance.getSnapshotBeforeUpdate === "function"
+              typeof ctor.getDerivedStateFromProps === 'function' ||
+              typeof instance.getSnapshotBeforeUpdate === 'function'
             ) {
               var foundWillMountName = null;
               var foundWillReceivePropsName = null;
               var foundWillUpdateName = null;
               if (
-                typeof instance.componentWillMount === "function" &&
+                typeof instance.componentWillMount === 'function' &&
                 instance.componentWillMount.__suppressDeprecationWarning !==
                   true
               ) {
-                foundWillMountName = "componentWillMount";
+                foundWillMountName = 'componentWillMount';
               } else if (
-                typeof instance.UNSAFE_componentWillMount === "function"
+                typeof instance.UNSAFE_componentWillMount === 'function'
               ) {
-                foundWillMountName = "UNSAFE_componentWillMount";
+                foundWillMountName = 'UNSAFE_componentWillMount';
               }
               if (
-                typeof instance.componentWillReceiveProps === "function" &&
+                typeof instance.componentWillReceiveProps === 'function' &&
                 instance.componentWillReceiveProps
                   .__suppressDeprecationWarning !== true
               ) {
-                foundWillReceivePropsName = "componentWillReceiveProps";
+                foundWillReceivePropsName = 'componentWillReceiveProps';
               } else if (
-                typeof instance.UNSAFE_componentWillReceiveProps === "function"
+                typeof instance.UNSAFE_componentWillReceiveProps === 'function'
               ) {
-                foundWillReceivePropsName = "UNSAFE_componentWillReceiveProps";
+                foundWillReceivePropsName = 'UNSAFE_componentWillReceiveProps';
               }
               if (
-                typeof instance.componentWillUpdate === "function" &&
+                typeof instance.componentWillUpdate === 'function' &&
                 instance.componentWillUpdate.__suppressDeprecationWarning !==
                   true
               ) {
-                foundWillUpdateName = "componentWillUpdate";
+                foundWillUpdateName = 'componentWillUpdate';
               } else if (
-                typeof instance.UNSAFE_componentWillUpdate === "function"
+                typeof instance.UNSAFE_componentWillUpdate === 'function'
               ) {
-                foundWillUpdateName = "UNSAFE_componentWillUpdate";
+                foundWillUpdateName = 'UNSAFE_componentWillUpdate';
               }
               if (
                 foundWillMountName !== null ||
@@ -13784,11 +13784,11 @@ var require_react_dom_development = __commonJS({
                 foundWillUpdateName !== null
               ) {
                 var _componentName =
-                  getComponentNameFromType(ctor) || "Component";
+                  getComponentNameFromType(ctor) || 'Component';
                 var newApiName =
-                  typeof ctor.getDerivedStateFromProps === "function"
-                    ? "getDerivedStateFromProps()"
-                    : "getSnapshotBeforeUpdate()";
+                  typeof ctor.getDerivedStateFromProps === 'function'
+                    ? 'getDerivedStateFromProps()'
+                    : 'getSnapshotBeforeUpdate()';
                 if (
                   !didWarnAboutLegacyLifecyclesAndDerivedState.has(
                     _componentName,
@@ -13798,18 +13798,18 @@ var require_react_dom_development = __commonJS({
                     _componentName,
                   );
                   error(
-                    "Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\nThe above lifecycles should be removed. Learn more about this warning here:\nhttps://reactjs.org/link/unsafe-component-lifecycles",
+                    'Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\nThe above lifecycles should be removed. Learn more about this warning here:\nhttps://reactjs.org/link/unsafe-component-lifecycles',
                     _componentName,
                     newApiName,
                     foundWillMountName !== null
-                      ? "\n  " + foundWillMountName
-                      : "",
+                      ? '\n  ' + foundWillMountName
+                      : '',
                     foundWillReceivePropsName !== null
-                      ? "\n  " + foundWillReceivePropsName
-                      : "",
+                      ? '\n  ' + foundWillReceivePropsName
+                      : '',
                     foundWillUpdateName !== null
-                      ? "\n  " + foundWillUpdateName
-                      : "",
+                      ? '\n  ' + foundWillUpdateName
+                      : '',
                   );
                 }
               }
@@ -13822,17 +13822,17 @@ var require_react_dom_development = __commonJS({
         }
         function callComponentWillMount(workInProgress2, instance) {
           var oldState = instance.state;
-          if (typeof instance.componentWillMount === "function") {
+          if (typeof instance.componentWillMount === 'function') {
             instance.componentWillMount();
           }
-          if (typeof instance.UNSAFE_componentWillMount === "function") {
+          if (typeof instance.UNSAFE_componentWillMount === 'function') {
             instance.UNSAFE_componentWillMount();
           }
           if (oldState !== instance.state) {
             {
               error(
                 "%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.",
-                getComponentNameFromFiber(workInProgress2) || "Component",
+                getComponentNameFromFiber(workInProgress2) || 'Component',
               );
             }
             classComponentUpdater.enqueueReplaceState(
@@ -13849,16 +13849,16 @@ var require_react_dom_development = __commonJS({
           nextContext,
         ) {
           var oldState = instance.state;
-          if (typeof instance.componentWillReceiveProps === "function") {
+          if (typeof instance.componentWillReceiveProps === 'function') {
             instance.componentWillReceiveProps(newProps, nextContext);
           }
-          if (typeof instance.UNSAFE_componentWillReceiveProps === "function") {
+          if (typeof instance.UNSAFE_componentWillReceiveProps === 'function') {
             instance.UNSAFE_componentWillReceiveProps(newProps, nextContext);
           }
           if (instance.state !== oldState) {
             {
               var componentName =
-                getComponentNameFromFiber(workInProgress2) || "Component";
+                getComponentNameFromFiber(workInProgress2) || 'Component';
               if (!didWarnAboutStateAssignmentForComponent.has(componentName)) {
                 didWarnAboutStateAssignmentForComponent.add(componentName);
                 error(
@@ -13889,7 +13889,7 @@ var require_react_dom_development = __commonJS({
           instance.refs = emptyRefsObject;
           initializeUpdateQueue(workInProgress2);
           var contextType = ctor.contextType;
-          if (typeof contextType === "object" && contextType !== null) {
+          if (typeof contextType === 'object' && contextType !== null) {
             instance.context = readContext(contextType);
           } else {
             var unmaskedContext = getUnmaskedContext(
@@ -13904,7 +13904,7 @@ var require_react_dom_development = __commonJS({
           }
           {
             if (instance.state === newProps) {
-              var componentName = getComponentNameFromType(ctor) || "Component";
+              var componentName = getComponentNameFromType(ctor) || 'Component';
               if (
                 !didWarnAboutDirectlyAssigningPropsToState.has(componentName)
               ) {
@@ -13930,7 +13930,7 @@ var require_react_dom_development = __commonJS({
           }
           instance.state = workInProgress2.memoizedState;
           var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
-          if (typeof getDerivedStateFromProps === "function") {
+          if (typeof getDerivedStateFromProps === 'function') {
             applyDerivedStateFromProps(
               workInProgress2,
               ctor,
@@ -13940,10 +13940,10 @@ var require_react_dom_development = __commonJS({
             instance.state = workInProgress2.memoizedState;
           }
           if (
-            typeof ctor.getDerivedStateFromProps !== "function" &&
-            typeof instance.getSnapshotBeforeUpdate !== "function" &&
-            (typeof instance.UNSAFE_componentWillMount === "function" ||
-              typeof instance.componentWillMount === "function")
+            typeof ctor.getDerivedStateFromProps !== 'function' &&
+            typeof instance.getSnapshotBeforeUpdate !== 'function' &&
+            (typeof instance.UNSAFE_componentWillMount === 'function' ||
+              typeof instance.componentWillMount === 'function')
           ) {
             callComponentWillMount(workInProgress2, instance);
             processUpdateQueue(
@@ -13954,7 +13954,7 @@ var require_react_dom_development = __commonJS({
             );
             instance.state = workInProgress2.memoizedState;
           }
-          if (typeof instance.componentDidMount === "function") {
+          if (typeof instance.componentDidMount === 'function') {
             var fiberFlags = Update;
             {
               fiberFlags |= LayoutStatic;
@@ -13977,7 +13977,7 @@ var require_react_dom_development = __commonJS({
           var oldContext = instance.context;
           var contextType = ctor.contextType;
           var nextContext = emptyContextObject;
-          if (typeof contextType === "object" && contextType !== null) {
+          if (typeof contextType === 'object' && contextType !== null) {
             nextContext = readContext(contextType);
           } else {
             var nextLegacyUnmaskedContext = getUnmaskedContext(
@@ -13992,12 +13992,12 @@ var require_react_dom_development = __commonJS({
           }
           var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
           var hasNewLifecycles =
-            typeof getDerivedStateFromProps === "function" ||
-            typeof instance.getSnapshotBeforeUpdate === "function";
+            typeof getDerivedStateFromProps === 'function' ||
+            typeof instance.getSnapshotBeforeUpdate === 'function';
           if (
             !hasNewLifecycles &&
-            (typeof instance.UNSAFE_componentWillReceiveProps === "function" ||
-              typeof instance.componentWillReceiveProps === "function")
+            (typeof instance.UNSAFE_componentWillReceiveProps === 'function' ||
+              typeof instance.componentWillReceiveProps === 'function')
           ) {
             if (oldProps !== newProps || oldContext !== nextContext) {
               callComponentWillReceiveProps(
@@ -14019,7 +14019,7 @@ var require_react_dom_development = __commonJS({
             !hasContextChanged() &&
             !checkHasForceUpdateAfterProcessing()
           ) {
-            if (typeof instance.componentDidMount === "function") {
+            if (typeof instance.componentDidMount === 'function') {
               var fiberFlags = Update;
               {
                 fiberFlags |= LayoutStatic;
@@ -14031,7 +14031,7 @@ var require_react_dom_development = __commonJS({
             }
             return false;
           }
-          if (typeof getDerivedStateFromProps === "function") {
+          if (typeof getDerivedStateFromProps === 'function') {
             applyDerivedStateFromProps(
               workInProgress2,
               ctor,
@@ -14054,17 +14054,17 @@ var require_react_dom_development = __commonJS({
           if (shouldUpdate) {
             if (
               !hasNewLifecycles &&
-              (typeof instance.UNSAFE_componentWillMount === "function" ||
-                typeof instance.componentWillMount === "function")
+              (typeof instance.UNSAFE_componentWillMount === 'function' ||
+                typeof instance.componentWillMount === 'function')
             ) {
-              if (typeof instance.componentWillMount === "function") {
+              if (typeof instance.componentWillMount === 'function') {
                 instance.componentWillMount();
               }
-              if (typeof instance.UNSAFE_componentWillMount === "function") {
+              if (typeof instance.UNSAFE_componentWillMount === 'function') {
                 instance.UNSAFE_componentWillMount();
               }
             }
-            if (typeof instance.componentDidMount === "function") {
+            if (typeof instance.componentDidMount === 'function') {
               var _fiberFlags = Update;
               {
                 _fiberFlags |= LayoutStatic;
@@ -14075,7 +14075,7 @@ var require_react_dom_development = __commonJS({
               workInProgress2.flags |= _fiberFlags;
             }
           } else {
-            if (typeof instance.componentDidMount === "function") {
+            if (typeof instance.componentDidMount === 'function') {
               var _fiberFlags2 = Update;
               {
                 _fiberFlags2 |= LayoutStatic;
@@ -14112,7 +14112,7 @@ var require_react_dom_development = __commonJS({
           var oldContext = instance.context;
           var contextType = ctor.contextType;
           var nextContext = emptyContextObject;
-          if (typeof contextType === "object" && contextType !== null) {
+          if (typeof contextType === 'object' && contextType !== null) {
             nextContext = readContext(contextType);
           } else {
             var nextUnmaskedContext = getUnmaskedContext(
@@ -14127,12 +14127,12 @@ var require_react_dom_development = __commonJS({
           }
           var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
           var hasNewLifecycles =
-            typeof getDerivedStateFromProps === "function" ||
-            typeof instance.getSnapshotBeforeUpdate === "function";
+            typeof getDerivedStateFromProps === 'function' ||
+            typeof instance.getSnapshotBeforeUpdate === 'function';
           if (
             !hasNewLifecycles &&
-            (typeof instance.UNSAFE_componentWillReceiveProps === "function" ||
-              typeof instance.componentWillReceiveProps === "function")
+            (typeof instance.UNSAFE_componentWillReceiveProps === 'function' ||
+              typeof instance.componentWillReceiveProps === 'function')
           ) {
             if (
               unresolvedOldProps !== unresolvedNewProps ||
@@ -14158,7 +14158,7 @@ var require_react_dom_development = __commonJS({
             !checkHasForceUpdateAfterProcessing() &&
             !enableLazyContextPropagation
           ) {
-            if (typeof instance.componentDidUpdate === "function") {
+            if (typeof instance.componentDidUpdate === 'function') {
               if (
                 unresolvedOldProps !== current2.memoizedProps ||
                 oldState !== current2.memoizedState
@@ -14166,7 +14166,7 @@ var require_react_dom_development = __commonJS({
                 workInProgress2.flags |= Update;
               }
             }
-            if (typeof instance.getSnapshotBeforeUpdate === "function") {
+            if (typeof instance.getSnapshotBeforeUpdate === 'function') {
               if (
                 unresolvedOldProps !== current2.memoizedProps ||
                 oldState !== current2.memoizedState
@@ -14176,7 +14176,7 @@ var require_react_dom_development = __commonJS({
             }
             return false;
           }
-          if (typeof getDerivedStateFromProps === "function") {
+          if (typeof getDerivedStateFromProps === 'function') {
             applyDerivedStateFromProps(
               workInProgress2,
               ctor,
@@ -14203,13 +14203,13 @@ var require_react_dom_development = __commonJS({
           if (shouldUpdate) {
             if (
               !hasNewLifecycles &&
-              (typeof instance.UNSAFE_componentWillUpdate === "function" ||
-                typeof instance.componentWillUpdate === "function")
+              (typeof instance.UNSAFE_componentWillUpdate === 'function' ||
+                typeof instance.componentWillUpdate === 'function')
             ) {
-              if (typeof instance.componentWillUpdate === "function") {
+              if (typeof instance.componentWillUpdate === 'function') {
                 instance.componentWillUpdate(newProps, newState, nextContext);
               }
-              if (typeof instance.UNSAFE_componentWillUpdate === "function") {
+              if (typeof instance.UNSAFE_componentWillUpdate === 'function') {
                 instance.UNSAFE_componentWillUpdate(
                   newProps,
                   newState,
@@ -14217,14 +14217,14 @@ var require_react_dom_development = __commonJS({
                 );
               }
             }
-            if (typeof instance.componentDidUpdate === "function") {
+            if (typeof instance.componentDidUpdate === 'function') {
               workInProgress2.flags |= Update;
             }
-            if (typeof instance.getSnapshotBeforeUpdate === "function") {
+            if (typeof instance.getSnapshotBeforeUpdate === 'function') {
               workInProgress2.flags |= Snapshot;
             }
           } else {
-            if (typeof instance.componentDidUpdate === "function") {
+            if (typeof instance.componentDidUpdate === 'function') {
               if (
                 unresolvedOldProps !== current2.memoizedProps ||
                 oldState !== current2.memoizedState
@@ -14232,7 +14232,7 @@ var require_react_dom_development = __commonJS({
                 workInProgress2.flags |= Update;
               }
             }
-            if (typeof instance.getSnapshotBeforeUpdate === "function") {
+            if (typeof instance.getSnapshotBeforeUpdate === 'function') {
               if (
                 unresolvedOldProps !== current2.memoizedProps ||
                 oldState !== current2.memoizedState
@@ -14261,20 +14261,20 @@ var require_react_dom_development = __commonJS({
           ownerHasKeyUseWarning = {};
           ownerHasFunctionTypeWarning = {};
           warnForMissingKey = function (child, returnFiber) {
-            if (child === null || typeof child !== "object") {
+            if (child === null || typeof child !== 'object') {
               return;
             }
             if (!child._store || child._store.validated || child.key != null) {
               return;
             }
-            if (typeof child._store !== "object") {
+            if (typeof child._store !== 'object') {
               throw new Error(
-                "React Component in warnForMissingKey should have a _store. This error is likely caused by a bug in React. Please file an issue.",
+                'React Component in warnForMissingKey should have a _store. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
             child._store.validated = true;
             var componentName =
-              getComponentNameFromFiber(returnFiber) || "Component";
+              getComponentNameFromFiber(returnFiber) || 'Component';
             if (ownerHasKeyUseWarning[componentName]) {
               return;
             }
@@ -14288,8 +14288,8 @@ var require_react_dom_development = __commonJS({
           var mixedRef = element.ref;
           if (
             mixedRef !== null &&
-            typeof mixedRef !== "function" &&
-            typeof mixedRef !== "object"
+            typeof mixedRef !== 'function' &&
+            typeof mixedRef !== 'object'
           ) {
             {
               if (
@@ -14303,7 +14303,7 @@ var require_react_dom_development = __commonJS({
                 )
               ) {
                 var componentName =
-                  getComponentNameFromFiber(returnFiber) || "Component";
+                  getComponentNameFromFiber(returnFiber) || 'Component';
                 if (!didWarnAboutStringRefs[componentName]) {
                   {
                     error(
@@ -14322,27 +14322,27 @@ var require_react_dom_development = __commonJS({
                 var ownerFiber = owner;
                 if (ownerFiber.tag !== ClassComponent) {
                   throw new Error(
-                    "Function components cannot have string refs. We recommend using useRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref",
+                    'Function components cannot have string refs. We recommend using useRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref',
                   );
                 }
                 inst = ownerFiber.stateNode;
               }
               if (!inst) {
                 throw new Error(
-                  "Missing owner for string ref " +
+                  'Missing owner for string ref ' +
                     mixedRef +
-                    ". This error is likely caused by a bug in React. Please file an issue.",
+                    '. This error is likely caused by a bug in React. Please file an issue.',
                 );
               }
               var resolvedInst = inst;
               {
-                checkPropStringCoercion(mixedRef, "ref");
+                checkPropStringCoercion(mixedRef, 'ref');
               }
-              var stringRef = "" + mixedRef;
+              var stringRef = '' + mixedRef;
               if (
                 current2 !== null &&
                 current2.ref !== null &&
-                typeof current2.ref === "function" &&
+                typeof current2.ref === 'function' &&
                 current2.ref._stringRef === stringRef
               ) {
                 return current2.ref;
@@ -14361,14 +14361,14 @@ var require_react_dom_development = __commonJS({
               ref._stringRef = stringRef;
               return ref;
             } else {
-              if (typeof mixedRef !== "string") {
+              if (typeof mixedRef !== 'string') {
                 throw new Error(
-                  "Expected ref to be a function, a string, an object returned by React.createRef(), or null.",
+                  'Expected ref to be a function, a string, an object returned by React.createRef(), or null.',
                 );
               }
               if (!element._owner) {
                 throw new Error(
-                  "Element ref was specified as a string (" +
+                  'Element ref was specified as a string (' +
                     mixedRef +
                     ") but no owner was set. This could happen for one of the following reasons:\n1. You may be adding a ref to a function component\n2. You may be adding a ref to a component that was not created inside a component's render method\n3. You have multiple copies of React loaded\nSee https://reactjs.org/link/refs-must-have-owner for more information.",
                 );
@@ -14380,23 +14380,23 @@ var require_react_dom_development = __commonJS({
         function throwOnInvalidObjectType(returnFiber, newChild) {
           var childString = Object.prototype.toString.call(newChild);
           throw new Error(
-            "Objects are not valid as a React child (found: " +
-              (childString === "[object Object]"
-                ? "object with keys {" + Object.keys(newChild).join(", ") + "}"
+            'Objects are not valid as a React child (found: ' +
+              (childString === '[object Object]'
+                ? 'object with keys {' + Object.keys(newChild).join(', ') + '}'
                 : childString) +
-              "). If you meant to render a collection of children, use an array instead.",
+              '). If you meant to render a collection of children, use an array instead.',
           );
         }
         function warnOnFunctionType(returnFiber) {
           {
             var componentName =
-              getComponentNameFromFiber(returnFiber) || "Component";
+              getComponentNameFromFiber(returnFiber) || 'Component';
             if (ownerHasFunctionTypeWarning[componentName]) {
               return;
             }
             ownerHasFunctionTypeWarning[componentName] = true;
             error(
-              "Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.",
+              'Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.',
             );
           }
         }
@@ -14507,7 +14507,7 @@ var require_react_dom_development = __commonJS({
                 // We need to do this after the Hot Reloading check above,
                 // because hot reloading has different semantics than prod because
                 // it doesn't resuspend. So we can't let the call below suspend.
-                (typeof elementType === "object" &&
+                (typeof elementType === 'object' &&
                   elementType !== null &&
                   elementType.$$typeof === REACT_LAZY_TYPE &&
                   resolveLazy(elementType) === current2.type)
@@ -14575,18 +14575,18 @@ var require_react_dom_development = __commonJS({
           }
           function createChild(returnFiber, newChild, lanes) {
             if (
-              (typeof newChild === "string" && newChild !== "") ||
-              typeof newChild === "number"
+              (typeof newChild === 'string' && newChild !== '') ||
+              typeof newChild === 'number'
             ) {
               var created = createFiberFromText(
-                "" + newChild,
+                '' + newChild,
                 returnFiber.mode,
                 lanes,
               );
               created.return = returnFiber;
               return created;
             }
-            if (typeof newChild === "object" && newChild !== null) {
+            if (typeof newChild === 'object' && newChild !== null) {
               switch (newChild.$$typeof) {
                 case REACT_ELEMENT_TYPE: {
                   var _created = createFiberFromElement(
@@ -14626,7 +14626,7 @@ var require_react_dom_development = __commonJS({
               throwOnInvalidObjectType(returnFiber, newChild);
             }
             {
-              if (typeof newChild === "function") {
+              if (typeof newChild === 'function') {
                 warnOnFunctionType(returnFiber);
               }
             }
@@ -14635,8 +14635,8 @@ var require_react_dom_development = __commonJS({
           function updateSlot(returnFiber, oldFiber, newChild, lanes) {
             var key = oldFiber !== null ? oldFiber.key : null;
             if (
-              (typeof newChild === "string" && newChild !== "") ||
-              typeof newChild === "number"
+              (typeof newChild === 'string' && newChild !== '') ||
+              typeof newChild === 'number'
             ) {
               if (key !== null) {
                 return null;
@@ -14644,11 +14644,11 @@ var require_react_dom_development = __commonJS({
               return updateTextNode(
                 returnFiber,
                 oldFiber,
-                "" + newChild,
+                '' + newChild,
                 lanes,
               );
             }
-            if (typeof newChild === "object" && newChild !== null) {
+            if (typeof newChild === 'object' && newChild !== null) {
               switch (newChild.$$typeof) {
                 case REACT_ELEMENT_TYPE: {
                   if (newChild.key === key) {
@@ -14695,7 +14695,7 @@ var require_react_dom_development = __commonJS({
               throwOnInvalidObjectType(returnFiber, newChild);
             }
             {
-              if (typeof newChild === "function") {
+              if (typeof newChild === 'function') {
                 warnOnFunctionType(returnFiber);
               }
             }
@@ -14709,18 +14709,18 @@ var require_react_dom_development = __commonJS({
             lanes,
           ) {
             if (
-              (typeof newChild === "string" && newChild !== "") ||
-              typeof newChild === "number"
+              (typeof newChild === 'string' && newChild !== '') ||
+              typeof newChild === 'number'
             ) {
               var matchedFiber = existingChildren.get(newIdx) || null;
               return updateTextNode(
                 returnFiber,
                 matchedFiber,
-                "" + newChild,
+                '' + newChild,
                 lanes,
               );
             }
-            if (typeof newChild === "object" && newChild !== null) {
+            if (typeof newChild === 'object' && newChild !== null) {
               switch (newChild.$$typeof) {
                 case REACT_ELEMENT_TYPE: {
                   var _matchedFiber =
@@ -14770,7 +14770,7 @@ var require_react_dom_development = __commonJS({
               throwOnInvalidObjectType(returnFiber, newChild);
             }
             {
-              if (typeof newChild === "function") {
+              if (typeof newChild === 'function') {
                 warnOnFunctionType(returnFiber);
               }
             }
@@ -14778,7 +14778,7 @@ var require_react_dom_development = __commonJS({
           }
           function warnOnInvalidKey(child, knownKeys, returnFiber) {
             {
-              if (typeof child !== "object" || child === null) {
+              if (typeof child !== 'object' || child === null) {
                 return knownKeys;
               }
               switch (child.$$typeof) {
@@ -14786,7 +14786,7 @@ var require_react_dom_development = __commonJS({
                 case REACT_PORTAL_TYPE:
                   warnForMissingKey(child, returnFiber);
                   var key = child.key;
-                  if (typeof key !== "string") {
+                  if (typeof key !== 'string') {
                     break;
                   }
                   if (knownKeys === null) {
@@ -14799,7 +14799,7 @@ var require_react_dom_development = __commonJS({
                     break;
                   }
                   error(
-                    "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.",
+                    'Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.',
                     key,
                   );
                   break;
@@ -14948,19 +14948,19 @@ var require_react_dom_development = __commonJS({
             lanes,
           ) {
             var iteratorFn = getIteratorFn(newChildrenIterable);
-            if (typeof iteratorFn !== "function") {
+            if (typeof iteratorFn !== 'function') {
               throw new Error(
-                "An object is not an iterable. This error is likely caused by a bug in React. Please file an issue.",
+                'An object is not an iterable. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
             {
               if (
-                typeof Symbol === "function" && // $FlowFixMe Flow doesn't know about toStringTag
-                newChildrenIterable[Symbol.toStringTag] === "Generator"
+                typeof Symbol === 'function' && // $FlowFixMe Flow doesn't know about toStringTag
+                newChildrenIterable[Symbol.toStringTag] === 'Generator'
               ) {
                 if (!didWarnAboutGenerators) {
                   error(
-                    "Using Generators as children is unsupported and will likely yield unexpected results because enumerating a generator mutates it. You may convert it to an array with `Array.from()` or the `[...spread]` operator before rendering. Keep in mind you might need to polyfill these features for older browsers.",
+                    'Using Generators as children is unsupported and will likely yield unexpected results because enumerating a generator mutates it. You may convert it to an array with `Array.from()` or the `[...spread]` operator before rendering. Keep in mind you might need to polyfill these features for older browsers.',
                   );
                 }
                 didWarnAboutGenerators = true;
@@ -14968,7 +14968,7 @@ var require_react_dom_development = __commonJS({
               if (newChildrenIterable.entries === iteratorFn) {
                 if (!didWarnAboutMaps) {
                   error(
-                    "Using Maps as children is not supported. Use an array of keyed ReactElements instead.",
+                    'Using Maps as children is not supported. Use an array of keyed ReactElements instead.',
                   );
                 }
                 didWarnAboutMaps = true;
@@ -14985,7 +14985,7 @@ var require_react_dom_development = __commonJS({
             }
             var newChildren = iteratorFn.call(newChildrenIterable);
             if (newChildren == null) {
-              throw new Error("An iterable object provided no iterator.");
+              throw new Error('An iterable object provided no iterator.');
             }
             var resultingFirstChild = null;
             var previousNewFiber = null;
@@ -15157,7 +15157,7 @@ var require_react_dom_development = __commonJS({
                     // We need to do this after the Hot Reloading check above,
                     // because hot reloading has different semantics than prod because
                     // it doesn't resuspend. So we can't let the call below suspend.
-                    (typeof elementType === "object" &&
+                    (typeof elementType === 'object' &&
                       elementType !== null &&
                       elementType.$$typeof === REACT_LAZY_TYPE &&
                       resolveLazy(elementType) === child.type)
@@ -15247,14 +15247,14 @@ var require_react_dom_development = __commonJS({
             lanes,
           ) {
             var isUnkeyedTopLevelFragment =
-              typeof newChild === "object" &&
+              typeof newChild === 'object' &&
               newChild !== null &&
               newChild.type === REACT_FRAGMENT_TYPE &&
               newChild.key === null;
             if (isUnkeyedTopLevelFragment) {
               newChild = newChild.props.children;
             }
-            if (typeof newChild === "object" && newChild !== null) {
+            if (typeof newChild === 'object' && newChild !== null) {
               switch (newChild.$$typeof) {
                 case REACT_ELEMENT_TYPE:
                   return placeSingleChild(
@@ -15303,20 +15303,20 @@ var require_react_dom_development = __commonJS({
               throwOnInvalidObjectType(returnFiber, newChild);
             }
             if (
-              (typeof newChild === "string" && newChild !== "") ||
-              typeof newChild === "number"
+              (typeof newChild === 'string' && newChild !== '') ||
+              typeof newChild === 'number'
             ) {
               return placeSingleChild(
                 reconcileSingleTextNode(
                   returnFiber,
                   currentFirstChild,
-                  "" + newChild,
+                  '' + newChild,
                   lanes,
                 ),
               );
             }
             {
-              if (typeof newChild === "function") {
+              if (typeof newChild === 'function') {
                 warnOnFunctionType(returnFiber);
               }
             }
@@ -15328,7 +15328,7 @@ var require_react_dom_development = __commonJS({
         var mountChildFibers = ChildReconciler(false);
         function cloneChildFibers(current2, workInProgress2) {
           if (current2 !== null && workInProgress2.child !== current2.child) {
-            throw new Error("Resuming work not yet implemented.");
+            throw new Error('Resuming work not yet implemented.');
           }
           if (workInProgress2.child === null) {
             return;
@@ -15364,7 +15364,7 @@ var require_react_dom_development = __commonJS({
         function requiredContext(c) {
           if (c === NO_CONTEXT) {
             throw new Error(
-              "Expected host context to exist. This error is likely caused by a bug in React. Please file an issue.",
+              'Expected host context to exist. This error is likely caused by a bug in React. Please file an issue.',
             );
           }
           return c;
@@ -15567,7 +15567,7 @@ var require_react_dom_development = __commonJS({
           {
             if (deps !== void 0 && deps !== null && !isArray(deps)) {
               error(
-                "%s received a final argument that is not an array (instead, received `%s`). When specified, the final argument must be an array.",
+                '%s received a final argument that is not an array (instead, received `%s`). When specified, the final argument must be an array.',
                 currentHookNameInDev,
                 typeof deps,
               );
@@ -15582,7 +15582,7 @@ var require_react_dom_development = __commonJS({
             if (!didWarnAboutMismatchedHooksForComponent.has(componentName)) {
               didWarnAboutMismatchedHooksForComponent.add(componentName);
               if (hookTypesDev !== null) {
-                var table = "";
+                var table = '';
                 var secondColumnStart = 30;
                 for (var i = 0; i <= hookTypesUpdateIndexDev; i++) {
                   var oldHookName = hookTypesDev[i];
@@ -15590,15 +15590,15 @@ var require_react_dom_development = __commonJS({
                     i === hookTypesUpdateIndexDev
                       ? currentHookName
                       : oldHookName;
-                  var row = i + 1 + ". " + oldHookName;
+                  var row = i + 1 + '. ' + oldHookName;
                   while (row.length < secondColumnStart) {
-                    row += " ";
+                    row += ' ';
                   }
-                  row += newHookName + "\n";
+                  row += newHookName + '\n';
                   table += row;
                 }
                 error(
-                  "React has detected a change in the order of Hooks called by %s. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://reactjs.org/link/rules-of-hooks\n\n   Previous render            Next render\n   ------------------------------------------------------\n%s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+                  'React has detected a change in the order of Hooks called by %s. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://reactjs.org/link/rules-of-hooks\n\n   Previous render            Next render\n   ------------------------------------------------------\n%s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n',
                   componentName,
                   table,
                 );
@@ -15608,7 +15608,7 @@ var require_react_dom_development = __commonJS({
         }
         function throwInvalidHookError() {
           throw new Error(
-            "Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.",
+            'Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.',
           );
         }
         function areHookInputsEqual(nextDeps, prevDeps) {
@@ -15620,7 +15620,7 @@ var require_react_dom_development = __commonJS({
           if (prevDeps === null) {
             {
               error(
-                "%s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders.",
+                '%s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders.',
                 currentHookNameInDev,
               );
             }
@@ -15629,10 +15629,10 @@ var require_react_dom_development = __commonJS({
           {
             if (nextDeps.length !== prevDeps.length) {
               error(
-                "The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s",
+                'The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s',
                 currentHookNameInDev,
-                "[" + prevDeps.join(", ") + "]",
-                "[" + nextDeps.join(", ") + "]",
+                '[' + prevDeps.join(', ') + ']',
+                '[' + nextDeps.join(', ') + ']',
               );
             }
           }
@@ -15681,7 +15681,7 @@ var require_react_dom_development = __commonJS({
               localIdCounter = 0;
               if (numberOfReRenders >= RE_RENDER_LIMIT) {
                 throw new Error(
-                  "Too many re-renders. React limits the number of renders to prevent an infinite loop.",
+                  'Too many re-renders. React limits the number of renders to prevent an infinite loop.',
                 );
               }
               numberOfReRenders += 1;
@@ -15723,14 +15723,14 @@ var require_react_dom_development = __commonJS({
               (current2.mode & ConcurrentMode) !== NoMode
             ) {
               error(
-                "Internal React error: Expected static flag was missing. Please notify the React team.",
+                'Internal React error: Expected static flag was missing. Please notify the React team.',
               );
             }
           }
           didScheduleRenderPhaseUpdate = false;
           if (didRenderTooFewHooks) {
             throw new Error(
-              "Rendered fewer hooks than expected. This may be caused by an accidental early return statement.",
+              'Rendered fewer hooks than expected. This may be caused by an accidental early return statement.',
             );
           }
           return children;
@@ -15820,7 +15820,7 @@ var require_react_dom_development = __commonJS({
           } else {
             if (nextCurrentHook === null) {
               throw new Error(
-                "Rendered more hooks than during the previous render.",
+                'Rendered more hooks than during the previous render.',
               );
             }
             currentHook = nextCurrentHook;
@@ -15847,7 +15847,7 @@ var require_react_dom_development = __commonJS({
           };
         }
         function basicStateReducer(state, action) {
-          return typeof action === "function" ? action(state) : action;
+          return typeof action === 'function' ? action(state) : action;
         }
         function mountReducer(reducer, initialArg, init) {
           var hook = mountWorkInProgressHook();
@@ -15879,7 +15879,7 @@ var require_react_dom_development = __commonJS({
           var queue = hook.queue;
           if (queue === null) {
             throw new Error(
-              "Should have a queue. This is likely a bug in React. Please file an issue.",
+              'Should have a queue. This is likely a bug in React. Please file an issue.',
             );
           }
           queue.lastRenderedReducer = reducer;
@@ -15896,7 +15896,7 @@ var require_react_dom_development = __commonJS({
             {
               if (current2.baseQueue !== baseQueue) {
                 error(
-                  "Internal error: Expected work-in-progress queue to be a clone. This is a bug in React.",
+                  'Internal error: Expected work-in-progress queue to be a clone. This is a bug in React.',
                 );
               }
             }
@@ -15990,7 +15990,7 @@ var require_react_dom_development = __commonJS({
           var queue = hook.queue;
           if (queue === null) {
             throw new Error(
-              "Should have a queue. This is likely a bug in React. Please file an issue.",
+              'Should have a queue. This is likely a bug in React. Please file an issue.',
             );
           }
           queue.lastRenderedReducer = reducer;
@@ -16039,7 +16039,7 @@ var require_react_dom_development = __commonJS({
           if (isHydrating2) {
             if (getServerSnapshot === void 0) {
               throw new Error(
-                "Missing getServerSnapshot, which is required for server-rendered content. Will revert to client rendering.",
+                'Missing getServerSnapshot, which is required for server-rendered content. Will revert to client rendering.',
               );
             }
             nextSnapshot = getServerSnapshot();
@@ -16047,7 +16047,7 @@ var require_react_dom_development = __commonJS({
               if (!didWarnUncachedGetSnapshot) {
                 if (nextSnapshot !== getServerSnapshot()) {
                   error(
-                    "The result of getServerSnapshot should be cached to avoid an infinite loop",
+                    'The result of getServerSnapshot should be cached to avoid an infinite loop',
                   );
                   didWarnUncachedGetSnapshot = true;
                 }
@@ -16060,7 +16060,7 @@ var require_react_dom_development = __commonJS({
                 var cachedSnapshot = getSnapshot();
                 if (!objectIs(nextSnapshot, cachedSnapshot)) {
                   error(
-                    "The result of getSnapshot should be cached to avoid an infinite loop",
+                    'The result of getSnapshot should be cached to avoid an infinite loop',
                   );
                   didWarnUncachedGetSnapshot = true;
                 }
@@ -16069,7 +16069,7 @@ var require_react_dom_development = __commonJS({
             var root2 = getWorkInProgressRoot();
             if (root2 === null) {
               throw new Error(
-                "Expected a work-in-progress root. This is a bug in React. Please file an issue.",
+                'Expected a work-in-progress root. This is a bug in React. Please file an issue.',
               );
             }
             if (!includesBlockingLane(root2, renderLanes)) {
@@ -16113,7 +16113,7 @@ var require_react_dom_development = __commonJS({
               var cachedSnapshot = getSnapshot();
               if (!objectIs(nextSnapshot, cachedSnapshot)) {
                 error(
-                  "The result of getSnapshot should be cached to avoid an infinite loop",
+                  'The result of getSnapshot should be cached to avoid an infinite loop',
                 );
                 didWarnUncachedGetSnapshot = true;
               }
@@ -16152,7 +16152,7 @@ var require_react_dom_development = __commonJS({
             var root2 = getWorkInProgressRoot();
             if (root2 === null) {
               throw new Error(
-                "Expected a work-in-progress root. This is a bug in React. Please file an issue.",
+                'Expected a work-in-progress root. This is a bug in React. Please file an issue.',
               );
             }
             if (!includesBlockingLane(root2, renderLanes)) {
@@ -16218,7 +16218,7 @@ var require_react_dom_development = __commonJS({
         }
         function mountState(initialState) {
           var hook = mountWorkInProgressHook();
-          if (typeof initialState === "function") {
+          if (typeof initialState === 'function') {
             initialState = initialState();
           }
           hook.memoizedState = hook.baseState = initialState;
@@ -16364,7 +16364,7 @@ var require_react_dom_development = __commonJS({
           return updateEffectImpl(Update, Layout, create, deps);
         }
         function imperativeHandleEffect(create, ref) {
-          if (typeof ref === "function") {
+          if (typeof ref === 'function') {
             var refCallback = ref;
             var _inst = create();
             refCallback(_inst);
@@ -16374,12 +16374,12 @@ var require_react_dom_development = __commonJS({
           } else if (ref !== null && ref !== void 0) {
             var refObject = ref;
             {
-              if (!refObject.hasOwnProperty("current")) {
+              if (!refObject.hasOwnProperty('current')) {
                 error(
-                  "Expected useImperativeHandle() first argument to either be a ref callback or React.createRef() object. Instead received: %s.",
-                  "an object with keys {" +
-                    Object.keys(refObject).join(", ") +
-                    "}",
+                  'Expected useImperativeHandle() first argument to either be a ref callback or React.createRef() object. Instead received: %s.',
+                  'an object with keys {' +
+                    Object.keys(refObject).join(', ') +
+                    '}',
                 );
               }
             }
@@ -16392,10 +16392,10 @@ var require_react_dom_development = __commonJS({
         }
         function mountImperativeHandle(ref, create, deps) {
           {
-            if (typeof create !== "function") {
+            if (typeof create !== 'function') {
               error(
-                "Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.",
-                create !== null ? typeof create : "null",
+                'Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.',
+                create !== null ? typeof create : 'null',
               );
             }
           }
@@ -16417,10 +16417,10 @@ var require_react_dom_development = __commonJS({
         }
         function updateImperativeHandle(ref, create, deps) {
           {
-            if (typeof create !== "function") {
+            if (typeof create !== 'function') {
               error(
-                "Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.",
-                create !== null ? typeof create : "null",
+                'Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.',
+                create !== null ? typeof create : 'null',
               );
             }
           }
@@ -16546,7 +16546,7 @@ var require_react_dom_development = __commonJS({
                 var updatedFibersCount = currentTransition._updatedFibers.size;
                 if (updatedFibersCount > 10) {
                   warn(
-                    "Detected a large number of updates inside startTransition. If this is due to a subscription please re-write it to use React provided hooks. Otherwise concurrent mode guarantees are off the table.",
+                    'Detected a large number of updates inside startTransition. If this is due to a subscription please re-write it to use React provided hooks. Otherwise concurrent mode guarantees are off the table.',
                   );
                 }
                 currentTransition._updatedFibers.clear();
@@ -16590,16 +16590,16 @@ var require_react_dom_development = __commonJS({
           var id;
           if (getIsHydrating()) {
             var treeId = getTreeId();
-            id = ":" + identifierPrefix + "R" + treeId;
+            id = ':' + identifierPrefix + 'R' + treeId;
             var localId = localIdCounter++;
             if (localId > 0) {
-              id += "H" + localId.toString(32);
+              id += 'H' + localId.toString(32);
             }
-            id += ":";
+            id += ':';
           } else {
             var globalClientId = globalClientIdCounter++;
             id =
-              ":" + identifierPrefix + "r" + globalClientId.toString(32) + ":";
+              ':' + identifierPrefix + 'r' + globalClientId.toString(32) + ':';
           }
           hook.memoizedState = id;
           return id;
@@ -16611,7 +16611,7 @@ var require_react_dom_development = __commonJS({
         }
         function dispatchReducerAction(fiber, queue, action) {
           {
-            if (typeof arguments[3] === "function") {
+            if (typeof arguments[3] === 'function') {
               error(
                 "State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().",
               );
@@ -16639,7 +16639,7 @@ var require_react_dom_development = __commonJS({
         }
         function dispatchSetState(fiber, queue, action) {
           {
-            if (typeof arguments[3] === "function") {
+            if (typeof arguments[3] === 'function') {
               error(
                 "State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().",
               );
@@ -16763,12 +16763,12 @@ var require_react_dom_development = __commonJS({
         {
           var warnInvalidContextAccess = function () {
             error(
-              "Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().",
+              'Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().',
             );
           };
           var warnInvalidHookAccess = function () {
             error(
-              "Do not call Hooks inside useEffect(...), useMemo(...), or other built-in Hooks. You can only call Hooks at the top level of your React function. For more information, see https://reactjs.org/link/rules-of-hooks",
+              'Do not call Hooks inside useEffect(...), useMemo(...), or other built-in Hooks. You can only call Hooks at the top level of your React function. For more information, see https://reactjs.org/link/rules-of-hooks',
             );
           };
           HooksDispatcherOnMountInDEV = {
@@ -16776,42 +16776,42 @@ var require_react_dom_development = __commonJS({
               return readContext(context);
             },
             useCallback: function (callback, deps) {
-              currentHookNameInDev = "useCallback";
+              currentHookNameInDev = 'useCallback';
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
               return mountCallback(callback, deps);
             },
             useContext: function (context) {
-              currentHookNameInDev = "useContext";
+              currentHookNameInDev = 'useContext';
               mountHookTypesDev();
               return readContext(context);
             },
             useEffect: function (create, deps) {
-              currentHookNameInDev = "useEffect";
+              currentHookNameInDev = 'useEffect';
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
               return mountEffect(create, deps);
             },
             useImperativeHandle: function (ref, create, deps) {
-              currentHookNameInDev = "useImperativeHandle";
+              currentHookNameInDev = 'useImperativeHandle';
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
               return mountImperativeHandle(ref, create, deps);
             },
             useInsertionEffect: function (create, deps) {
-              currentHookNameInDev = "useInsertionEffect";
+              currentHookNameInDev = 'useInsertionEffect';
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
               return mountInsertionEffect(create, deps);
             },
             useLayoutEffect: function (create, deps) {
-              currentHookNameInDev = "useLayoutEffect";
+              currentHookNameInDev = 'useLayoutEffect';
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
               return mountLayoutEffect(create, deps);
             },
             useMemo: function (create, deps) {
-              currentHookNameInDev = "useMemo";
+              currentHookNameInDev = 'useMemo';
               mountHookTypesDev();
               checkDepsAreArrayDev(deps);
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -16824,7 +16824,7 @@ var require_react_dom_development = __commonJS({
               }
             },
             useReducer: function (reducer, initialArg, init) {
-              currentHookNameInDev = "useReducer";
+              currentHookNameInDev = 'useReducer';
               mountHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -16836,12 +16836,12 @@ var require_react_dom_development = __commonJS({
               }
             },
             useRef: function (initialValue) {
-              currentHookNameInDev = "useRef";
+              currentHookNameInDev = 'useRef';
               mountHookTypesDev();
               return mountRef(initialValue);
             },
             useState: function (initialState) {
-              currentHookNameInDev = "useState";
+              currentHookNameInDev = 'useState';
               mountHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -16853,22 +16853,22 @@ var require_react_dom_development = __commonJS({
               }
             },
             useDebugValue: function (value, formatterFn) {
-              currentHookNameInDev = "useDebugValue";
+              currentHookNameInDev = 'useDebugValue';
               mountHookTypesDev();
               return mountDebugValue();
             },
             useDeferredValue: function (value) {
-              currentHookNameInDev = "useDeferredValue";
+              currentHookNameInDev = 'useDeferredValue';
               mountHookTypesDev();
               return mountDeferredValue(value);
             },
             useTransition: function () {
-              currentHookNameInDev = "useTransition";
+              currentHookNameInDev = 'useTransition';
               mountHookTypesDev();
               return mountTransition();
             },
             useMutableSource: function (source, getSnapshot, subscribe) {
-              currentHookNameInDev = "useMutableSource";
+              currentHookNameInDev = 'useMutableSource';
               mountHookTypesDev();
               return mountMutableSource();
             },
@@ -16877,7 +16877,7 @@ var require_react_dom_development = __commonJS({
               getSnapshot,
               getServerSnapshot,
             ) {
-              currentHookNameInDev = "useSyncExternalStore";
+              currentHookNameInDev = 'useSyncExternalStore';
               mountHookTypesDev();
               return mountSyncExternalStore(
                 subscribe,
@@ -16886,7 +16886,7 @@ var require_react_dom_development = __commonJS({
               );
             },
             useId: function () {
-              currentHookNameInDev = "useId";
+              currentHookNameInDev = 'useId';
               mountHookTypesDev();
               return mountId();
             },
@@ -16897,37 +16897,37 @@ var require_react_dom_development = __commonJS({
               return readContext(context);
             },
             useCallback: function (callback, deps) {
-              currentHookNameInDev = "useCallback";
+              currentHookNameInDev = 'useCallback';
               updateHookTypesDev();
               return mountCallback(callback, deps);
             },
             useContext: function (context) {
-              currentHookNameInDev = "useContext";
+              currentHookNameInDev = 'useContext';
               updateHookTypesDev();
               return readContext(context);
             },
             useEffect: function (create, deps) {
-              currentHookNameInDev = "useEffect";
+              currentHookNameInDev = 'useEffect';
               updateHookTypesDev();
               return mountEffect(create, deps);
             },
             useImperativeHandle: function (ref, create, deps) {
-              currentHookNameInDev = "useImperativeHandle";
+              currentHookNameInDev = 'useImperativeHandle';
               updateHookTypesDev();
               return mountImperativeHandle(ref, create, deps);
             },
             useInsertionEffect: function (create, deps) {
-              currentHookNameInDev = "useInsertionEffect";
+              currentHookNameInDev = 'useInsertionEffect';
               updateHookTypesDev();
               return mountInsertionEffect(create, deps);
             },
             useLayoutEffect: function (create, deps) {
-              currentHookNameInDev = "useLayoutEffect";
+              currentHookNameInDev = 'useLayoutEffect';
               updateHookTypesDev();
               return mountLayoutEffect(create, deps);
             },
             useMemo: function (create, deps) {
-              currentHookNameInDev = "useMemo";
+              currentHookNameInDev = 'useMemo';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -16939,7 +16939,7 @@ var require_react_dom_development = __commonJS({
               }
             },
             useReducer: function (reducer, initialArg, init) {
-              currentHookNameInDev = "useReducer";
+              currentHookNameInDev = 'useReducer';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -16951,12 +16951,12 @@ var require_react_dom_development = __commonJS({
               }
             },
             useRef: function (initialValue) {
-              currentHookNameInDev = "useRef";
+              currentHookNameInDev = 'useRef';
               updateHookTypesDev();
               return mountRef(initialValue);
             },
             useState: function (initialState) {
-              currentHookNameInDev = "useState";
+              currentHookNameInDev = 'useState';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -16968,22 +16968,22 @@ var require_react_dom_development = __commonJS({
               }
             },
             useDebugValue: function (value, formatterFn) {
-              currentHookNameInDev = "useDebugValue";
+              currentHookNameInDev = 'useDebugValue';
               updateHookTypesDev();
               return mountDebugValue();
             },
             useDeferredValue: function (value) {
-              currentHookNameInDev = "useDeferredValue";
+              currentHookNameInDev = 'useDeferredValue';
               updateHookTypesDev();
               return mountDeferredValue(value);
             },
             useTransition: function () {
-              currentHookNameInDev = "useTransition";
+              currentHookNameInDev = 'useTransition';
               updateHookTypesDev();
               return mountTransition();
             },
             useMutableSource: function (source, getSnapshot, subscribe) {
-              currentHookNameInDev = "useMutableSource";
+              currentHookNameInDev = 'useMutableSource';
               updateHookTypesDev();
               return mountMutableSource();
             },
@@ -16992,7 +16992,7 @@ var require_react_dom_development = __commonJS({
               getSnapshot,
               getServerSnapshot,
             ) {
-              currentHookNameInDev = "useSyncExternalStore";
+              currentHookNameInDev = 'useSyncExternalStore';
               updateHookTypesDev();
               return mountSyncExternalStore(
                 subscribe,
@@ -17001,7 +17001,7 @@ var require_react_dom_development = __commonJS({
               );
             },
             useId: function () {
-              currentHookNameInDev = "useId";
+              currentHookNameInDev = 'useId';
               updateHookTypesDev();
               return mountId();
             },
@@ -17012,37 +17012,37 @@ var require_react_dom_development = __commonJS({
               return readContext(context);
             },
             useCallback: function (callback, deps) {
-              currentHookNameInDev = "useCallback";
+              currentHookNameInDev = 'useCallback';
               updateHookTypesDev();
               return updateCallback(callback, deps);
             },
             useContext: function (context) {
-              currentHookNameInDev = "useContext";
+              currentHookNameInDev = 'useContext';
               updateHookTypesDev();
               return readContext(context);
             },
             useEffect: function (create, deps) {
-              currentHookNameInDev = "useEffect";
+              currentHookNameInDev = 'useEffect';
               updateHookTypesDev();
               return updateEffect(create, deps);
             },
             useImperativeHandle: function (ref, create, deps) {
-              currentHookNameInDev = "useImperativeHandle";
+              currentHookNameInDev = 'useImperativeHandle';
               updateHookTypesDev();
               return updateImperativeHandle(ref, create, deps);
             },
             useInsertionEffect: function (create, deps) {
-              currentHookNameInDev = "useInsertionEffect";
+              currentHookNameInDev = 'useInsertionEffect';
               updateHookTypesDev();
               return updateInsertionEffect(create, deps);
             },
             useLayoutEffect: function (create, deps) {
-              currentHookNameInDev = "useLayoutEffect";
+              currentHookNameInDev = 'useLayoutEffect';
               updateHookTypesDev();
               return updateLayoutEffect(create, deps);
             },
             useMemo: function (create, deps) {
-              currentHookNameInDev = "useMemo";
+              currentHookNameInDev = 'useMemo';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -17054,7 +17054,7 @@ var require_react_dom_development = __commonJS({
               }
             },
             useReducer: function (reducer, initialArg, init) {
-              currentHookNameInDev = "useReducer";
+              currentHookNameInDev = 'useReducer';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -17066,12 +17066,12 @@ var require_react_dom_development = __commonJS({
               }
             },
             useRef: function (initialValue) {
-              currentHookNameInDev = "useRef";
+              currentHookNameInDev = 'useRef';
               updateHookTypesDev();
               return updateRef();
             },
             useState: function (initialState) {
-              currentHookNameInDev = "useState";
+              currentHookNameInDev = 'useState';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -17083,22 +17083,22 @@ var require_react_dom_development = __commonJS({
               }
             },
             useDebugValue: function (value, formatterFn) {
-              currentHookNameInDev = "useDebugValue";
+              currentHookNameInDev = 'useDebugValue';
               updateHookTypesDev();
               return updateDebugValue();
             },
             useDeferredValue: function (value) {
-              currentHookNameInDev = "useDeferredValue";
+              currentHookNameInDev = 'useDeferredValue';
               updateHookTypesDev();
               return updateDeferredValue(value);
             },
             useTransition: function () {
-              currentHookNameInDev = "useTransition";
+              currentHookNameInDev = 'useTransition';
               updateHookTypesDev();
               return updateTransition();
             },
             useMutableSource: function (source, getSnapshot, subscribe) {
-              currentHookNameInDev = "useMutableSource";
+              currentHookNameInDev = 'useMutableSource';
               updateHookTypesDev();
               return updateMutableSource();
             },
@@ -17107,12 +17107,12 @@ var require_react_dom_development = __commonJS({
               getSnapshot,
               getServerSnapshot,
             ) {
-              currentHookNameInDev = "useSyncExternalStore";
+              currentHookNameInDev = 'useSyncExternalStore';
               updateHookTypesDev();
               return updateSyncExternalStore(subscribe, getSnapshot);
             },
             useId: function () {
-              currentHookNameInDev = "useId";
+              currentHookNameInDev = 'useId';
               updateHookTypesDev();
               return updateId();
             },
@@ -17123,37 +17123,37 @@ var require_react_dom_development = __commonJS({
               return readContext(context);
             },
             useCallback: function (callback, deps) {
-              currentHookNameInDev = "useCallback";
+              currentHookNameInDev = 'useCallback';
               updateHookTypesDev();
               return updateCallback(callback, deps);
             },
             useContext: function (context) {
-              currentHookNameInDev = "useContext";
+              currentHookNameInDev = 'useContext';
               updateHookTypesDev();
               return readContext(context);
             },
             useEffect: function (create, deps) {
-              currentHookNameInDev = "useEffect";
+              currentHookNameInDev = 'useEffect';
               updateHookTypesDev();
               return updateEffect(create, deps);
             },
             useImperativeHandle: function (ref, create, deps) {
-              currentHookNameInDev = "useImperativeHandle";
+              currentHookNameInDev = 'useImperativeHandle';
               updateHookTypesDev();
               return updateImperativeHandle(ref, create, deps);
             },
             useInsertionEffect: function (create, deps) {
-              currentHookNameInDev = "useInsertionEffect";
+              currentHookNameInDev = 'useInsertionEffect';
               updateHookTypesDev();
               return updateInsertionEffect(create, deps);
             },
             useLayoutEffect: function (create, deps) {
-              currentHookNameInDev = "useLayoutEffect";
+              currentHookNameInDev = 'useLayoutEffect';
               updateHookTypesDev();
               return updateLayoutEffect(create, deps);
             },
             useMemo: function (create, deps) {
-              currentHookNameInDev = "useMemo";
+              currentHookNameInDev = 'useMemo';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -17165,7 +17165,7 @@ var require_react_dom_development = __commonJS({
               }
             },
             useReducer: function (reducer, initialArg, init) {
-              currentHookNameInDev = "useReducer";
+              currentHookNameInDev = 'useReducer';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -17177,12 +17177,12 @@ var require_react_dom_development = __commonJS({
               }
             },
             useRef: function (initialValue) {
-              currentHookNameInDev = "useRef";
+              currentHookNameInDev = 'useRef';
               updateHookTypesDev();
               return updateRef();
             },
             useState: function (initialState) {
-              currentHookNameInDev = "useState";
+              currentHookNameInDev = 'useState';
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current =
@@ -17194,22 +17194,22 @@ var require_react_dom_development = __commonJS({
               }
             },
             useDebugValue: function (value, formatterFn) {
-              currentHookNameInDev = "useDebugValue";
+              currentHookNameInDev = 'useDebugValue';
               updateHookTypesDev();
               return updateDebugValue();
             },
             useDeferredValue: function (value) {
-              currentHookNameInDev = "useDeferredValue";
+              currentHookNameInDev = 'useDeferredValue';
               updateHookTypesDev();
               return rerenderDeferredValue(value);
             },
             useTransition: function () {
-              currentHookNameInDev = "useTransition";
+              currentHookNameInDev = 'useTransition';
               updateHookTypesDev();
               return rerenderTransition();
             },
             useMutableSource: function (source, getSnapshot, subscribe) {
-              currentHookNameInDev = "useMutableSource";
+              currentHookNameInDev = 'useMutableSource';
               updateHookTypesDev();
               return updateMutableSource();
             },
@@ -17218,12 +17218,12 @@ var require_react_dom_development = __commonJS({
               getSnapshot,
               getServerSnapshot,
             ) {
-              currentHookNameInDev = "useSyncExternalStore";
+              currentHookNameInDev = 'useSyncExternalStore';
               updateHookTypesDev();
               return updateSyncExternalStore(subscribe, getSnapshot);
             },
             useId: function () {
-              currentHookNameInDev = "useId";
+              currentHookNameInDev = 'useId';
               updateHookTypesDev();
               return updateId();
             },
@@ -17235,43 +17235,43 @@ var require_react_dom_development = __commonJS({
               return readContext(context);
             },
             useCallback: function (callback, deps) {
-              currentHookNameInDev = "useCallback";
+              currentHookNameInDev = 'useCallback';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountCallback(callback, deps);
             },
             useContext: function (context) {
-              currentHookNameInDev = "useContext";
+              currentHookNameInDev = 'useContext';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return readContext(context);
             },
             useEffect: function (create, deps) {
-              currentHookNameInDev = "useEffect";
+              currentHookNameInDev = 'useEffect';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountEffect(create, deps);
             },
             useImperativeHandle: function (ref, create, deps) {
-              currentHookNameInDev = "useImperativeHandle";
+              currentHookNameInDev = 'useImperativeHandle';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountImperativeHandle(ref, create, deps);
             },
             useInsertionEffect: function (create, deps) {
-              currentHookNameInDev = "useInsertionEffect";
+              currentHookNameInDev = 'useInsertionEffect';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountInsertionEffect(create, deps);
             },
             useLayoutEffect: function (create, deps) {
-              currentHookNameInDev = "useLayoutEffect";
+              currentHookNameInDev = 'useLayoutEffect';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountLayoutEffect(create, deps);
             },
             useMemo: function (create, deps) {
-              currentHookNameInDev = "useMemo";
+              currentHookNameInDev = 'useMemo';
               warnInvalidHookAccess();
               mountHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17284,7 +17284,7 @@ var require_react_dom_development = __commonJS({
               }
             },
             useReducer: function (reducer, initialArg, init) {
-              currentHookNameInDev = "useReducer";
+              currentHookNameInDev = 'useReducer';
               warnInvalidHookAccess();
               mountHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17297,13 +17297,13 @@ var require_react_dom_development = __commonJS({
               }
             },
             useRef: function (initialValue) {
-              currentHookNameInDev = "useRef";
+              currentHookNameInDev = 'useRef';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountRef(initialValue);
             },
             useState: function (initialState) {
-              currentHookNameInDev = "useState";
+              currentHookNameInDev = 'useState';
               warnInvalidHookAccess();
               mountHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17316,25 +17316,25 @@ var require_react_dom_development = __commonJS({
               }
             },
             useDebugValue: function (value, formatterFn) {
-              currentHookNameInDev = "useDebugValue";
+              currentHookNameInDev = 'useDebugValue';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountDebugValue();
             },
             useDeferredValue: function (value) {
-              currentHookNameInDev = "useDeferredValue";
+              currentHookNameInDev = 'useDeferredValue';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountDeferredValue(value);
             },
             useTransition: function () {
-              currentHookNameInDev = "useTransition";
+              currentHookNameInDev = 'useTransition';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountTransition();
             },
             useMutableSource: function (source, getSnapshot, subscribe) {
-              currentHookNameInDev = "useMutableSource";
+              currentHookNameInDev = 'useMutableSource';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountMutableSource();
@@ -17344,7 +17344,7 @@ var require_react_dom_development = __commonJS({
               getSnapshot,
               getServerSnapshot,
             ) {
-              currentHookNameInDev = "useSyncExternalStore";
+              currentHookNameInDev = 'useSyncExternalStore';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountSyncExternalStore(
@@ -17354,7 +17354,7 @@ var require_react_dom_development = __commonJS({
               );
             },
             useId: function () {
-              currentHookNameInDev = "useId";
+              currentHookNameInDev = 'useId';
               warnInvalidHookAccess();
               mountHookTypesDev();
               return mountId();
@@ -17367,43 +17367,43 @@ var require_react_dom_development = __commonJS({
               return readContext(context);
             },
             useCallback: function (callback, deps) {
-              currentHookNameInDev = "useCallback";
+              currentHookNameInDev = 'useCallback';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateCallback(callback, deps);
             },
             useContext: function (context) {
-              currentHookNameInDev = "useContext";
+              currentHookNameInDev = 'useContext';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return readContext(context);
             },
             useEffect: function (create, deps) {
-              currentHookNameInDev = "useEffect";
+              currentHookNameInDev = 'useEffect';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateEffect(create, deps);
             },
             useImperativeHandle: function (ref, create, deps) {
-              currentHookNameInDev = "useImperativeHandle";
+              currentHookNameInDev = 'useImperativeHandle';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateImperativeHandle(ref, create, deps);
             },
             useInsertionEffect: function (create, deps) {
-              currentHookNameInDev = "useInsertionEffect";
+              currentHookNameInDev = 'useInsertionEffect';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateInsertionEffect(create, deps);
             },
             useLayoutEffect: function (create, deps) {
-              currentHookNameInDev = "useLayoutEffect";
+              currentHookNameInDev = 'useLayoutEffect';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateLayoutEffect(create, deps);
             },
             useMemo: function (create, deps) {
-              currentHookNameInDev = "useMemo";
+              currentHookNameInDev = 'useMemo';
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17416,7 +17416,7 @@ var require_react_dom_development = __commonJS({
               }
             },
             useReducer: function (reducer, initialArg, init) {
-              currentHookNameInDev = "useReducer";
+              currentHookNameInDev = 'useReducer';
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17429,13 +17429,13 @@ var require_react_dom_development = __commonJS({
               }
             },
             useRef: function (initialValue) {
-              currentHookNameInDev = "useRef";
+              currentHookNameInDev = 'useRef';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateRef();
             },
             useState: function (initialState) {
-              currentHookNameInDev = "useState";
+              currentHookNameInDev = 'useState';
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17448,25 +17448,25 @@ var require_react_dom_development = __commonJS({
               }
             },
             useDebugValue: function (value, formatterFn) {
-              currentHookNameInDev = "useDebugValue";
+              currentHookNameInDev = 'useDebugValue';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateDebugValue();
             },
             useDeferredValue: function (value) {
-              currentHookNameInDev = "useDeferredValue";
+              currentHookNameInDev = 'useDeferredValue';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateDeferredValue(value);
             },
             useTransition: function () {
-              currentHookNameInDev = "useTransition";
+              currentHookNameInDev = 'useTransition';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateTransition();
             },
             useMutableSource: function (source, getSnapshot, subscribe) {
-              currentHookNameInDev = "useMutableSource";
+              currentHookNameInDev = 'useMutableSource';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateMutableSource();
@@ -17476,13 +17476,13 @@ var require_react_dom_development = __commonJS({
               getSnapshot,
               getServerSnapshot,
             ) {
-              currentHookNameInDev = "useSyncExternalStore";
+              currentHookNameInDev = 'useSyncExternalStore';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateSyncExternalStore(subscribe, getSnapshot);
             },
             useId: function () {
-              currentHookNameInDev = "useId";
+              currentHookNameInDev = 'useId';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateId();
@@ -17495,43 +17495,43 @@ var require_react_dom_development = __commonJS({
               return readContext(context);
             },
             useCallback: function (callback, deps) {
-              currentHookNameInDev = "useCallback";
+              currentHookNameInDev = 'useCallback';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateCallback(callback, deps);
             },
             useContext: function (context) {
-              currentHookNameInDev = "useContext";
+              currentHookNameInDev = 'useContext';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return readContext(context);
             },
             useEffect: function (create, deps) {
-              currentHookNameInDev = "useEffect";
+              currentHookNameInDev = 'useEffect';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateEffect(create, deps);
             },
             useImperativeHandle: function (ref, create, deps) {
-              currentHookNameInDev = "useImperativeHandle";
+              currentHookNameInDev = 'useImperativeHandle';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateImperativeHandle(ref, create, deps);
             },
             useInsertionEffect: function (create, deps) {
-              currentHookNameInDev = "useInsertionEffect";
+              currentHookNameInDev = 'useInsertionEffect';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateInsertionEffect(create, deps);
             },
             useLayoutEffect: function (create, deps) {
-              currentHookNameInDev = "useLayoutEffect";
+              currentHookNameInDev = 'useLayoutEffect';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateLayoutEffect(create, deps);
             },
             useMemo: function (create, deps) {
-              currentHookNameInDev = "useMemo";
+              currentHookNameInDev = 'useMemo';
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17544,7 +17544,7 @@ var require_react_dom_development = __commonJS({
               }
             },
             useReducer: function (reducer, initialArg, init) {
-              currentHookNameInDev = "useReducer";
+              currentHookNameInDev = 'useReducer';
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17557,13 +17557,13 @@ var require_react_dom_development = __commonJS({
               }
             },
             useRef: function (initialValue) {
-              currentHookNameInDev = "useRef";
+              currentHookNameInDev = 'useRef';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateRef();
             },
             useState: function (initialState) {
-              currentHookNameInDev = "useState";
+              currentHookNameInDev = 'useState';
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
@@ -17576,25 +17576,25 @@ var require_react_dom_development = __commonJS({
               }
             },
             useDebugValue: function (value, formatterFn) {
-              currentHookNameInDev = "useDebugValue";
+              currentHookNameInDev = 'useDebugValue';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateDebugValue();
             },
             useDeferredValue: function (value) {
-              currentHookNameInDev = "useDeferredValue";
+              currentHookNameInDev = 'useDeferredValue';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return rerenderDeferredValue(value);
             },
             useTransition: function () {
-              currentHookNameInDev = "useTransition";
+              currentHookNameInDev = 'useTransition';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return rerenderTransition();
             },
             useMutableSource: function (source, getSnapshot, subscribe) {
-              currentHookNameInDev = "useMutableSource";
+              currentHookNameInDev = 'useMutableSource';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateMutableSource();
@@ -17604,13 +17604,13 @@ var require_react_dom_development = __commonJS({
               getSnapshot,
               getServerSnapshot,
             ) {
-              currentHookNameInDev = "useSyncExternalStore";
+              currentHookNameInDev = 'useSyncExternalStore';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateSyncExternalStore(subscribe, getSnapshot);
             },
             useId: function () {
-              currentHookNameInDev = "useId";
+              currentHookNameInDev = 'useId';
               warnInvalidHookAccess();
               updateHookTypesDev();
               return updateId();
@@ -17759,43 +17759,43 @@ var require_react_dom_development = __commonJS({
             if (true) {
               var source = errorInfo.source;
               var stack = errorInfo.stack;
-              var componentStack = stack !== null ? stack : "";
+              var componentStack = stack !== null ? stack : '';
               if (error2 != null && error2._suppressLogging) {
                 if (boundary.tag === ClassComponent) {
                   return;
                 }
-                console["error"](error2);
+                console['error'](error2);
               }
               var componentName = source
                 ? getComponentNameFromFiber(source)
                 : null;
               var componentNameMessage = componentName
-                ? "The above error occurred in the <" +
+                ? 'The above error occurred in the <' +
                   componentName +
-                  "> component:"
-                : "The above error occurred in one of your React components:";
+                  '> component:'
+                : 'The above error occurred in one of your React components:';
               var errorBoundaryMessage;
               if (boundary.tag === HostRoot) {
                 errorBoundaryMessage =
-                  "Consider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.";
+                  'Consider adding an error boundary to your tree to customize error handling behavior.\nVisit https://reactjs.org/link/error-boundaries to learn more about error boundaries.';
               } else {
                 var errorBoundaryName =
-                  getComponentNameFromFiber(boundary) || "Anonymous";
+                  getComponentNameFromFiber(boundary) || 'Anonymous';
                 errorBoundaryMessage =
-                  "React will try to recreate this component tree from scratch " +
-                  ("using the error boundary you provided, " +
+                  'React will try to recreate this component tree from scratch ' +
+                  ('using the error boundary you provided, ' +
                     errorBoundaryName +
-                    ".");
+                    '.');
               }
               var combinedMessage =
                 componentNameMessage +
-                "\n" +
+                '\n' +
                 componentStack +
-                "\n\n" +
-                ("" + errorBoundaryMessage);
-              console["error"](combinedMessage);
+                '\n\n' +
+                ('' + errorBoundaryMessage);
+              console['error'](combinedMessage);
             } else {
-              console["error"](error2);
+              console['error'](error2);
             }
           } catch (e) {
             setTimeout(function () {
@@ -17803,7 +17803,7 @@ var require_react_dom_development = __commonJS({
             });
           }
         }
-        var PossiblyWeakMap$1 = typeof WeakMap === "function" ? WeakMap : Map;
+        var PossiblyWeakMap$1 = typeof WeakMap === 'function' ? WeakMap : Map;
         function createRootErrorUpdate(fiber, errorInfo, lane) {
           var update = createUpdate(NoTimestamp, lane);
           update.tag = CaptureUpdate;
@@ -17821,7 +17821,7 @@ var require_react_dom_development = __commonJS({
           var update = createUpdate(NoTimestamp, lane);
           update.tag = CaptureUpdate;
           var getDerivedStateFromError = fiber.type.getDerivedStateFromError;
-          if (typeof getDerivedStateFromError === "function") {
+          if (typeof getDerivedStateFromError === 'function') {
             var error$1 = errorInfo.value;
             update.payload = function () {
               return getDerivedStateFromError(error$1);
@@ -17834,26 +17834,26 @@ var require_react_dom_development = __commonJS({
             };
           }
           var inst = fiber.stateNode;
-          if (inst !== null && typeof inst.componentDidCatch === "function") {
+          if (inst !== null && typeof inst.componentDidCatch === 'function') {
             update.callback = function callback() {
               {
                 markFailedErrorBoundaryForHotReloading(fiber);
               }
               logCapturedError(fiber, errorInfo);
-              if (typeof getDerivedStateFromError !== "function") {
+              if (typeof getDerivedStateFromError !== 'function') {
                 markLegacyErrorBoundaryAsFailed(this);
               }
               var error$12 = errorInfo.value;
               var stack = errorInfo.stack;
               this.componentDidCatch(error$12, {
-                componentStack: stack !== null ? stack : "",
+                componentStack: stack !== null ? stack : '',
               });
               {
-                if (typeof getDerivedStateFromError !== "function") {
+                if (typeof getDerivedStateFromError !== 'function') {
                   if (!includesSomeLane(fiber.lanes, SyncLane)) {
                     error(
-                      "%s: Error boundaries should implement getDerivedStateFromError(). In that method, return a state update to display an error message or fallback UI.",
-                      getComponentNameFromFiber(fiber) || "Unknown",
+                      '%s: Error boundaries should implement getDerivedStateFromError(). In that method, return a state update to display an error message or fallback UI.',
+                      getComponentNameFromFiber(fiber) || 'Unknown',
                     );
                   }
                 }
@@ -17973,8 +17973,8 @@ var require_react_dom_development = __commonJS({
           }
           if (
             value !== null &&
-            typeof value === "object" &&
-            typeof value.then === "function"
+            typeof value === 'object' &&
+            typeof value.then === 'function'
           ) {
             var wakeable = value;
             resetSuspendedComponent(sourceFiber);
@@ -18006,7 +18006,7 @@ var require_react_dom_development = __commonJS({
                 return;
               }
               var uncaughtSuspenseError = new Error(
-                "A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition.",
+                'A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition.',
               );
               value = uncaughtSuspenseError;
             }
@@ -18057,9 +18057,9 @@ var require_react_dom_development = __commonJS({
                 var instance = workInProgress2.stateNode;
                 if (
                   (workInProgress2.flags & DidCapture) === NoFlags &&
-                  (typeof ctor.getDerivedStateFromError === "function" ||
+                  (typeof ctor.getDerivedStateFromError === 'function' ||
                     (instance !== null &&
-                      typeof instance.componentDidCatch === "function" &&
+                      typeof instance.componentDidCatch === 'function' &&
                       !isAlreadyFailedLegacyErrorBoundary(instance)))
                 ) {
                   workInProgress2.flags |= ShouldCapture;
@@ -18162,7 +18162,7 @@ var require_react_dom_development = __commonJS({
                   innerPropTypes,
                   nextProps,
                   // Resolved props
-                  "prop",
+                  'prop',
                   getComponentNameFromType(Component),
                 );
               }
@@ -18267,7 +18267,7 @@ var require_react_dom_development = __commonJS({
                   innerPropTypes,
                   nextProps,
                   // Resolved props
-                  "prop",
+                  'prop',
                   getComponentNameFromType(type),
                 );
               }
@@ -18293,7 +18293,7 @@ var require_react_dom_development = __commonJS({
                 _innerPropTypes,
                 nextProps,
                 // Resolved props
-                "prop",
+                'prop',
                 getComponentNameFromType(_type),
               );
             }
@@ -18350,7 +18350,7 @@ var require_react_dom_development = __commonJS({
                     outerPropTypes,
                     nextProps,
                     // Resolved (SimpleMemoComponent has no defaultProps)
-                    "prop",
+                    'prop',
                     getComponentNameFromType(outerMemoType),
                   );
                 }
@@ -18397,7 +18397,7 @@ var require_react_dom_development = __commonJS({
           var nextProps = workInProgress2.pendingProps;
           var nextChildren = nextProps.children;
           var prevState = current2 !== null ? current2.memoizedState : null;
-          if (nextProps.mode === "hidden" || enableLegacyHidden) {
+          if (nextProps.mode === 'hidden' || enableLegacyHidden) {
             if ((workInProgress2.mode & ConcurrentMode) === NoMode) {
               var nextState = {
                 baseLanes: NoLanes,
@@ -18524,7 +18524,7 @@ var require_react_dom_development = __commonJS({
                   innerPropTypes,
                   nextProps,
                   // Resolved props
-                  "prop",
+                  'prop',
                   getComponentNameFromType(Component),
                 );
               }
@@ -18621,7 +18621,7 @@ var require_react_dom_development = __commonJS({
               case true: {
                 workInProgress2.flags |= DidCapture;
                 workInProgress2.flags |= ShouldCapture;
-                var error$1 = new Error("Simulated error coming from DevTools");
+                var error$1 = new Error('Simulated error coming from DevTools');
                 var lane = pickArbitraryLane(renderLanes2);
                 workInProgress2.lanes = mergeLanes(workInProgress2.lanes, lane);
                 var update = createClassErrorUpdate(
@@ -18640,7 +18640,7 @@ var require_react_dom_development = __commonJS({
                   innerPropTypes,
                   nextProps,
                   // Resolved props
-                  "prop",
+                  'prop',
                   getComponentNameFromType(Component),
                 );
               }
@@ -18695,8 +18695,8 @@ var require_react_dom_development = __commonJS({
             if (shouldUpdate && inst.props !== nextProps) {
               if (!didWarnAboutReassigningProps) {
                 error(
-                  "It looks like %s is reassigning its own `this.props` while rendering. This is not supported and can lead to confusing bugs.",
-                  getComponentNameFromFiber(workInProgress2) || "a component",
+                  'It looks like %s is reassigning its own `this.props` while rendering. This is not supported and can lead to confusing bugs.',
+                  getComponentNameFromFiber(workInProgress2) || 'a component',
                 );
               }
               didWarnAboutReassigningProps = true;
@@ -18730,7 +18730,7 @@ var require_react_dom_development = __commonJS({
           var nextChildren;
           if (
             didCaptureError &&
-            typeof Component.getDerivedStateFromError !== "function"
+            typeof Component.getDerivedStateFromError !== 'function'
           ) {
             nextChildren = null;
             {
@@ -18796,7 +18796,7 @@ var require_react_dom_development = __commonJS({
           pushHostRootContext(workInProgress2);
           if (current2 === null) {
             throw new Error(
-              "Should have a current fiber. This is a bug in React.",
+              'Should have a current fiber. This is a bug in React.',
             );
           }
           var nextProps = workInProgress2.pendingProps;
@@ -18821,7 +18821,7 @@ var require_react_dom_development = __commonJS({
             if (workInProgress2.flags & ForceClientRender) {
               var recoverableError = createCapturedValueAtFiber(
                 new Error(
-                  "There was an error while hydrating. Because the error happened outside of a Suspense boundary, the entire root will switch to client rendering.",
+                  'There was an error while hydrating. Because the error happened outside of a Suspense boundary, the entire root will switch to client rendering.',
                 ),
                 workInProgress2,
               );
@@ -18835,7 +18835,7 @@ var require_react_dom_development = __commonJS({
             } else if (nextChildren !== prevChildren) {
               var _recoverableError = createCapturedValueAtFiber(
                 new Error(
-                  "This root received an early update, before anything was able hydrate. Switched the entire root to client rendering.",
+                  'This root received an early update, before anything was able hydrate. Switched the entire root to client rendering.',
                 ),
                 workInProgress2,
               );
@@ -19000,7 +19000,7 @@ var require_react_dom_development = __commonJS({
                       outerPropTypes,
                       resolvedProps,
                       // Resolved for outer only
-                      "prop",
+                      'prop',
                       getComponentNameFromType(Component),
                     );
                   }
@@ -19017,22 +19017,22 @@ var require_react_dom_development = __commonJS({
               return child;
             }
           }
-          var hint = "";
+          var hint = '';
           {
             if (
               Component !== null &&
-              typeof Component === "object" &&
+              typeof Component === 'object' &&
               Component.$$typeof === REACT_LAZY_TYPE
             ) {
               hint =
-                " Did you wrap a component in React.lazy() more than once?";
+                ' Did you wrap a component in React.lazy() more than once?';
             }
           }
           throw new Error(
-            "Element type is invalid. Received a promise that resolves to: " +
+            'Element type is invalid. Received a promise that resolves to: ' +
               Component +
-              ". " +
-              ("Lazy element type must resolve to a class or function." + hint),
+              '. ' +
+              ('Lazy element type must resolve to a class or function.' + hint),
           );
         }
         function mountIncompleteClassComponent(
@@ -19094,10 +19094,10 @@ var require_react_dom_development = __commonJS({
           {
             if (
               Component.prototype &&
-              typeof Component.prototype.render === "function"
+              typeof Component.prototype.render === 'function'
             ) {
               var componentName =
-                getComponentNameFromType(Component) || "Unknown";
+                getComponentNameFromType(Component) || 'Unknown';
               if (!didWarnAboutBadClass[componentName]) {
                 error(
                   "The <%s /> component appears to have a render method, but doesn't extend React.Component. This is likely to cause errors. Change %s to extend React.Component instead.",
@@ -19132,13 +19132,13 @@ var require_react_dom_development = __commonJS({
           workInProgress2.flags |= PerformedWork;
           {
             if (
-              typeof value === "object" &&
+              typeof value === 'object' &&
               value !== null &&
-              typeof value.render === "function" &&
+              typeof value.render === 'function' &&
               value.$$typeof === void 0
             ) {
               var _componentName =
-                getComponentNameFromType(Component) || "Unknown";
+                getComponentNameFromType(Component) || 'Unknown';
               if (!didWarnAboutModulePatternComponent[_componentName]) {
                 error(
                   "The <%s /> component appears to be a function component that returns a class instance. Change %s to a class that extends React.Component instead. If you can't use a class try assigning the prototype on the function as a workaround. `%s.prototype = React.Component.prototype`. Don't use an arrow function since it cannot be called with `new` by React.",
@@ -19153,14 +19153,14 @@ var require_react_dom_development = __commonJS({
           if (
             // Run these checks in production only if the flag is off.
             // Eventually we'll delete this branch altogether.
-            typeof value === "object" &&
+            typeof value === 'object' &&
             value !== null &&
-            typeof value.render === "function" &&
+            typeof value.render === 'function' &&
             value.$$typeof === void 0
           ) {
             {
               var _componentName2 =
-                getComponentNameFromType(Component) || "Unknown";
+                getComponentNameFromType(Component) || 'Unknown';
               if (!didWarnAboutModulePatternComponent[_componentName2]) {
                 error(
                   "The <%s /> component appears to be a function component that returns a class instance. Change %s to a class that extends React.Component instead. If you can't use a class try assigning the prototype on the function as a workaround. `%s.prototype = React.Component.prototype`. Don't use an arrow function since it cannot be called with `new` by React.",
@@ -19231,39 +19231,39 @@ var require_react_dom_development = __commonJS({
             if (Component) {
               if (Component.childContextTypes) {
                 error(
-                  "%s(...): childContextTypes cannot be defined on a function component.",
-                  Component.displayName || Component.name || "Component",
+                  '%s(...): childContextTypes cannot be defined on a function component.',
+                  Component.displayName || Component.name || 'Component',
                 );
               }
             }
             if (workInProgress2.ref !== null) {
-              var info = "";
+              var info = '';
               var ownerName = getCurrentFiberOwnerNameInDevOrNull();
               if (ownerName) {
-                info += "\n\nCheck the render method of `" + ownerName + "`.";
+                info += '\n\nCheck the render method of `' + ownerName + '`.';
               }
-              var warningKey = ownerName || "";
+              var warningKey = ownerName || '';
               var debugSource = workInProgress2._debugSource;
               if (debugSource) {
                 warningKey =
-                  debugSource.fileName + ":" + debugSource.lineNumber;
+                  debugSource.fileName + ':' + debugSource.lineNumber;
               }
               if (!didWarnAboutFunctionRefs[warningKey]) {
                 didWarnAboutFunctionRefs[warningKey] = true;
                 error(
-                  "Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?%s",
+                  'Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?%s',
                   info,
                 );
               }
             }
-            if (typeof Component.getDerivedStateFromProps === "function") {
+            if (typeof Component.getDerivedStateFromProps === 'function') {
               var _componentName3 =
-                getComponentNameFromType(Component) || "Unknown";
+                getComponentNameFromType(Component) || 'Unknown';
               if (
                 !didWarnAboutGetDerivedStateOnFunctionComponent[_componentName3]
               ) {
                 error(
-                  "%s: Function components do not support getDerivedStateFromProps.",
+                  '%s: Function components do not support getDerivedStateFromProps.',
                   _componentName3,
                 );
                 didWarnAboutGetDerivedStateOnFunctionComponent[
@@ -19272,16 +19272,16 @@ var require_react_dom_development = __commonJS({
               }
             }
             if (
-              typeof Component.contextType === "object" &&
+              typeof Component.contextType === 'object' &&
               Component.contextType !== null
             ) {
               var _componentName4 =
-                getComponentNameFromType(Component) || "Unknown";
+                getComponentNameFromType(Component) || 'Unknown';
               if (
                 !didWarnAboutContextTypeOnFunctionComponent[_componentName4]
               ) {
                 error(
-                  "%s: Function components do not support contextType.",
+                  '%s: Function components do not support contextType.',
                   _componentName4,
                 );
                 didWarnAboutContextTypeOnFunctionComponent[_componentName4] =
@@ -19452,7 +19452,7 @@ var require_react_dom_development = __commonJS({
         ) {
           var mode = workInProgress2.mode;
           var primaryChildProps = {
-            mode: "visible",
+            mode: 'visible',
             children: primaryChildren,
           };
           var primaryChildFragment = mountWorkInProgressOffscreenFiber(
@@ -19472,7 +19472,7 @@ var require_react_dom_development = __commonJS({
           var mode = workInProgress2.mode;
           var progressedPrimaryFragment = workInProgress2.child;
           var primaryChildProps = {
-            mode: "hidden",
+            mode: 'hidden',
             children: primaryChildren,
           };
           var primaryChildFragment;
@@ -19536,7 +19536,7 @@ var require_react_dom_development = __commonJS({
           var primaryChildFragment = updateWorkInProgressOffscreenFiber(
             currentPrimaryChildFragment,
             {
-              mode: "visible",
+              mode: 'visible',
               children: primaryChildren,
             },
           );
@@ -19569,7 +19569,7 @@ var require_react_dom_development = __commonJS({
           var currentFallbackChildFragment =
             currentPrimaryChildFragment.sibling;
           var primaryChildProps = {
-            mode: "hidden",
+            mode: 'hidden',
             children: primaryChildren,
           };
           var primaryChildFragment;
@@ -19660,7 +19660,7 @@ var require_react_dom_development = __commonJS({
         ) {
           var fiberMode = workInProgress2.mode;
           var primaryChildProps = {
-            mode: "visible",
+            mode: 'visible',
             children: primaryChildren,
           };
           var primaryChildFragment = mountWorkInProgressOffscreenFiber(
@@ -19696,7 +19696,7 @@ var require_react_dom_development = __commonJS({
           if ((workInProgress2.mode & ConcurrentMode) === NoMode) {
             {
               error(
-                "Cannot hydrate Suspense in legacy mode. Switch from ReactDOM.hydrate(element, container) to ReactDOMClient.hydrateRoot(container, <App />).render(element) or remove the Suspense components from the server rendered components.",
+                'Cannot hydrate Suspense in legacy mode. Switch from ReactDOM.hydrate(element, container) to ReactDOMClient.hydrateRoot(container, <App />).render(element) or remove the Suspense components from the server rendered components.',
               );
             }
             workInProgress2.lanes = laneToLanes(SyncLane);
@@ -19743,7 +19743,7 @@ var require_react_dom_development = __commonJS({
                 error2 = new Error(message);
               } else {
                 error2 = new Error(
-                  "The server could not finish this Suspense boundary, likely due to an error during server rendering. Switched to client rendering.",
+                  'The server could not finish this Suspense boundary, likely due to an error during server rendering. Switched to client rendering.',
                 );
               }
               var capturedValue = createCapturedValue(error2, digest, stack);
@@ -19786,7 +19786,7 @@ var require_react_dom_development = __commonJS({
               renderDidSuspendDelayIfPossible();
               var _capturedValue = createCapturedValue(
                 new Error(
-                  "This Suspense boundary received an update before it finished hydrating. This caused the boundary to switch to client rendering. The usual way to fix this is to wrap the original update in startTransition.",
+                  'This Suspense boundary received an update before it finished hydrating. This caused the boundary to switch to client rendering. The usual way to fix this is to wrap the original update in startTransition.',
                 ),
               );
               return retrySuspenseComponentWithoutHydrating(
@@ -19820,7 +19820,7 @@ var require_react_dom_development = __commonJS({
               workInProgress2.flags &= ~ForceClientRender;
               var _capturedValue2 = createCapturedValue(
                 new Error(
-                  "There was an error while hydrating this Suspense boundary. Switched to client rendering.",
+                  'There was an error while hydrating this Suspense boundary. Switched to client rendering.',
                 ),
               );
               return retrySuspenseComponentWithoutHydrating(
@@ -19923,17 +19923,17 @@ var require_react_dom_development = __commonJS({
           {
             if (
               revealOrder !== void 0 &&
-              revealOrder !== "forwards" &&
-              revealOrder !== "backwards" &&
-              revealOrder !== "together" &&
+              revealOrder !== 'forwards' &&
+              revealOrder !== 'backwards' &&
+              revealOrder !== 'together' &&
               !didWarnAboutRevealOrder[revealOrder]
             ) {
               didWarnAboutRevealOrder[revealOrder] = true;
-              if (typeof revealOrder === "string") {
+              if (typeof revealOrder === 'string') {
                 switch (revealOrder.toLowerCase()) {
-                  case "together":
-                  case "forwards":
-                  case "backwards": {
+                  case 'together':
+                  case 'forwards':
+                  case 'backwards': {
                     error(
                       '"%s" is not a valid value for revealOrder on <SuspenseList />. Use lowercase "%s" instead.',
                       revealOrder,
@@ -19941,8 +19941,8 @@ var require_react_dom_development = __commonJS({
                     );
                     break;
                   }
-                  case "forward":
-                  case "backward": {
+                  case 'forward':
+                  case 'backward': {
                     error(
                       '"%s" is not a valid value for revealOrder on <SuspenseList />. React uses the -s suffix in the spelling. Use "%ss" instead.',
                       revealOrder,
@@ -19969,15 +19969,15 @@ var require_react_dom_development = __commonJS({
         function validateTailOptions(tailMode, revealOrder) {
           {
             if (tailMode !== void 0 && !didWarnAboutTailOptions[tailMode]) {
-              if (tailMode !== "collapsed" && tailMode !== "hidden") {
+              if (tailMode !== 'collapsed' && tailMode !== 'hidden') {
                 didWarnAboutTailOptions[tailMode] = true;
                 error(
                   '"%s" is not a supported value for tail on <SuspenseList />. Did you mean "collapsed" or "hidden"?',
                   tailMode,
                 );
               } else if (
-                revealOrder !== "forwards" &&
-                revealOrder !== "backwards"
+                revealOrder !== 'forwards' &&
+                revealOrder !== 'backwards'
               ) {
                 didWarnAboutTailOptions[tailMode] = true;
                 error(
@@ -19992,11 +19992,11 @@ var require_react_dom_development = __commonJS({
           {
             var isAnArray = isArray(childSlot);
             var isIterable =
-              !isAnArray && typeof getIteratorFn(childSlot) === "function";
+              !isAnArray && typeof getIteratorFn(childSlot) === 'function';
             if (isAnArray || isIterable) {
-              var type = isAnArray ? "array" : "iterable";
+              var type = isAnArray ? 'array' : 'iterable';
               error(
-                "A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>",
+                'A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>',
                 type,
                 index2,
                 type,
@@ -20009,7 +20009,7 @@ var require_react_dom_development = __commonJS({
         function validateSuspenseListChildren(children, revealOrder) {
           {
             if (
-              (revealOrder === "forwards" || revealOrder === "backwards") &&
+              (revealOrder === 'forwards' || revealOrder === 'backwards') &&
               children !== void 0 &&
               children !== null &&
               children !== false
@@ -20022,7 +20022,7 @@ var require_react_dom_development = __commonJS({
                 }
               } else {
                 var iteratorFn = getIteratorFn(children);
-                if (typeof iteratorFn === "function") {
+                if (typeof iteratorFn === 'function') {
                   var childrenIterator = iteratorFn.call(children);
                   if (childrenIterator) {
                     var step = childrenIterator.next();
@@ -20116,7 +20116,7 @@ var require_react_dom_development = __commonJS({
             workInProgress2.memoizedState = null;
           } else {
             switch (revealOrder) {
-              case "forwards": {
+              case 'forwards': {
                 var lastContentRow = findLastContentRow(workInProgress2.child);
                 var tail;
                 if (lastContentRow === null) {
@@ -20136,7 +20136,7 @@ var require_react_dom_development = __commonJS({
                 );
                 break;
               }
-              case "backwards": {
+              case 'backwards': {
                 var _tail = null;
                 var row = workInProgress2.child;
                 workInProgress2.child = null;
@@ -20165,7 +20165,7 @@ var require_react_dom_development = __commonJS({
                 );
                 break;
               }
-              case "together": {
+              case 'together': {
                 initSuspenseListRenderState(
                   workInProgress2,
                   false,
@@ -20224,11 +20224,11 @@ var require_react_dom_development = __commonJS({
           var oldProps = workInProgress2.memoizedProps;
           var newValue = newProps.value;
           {
-            if (!("value" in newProps)) {
+            if (!('value' in newProps)) {
               if (!hasWarnedAboutUsingNoValuePropOnContextProvider) {
                 hasWarnedAboutUsingNoValuePropOnContextProvider = true;
                 error(
-                  "The `value` prop is required for the `<Context.Provider>`. Did you misspell it or forget to pass it?",
+                  'The `value` prop is required for the `<Context.Provider>`. Did you misspell it or forget to pass it?',
                 );
               }
             }
@@ -20237,8 +20237,8 @@ var require_react_dom_development = __commonJS({
               checkPropTypes(
                 providerPropTypes,
                 newProps,
-                "prop",
-                "Context.Provider",
+                'prop',
+                'Context.Provider',
               );
             }
           }
@@ -20284,7 +20284,7 @@ var require_react_dom_development = __commonJS({
                 if (!hasWarnedAboutUsingContextAsConsumer) {
                   hasWarnedAboutUsingContextAsConsumer = true;
                   error(
-                    "Rendering <Context> directly is not supported and will be removed in a future major release. Did you mean to render <Context.Consumer> instead?",
+                    'Rendering <Context> directly is not supported and will be removed in a future major release. Did you mean to render <Context.Consumer> instead?',
                   );
                 }
               }
@@ -20295,7 +20295,7 @@ var require_react_dom_development = __commonJS({
           var newProps = workInProgress2.pendingProps;
           var render2 = newProps.children;
           {
-            if (typeof render2 !== "function") {
+            if (typeof render2 !== 'function') {
               error(
                 "A context consumer was rendered with multiple children, or a child that isn't a function. A context consumer expects a single child that is a function. If you did pass a function, make sure there is no trailing or leading whitespace around it.",
               );
@@ -20364,7 +20364,7 @@ var require_react_dom_development = __commonJS({
           {
             var returnFiber = oldWorkInProgress.return;
             if (returnFiber === null) {
-              throw new Error("Cannot swap the root fiber.");
+              throw new Error('Cannot swap the root fiber.');
             }
             current2.alternate = null;
             oldWorkInProgress.alternate = null;
@@ -20377,12 +20377,12 @@ var require_react_dom_development = __commonJS({
             } else {
               var prevSibling = returnFiber.child;
               if (prevSibling === null) {
-                throw new Error("Expected parent to have a child.");
+                throw new Error('Expected parent to have a child.');
               }
               while (prevSibling.sibling !== oldWorkInProgress) {
                 prevSibling = prevSibling.sibling;
                 if (prevSibling === null) {
-                  throw new Error("Expected to find the previous sibling.");
+                  throw new Error('Expected to find the previous sibling.');
                 }
               }
               prevSibling.sibling = newWorkInProgress;
@@ -20722,7 +20722,7 @@ var require_react_dom_development = __commonJS({
                       outerPropTypes,
                       _resolvedProps3,
                       // Resolved for outer only
-                      "prop",
+                      'prop',
                       getComponentNameFromType(_type2),
                     );
                   }
@@ -20783,9 +20783,9 @@ var require_react_dom_development = __commonJS({
             }
           }
           throw new Error(
-            "Unknown unit of work tag (" +
+            'Unknown unit of work tag (' +
               workInProgress2.tag +
-              "). This error is likely caused by a bug in React. Please file an issue.",
+              '). This error is likely caused by a bug in React. Please file an issue.',
           );
         }
         function markUpdate(workInProgress2) {
@@ -20874,7 +20874,7 @@ var require_react_dom_development = __commonJS({
             return;
           }
           switch (renderState.tailMode) {
-            case "hidden": {
+            case 'hidden': {
               var tailNode = renderState.tail;
               var lastTailNode = null;
               while (tailNode !== null) {
@@ -20890,7 +20890,7 @@ var require_react_dom_development = __commonJS({
               }
               break;
             }
-            case "collapsed": {
+            case 'collapsed': {
               var _tailNode = renderState.tail;
               var _lastTailNode = null;
               while (_tailNode !== null) {
@@ -21004,7 +21004,7 @@ var require_react_dom_development = __commonJS({
             if (current2 === null) {
               if (!wasHydrated) {
                 throw new Error(
-                  "A dehydrated suspense component was completed without a hydrated node. This is probably a bug in React.",
+                  'A dehydrated suspense component was completed without a hydrated node. This is probably a bug in React.',
                 );
               }
               prepareToHydrateHostSuspenseInstance(workInProgress2);
@@ -21122,7 +21122,7 @@ var require_react_dom_development = __commonJS({
                 if (!newProps) {
                   if (workInProgress2.stateNode === null) {
                     throw new Error(
-                      "We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.",
+                      'We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.',
                     );
                   }
                   bubbleProperties(workInProgress2);
@@ -21174,10 +21174,10 @@ var require_react_dom_development = __commonJS({
                 var oldText = current2.memoizedProps;
                 updateHostText$1(current2, workInProgress2, oldText, newText);
               } else {
-                if (typeof newText !== "string") {
+                if (typeof newText !== 'string') {
                   if (workInProgress2.stateNode === null) {
                     throw new Error(
-                      "We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.",
+                      'We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.',
                     );
                   }
                 }
@@ -21364,7 +21364,7 @@ var require_react_dom_development = __commonJS({
                     cutOffTailIfNeeded(renderState, true);
                     if (
                       renderState.tail === null &&
-                      renderState.tailMode === "hidden" &&
+                      renderState.tailMode === 'hidden' &&
                       !renderedTail.alternate &&
                       !getIsHydrating()
                     ) {
@@ -21463,9 +21463,9 @@ var require_react_dom_development = __commonJS({
             }
           }
           throw new Error(
-            "Unknown unit of work tag (" +
+            'Unknown unit of work tag (' +
               workInProgress2.tag +
-              "). This error is likely caused by a bug in React. Please file an issue.",
+              '). This error is likely caused by a bug in React. Please file an issue.',
           );
         }
         function unwindWork(current2, workInProgress2, renderLanes2) {
@@ -21511,7 +21511,7 @@ var require_react_dom_development = __commonJS({
               if (suspenseState !== null && suspenseState.dehydrated !== null) {
                 if (workInProgress2.alternate === null) {
                   throw new Error(
-                    "Threw in newly mounted dehydrated component. This is likely a bug in React. Please file an issue.",
+                    'Threw in newly mounted dehydrated component. This is likely a bug in React. Please file an issue.',
                   );
                 }
                 resetHydrationState();
@@ -21597,7 +21597,7 @@ var require_react_dom_development = __commonJS({
         }
         var offscreenSubtreeIsHidden = false;
         var offscreenSubtreeWasHidden = false;
-        var PossiblyWeakSet = typeof WeakSet === "function" ? WeakSet : Set;
+        var PossiblyWeakSet = typeof WeakSet === 'function' ? WeakSet : Set;
         var nextEffect = null;
         var inProgressLanes = null;
         var inProgressRoot = null;
@@ -21665,7 +21665,7 @@ var require_react_dom_development = __commonJS({
         function safelyDetachRef(current2, nearestMountedAncestor) {
           var ref = current2.ref;
           if (ref !== null) {
-            if (typeof ref === "function") {
+            if (typeof ref === 'function') {
               var retVal;
               try {
                 if (
@@ -21690,9 +21690,9 @@ var require_react_dom_development = __commonJS({
                 );
               }
               {
-                if (typeof retVal === "function") {
+                if (typeof retVal === 'function') {
                   error(
-                    "Unexpected return value from a callback ref in %s. A callback ref should not return a function.",
+                    'Unexpected return value from a callback ref in %s. A callback ref should not return a function.',
                     getComponentNameFromFiber(current2),
                   );
                 }
@@ -21777,14 +21777,14 @@ var require_react_dom_development = __commonJS({
                     ) {
                       if (instance.props !== finishedWork.memoizedProps) {
                         error(
-                          "Expected %s props to match memoized props before getSnapshotBeforeUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.",
-                          getComponentNameFromFiber(finishedWork) || "instance",
+                          'Expected %s props to match memoized props before getSnapshotBeforeUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.',
+                          getComponentNameFromFiber(finishedWork) || 'instance',
                         );
                       }
                       if (instance.state !== finishedWork.memoizedState) {
                         error(
-                          "Expected %s state to match memoized state before getSnapshotBeforeUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.",
-                          getComponentNameFromFiber(finishedWork) || "instance",
+                          'Expected %s state to match memoized state before getSnapshotBeforeUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.',
+                          getComponentNameFromFiber(finishedWork) || 'instance',
                         );
                       }
                     }
@@ -21803,7 +21803,7 @@ var require_react_dom_development = __commonJS({
                     ) {
                       didWarnSet.add(finishedWork.type);
                       error(
-                        "%s.getSnapshotBeforeUpdate(): A snapshot value (or null) must be returned. You have returned undefined.",
+                        '%s.getSnapshotBeforeUpdate(): A snapshot value (or null) must be returned. You have returned undefined.',
                         getComponentNameFromFiber(finishedWork),
                       );
                     }
@@ -21826,7 +21826,7 @@ var require_react_dom_development = __commonJS({
                 break;
               default: {
                 throw new Error(
-                  "This unit of work tag should not have side-effects. This error is likely caused by a bug in React. Please file an issue.",
+                  'This unit of work tag should not have side-effects. This error is likely caused by a bug in React. Please file an issue.',
                 );
               }
             }
@@ -21919,31 +21919,31 @@ var require_react_dom_development = __commonJS({
                 }
                 {
                   var destroy = effect.destroy;
-                  if (destroy !== void 0 && typeof destroy !== "function") {
+                  if (destroy !== void 0 && typeof destroy !== 'function') {
                     var hookName = void 0;
                     if ((effect.tag & Layout) !== NoFlags) {
-                      hookName = "useLayoutEffect";
+                      hookName = 'useLayoutEffect';
                     } else if ((effect.tag & Insertion) !== NoFlags) {
-                      hookName = "useInsertionEffect";
+                      hookName = 'useInsertionEffect';
                     } else {
-                      hookName = "useEffect";
+                      hookName = 'useEffect';
                     }
                     var addendum = void 0;
                     if (destroy === null) {
                       addendum =
-                        " You returned null. If your effect does not require clean up, return undefined (or nothing).";
-                    } else if (typeof destroy.then === "function") {
+                        ' You returned null. If your effect does not require clean up, return undefined (or nothing).';
+                    } else if (typeof destroy.then === 'function') {
                       addendum =
-                        "\n\nIt looks like you wrote " +
+                        '\n\nIt looks like you wrote ' +
                         hookName +
-                        "(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately:\n\n" +
+                        '(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately:\n\n' +
                         hookName +
                         "(() => {\n  async function fetchData() {\n    // You can await here\n    const response = await MyAPI.getData(someId);\n    // ...\n  }\n  fetchData();\n}, [someId]); // Or [] if effect doesn't need props or state\n\nLearn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-fetching";
                     } else {
-                      addendum = " You returned: " + destroy;
+                      addendum = ' You returned: ' + destroy;
                     }
                     error(
-                      "%s must not return anything besides a function, which is used for clean-up.%s",
+                      '%s must not return anything besides a function, which is used for clean-up.%s',
                       hookName,
                       addendum,
                     );
@@ -21966,13 +21966,13 @@ var require_react_dom_development = __commonJS({
                     onPostCommit = _finishedWork$memoize.onPostCommit;
                   var commitTime2 = getCommitTime();
                   var phase =
-                    finishedWork.alternate === null ? "mount" : "update";
+                    finishedWork.alternate === null ? 'mount' : 'update';
                   {
                     if (isCurrentUpdateNested()) {
-                      phase = "nested-update";
+                      phase = 'nested-update';
                     }
                   }
-                  if (typeof onPostCommit === "function") {
+                  if (typeof onPostCommit === 'function') {
                     onPostCommit(id, phase, passiveEffectDuration, commitTime2);
                   }
                   var parentFiber = finishedWork.return;
@@ -22036,16 +22036,16 @@ var require_react_dom_development = __commonJS({
                         ) {
                           if (instance.props !== finishedWork.memoizedProps) {
                             error(
-                              "Expected %s props to match memoized props before componentDidMount. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.",
+                              'Expected %s props to match memoized props before componentDidMount. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.',
                               getComponentNameFromFiber(finishedWork) ||
-                                "instance",
+                                'instance',
                             );
                           }
                           if (instance.state !== finishedWork.memoizedState) {
                             error(
-                              "Expected %s state to match memoized state before componentDidMount. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.",
+                              'Expected %s state to match memoized state before componentDidMount. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.',
                               getComponentNameFromFiber(finishedWork) ||
-                                "instance",
+                                'instance',
                             );
                           }
                         }
@@ -22076,16 +22076,16 @@ var require_react_dom_development = __commonJS({
                         ) {
                           if (instance.props !== finishedWork.memoizedProps) {
                             error(
-                              "Expected %s props to match memoized props before componentDidUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.",
+                              'Expected %s props to match memoized props before componentDidUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.',
                               getComponentNameFromFiber(finishedWork) ||
-                                "instance",
+                                'instance',
                             );
                           }
                           if (instance.state !== finishedWork.memoizedState) {
                             error(
-                              "Expected %s state to match memoized state before componentDidUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.",
+                              'Expected %s state to match memoized state before componentDidUpdate. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.',
                               getComponentNameFromFiber(finishedWork) ||
-                                "instance",
+                                'instance',
                             );
                           }
                         }
@@ -22120,14 +22120,14 @@ var require_react_dom_development = __commonJS({
                     ) {
                       if (instance.props !== finishedWork.memoizedProps) {
                         error(
-                          "Expected %s props to match memoized props before processing the update queue. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.",
-                          getComponentNameFromFiber(finishedWork) || "instance",
+                          'Expected %s props to match memoized props before processing the update queue. This might either be because of a bug in React, or because a component reassigns its own `this.props`. Please file an issue.',
+                          getComponentNameFromFiber(finishedWork) || 'instance',
                         );
                       }
                       if (instance.state !== finishedWork.memoizedState) {
                         error(
-                          "Expected %s state to match memoized state before processing the update queue. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.",
-                          getComponentNameFromFiber(finishedWork) || "instance",
+                          'Expected %s state to match memoized state before processing the update queue. This might either be because of a bug in React, or because a component reassigns its own `this.state`. Please file an issue.',
+                          getComponentNameFromFiber(finishedWork) || 'instance',
                         );
                       }
                     }
@@ -22178,13 +22178,13 @@ var require_react_dom_development = __commonJS({
                     onRender = _finishedWork$memoize2.onRender;
                   var effectDuration = finishedWork.stateNode.effectDuration;
                   var commitTime2 = getCommitTime();
-                  var phase = current2 === null ? "mount" : "update";
+                  var phase = current2 === null ? 'mount' : 'update';
                   {
                     if (isCurrentUpdateNested()) {
-                      phase = "nested-update";
+                      phase = 'nested-update';
                     }
                   }
-                  if (typeof onRender === "function") {
+                  if (typeof onRender === 'function') {
                     onRender(
                       finishedWork.memoizedProps.id,
                       phase,
@@ -22195,7 +22195,7 @@ var require_react_dom_development = __commonJS({
                     );
                   }
                   {
-                    if (typeof onCommit === "function") {
+                    if (typeof onCommit === 'function') {
                       onCommit(
                         finishedWork.memoizedProps.id,
                         phase,
@@ -22236,7 +22236,7 @@ var require_react_dom_development = __commonJS({
               }
               default:
                 throw new Error(
-                  "This unit of work tag should not have side-effects. This error is likely caused by a bug in React. Please file an issue.",
+                  'This unit of work tag should not have side-effects. This error is likely caused by a bug in React. Please file an issue.',
                 );
             }
           }
@@ -22267,7 +22267,7 @@ var require_react_dom_development = __commonJS({
             }
             case ClassComponent: {
               var instance = node.stateNode;
-              if (typeof instance.componentDidMount === "function") {
+              if (typeof instance.componentDidMount === 'function') {
                 safelyCallComponentDidMount(node, node.return, instance);
               }
               safelyAttachRef(node, node.return);
@@ -22362,7 +22362,7 @@ var require_react_dom_development = __commonJS({
               default:
                 instanceToUse = instance;
             }
-            if (typeof ref === "function") {
+            if (typeof ref === 'function') {
               var retVal;
               if (finishedWork.mode & ProfileMode) {
                 try {
@@ -22375,18 +22375,18 @@ var require_react_dom_development = __commonJS({
                 retVal = ref(instanceToUse);
               }
               {
-                if (typeof retVal === "function") {
+                if (typeof retVal === 'function') {
                   error(
-                    "Unexpected return value from a callback ref in %s. A callback ref should not return a function.",
+                    'Unexpected return value from a callback ref in %s. A callback ref should not return a function.',
                     getComponentNameFromFiber(finishedWork),
                   );
                 }
               }
             } else {
               {
-                if (!ref.hasOwnProperty("current")) {
+                if (!ref.hasOwnProperty('current')) {
                   error(
-                    "Unexpected ref object provided for %s. Use either a ref-setter function or React.createRef().",
+                    'Unexpected ref object provided for %s. Use either a ref-setter function or React.createRef().',
                     getComponentNameFromFiber(finishedWork),
                   );
                 }
@@ -22442,7 +22442,7 @@ var require_react_dom_development = __commonJS({
             parent = parent.return;
           }
           throw new Error(
-            "Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.",
+            'Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.',
           );
         }
         function isHostParent(fiber) {
@@ -22509,7 +22509,7 @@ var require_react_dom_development = __commonJS({
             }
             default:
               throw new Error(
-                "Invalid host parent fiber. This error is likely caused by a bug in React. Please file an issue.",
+                'Invalid host parent fiber. This error is likely caused by a bug in React. Please file an issue.',
               );
           }
         }
@@ -22594,7 +22594,7 @@ var require_react_dom_development = __commonJS({
             }
             if (hostParent === null) {
               throw new Error(
-                "Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.",
+                'Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.',
               );
             }
             commitDeletionEffectsOnFiber(root2, returnFiber, deletedFiber);
@@ -22750,7 +22750,7 @@ var require_react_dom_development = __commonJS({
               if (!offscreenSubtreeWasHidden) {
                 safelyDetachRef(deletedFiber, nearestMountedAncestor);
                 var instance = deletedFiber.stateNode;
-                if (typeof instance.componentWillUnmount === "function") {
+                if (typeof instance.componentWillUnmount === 'function') {
                   safelyCallComponentWillUnmount(
                     deletedFiber,
                     nearestMountedAncestor,
@@ -22847,7 +22847,7 @@ var require_react_dom_development = __commonJS({
                       restorePendingUpdaters(inProgressRoot, inProgressLanes);
                     } else {
                       throw Error(
-                        "Expected finished root and lanes to be set. This is a bug in React.",
+                        'Expected finished root and lanes to be set. This is a bug in React.',
                       );
                     }
                   }
@@ -23021,7 +23021,7 @@ var require_react_dom_development = __commonJS({
                 {
                   if (finishedWork.stateNode === null) {
                     throw new Error(
-                      "This should have a text node initialized. This error is likely caused by a bug in React. Please file an issue.",
+                      'This should have a text node initialized. This error is likely caused by a bug in React. Please file an issue.',
                     );
                   }
                   var textInstance = finishedWork.stateNode;
@@ -23320,7 +23320,7 @@ var require_react_dom_development = __commonJS({
               case ClassComponent: {
                 safelyDetachRef(fiber, fiber.return);
                 var instance = fiber.stateNode;
-                if (typeof instance.componentWillUnmount === "function") {
+                if (typeof instance.componentWillUnmount === 'function') {
                   safelyCallComponentWillUnmount(fiber, fiber.return, instance);
                 }
                 break;
@@ -23725,7 +23725,7 @@ var require_react_dom_development = __commonJS({
               }
               case ClassComponent: {
                 var instance = fiber.stateNode;
-                if (typeof instance.componentWillUnmount === "function") {
+                if (typeof instance.componentWillUnmount === 'function') {
                   safelyCallComponentWillUnmount(fiber, fiber.return, instance);
                 }
                 break;
@@ -23757,13 +23757,13 @@ var require_react_dom_development = __commonJS({
         var ROLE_TYPE = 2;
         var TEST_NAME_TYPE = 3;
         var TEXT_TYPE = 4;
-        if (typeof Symbol === "function" && Symbol.for) {
+        if (typeof Symbol === 'function' && Symbol.for) {
           var symbolFor = Symbol.for;
-          COMPONENT_TYPE = symbolFor("selector.component");
-          HAS_PSEUDO_CLASS_TYPE = symbolFor("selector.has_pseudo_class");
-          ROLE_TYPE = symbolFor("selector.role");
-          TEST_NAME_TYPE = symbolFor("selector.test_id");
-          TEXT_TYPE = symbolFor("selector.text");
+          COMPONENT_TYPE = symbolFor('selector.component');
+          HAS_PSEUDO_CLASS_TYPE = symbolFor('selector.has_pseudo_class');
+          ROLE_TYPE = symbolFor('selector.role');
+          TEST_NAME_TYPE = symbolFor('selector.test_id');
+          TEXT_TYPE = symbolFor('selector.text');
         }
         var commitHooks = [];
         function onCommitRoot$1() {
@@ -23778,10 +23778,10 @@ var require_react_dom_development = __commonJS({
           {
             var isReactActEnvironmentGlobal =
               // $FlowExpectedError – Flow doesn't know about IS_REACT_ACT_ENVIRONMENT global
-              typeof IS_REACT_ACT_ENVIRONMENT !== "undefined"
+              typeof IS_REACT_ACT_ENVIRONMENT !== 'undefined'
                 ? IS_REACT_ACT_ENVIRONMENT
                 : void 0;
-            var jestIsDefined = typeof jest !== "undefined";
+            var jestIsDefined = typeof jest !== 'undefined';
             return jestIsDefined && isReactActEnvironmentGlobal !== false;
           }
         }
@@ -23789,7 +23789,7 @@ var require_react_dom_development = __commonJS({
           {
             var isReactActEnvironmentGlobal =
               // $FlowExpectedError – Flow doesn't know about IS_REACT_ACT_ENVIRONMENT global
-              typeof IS_REACT_ACT_ENVIRONMENT !== "undefined"
+              typeof IS_REACT_ACT_ENVIRONMENT !== 'undefined'
                 ? IS_REACT_ACT_ENVIRONMENT
                 : void 0;
             if (
@@ -23797,7 +23797,7 @@ var require_react_dom_development = __commonJS({
               ReactCurrentActQueue.current !== null
             ) {
               error(
-                "The current testing environment is not configured to support act(...)",
+                'The current testing environment is not configured to support act(...)',
               );
             }
             return isReactActEnvironmentGlobal;
@@ -23931,7 +23931,7 @@ var require_react_dom_development = __commonJS({
           checkForNestedUpdates();
           {
             if (isRunningInsertionEffect) {
-              error("useInsertionEffect must not schedule updates.");
+              error('useInsertionEffect must not schedule updates.');
             }
           }
           {
@@ -24022,7 +24022,7 @@ var require_react_dom_development = __commonJS({
                 existingCallbackPriority !== SyncLane
               ) {
                 error(
-                  "Expected scheduled callback to exist. This error is likely caused by a bug in React. Please file an issue.",
+                  'Expected scheduled callback to exist. This error is likely caused by a bug in React. Please file an issue.',
                 );
               }
             }
@@ -24095,7 +24095,7 @@ var require_react_dom_development = __commonJS({
             (executionContext & (RenderContext | CommitContext)) !==
             NoContext
           ) {
-            throw new Error("Should not already be working.");
+            throw new Error('Should not already be working.');
           }
           var originalCallbackNode = root2.callbackNode;
           var didFlushPassiveEffects = flushPassiveEffects();
@@ -24208,7 +24208,7 @@ var require_react_dom_development = __commonJS({
           switch (exitStatus) {
             case RootInProgress:
             case RootFatalErrored: {
-              throw new Error("Root did not complete. This is a bug in React.");
+              throw new Error('Root did not complete. This is a bug in React.');
             }
             case RootErrored: {
               commitRoot(
@@ -24295,7 +24295,7 @@ var require_react_dom_development = __commonJS({
               break;
             }
             default: {
-              throw new Error("Unknown root exit status.");
+              throw new Error('Unknown root exit status.');
             }
           }
         }
@@ -24361,7 +24361,7 @@ var require_react_dom_development = __commonJS({
             (executionContext & (RenderContext | CommitContext)) !==
             NoContext
           ) {
-            throw new Error("Should not already be working.");
+            throw new Error('Should not already be working.');
           }
           flushPassiveEffects();
           var lanes = getNextLanes(root2, NoLanes);
@@ -24385,7 +24385,7 @@ var require_react_dom_development = __commonJS({
             throw fatalError;
           }
           if (exitStatus === RootDidNotComplete) {
-            throw new Error("Root did not complete. This is a bug in React.");
+            throw new Error('Root did not complete. This is a bug in React.');
           }
           var finishedWork = root2.current.alternate;
           root2.finishedWork = finishedWork;
@@ -24548,8 +24548,8 @@ var require_react_dom_development = __commonJS({
                 markComponentRenderStopped();
                 if (
                   thrownValue !== null &&
-                  typeof thrownValue === "object" &&
-                  typeof thrownValue.then === "function"
+                  typeof thrownValue === 'object' &&
+                  typeof thrownValue.then === 'function'
                 ) {
                   var wakeable = thrownValue;
                   markComponentSuspended(
@@ -24681,7 +24681,7 @@ var require_react_dom_development = __commonJS({
           popDispatcher(prevDispatcher);
           if (workInProgress !== null) {
             throw new Error(
-              "Cannot commit an incomplete root. This error is likely caused by a bug in React. Please file an issue.",
+              'Cannot commit an incomplete root. This error is likely caused by a bug in React. Please file an issue.',
             );
           }
           {
@@ -24870,7 +24870,7 @@ var require_react_dom_development = __commonJS({
             (executionContext & (RenderContext | CommitContext)) !==
             NoContext
           ) {
-            throw new Error("Should not already be working.");
+            throw new Error('Should not already be working.');
           }
           var finishedWork = root2.finishedWork;
           var lanes = root2.finishedLanes;
@@ -24886,7 +24886,7 @@ var require_react_dom_development = __commonJS({
             {
               if (lanes === NoLanes) {
                 error(
-                  "root.finishedLanes should not be empty during a commit. This is a bug in React.",
+                  'root.finishedLanes should not be empty during a commit. This is a bug in React.',
                 );
               }
             }
@@ -24895,7 +24895,7 @@ var require_react_dom_development = __commonJS({
           root2.finishedLanes = NoLanes;
           if (finishedWork === root2.current) {
             throw new Error(
-              "Cannot commit the same tree as before. This error is likely caused by a bug in React. Please file an issue.",
+              'Cannot commit the same tree as before. This error is likely caused by a bug in React. Please file an issue.',
             );
           }
           root2.callbackNode = null;
@@ -25093,7 +25093,7 @@ var require_react_dom_development = __commonJS({
             NoContext
           ) {
             throw new Error(
-              "Cannot flush passive effects while already rendering.",
+              'Cannot flush passive effects while already rendering.',
             );
           }
           {
@@ -25202,8 +25202,8 @@ var require_react_dom_development = __commonJS({
               var ctor = fiber.type;
               var instance = fiber.stateNode;
               if (
-                typeof ctor.getDerivedStateFromError === "function" ||
-                (typeof instance.componentDidCatch === "function" &&
+                typeof ctor.getDerivedStateFromError === 'function' ||
+                (typeof instance.componentDidCatch === 'function' &&
                   !isAlreadyFailedLegacyErrorBoundary(instance))
               ) {
                 var errorInfo = createCapturedValueAtFiber(
@@ -25224,7 +25224,7 @@ var require_react_dom_development = __commonJS({
           }
           {
             error(
-              "Internal React error: Attempted to capture a commit phase error inside a detached tree. This indicates a bug in React. Likely causes include deleting the same fiber more than once, committing an already-finished tree, or an inconsistent return pointer.\n\nError message:\n\n%s",
+              'Internal React error: Attempted to capture a commit phase error inside a detached tree. This indicates a bug in React. Likely causes include deleting the same fiber more than once, committing an already-finished tree, or an inconsistent return pointer.\n\nError message:\n\n%s',
               error$1,
             );
           }
@@ -25292,7 +25292,7 @@ var require_react_dom_development = __commonJS({
               break;
             default:
               throw new Error(
-                "Pinged unknown suspense boundary type. This is probably a bug in React.",
+                'Pinged unknown suspense boundary type. This is probably a bug in React.',
               );
           }
           if (retryCache !== null) {
@@ -25320,7 +25320,7 @@ var require_react_dom_development = __commonJS({
             nestedUpdateCount = 0;
             rootWithNestedUpdates = null;
             throw new Error(
-              "Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+              'Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.',
             );
           }
           {
@@ -25418,7 +25418,7 @@ var require_react_dom_development = __commonJS({
               return;
             }
             var componentName =
-              getComponentNameFromFiber(fiber) || "ReactComponent";
+              getComponentNameFromFiber(fiber) || 'ReactComponent';
             if (didWarnStateUpdateForNotYetMountedComponent !== null) {
               if (
                 didWarnStateUpdateForNotYetMountedComponent.has(componentName)
@@ -25459,8 +25459,8 @@ var require_react_dom_development = __commonJS({
               if (
                 didSuspendOrErrorWhileHydratingDEV() ||
                 (originalError !== null &&
-                  typeof originalError === "object" &&
-                  typeof originalError.then === "function")
+                  typeof originalError === 'object' &&
+                  typeof originalError.then === 'function')
               ) {
                 throw originalError;
               }
@@ -25485,10 +25485,10 @@ var require_react_dom_development = __commonJS({
               if (hasCaughtError()) {
                 var replayError = clearCaughtError();
                 if (
-                  typeof replayError === "object" &&
+                  typeof replayError === 'object' &&
                   replayError !== null &&
                   replayError._suppressLogging &&
-                  typeof originalError === "object" &&
+                  typeof originalError === 'object' &&
                   originalError !== null &&
                   !originalError._suppressLogging
                 ) {
@@ -25515,7 +25515,7 @@ var require_react_dom_development = __commonJS({
                   var renderingComponentName =
                     (workInProgress &&
                       getComponentNameFromFiber(workInProgress)) ||
-                    "Unknown";
+                    'Unknown';
                   var dedupeKey = renderingComponentName;
                   if (
                     !didWarnAboutUpdateInRenderForAnotherComponent.has(
@@ -25526,9 +25526,9 @@ var require_react_dom_development = __commonJS({
                       dedupeKey,
                     );
                     var setStateComponentName =
-                      getComponentNameFromFiber(fiber) || "Unknown";
+                      getComponentNameFromFiber(fiber) || 'Unknown';
                     error(
-                      "Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render",
+                      'Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render',
                       setStateComponentName,
                       renderingComponentName,
                       renderingComponentName,
@@ -25539,7 +25539,7 @@ var require_react_dom_development = __commonJS({
                 case ClassComponent: {
                   if (!didWarnAboutUpdateInRender) {
                     error(
-                      "Cannot update during an existing state transition (such as within `render`). Render methods should be a pure function of props and state.",
+                      'Cannot update during an existing state transition (such as within `render`). Render methods should be a pure function of props and state.',
                     );
                     didWarnAboutUpdateInRender = true;
                   }
@@ -25669,7 +25669,7 @@ var require_react_dom_development = __commonJS({
               if (
                 type !== null &&
                 type !== void 0 &&
-                typeof type.render === "function"
+                typeof type.render === 'function'
               ) {
                 var currentRender = resolveFunctionForHotReloading(type.render);
                 if (type.render !== currentRender) {
@@ -25697,18 +25697,18 @@ var require_react_dom_development = __commonJS({
             var nextType = element.type;
             var needsCompareFamilies = false;
             var $$typeofNextType =
-              typeof nextType === "object" && nextType !== null
+              typeof nextType === 'object' && nextType !== null
                 ? nextType.$$typeof
                 : null;
             switch (fiber.tag) {
               case ClassComponent: {
-                if (typeof nextType === "function") {
+                if (typeof nextType === 'function') {
                   needsCompareFamilies = true;
                 }
                 break;
               }
               case FunctionComponent: {
-                if (typeof nextType === "function") {
+                if (typeof nextType === 'function') {
                   needsCompareFamilies = true;
                 } else if ($$typeofNextType === REACT_LAZY_TYPE) {
                   needsCompareFamilies = true;
@@ -25752,7 +25752,7 @@ var require_react_dom_development = __commonJS({
             if (resolveFamily === null) {
               return;
             }
-            if (typeof WeakSet !== "function") {
+            if (typeof WeakSet !== 'function') {
               return;
             }
             if (failedBoundaries === null) {
@@ -25813,7 +25813,7 @@ var require_react_dom_development = __commonJS({
             }
             if (resolveFamily === null) {
               throw new Error(
-                "Expected resolveFamily to be set during hot reload.",
+                'Expected resolveFamily to be set during hot reload.',
               );
             }
             var needsRender = false;
@@ -25951,7 +25951,7 @@ var require_react_dom_development = __commonJS({
                   return;
               }
               if (node.return === null) {
-                throw new Error("Expected to reach root first.");
+                throw new Error('Expected to reach root first.');
               }
               node = node.return;
             }
@@ -26036,7 +26036,7 @@ var require_react_dom_development = __commonJS({
             this._debugHookTypes = null;
             if (
               !hasBadMapPolyfill &&
-              typeof Object.preventExtensions === "function"
+              typeof Object.preventExtensions === 'function'
             ) {
               Object.preventExtensions(this);
             }
@@ -26051,13 +26051,13 @@ var require_react_dom_development = __commonJS({
         }
         function isSimpleFunctionComponent(type) {
           return (
-            typeof type === "function" &&
+            typeof type === 'function' &&
             !shouldConstruct$1(type) &&
             type.defaultProps === void 0
           );
         }
         function resolveLazyComponentTag(Component) {
-          if (typeof Component === "function") {
+          if (typeof Component === 'function') {
             return shouldConstruct$1(Component)
               ? ClassComponent
               : FunctionComponent;
@@ -26222,7 +26222,7 @@ var require_react_dom_development = __commonJS({
         ) {
           var fiberTag = IndeterminateComponent;
           var resolvedType = type;
-          if (typeof type === "function") {
+          if (typeof type === 'function') {
             if (shouldConstruct$1(type)) {
               fiberTag = ClassComponent;
               {
@@ -26233,7 +26233,7 @@ var require_react_dom_development = __commonJS({
                 resolvedType = resolveFunctionForHotReloading(resolvedType);
               }
             }
-          } else if (typeof type === "string") {
+          } else if (typeof type === 'string') {
             fiberTag = HostComponent;
           } else {
             getTag: switch (type) {
@@ -26270,7 +26270,7 @@ var require_react_dom_development = __commonJS({
               case REACT_TRACING_MARKER_TYPE:
               case REACT_DEBUG_TRACING_MODE_TYPE:
               default: {
-                if (typeof type === "object" && type !== null) {
+                if (typeof type === 'object' && type !== null) {
                   switch (type.$$typeof) {
                     case REACT_PROVIDER_TYPE:
                       fiberTag = ContextProvider;
@@ -26294,11 +26294,11 @@ var require_react_dom_development = __commonJS({
                       break getTag;
                   }
                 }
-                var info = "";
+                var info = '';
                 {
                   if (
                     type === void 0 ||
-                    (typeof type === "object" &&
+                    (typeof type === 'object' &&
                       type !== null &&
                       Object.keys(type).length === 0)
                   ) {
@@ -26310,14 +26310,14 @@ var require_react_dom_development = __commonJS({
                     : null;
                   if (ownerName) {
                     info +=
-                      "\n\nCheck the render method of `" + ownerName + "`.";
+                      '\n\nCheck the render method of `' + ownerName + '`.';
                   }
                 }
                 throw new Error(
-                  "Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) " +
-                    ("but got: " +
+                  'Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) ' +
+                    ('but got: ' +
                       (type == null ? type : typeof type) +
-                      "." +
+                      '.' +
                       info),
                 );
               }
@@ -26361,7 +26361,7 @@ var require_react_dom_development = __commonJS({
         }
         function createFiberFromProfiler(pendingProps, mode, lanes, key) {
           {
-            if (typeof pendingProps.id !== "string") {
+            if (typeof pendingProps.id !== 'string') {
               error(
                 'Profiler must specify an "id" of type `string` as a prop. Received the type `%s` instead.',
                 typeof pendingProps.id,
@@ -26418,7 +26418,7 @@ var require_react_dom_development = __commonJS({
         }
         function createFiberFromHostInstanceForDeletion() {
           var fiber = createFiber(HostComponent, null, null, NoMode);
-          fiber.elementType = "DELETED";
+          fiber.elementType = 'DELETED';
           return fiber;
         }
         function createFiberFromDehydratedFragment(dehydratedNode) {
@@ -26524,11 +26524,11 @@ var require_react_dom_development = __commonJS({
             switch (tag) {
               case ConcurrentRoot:
                 this._debugRootType = hydrate2
-                  ? "hydrateRoot()"
-                  : "createRoot()";
+                  ? 'hydrateRoot()'
+                  : 'createRoot()';
                 break;
               case LegacyRoot:
-                this._debugRootType = hydrate2 ? "hydrate()" : "render()";
+                this._debugRootType = hydrate2 ? 'hydrate()' : 'render()';
                 break;
             }
           }
@@ -26569,7 +26569,7 @@ var require_react_dom_development = __commonJS({
           initializeUpdateQueue(uninitializedFiber);
           return root2;
         }
-        var ReactVersion = "18.2.0";
+        var ReactVersion = '18.2.0';
         function createPortal(children, containerInfo, implementation) {
           var key =
             arguments.length > 3 && arguments[3] !== void 0
@@ -26581,7 +26581,7 @@ var require_react_dom_development = __commonJS({
           return {
             // This tag allow us to uniquely identify this as a React Portal
             $$typeof: REACT_PORTAL_TYPE,
-            key: key == null ? null : "" + key,
+            key: key == null ? null : '' + key,
             children,
             containerInfo,
             implementation,
@@ -26611,14 +26611,14 @@ var require_react_dom_development = __commonJS({
           {
             var fiber = get(component);
             if (fiber === void 0) {
-              if (typeof component.render === "function") {
+              if (typeof component.render === 'function') {
                 throw new Error(
-                  "Unable to find node on an unmounted component.",
+                  'Unable to find node on an unmounted component.',
                 );
               } else {
-                var keys = Object.keys(component).join(",");
+                var keys = Object.keys(component).join(',');
                 throw new Error(
-                  "Argument appears to not be a ReactComponent. Keys: " + keys,
+                  'Argument appears to not be a ReactComponent. Keys: ' + keys,
                 );
               }
             }
@@ -26628,7 +26628,7 @@ var require_react_dom_development = __commonJS({
             }
             if (hostFiber.mode & StrictLegacyMode) {
               var componentName =
-                getComponentNameFromFiber(fiber) || "Component";
+                getComponentNameFromFiber(fiber) || 'Component';
               if (!didWarnAboutFindNodeInStrictMode[componentName]) {
                 didWarnAboutFindNodeInStrictMode[componentName] = true;
                 var previousFiber = current;
@@ -26636,14 +26636,14 @@ var require_react_dom_development = __commonJS({
                   setCurrentFiber(hostFiber);
                   if (fiber.mode & StrictLegacyMode) {
                     error(
-                      "%s is deprecated in StrictMode. %s was passed an instance of %s which is inside StrictMode. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node",
+                      '%s is deprecated in StrictMode. %s was passed an instance of %s which is inside StrictMode. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node',
                       methodName,
                       methodName,
                       componentName,
                     );
                   } else {
                     error(
-                      "%s is deprecated in StrictMode. %s was passed an instance of %s which renders StrictMode children. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node",
+                      '%s is deprecated in StrictMode. %s was passed an instance of %s which renders StrictMode children. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node',
                       methodName,
                       methodName,
                       componentName,
@@ -26745,8 +26745,8 @@ var require_react_dom_development = __commonJS({
             if (isRendering && current !== null && !didWarnAboutNestedUpdates) {
               didWarnAboutNestedUpdates = true;
               error(
-                "Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.\n\nCheck the render method of %s.",
-                getComponentNameFromFiber(current) || "Unknown",
+                'Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.\n\nCheck the render method of %s.',
+                getComponentNameFromFiber(current) || 'Unknown',
               );
             }
           }
@@ -26757,9 +26757,9 @@ var require_react_dom_development = __commonJS({
           callback = callback === void 0 ? null : callback;
           if (callback !== null) {
             {
-              if (typeof callback !== "function") {
+              if (typeof callback !== 'function') {
                 error(
-                  "render(...): Expected the last optional `callback` argument to be a function. Instead received: %s.",
+                  'render(...): Expected the last optional `callback` argument to be a function. Instead received: %s.',
                   callback,
                 );
               }
@@ -26919,13 +26919,13 @@ var require_react_dom_development = __commonJS({
           };
           var copyWithRename = function (obj, oldPath, newPath) {
             if (oldPath.length !== newPath.length) {
-              warn("copyWithRename() expects paths of the same length");
+              warn('copyWithRename() expects paths of the same length');
               return;
             } else {
               for (var i = 0; i < newPath.length - 1; i++) {
                 if (oldPath[i] !== newPath[i]) {
                   warn(
-                    "copyWithRename() expects paths to be the same except for the deepest key",
+                    'copyWithRename() expects paths to be the same except for the deepest key',
                   );
                   return;
                 }
@@ -27091,12 +27091,12 @@ var require_react_dom_development = __commonJS({
           });
         }
         var defaultOnRecoverableError =
-          typeof reportError === "function"
+          typeof reportError === 'function'
             ? // In modern browsers, reportError will dispatch an error event,
               // emulating an uncaught JavaScript error.
               reportError
             : function (error2) {
-                console["error"](error2);
+                console['error'](error2);
               };
         function ReactDOMRoot(internalRoot) {
           this._internalRoot = internalRoot;
@@ -27105,20 +27105,20 @@ var require_react_dom_development = __commonJS({
           function (children) {
             var root2 = this._internalRoot;
             if (root2 === null) {
-              throw new Error("Cannot update an unmounted root.");
+              throw new Error('Cannot update an unmounted root.');
             }
             {
-              if (typeof arguments[1] === "function") {
+              if (typeof arguments[1] === 'function') {
                 error(
-                  "render(...): does not support the second callback argument. To execute a side effect after rendering, declare it in a component body with useEffect().",
+                  'render(...): does not support the second callback argument. To execute a side effect after rendering, declare it in a component body with useEffect().',
                 );
               } else if (isValidContainer(arguments[1])) {
                 error(
                   "You passed a container to the second argument of root.render(...). You don't need to pass it again since you already passed it to create the root.",
                 );
-              } else if (typeof arguments[1] !== "undefined") {
+              } else if (typeof arguments[1] !== 'undefined') {
                 error(
-                  "You passed a second argument to root.render(...) but it only accepts one argument.",
+                  'You passed a second argument to root.render(...) but it only accepts one argument.',
                 );
               }
               var container = root2.containerInfo;
@@ -27138,9 +27138,9 @@ var require_react_dom_development = __commonJS({
         ReactDOMHydrationRoot.prototype.unmount =
           ReactDOMRoot.prototype.unmount = function () {
             {
-              if (typeof arguments[0] === "function") {
+              if (typeof arguments[0] === 'function') {
                 error(
-                  "unmount(...): does not support a callback argument. To execute a side effect after rendering, declare it in a component body with useEffect().",
+                  'unmount(...): does not support a callback argument. To execute a side effect after rendering, declare it in a component body with useEffect().',
                 );
               }
             }
@@ -27151,7 +27151,7 @@ var require_react_dom_development = __commonJS({
               {
                 if (isAlreadyRendering()) {
                   error(
-                    "Attempted to synchronously unmount a root while React was already rendering. React cannot finish unmounting the root until the current render has completed, which may lead to a race condition.",
+                    'Attempted to synchronously unmount a root while React was already rendering. React cannot finish unmounting the root until the current render has completed, which may lead to a race condition.',
                   );
                 }
               }
@@ -27164,29 +27164,29 @@ var require_react_dom_development = __commonJS({
         function createRoot(container, options2) {
           if (!isValidContainer(container)) {
             throw new Error(
-              "createRoot(...): Target container is not a DOM element.",
+              'createRoot(...): Target container is not a DOM element.',
             );
           }
           warnIfReactDOMContainerInDEV(container);
           var isStrictMode = false;
           var concurrentUpdatesByDefaultOverride = false;
-          var identifierPrefix = "";
+          var identifierPrefix = '';
           var onRecoverableError = defaultOnRecoverableError;
           var transitionCallbacks = null;
           if (options2 !== null && options2 !== void 0) {
             {
               if (options2.hydrate) {
                 warn(
-                  "hydrate through createRoot is deprecated. Use ReactDOMClient.hydrateRoot(container, <App />) instead.",
+                  'hydrate through createRoot is deprecated. Use ReactDOMClient.hydrateRoot(container, <App />) instead.',
                 );
               } else {
                 if (
-                  typeof options2 === "object" &&
+                  typeof options2 === 'object' &&
                   options2 !== null &&
                   options2.$$typeof === REACT_ELEMENT_TYPE
                 ) {
                   error(
-                    "You passed a JSX element to createRoot. You probably meant to call root.render instead. Example usage:\n\n  let root = createRoot(domContainer);\n  root.render(<App />);",
+                    'You passed a JSX element to createRoot. You probably meant to call root.render instead. Example usage:\n\n  let root = createRoot(domContainer);\n  root.render(<App />);',
                   );
                 }
               }
@@ -27234,14 +27234,14 @@ var require_react_dom_development = __commonJS({
         function hydrateRoot(container, initialChildren, options2) {
           if (!isValidContainer(container)) {
             throw new Error(
-              "hydrateRoot(...): Target container is not a DOM element.",
+              'hydrateRoot(...): Target container is not a DOM element.',
             );
           }
           warnIfReactDOMContainerInDEV(container);
           {
             if (initialChildren === void 0) {
               error(
-                "Must provide initial children as second argument to hydrateRoot. Example usage: hydrateRoot(domContainer, <App />)",
+                'Must provide initial children as second argument to hydrateRoot. Example usage: hydrateRoot(domContainer, <App />)',
               );
             }
           }
@@ -27250,7 +27250,7 @@ var require_react_dom_development = __commonJS({
             (options2 != null && options2.hydratedSources) || null;
           var isStrictMode = false;
           var concurrentUpdatesByDefaultOverride = false;
-          var identifierPrefix = "";
+          var identifierPrefix = '';
           var onRecoverableError = defaultOnRecoverableError;
           if (options2 !== null && options2 !== void 0) {
             if (options2.unstable_strictMode === true) {
@@ -27300,7 +27300,7 @@ var require_react_dom_development = __commonJS({
               node.nodeType === DOCUMENT_NODE ||
               node.nodeType === DOCUMENT_FRAGMENT_NODE ||
               (node.nodeType === COMMENT_NODE &&
-                node.nodeValue === " react-mount-point-unstable "))
+                node.nodeValue === ' react-mount-point-unstable '))
           );
         }
         function warnIfReactDOMContainerInDEV(container) {
@@ -27308,20 +27308,20 @@ var require_react_dom_development = __commonJS({
             if (
               container.nodeType === ELEMENT_NODE &&
               container.tagName &&
-              container.tagName.toUpperCase() === "BODY"
+              container.tagName.toUpperCase() === 'BODY'
             ) {
               error(
-                "createRoot(): Creating roots directly with document.body is discouraged, since its children are often manipulated by third-party scripts and browser extensions. This may lead to subtle reconciliation issues. Try using a container element created for your app.",
+                'createRoot(): Creating roots directly with document.body is discouraged, since its children are often manipulated by third-party scripts and browser extensions. This may lead to subtle reconciliation issues. Try using a container element created for your app.',
               );
             }
             if (isContainerMarkedAsRoot(container)) {
               if (container._reactRootContainer) {
                 error(
-                  "You are calling ReactDOMClient.createRoot() on a container that was previously passed to ReactDOM.render(). This is not supported.",
+                  'You are calling ReactDOMClient.createRoot() on a container that was previously passed to ReactDOM.render(). This is not supported.',
                 );
               } else {
                 error(
-                  "You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() on the existing root instead if you want to update it.",
+                  'You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() on the existing root instead if you want to update it.',
                 );
               }
             }
@@ -27341,7 +27341,7 @@ var require_react_dom_development = __commonJS({
               if (hostInstance) {
                 if (hostInstance.parentNode !== container) {
                   error(
-                    "render(...): It looks like the React-rendered content of this container was removed without using React. This is not supported and will cause errors. Instead, call ReactDOM.unmountComponentAtNode to empty a container.",
+                    'render(...): It looks like the React-rendered content of this container was removed without using React. This is not supported and will cause errors. Instead, call ReactDOM.unmountComponentAtNode to empty a container.',
                   );
                 }
               }
@@ -27353,16 +27353,16 @@ var require_react_dom_development = __commonJS({
             );
             if (hasNonRootReactChild && !isRootRenderedBySomeReact) {
               error(
-                "render(...): Replacing React-rendered children with a new root component. If you intended to update the children of this node, you should instead have the existing children update their state and render the new components instead of calling ReactDOM.render.",
+                'render(...): Replacing React-rendered children with a new root component. If you intended to update the children of this node, you should instead have the existing children update their state and render the new components instead of calling ReactDOM.render.',
               );
             }
             if (
               container.nodeType === ELEMENT_NODE &&
               container.tagName &&
-              container.tagName.toUpperCase() === "BODY"
+              container.tagName.toUpperCase() === 'BODY'
             ) {
               error(
-                "render(): Rendering components directly into document.body is discouraged, since its children are often manipulated by third-party scripts and browser extensions. This may lead to subtle reconciliation issues. Try rendering into a container element created for your app.",
+                'render(): Rendering components directly into document.body is discouraged, since its children are often manipulated by third-party scripts and browser extensions. This may lead to subtle reconciliation issues. Try rendering into a container element created for your app.',
               );
             }
           };
@@ -27386,7 +27386,7 @@ var require_react_dom_development = __commonJS({
           isHydrationContainer,
         ) {
           if (isHydrationContainer) {
-            if (typeof callback === "function") {
+            if (typeof callback === 'function') {
               var originalCallback = callback;
               callback = function () {
                 var instance = getPublicRootInstance(root2);
@@ -27404,7 +27404,7 @@ var require_react_dom_development = __commonJS({
               // isStrictMode
               false,
               // concurrentUpdatesByDefaultOverride,
-              "",
+              '',
               // identifierPrefix
               noopOnRecoverableError,
             );
@@ -27422,7 +27422,7 @@ var require_react_dom_development = __commonJS({
             while ((rootSibling = container.lastChild)) {
               container.removeChild(rootSibling);
             }
-            if (typeof callback === "function") {
+            if (typeof callback === 'function') {
               var _originalCallback = callback;
               callback = function () {
                 var instance = getPublicRootInstance(_root);
@@ -27438,7 +27438,7 @@ var require_react_dom_development = __commonJS({
               // isStrictMode
               false,
               // concurrentUpdatesByDefaultOverride,
-              "",
+              '',
               // identifierPrefix
               noopOnRecoverableError,
             );
@@ -27462,9 +27462,9 @@ var require_react_dom_development = __commonJS({
         }
         function warnOnInvalidCallback$1(callback, callerName) {
           {
-            if (callback !== null && typeof callback !== "function") {
+            if (callback !== null && typeof callback !== 'function') {
               error(
-                "%s(...): Expected the last optional `callback` argument to be a function. Instead received: %s.",
+                '%s(...): Expected the last optional `callback` argument to be a function. Instead received: %s.',
                 callerName,
                 callback,
               );
@@ -27482,7 +27482,7 @@ var require_react_dom_development = __commonJS({
             topLevelUpdateWarnings(container);
             warnOnInvalidCallback$1(
               callback === void 0 ? null : callback,
-              "render",
+              'render',
             );
           }
           var maybeRoot = container._reactRootContainer;
@@ -27497,7 +27497,7 @@ var require_react_dom_development = __commonJS({
             );
           } else {
             root2 = maybeRoot;
-            if (typeof callback === "function") {
+            if (typeof callback === 'function') {
               var originalCallback = callback;
               callback = function () {
                 var instance = getPublicRootInstance(root2);
@@ -27516,8 +27516,8 @@ var require_react_dom_development = __commonJS({
                 owner.stateNode._warnedAboutRefsInRender;
               if (!warnedAboutRefsInRender) {
                 error(
-                  "%s is accessing findDOMNode inside its render(). render() should be a pure function of props and state. It should never access something that requires stale data from the previous render, such as refs. Move this logic to componentDidMount and componentDidUpdate instead.",
-                  getComponentNameFromType(owner.type) || "A component",
+                  '%s is accessing findDOMNode inside its render(). render() should be a pure function of props and state. It should never access something that requires stale data from the previous render, such as refs. Move this logic to componentDidMount and componentDidUpdate instead.',
+                  getComponentNameFromType(owner.type) || 'A component',
                 );
               }
               owner.stateNode._warnedAboutRefsInRender = true;
@@ -27532,7 +27532,7 @@ var require_react_dom_development = __commonJS({
           {
             return findHostInstanceWithWarning(
               componentOrElement,
-              "findDOMNode",
+              'findDOMNode',
             );
           }
         }
@@ -27543,7 +27543,7 @@ var require_react_dom_development = __commonJS({
             );
           }
           if (!isValidContainerLegacy(container)) {
-            throw new Error("Target container is not a DOM element.");
+            throw new Error('Target container is not a DOM element.');
           }
           {
             var isModernRoot =
@@ -27551,7 +27551,7 @@ var require_react_dom_development = __commonJS({
               container._reactRootContainer === void 0;
             if (isModernRoot) {
               error(
-                "You are calling ReactDOM.hydrate() on a container that was previously passed to ReactDOMClient.createRoot(). This is not supported. Did you mean to call hydrateRoot(container, element)?",
+                'You are calling ReactDOM.hydrate() on a container that was previously passed to ReactDOMClient.createRoot(). This is not supported. Did you mean to call hydrateRoot(container, element)?',
               );
             }
           }
@@ -27570,7 +27570,7 @@ var require_react_dom_development = __commonJS({
             );
           }
           if (!isValidContainerLegacy(container)) {
-            throw new Error("Target container is not a DOM element.");
+            throw new Error('Target container is not a DOM element.');
           }
           {
             var isModernRoot =
@@ -27578,7 +27578,7 @@ var require_react_dom_development = __commonJS({
               container._reactRootContainer === void 0;
             if (isModernRoot) {
               error(
-                "You are calling ReactDOM.render() on a container that was previously passed to ReactDOMClient.createRoot(). This is not supported. Did you mean to call root.render(element)?",
+                'You are calling ReactDOM.render() on a container that was previously passed to ReactDOMClient.createRoot(). This is not supported. Did you mean to call root.render(element)?',
               );
             }
           }
@@ -27602,10 +27602,10 @@ var require_react_dom_development = __commonJS({
             );
           }
           if (!isValidContainerLegacy(containerNode)) {
-            throw new Error("Target container is not a DOM element.");
+            throw new Error('Target container is not a DOM element.');
           }
           if (parentComponent == null || !has(parentComponent)) {
-            throw new Error("parentComponent must be a valid React Component");
+            throw new Error('parentComponent must be a valid React Component');
           }
           return legacyRenderSubtreeIntoContainer(
             parentComponent,
@@ -27618,7 +27618,7 @@ var require_react_dom_development = __commonJS({
         function unmountComponentAtNode(container) {
           if (!isValidContainerLegacy(container)) {
             throw new Error(
-              "unmountComponentAtNode(...): Target container is not a DOM element.",
+              'unmountComponentAtNode(...): Target container is not a DOM element.',
             );
           }
           {
@@ -27627,7 +27627,7 @@ var require_react_dom_development = __commonJS({
               container._reactRootContainer === void 0;
             if (isModernRoot) {
               error(
-                "You are calling ReactDOM.unmountComponentAtNode() on a container that was previously passed to ReactDOMClient.createRoot(). This is not supported. Did you mean to call root.unmount()?",
+                'You are calling ReactDOM.unmountComponentAtNode() on a container that was previously passed to ReactDOMClient.createRoot(). This is not supported. Did you mean to call root.unmount()?',
               );
             }
           }
@@ -27669,8 +27669,8 @@ var require_react_dom_development = __commonJS({
                 error(
                   "unmountComponentAtNode(): The node you're attempting to unmount was rendered by React and is not a top-level container. %s",
                   isContainerReactRoot
-                    ? "You may have accidentally passed in a React root node instead of its container."
-                    : "Instead, have the parent component update its state and rerender in order to remove this component.",
+                    ? 'You may have accidentally passed in a React root node instead of its container.'
+                    : 'Instead, have the parent component update its state and rerender in order to remove this component.',
                 );
               }
             }
@@ -27686,16 +27686,16 @@ var require_react_dom_development = __commonJS({
         setAttemptHydrationAtPriority(runWithPriority);
         {
           if (
-            typeof Map !== "function" || // $FlowIssue Flow incorrectly thinks Map has no prototype
+            typeof Map !== 'function' || // $FlowIssue Flow incorrectly thinks Map has no prototype
             Map.prototype == null ||
-            typeof Map.prototype.forEach !== "function" ||
-            typeof Set !== "function" || // $FlowIssue Flow incorrectly thinks Set has no prototype
+            typeof Map.prototype.forEach !== 'function' ||
+            typeof Set !== 'function' || // $FlowIssue Flow incorrectly thinks Set has no prototype
             Set.prototype == null ||
-            typeof Set.prototype.clear !== "function" ||
-            typeof Set.prototype.forEach !== "function"
+            typeof Set.prototype.clear !== 'function' ||
+            typeof Set.prototype.forEach !== 'function'
           ) {
             error(
-              "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills",
+              'React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills',
             );
           }
         }
@@ -27707,7 +27707,7 @@ var require_react_dom_development = __commonJS({
               ? arguments[2]
               : null;
           if (!isValidContainer(container)) {
-            throw new Error("Target container is not a DOM element.");
+            throw new Error('Target container is not a DOM element.');
           }
           return createPortal(children, container, null, key);
         }
@@ -27761,7 +27761,7 @@ var require_react_dom_development = __commonJS({
           {
             if (isAlreadyRendering()) {
               error(
-                "flushSync was called from inside a lifecycle method. React cannot flush when React is already rendering. Consider moving this call to a scheduler task or micro task.",
+                'flushSync was called from inside a lifecycle method. React cannot flush when React is already rendering. Consider moving this call to a scheduler task or micro task.',
               );
             }
           }
@@ -27771,23 +27771,23 @@ var require_react_dom_development = __commonJS({
           findFiberByHostInstance: getClosestInstanceFromNode,
           bundleType: 1,
           version: ReactVersion,
-          rendererPackageName: "react-dom",
+          rendererPackageName: 'react-dom',
         });
         {
           if (!foundDevTools && canUseDOM && window.top === window.self) {
             if (
-              (navigator.userAgent.indexOf("Chrome") > -1 &&
-                navigator.userAgent.indexOf("Edge") === -1) ||
-              navigator.userAgent.indexOf("Firefox") > -1
+              (navigator.userAgent.indexOf('Chrome') > -1 &&
+                navigator.userAgent.indexOf('Edge') === -1) ||
+              navigator.userAgent.indexOf('Firefox') > -1
             ) {
               var protocol = window.location.protocol;
               if (/^(https?|file):$/.test(protocol)) {
                 console.info(
-                  "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools" +
-                    (protocol === "file:"
-                      ? "\nYou might need to use a local HTTP server (instead of file://): https://reactjs.org/link/react-devtools-faq"
-                      : ""),
-                  "font-weight:bold",
+                  '%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools' +
+                    (protocol === 'file:'
+                      ? '\nYou might need to use a local HTTP server (instead of file://): https://reactjs.org/link/react-devtools-faq'
+                      : ''),
+                  'font-weight:bold',
                 );
               }
             }
@@ -27807,9 +27807,9 @@ var require_react_dom_development = __commonJS({
           renderSubtreeIntoContainer;
         exports.version = ReactVersion;
         if (
-          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" &&
+          typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' &&
           typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop ===
-            "function"
+            'function'
         ) {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(
             new Error(),
@@ -27822,8 +27822,8 @@ var require_react_dom_development = __commonJS({
 
 // node_modules/react-dom/index.js
 var require_react_dom = __commonJS({
-  "node_modules/react-dom/index.js"(exports, module) {
-    "use strict";
+  'node_modules/react-dom/index.js'(exports, module) {
+    'use strict';
     if (false) {
       checkDCE();
       module.exports = null;

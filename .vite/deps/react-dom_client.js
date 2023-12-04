@@ -1,10 +1,10 @@
-import { require_react_dom } from "./chunk-PXJLUKTU.js";
-import "./chunk-FQO5W7GE.js";
-import { __commonJS } from "./chunk-ZS7NZCD4.js";
+import { require_react_dom } from './chunk-PXJLUKTU.js';
+import './chunk-FQO5W7GE.js';
+import { __commonJS } from './chunk-ZS7NZCD4.js';
 
 // node_modules/react-dom/client.js
 var require_client = __commonJS({
-  "node_modules/react-dom/client.js"(exports) {
+  'node_modules/react-dom/client.js'(exports) {
     var m = require_react_dom();
     if (false) {
       exports.createRoot = m.createRoot;

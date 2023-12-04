@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import AuthSide from "../components/AuthSide";
-import { useSelector, useDispatch } from "react-redux";
-import { useApi } from "../data/ApiProvider";
-import { getCategory } from "./categorySlice";
-import { addArtisan } from "./addArtisanSlice";
+import { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import AuthSide from '../components/AuthSide';
+import { useSelector, useDispatch } from 'react-redux';
+import { useApi } from '../data/ApiProvider';
+import { getCategory } from './categorySlice';
+import { addArtisan } from './addArtisanSlice';
 
 const AddArtisan = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const api = useApi();
 
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
 
   const [formErrors, setFormErrors] = useState({});
   const [isValidForm, setFormIsValid] = useState(false);
   const [formData, setFormData] = useState({
-    job_title: "",
-    summary: "",
-    category: "",
+    job_title: '',
+    summary: '',
+    category: '',
   });
 
   const { data, status, error } = useSelector((state) => state.category);
@@ -43,21 +43,21 @@ const AddArtisan = () => {
 
   const handleBlur = (e) => {
     let newErrors = { ...formErrors };
-    if (!e.target.value && e.target.name == "job_title") {
+    if (!e.target.value && e.target.name == 'job_title') {
       newErrors = {
         ...newErrors,
         job_title: {
-          message: "Profession number is required",
-          field: "job_title",
+          message: 'Profession number is required',
+          field: 'job_title',
         },
       };
     }
-    if (!e.target.value && e.target.name == "summary") {
+    if (!e.target.value && e.target.name == 'summary') {
       newErrors = {
         ...newErrors,
         summary: {
-          message: "Summary is required",
-          field: "summary",
+          message: 'Summary is required',
+          field: 'summary',
         },
       };
     }
@@ -77,21 +77,21 @@ const AddArtisan = () => {
         console.log(result);
         // navigate("/");
         setFormData({
-          job_title: "",
-          summary: "",
-          category: "",
+          job_title: '',
+          summary: '',
+          category: '',
         });
         setFormIsValid(false);
-        console.log("we are in", formErrors);
+        console.log('we are in', formErrors);
       },
     );
   };
 
-  if (status === "loading") {
+  if (status === 'loading') {
     return <div>Loading...</div>;
   }
 
-  if (status === "failed") {
+  if (status === 'failed') {
     return <div>Error loading data: {error}</div>;
   }
 
@@ -128,7 +128,7 @@ const AddArtisan = () => {
                 />
                 {formErrors.job_title && (
                   <p
-                    hidden={!(formErrors.job_title.field === "job_title")}
+                    hidden={!(formErrors.job_title.field === 'job_title')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.job_title.message}
@@ -149,7 +149,7 @@ const AddArtisan = () => {
                 />
                 {formErrors.summary && (
                   <p
-                    hidden={!(formErrors.summary.field === "summary")}
+                    hidden={!(formErrors.summary.field === 'summary')}
                     className="text-red-500 text-sm"
                   >
                     {formErrors.summary.message}
@@ -170,9 +170,9 @@ const AddArtisan = () => {
                       data.map((opt) => (
                         <option
                           value={opt.category}
-                          key={opt.category + "" + opt.id}
+                          key={opt.category + '' + opt.id}
                         >
-                          {opt.category.toLowerCase().replaceAll("_", " ")}
+                          {opt.category.toLowerCase().replaceAll('_', ' ')}
                         </option>
                       ))}
                   </select>
@@ -181,7 +181,7 @@ const AddArtisan = () => {
               <div className="w-full flex flex-col my-4">
                 <button
                   onClick={handleSubmit}
-                  disabled={status === "loading" || !isValidForm}
+                  disabled={status === 'loading' || !isValidForm}
                   className="w-full text-white my-2 font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >
                   Join

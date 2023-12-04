@@ -1,12 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginForm from "./features/login/Login";
-import Home from "./pages/Home";
-import PrivateRoutes from "./components/PrivateRoutes";
-import "./App.css";
-import SignupForm from "./features/login/signup";
-import AddAddress from "./features/AddAddress";
-import AddArtisan from "./features/AddArtisan";
-import ApiProvider from "./data/ApiProvider";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginForm from './features/login/Login';
+import Home from './pages/Home';
+import PrivateRoutes from './components/PrivateRoutes';
+import './App.css';
+import SignupForm from './features/login/signup';
+import AddAddress from './features/AddAddress';
+import AddArtisan from './features/AddArtisan';
+import ApiProvider from './data/ApiProvider';
+import SearchArtisan from './pages/SearchArtisan';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </Route>
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
+            <Route path="/search" element={<SearchArtisan />} />
           </Routes>
         </Router>
       </ApiProvider>
