@@ -23,7 +23,7 @@ const LoginForm = () => {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  const { status } = useSelector((state) => state.users);
+  const { status,  } = useSelector((state) => state.users);
 
   useEffect(() => {
     usernameRef.current.focus();
@@ -68,7 +68,6 @@ const LoginForm = () => {
         if (result.error && result.error.code === 'ERR_BAD_REQUEST') {
           setError({ hasError: true, message: 'Invalid username or password' });
         } else {
-          console.log('we are in');
           localStorage.setItem('authToken', result.payload.access);
           navigate('/');
         }

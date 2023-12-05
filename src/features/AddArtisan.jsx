@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 import AuthSide from '../components/AuthSide';
 import { useSelector, useDispatch } from 'react-redux';
 import { useApi } from '../data/ApiProvider';
@@ -8,10 +7,7 @@ import { addArtisan } from './addArtisanSlice';
 
 const AddArtisan = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const api = useApi();
-
-  const [selectedOption, setSelectedOption] = useState('');
 
   const [formErrors, setFormErrors] = useState({});
   const [isValidForm, setFormIsValid] = useState(false);
@@ -25,7 +21,7 @@ const AddArtisan = () => {
 
   useEffect(() => {
     dispatch(getCategory(async () => await api.getArtisanCategories()));
-  }, [dispatch]);
+  }, [dispatch, api]);
 
   const handleOnChange = (e) => {
     if (e.target.value.length > 0) {

@@ -34,7 +34,7 @@ const SignupForm = () => {
     ) {
       setFormIsValid(true);
     }
-  }, [isValidForm, formErrors, formData]);
+  }, [isValidForm, formErrors, formData, confirmPassword]);
 
   const handleBlur = (e) => {
     let newErrors = { ...formErrors };
@@ -66,7 +66,7 @@ const SignupForm = () => {
     if (Object.keys(formErrors).length > 0) {
       setFormIsValid(false);
     } else {
-      dispatch(signupUser(() => api.signup(formData))).then((result) => {
+      dispatch(signupUser(() => api.signup(formData))).then((res) => {
         setIsRegistered(true);
 
         setTimeout(() => {
@@ -75,18 +75,10 @@ const SignupForm = () => {
               async () => await api.login(formData.username, formData.password),
             ),
           ).then((result) => {
-            if (result.error && result.error.code === 'ERR_BAD_REQUEST') {
-              setError({
-                hasError: true,
-                message: 'Invalid username or password',
-              });
-            } else {
-              localStorage.setItem('authToken', result.payload.access);
-              navigate('/');
-            }
+            localStorage.setItem('authToken', result.payload.access);
+            navigate('/');
           });
         }, 2000);
-        console.log('Registered');
       });
     }
   };

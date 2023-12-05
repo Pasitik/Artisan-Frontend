@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   let Links = [
-    { name: "Home", link: "/home" },
-    { name: "About", link: "/about" },
-    { name: "Login", link: "/login" },
-    { name: "Signup", link: "/signup" },
+    { name: 'Home', link: '/home' },
+    { name: 'About', link: '/about' },
+    { name: 'Login', link: '/login' },
+    { name: 'Signup', link: '/signup' },
   ];
 
   let [open, setOpen] = useState(false);
@@ -29,7 +29,7 @@ const NavBar = () => {
         <ul
           className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:bg-white bg-gray-300 md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9
             transition-all duration-500 ease-in ${
-              open ? "top-20 opacity-100 z-10" : "top-[-490px]"
+              open ? 'top-20 opacity-100 z-10' : 'top-[-490px]'
             } md:opacity-100`}
         >
           {Links.map((link) => {
@@ -44,9 +44,11 @@ const NavBar = () => {
               </li>
             );
           })}
+          <Link to={'/search'}>
           <button className=" bg-orange-400 text-white font-[Poppins] font-bold py-2 px-6 rounded md:ml-8 hover:bg-orange-300 duration-500">
             Get Started
           </button>
+          </Link>
         </ul>
       </div>
     </div>

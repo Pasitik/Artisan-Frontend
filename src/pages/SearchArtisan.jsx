@@ -2,9 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import NavBar from '../components/NavBar';
 import StarRating from '../components/StarRating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faMagnifyingGlass,
-} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchArtisan } from './SearchArtisanSlice';
 import { useApi } from '../data/ApiProvider';
@@ -42,8 +40,6 @@ const SearchArtisan = () => {
       setSearchItem(searchValue);
       setCurrentPage(1);
     }
-    // dispatch an action
-    console.log('------->', searchValue);
   };
 
   if (status === 'loading') {
@@ -57,7 +53,7 @@ const SearchArtisan = () => {
   return (
     <main className=" h-screen w-screen">
       <NavBar />
-      <div className="py-[2em] h-full bg-gray-50 flex">
+      <div className="h-full bg-gray-50 flex">
         <section className="filters-section h-screen bg-gray-200 w-1/4 grid place-content-center">
           <p>filter 0</p>
           <p>filter 1</p>
@@ -65,7 +61,7 @@ const SearchArtisan = () => {
           <p>filter 1</p>
           <p>filter 1</p>
         </section>
-        <section className="search-section w-full h-screen py-[1em]">
+        <section className="search-section w-full h-screen">
           <h1 className="text-3xl font-bold text-center text-black-600 my-3 pt-4">
             Find an artisan near you!{' '}
           </h1>

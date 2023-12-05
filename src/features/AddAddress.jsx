@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 import AuthSide from '../components/AuthSide';
-import { useSelector, useDispatch } from 'react-redux';
-import { addAddress } from './addressSlice';
+import { useDispatch } from 'react-redux';
 import { useApi } from '../data/ApiProvider';
 
 const AddAddress = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const api = useApi();
 
   const [formErrors, setFormErrors] = useState({});
@@ -29,7 +26,7 @@ const AddAddress = () => {
     ) {
       setFormIsValid(true);
     }
-  }, [isValidForm, formErrors]);
+  }, [isValidForm, formErrors, formData]);
 
   const handleOnChange = (e) => {
     if (e.target.value.length > 0) {
