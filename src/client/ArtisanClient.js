@@ -54,11 +54,11 @@ export default class ArtisanClient {
     return await this.httpClient.post(url, body);
   }
 
-  async put(url, body, options) {
+  async put(url, body) {
     return await this.httpClient.put(url, body);
   }
 
-  async delete(url, options) {
+  async delete(url) {
     return await this.httpClient.delete(url);
   }
 
@@ -99,8 +99,14 @@ export default class ArtisanClient {
     const response = await this.get(`business/artisan/?search=${searchParam}`);
     return response.data;
   }
+
   async fetchAllArtisans() {
     const response = await this.get('business/artisan/');
+    return response.data;
+  }
+
+  async fetchArtisansPerPage(pageNumber) {
+    const response = await this.get(`business/artisan/?page=${pageNumber}`);
     return response.data;
   }
 }

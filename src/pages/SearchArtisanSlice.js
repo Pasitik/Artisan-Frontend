@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const initialState = {
-  data: [],
+  data: null,
   status: 'idle',
   error: null,
 };
@@ -19,7 +18,7 @@ const getArtisan = createSlice({
     builder
       .addCase(fetchArtisan.pending, (state) => {
         state.status = 'loading';
-        state.data = [];
+        state.data = null;
         state.error = null;
       })
       .addCase(fetchArtisan.fulfilled, (state, action) => {
@@ -29,7 +28,7 @@ const getArtisan = createSlice({
       })
       .addCase(fetchArtisan.rejected, (state, action) => {
         state.status = 'failed';
-        state.data = [];
+        state.data = null;
         state.error = action.error.message;
       });
   },
