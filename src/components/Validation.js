@@ -1,11 +1,18 @@
-export const signUpValidation = (e, field, newErrors, password, confirmPassword) => {
-  const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]?)[a-zA-Z0-9\W_]{8,}$/;
+export const signUpValidation = (
+  e,
+  field,
+  newErrors,
+  password,
+  confirmPassword,
+) => {
+  const password_pattern =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]?)[a-zA-Z0-9\W_]{8,}$/;
 
   if (!e.target.value && e.target.name === field) {
     newErrors = {
       ...newErrors,
       [e.target.name]: {
-        message: `${field.replaceAll('_', ' ')} is required`,
+        message: `${field.replaceAll("_", " ")} is required`,
         field: field,
       },
     };
@@ -20,7 +27,7 @@ export const signUpValidation = (e, field, newErrors, password, confirmPassword)
       },
     };
   }
-  
+
   if (password && !password_pattern.test(password)) {
     newErrors = {
       ...newErrors,
