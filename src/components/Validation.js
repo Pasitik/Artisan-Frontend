@@ -12,7 +12,7 @@ export const signUpValidation = (
     newErrors = {
       ...newErrors,
       [e.target.name]: {
-        message: `${field.replaceAll('_', ' ')} is required`,
+        message: `${field.replaceAll("_", " ")} is required`,
         field: field,
       },
     };
