@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import LoginForm from './features/login/Login';
 import Home from './pages/Home';
 import PrivateRoutes from './components/PrivateRoutes';

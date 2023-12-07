@@ -96,7 +96,7 @@ export default class ArtisanClient {
   }
 
   async fetchArtisan(searchParam) {
-    const response = await this.get(`business/artisan/?search=${searchParam}`);
+    const response = await this.get(`business/artisan/search/?${searchParam}`);
     return response.data;
   }
 

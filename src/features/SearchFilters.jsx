@@ -3,7 +3,7 @@ import { useApi } from '../data/ApiProvider';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLocation } from './filterSlice';
 
-const SearchFilters = ({ setLocationFilter, locationFilter }) => {
+const SearchFilters = ({ searchParamsTracker, setSearchParamsTracker }) => {
   const api = useApi();
   const dispatch = useDispatch();
 
@@ -14,7 +14,11 @@ const SearchFilters = ({ setLocationFilter, locationFilter }) => {
   const { status, data, error } = useSelector((state) => state.states);
 
   const handleLocation = (option) => {
-    setLocationFilter(option.target.value);
+    // setLocationFilter(option.target.value);
+    setSearchParamsTracker({
+      ...searchParamsTracker,
+      [option.target.name]: option.target.value,
+    });
   };
 
   if (status === 'loading') {
@@ -38,7 +42,7 @@ const SearchFilters = ({ setLocationFilter, locationFilter }) => {
             name="state"
             className="block w-full"
             onChange={handleLocation}
-            value={locationFilter}
+            value={searchParamsTracker.state}
           >
             <option value="" disabled>
               -- Select --
