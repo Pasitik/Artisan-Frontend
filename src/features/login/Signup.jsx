@@ -66,7 +66,7 @@ const SignupForm = () => {
     if (Object.keys(formErrors).length > 0) {
       setFormIsValid(false);
     } else {
-      dispatch(signupUser(() => api.signup(formData))).then((res) => {
+      dispatch(signupUser(() => api.signup(formData))).then(() => {
         setIsRegistered(true);
 
         setTimeout(() => {
