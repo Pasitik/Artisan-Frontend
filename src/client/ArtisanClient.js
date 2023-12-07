@@ -114,4 +114,14 @@ export default class ArtisanClient {
     const response = await this.get(`business/address/states`);
     return response.data;
   }
+
+  async fetchCities() {
+    const response = await this.get(`business/address/cities`);
+    return response.data;
+  }
+
+  async fetchStreets() {
+    const response = await this.get(`business/address/streets`);
+    return response.data;
+  }
 }

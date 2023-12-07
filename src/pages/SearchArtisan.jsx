@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import NavBar from '../components/NavBar';
 import StarRating from '../components/StarRating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,6 +18,8 @@ const SearchArtisan = () => {
   const [searchParamsTracker, setSearchParamsTracker] = useState({
     title: '',
     state: '',
+    city: '',
+    street: '',
   });
   const { status, data, error } = useSelector((state) => state.artisan);
 
@@ -43,21 +45,26 @@ const SearchArtisan = () => {
 
   const handleSearch = (e) => {
     const searchValue = e.target.value.toLowerCase();
-    setSearchItem(searchValue)
+    setSearchItem(searchValue);
 
     if (e.key === 'Enter' && searchValue.trim() !== '') {
       dispatch(
-        fetchArtisan(async () => await api.fetchArtisan(`title=${searchValue}`)),
+        fetchArtisan(
+          async () => await api.fetchArtisan(`title=${searchValue}`),
+        ),
       ).then((res) => {
         console.log(res);
         searchRef.current.focus();
         setSearchParamsTracker({ ...searchParamsTracker, title: searchValue });
       });
       setCurrentPage(1);
-    } else if(searchValue.trim() === '' && e.type == 'change') {
+    } else if (searchValue.trim() === '' && e.type == 'change') {
       dispatch(
         fetchArtisan(async () => await api.fetchArtisansPerPage(currentPage)),
-      ).then(() => searchRef.current.focus());
+      ).then(() => {
+        searchRef.current.focus();
+        setSearchParamsTracker({ ...searchParamsTracker, title: '' });
+      });
     }
   };
 
@@ -100,7 +107,7 @@ const SearchArtisan = () => {
               placeholder="capenter"
               value={searchItem}
               onChange={(e) => {
-                handleSearch(e)
+                handleSearch(e);
                 // setSearchItem(e.target.value)
               }}
               ref={searchRef}

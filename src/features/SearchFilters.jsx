@@ -1,20 +1,31 @@
 import { useEffect, useState } from 'react';
 import { useApi } from '../data/ApiProvider';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLocation } from './filterSlice';
+import { getStates } from './stateSlice';
+import { getCities } from './citySlice';
+import { getStreets } from './streetSlice';
 
 const SearchFilters = ({ searchParamsTracker, setSearchParamsTracker }) => {
   const api = useApi();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getLocation(async () => await api.fetchStates()));
-  }, [api, dispatch]);
+    dispatch(getStates(async () => await api.fetchStates()));
 
-  const { status, data, error } = useSelector((state) => state.states);
+    if (searchParamsTracker.state.trim() !== '') {
+      dispatch(getCities(async () => await api.fetchCities()));
+    }
+
+    if (searchParamsTracker.city.trim() !== '') {
+      dispatch(getStreets(async () => await api.fetchStreets()));
+    }
+  }, [api, dispatch, searchParamsTracker]);
+
+  const { status, states, error } = useSelector((state) => state.states);
+  const { cities } = useSelector((state) => state.cities);
+  const { streets } = useSelector((state) => state.streets);
 
   const handleLocation = (option) => {
-    // setLocationFilter(option.target.value);
     setSearchParamsTracker({
       ...searchParamsTracker,
       [option.target.name]: option.target.value,
@@ -37,7 +48,7 @@ const SearchFilters = ({ searchParamsTracker, setSearchParamsTracker }) => {
       </div>
       <div className="w-[180px] border boder-1 border-gray-600 max-w-[180px] grid place-content-center p-1 my-4">
         <button>Location</button>
-        <div>
+        <div className="my-2">
           <select
             name="state"
             className="block w-full"
@@ -47,8 +58,44 @@ const SearchFilters = ({ searchParamsTracker, setSearchParamsTracker }) => {
             <option value="" disabled>
               -- Select --
             </option>
-            {data.states &&
-              data.states.map((opts) => (
+            {states &&
+              states.map((opts) => (
+                <option key={opts} value={opts}>
+                  {opts}
+                </option>
+              ))}
+          </select>
+        </div>
+        <div className="my-2">
+          <select
+            name="city"
+            className="block w-full"
+            onChange={handleLocation}
+            value={searchParamsTracker.city}
+          >
+            <option value="" disabled>
+              -- Select --
+            </option>
+            {cities &&
+              cities.map((opts) => (
+                <option key={opts} value={opts}>
+                  {opts}
+                </option>
+              ))}
+          </select>
+        </div>
+        <div className="my-2">
+          <select
+            name="street"
+            className="block w-full"
+            onChange={handleLocation}
+            value={searchParamsTracker.street}
+          >
+            <option value="" disabled>
+              -- Select --
+            </option>
+            {streets &&
+              streets.map((opts) => (
                 <option key={opts} value={opts}>
                   {opts}
                 </option>
