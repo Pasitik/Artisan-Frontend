@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginForm from './features/login/Login';
 import Home from './pages/Home';
 import PrivateRoutes from './components/PrivateRoutes';
@@ -16,13 +16,14 @@ function App() {
         <Router>
           <Routes>
             <Route element={<PrivateRoutes />}>
-              <Route exact path="/" element={<Home />} />
               <Route path="/artisan/address" element={<AddAddress />} />
               <Route path="/artisan/join" element={<AddArtisan />} />
             </Route>
+            <Route exact path="/" element={<Home />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/search" element={<SearchArtisan />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>
       </ApiProvider>

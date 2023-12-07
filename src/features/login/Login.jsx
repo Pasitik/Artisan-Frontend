@@ -23,7 +23,7 @@ const LoginForm = () => {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  const { status,  } = useSelector((state) => state.users);
+  const { status } = useSelector((state) => state.users);
 
   useEffect(() => {
     usernameRef.current.focus();

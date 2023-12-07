@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const PaginationExample = ({ numberOfRecords, handleFetch, currentPage }) => {
-  const itemsPerPage = 5;
+const Pagination = ({ numberOfRecords, handleFetch, currentPage }) => {
+  const itemsPerPage = 8;
   const totalPages = Math.ceil(numberOfRecords / itemsPerPage);
 
   const [startIndex, setStartIndex] = useState(1);
@@ -19,7 +19,7 @@ const PaginationExample = ({ numberOfRecords, handleFetch, currentPage }) => {
   };
 
   return (
-    <div className={'px-2 py-1 my-2 mx-1'}>
+    <div className={'px-2 mx-1'}>
       {/* Pagination controls */}
       <button
         disabled={currentPage === 1}
@@ -55,4 +55,4 @@ const PaginationExample = ({ numberOfRecords, handleFetch, currentPage }) => {
   );
 };
 
-export default PaginationExample;
+export default Pagination;

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import NavBar from '../components/NavBar';
 import StarRating from '../components/StarRating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +6,8 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchArtisan } from './SearchArtisanSlice';
 import { useApi } from '../data/ApiProvider';
-import PaginationExample from '../components/Pagination';
+import Pagination from '../components/Pagination';
+import SearchFilters from '../features/SearchFilters';
 
 const SearchArtisan = () => {
   const searchRef = useRef();
@@ -14,34 +15,58 @@ const SearchArtisan = () => {
   const api = useApi();
   const [searchItem, setSearchItem] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [locationFilter, setLocationFilter] = useState('');
 
   const { status, data, error } = useSelector((state) => state.artisan);
+  // const check = data && data.results
+
+  useEffect(() => {
+    dispatch(
+      fetchArtisan(async () => await api.fetchArtisansPerPage(currentPage)),
+    ).then(() =>  searchRef.current.focus())
+  }, [currentPage, dispatch, api]);
 
   useEffect(() => {
     searchRef.current.focus();
+    (async () => {
+      if (locationFilter.trim() !== '') {
+        const res = searchItem ? await api.fetchArtisan(searchItem) : await api.fetchArtisansPerPage(currentPage)
 
-    let apiQuery = null;
-
-    if (searchItem) {
-      apiQuery = api.fetchArtisan(searchItem);
-    } else {
-      apiQuery = api.fetchArtisansPerPage(currentPage);
-    }
-    dispatch(fetchArtisan(async () => await apiQuery)).then((res) => {
-      console.log(res.payload);
-      searchRef.current.focus();
-    });
-  }, [currentPage, searchItem, dispatch, api]);
+        if (locationFilter && res && res.results) {
+  
+          const filteredData = () =>
+            res.results.filter((artisan) => {
+              if (
+                artisan.addresses[0] &&
+                artisan.addresses[0].state == locationFilter
+              ) {
+                return artisan;
+              }
+            });
+  
+          dispatch(fetchArtisan(() => ({ results: filteredData() })))
+          .then(() =>  searchRef.current.focus());
+        }
+      
+      }
+    })()
+  }, [locationFilter, dispatch, api, currentPage, searchItem]);
 
   const handleSearch = (e) => {
     const searchValue = e.target.value.toLowerCase();
 
     if (e.key === 'Enter' && searchValue.trim() !== '') {
-      setSearchItem(searchValue);
+      dispatch(
+        fetchArtisan(async () => await api.fetchArtisan(searchItem)),
+      ).then(() => {
+        searchRef.current.focus();
+      });
+
       setCurrentPage(1);
     }
   };
 
+  // const handleFilters
   if (status === 'loading') {
     return <div>Loading...</div>;
   }
@@ -54,13 +79,11 @@ const SearchArtisan = () => {
     <main className=" h-screen w-screen">
       <NavBar />
       <div className="h-full bg-gray-50 flex">
-        <section className="filters-section h-screen bg-gray-200 w-1/4 grid place-content-center">
-          <p>filter 0</p>
-          <p>filter 1</p>
-          <p>filter 1</p>
-          <p>filter 1</p>
-          <p>filter 1</p>
-        </section>
+        <SearchFilters
+          // handleSearch={handleLocationSearch}
+          locationFilter={locationFilter}
+          setLocationFilter={setLocationFilter}
+        />
         <section className="search-section w-full h-screen">
           <h1 className="text-3xl font-bold text-center text-black-600 my-3 pt-4">
             Find an artisan near you!{' '}
@@ -87,12 +110,12 @@ const SearchArtisan = () => {
               onKeyDown={handleSearch}
             />
           </div>
-          <section className="py-4 px-2 flex flex-col items-center">
+          <section className="py-4 px-2 grid grid-cols-2">
             {data && data.results.length != 0 ? (
               data.results.map((artist) => (
                 <figure
                   key={artist.id}
-                  className="flex m-2 w-8/12 border-5 border border-gray-400"
+                  className="flex m-2 w-12/12 border-5 border border-gray-400"
                 >
                   <img src="./artisan.jpeg" width={200} height={200} />
                   <figcaption className="px-2 flex flex-col justify-end ">
@@ -118,16 +141,19 @@ const SearchArtisan = () => {
                 </figure>
               ))
             ) : (
-              <p>No artisan found</p>
+              <p className="text-center">No artisan found</p>
             )}
-            {data && (
-              <PaginationExample
+           
+          </section>
+          <div className='flex justify-end'>
+          {data && data.results.length > 0 && (
+              <Pagination
                 numberOfRecords={data.count}
                 handleFetch={setCurrentPage}
                 currentPage={currentPage}
               />
             )}
-          </section>
+          </div>
         </section>
       </div>
     </main>

@@ -109,4 +109,9 @@ export default class ArtisanClient {
     const response = await this.get(`business/artisan/?page=${pageNumber}`);
     return response.data;
   }
+
+  async fetchStates() {
+    const response = await this.get(`business/address/states`);
+    return response.data;
+  }
 }

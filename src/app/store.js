@@ -4,6 +4,7 @@ import signupReducer from '../features/login/signupSlice';
 import categoryReducer from '../features/categorySlice';
 import artisanProfileReducer from '../features/addArtisanSlice';
 import artisanReducer from '.././pages/SearchArtisanSlice';
+import { fetchStates } from '../features/filterSlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     category: categoryReducer,
     artisanProfile: artisanProfileReducer,
     artisan: artisanReducer,
+    states: fetchStates.reducer,
   },
 });
