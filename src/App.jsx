@@ -8,7 +8,7 @@ import LoginForm from './features/login/Login';
 import Home from './pages/Home';
 import PrivateRoutes from './components/PrivateRoutes';
 import './App.css';
-import SignupForm from './features/login/signup';
+import SignupForm from './features/login/Signup';
 import AddAddress from './features/AddAddress';
 import AddArtisan from './features/AddArtisan';
 import ApiProvider from './data/ApiProvider';
