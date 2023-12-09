@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import NavBar from '../components/NavBar';
-import StarRating from '../components/StarRating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';

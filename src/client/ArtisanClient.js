@@ -5,12 +5,12 @@ const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 export const errorHandler = (error) => {
   console.error(JSON.stringify(error, null, 2));
 
-  console.log('=====>', error.response.data)
+  console.log('=====>', error.response.data);
 
   if (error.response.status == 400) {
-    const myrror = new Error()
-    myrror.message = JSON.stringify(error.response.data)
-    error = myrror
+    const myrror = new Error();
+    myrror.message = JSON.stringify(error.response.data);
+    error = myrror;
   }
   // throw for redux error handler
   throw error;

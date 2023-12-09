@@ -6,8 +6,8 @@ const Profile = () => {
       <NavBar />
       <section id="hero" className="py-5">
         <div className="container flex flex-wrap items-center justify-center mx-auto mt-10 md:px-12 md:flex-row">
-			Update profile here
-	    </div>
+          Update profile here
+        </div>
       </section>
     </div>
   );

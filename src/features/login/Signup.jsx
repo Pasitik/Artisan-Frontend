@@ -22,7 +22,7 @@ const SignupForm = () => {
     membership: true,
   });
 
-  const { status, error } = useSelector((state) => state.users);
+  const { status } = useSelector((state) => state.users);
   const api = useApi();
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const SignupForm = () => {
       setFormErrors({});
     }
     if (e.target.name === 'confirm_password') {
-      setConfirmPassword(e.target.value)
+      setConfirmPassword(e.target.value);
     } else {
       setFormData({
         ...formData,
@@ -74,10 +74,9 @@ const SignupForm = () => {
     } else {
       dispatch(signupUser(() => api.signup(formData))).then((res) => {
         if (res.error) {
-
-          const response = JSON.parse(res.error.message)
+          const response = JSON.parse(res.error.message);
           let newErrors = { ...formErrors };
-          const errorsArray = Object.entries(response)
+          const errorsArray = Object.entries(response);
 
           if (errorsArray.length > 1) {
             errorsArray.map(([key, value]) => {
@@ -85,27 +84,28 @@ const SignupForm = () => {
                 ...newErrors,
                 [key]: {
                   message: value[0],
-                  field: key
+                  field: key,
                 },
               };
-            })
+            });
           } else {
             newErrors = {
               ...newErrors,
-              "confirm_password": {
-                message: "Unable to create account. Try again later",
-                field: "confirm_password"
+              confirm_password: {
+                message: 'Unable to create account. Try again later',
+                field: 'confirm_password',
               },
             };
           }
-          setFormErrors(newErrors)
+          setFormErrors(newErrors);
         } else {
           setIsRegistered(true);
 
           setTimeout(() => {
             dispatch(
               loginUser(
-                async () => await api.login(formData.username, formData.password),
+                async () =>
+                  await api.login(formData.username, formData.password),
               ),
             ).then((result) => {
               localStorage.setItem('authToken', result.payload.access);
@@ -145,7 +145,7 @@ const SignupForm = () => {
                   onChange={handleOnChange}
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
                 />
-                 {formErrors.username && (
+                {formErrors.username && (
                   <p
                     hidden={!(formErrors.username.field === 'username')}
                     className="text-red-500 text-sm"
@@ -164,7 +164,7 @@ const SignupForm = () => {
                   onChange={handleOnChange}
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
                 />
-                 {formErrors.email && (
+                {formErrors.email && (
                   <p
                     hidden={!(formErrors.email.field === 'email')}
                     className="text-red-500 text-sm"

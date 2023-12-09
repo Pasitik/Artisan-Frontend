@@ -15,8 +15,7 @@ const ArtisanDetail = () => {
     throw new Error('User not found');
   }
   useEffect(() => {
-
-    dispatch(getArtisan(async () => await api.fetchArtist(id)))
+    dispatch(getArtisan(async () => await api.fetchArtist(id)));
   }, [dispatch, api, id]);
 
   const { status, artisan, error } = useSelector((state) => state.artisan);
@@ -50,14 +49,33 @@ const ArtisanDetail = () => {
                 {artisan.summary}
               </p>
             </article>
-			<article className="my-2">
-				<h3 className='font-bold'>Reviews:</h3>
-				<p className='my-1 p-1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut similique nulla ipsum illo error corrupti sit labore aspernatur debitis enim, provident cupiditate facere culpa odit temporibus quas veritatis minus modi?</p>
-				<p className='my-1 p-1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut similique nulla ipsum illo error corrupti sit labore aspernatur debitis enim, provident cupiditate facere culpa odit temporibus quas veritatis minus modi?</p>
-				<p className='my-1 p-1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut similique nulla ipsum illo error corrupti sit labore aspernatur debitis enim, provident cupiditate facere culpa odit temporibus quas veritatis minus modi?</p>
-				<p className='my-1 p-1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut similique nulla ipsum illo error corrupti sit labore aspernatur debitis enim, provident cupiditate facere culpa odit temporibus quas veritatis minus modi?</p>
-			</article>
-			
+            <article className="my-2">
+              <h3 className="font-bold">Reviews:</h3>
+              <p className="my-1 p-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                similique nulla ipsum illo error corrupti sit labore aspernatur
+                debitis enim, provident cupiditate facere culpa odit temporibus
+                quas veritatis minus modi?
+              </p>
+              <p className="my-1 p-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                similique nulla ipsum illo error corrupti sit labore aspernatur
+                debitis enim, provident cupiditate facere culpa odit temporibus
+                quas veritatis minus modi?
+              </p>
+              <p className="my-1 p-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                similique nulla ipsum illo error corrupti sit labore aspernatur
+                debitis enim, provident cupiditate facere culpa odit temporibus
+                quas veritatis minus modi?
+              </p>
+              <p className="my-1 p-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                similique nulla ipsum illo error corrupti sit labore aspernatur
+                debitis enim, provident cupiditate facere culpa odit temporibus
+                quas veritatis minus modi?
+              </p>
+            </article>
           </>
         )}
       </section>

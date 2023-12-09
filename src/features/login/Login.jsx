@@ -32,7 +32,6 @@ const LoginForm = () => {
     }
   }, []);
 
-
   const handleOnChange = (e) => {
     if (e.target.value.length > 0) {
       setFormError({
@@ -128,7 +127,7 @@ const LoginForm = () => {
 
               <div className="w-full flex flex-col my-4">
                 <button
-                  type='submit'
+                  type="submit"
                   disabled={status === 'loading'}
                   className="w-full text-white my-2 font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >

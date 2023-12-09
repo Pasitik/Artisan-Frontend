@@ -1,8 +1,4 @@
-export const signUpValidation = (
-  newErrors,
-  password,
-  confirmPassword,
-) => {
+export const signUpValidation = (newErrors, password, confirmPassword) => {
   const password_pattern =
     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]?)[a-zA-Z0-9\W_]{8,}$/;
 
@@ -25,7 +21,7 @@ export const signUpValidation = (
         field: 'password',
       },
     };
-    return newErrors
+    return newErrors;
   }
 
   if (password && !password_pattern.test(password)) {
