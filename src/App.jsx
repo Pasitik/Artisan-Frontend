@@ -14,6 +14,7 @@ import AddArtisan from './features/AddArtisan';
 import ApiProvider from './data/ApiProvider';
 import SearchArtisan from './pages/SearchArtisan';
 import ArtisanDetail from './pages/ArtisanDetail';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route element={<PrivateRoutes />}>
               <Route path="/artisan/address" element={<AddAddress />} />
               <Route path="/artisan/join" element={<AddArtisan />} />
+              <Route path="/artisan/profile" element={<Profile />} />
             </Route>
             <Route exact path="/" element={<Home />} />
             <Route path="/login" element={<LoginForm />} />
