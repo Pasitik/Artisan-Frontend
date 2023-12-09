@@ -13,6 +13,7 @@ import AddAddress from './features/AddAddress';
 import AddArtisan from './features/AddArtisan';
 import ApiProvider from './data/ApiProvider';
 import SearchArtisan from './pages/SearchArtisan';
+import ArtisanDetail from './pages/ArtisanDetail';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/search" element={<SearchArtisan />} />
+            <Route path="/artisan/:id" element={<ArtisanDetail />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>

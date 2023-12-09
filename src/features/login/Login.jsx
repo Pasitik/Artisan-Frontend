@@ -32,19 +32,6 @@ const LoginForm = () => {
     }
   }, []);
 
-  const handleBlur = (e) => {
-    if (!e.target.value) {
-      setFormError({
-        fieldname: e.target.name,
-        message: `${e.target.name} is required`,
-      });
-    }
-    error.message = '';
-
-    if (!e.target.value) {
-      setError({ hasError: true, message: '' });
-    }
-  };
 
   const handleOnChange = (e) => {
     if (e.target.value.length > 0) {
@@ -93,13 +80,13 @@ const LoginForm = () => {
           </div>
 
           <div className="w-full flex flex-col">
-            <form action="">
+            <form onSubmit={handleLogin}>
               <input
                 name="username"
                 type="text"
+                required
                 placeholder="Username"
                 ref={usernameRef}
-                onBlur={handleBlur}
                 onChange={handleOnChange}
                 className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
               />
@@ -113,9 +100,9 @@ const LoginForm = () => {
               <input
                 name="password"
                 type="password"
+                required
                 placeholder="Password"
                 ref={passwordRef}
-                onBlur={handleBlur}
                 onChange={handleOnChange}
                 className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
               />
@@ -141,8 +128,8 @@ const LoginForm = () => {
 
               <div className="w-full flex flex-col my-4">
                 <button
-                  onClick={handleLogin}
-                  disabled={status === 'loading' || error.hasError}
+                  type='submit'
+                  disabled={status === 'loading'}
                   className="w-full text-white my-2 font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >
                   Login

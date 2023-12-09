@@ -22,7 +22,7 @@ const SignupForm = () => {
     membership: true,
   });
 
-  const { status } = useSelector((state) => state.users);
+  const { status, error } = useSelector((state) => state.users);
   const api = useApi();
 
   useEffect(() => {
@@ -36,15 +36,17 @@ const SignupForm = () => {
     }
   }, [isValidForm, formErrors, formData, confirmPassword]);
 
-  const handleBlur = (e) => {
+  const handleBlur = () => {
     let newErrors = { ...formErrors };
     const validationErrors = signUpValidation(
-      e,
-      e.target.name,
       newErrors,
       formData.password,
       confirmPassword,
     );
+
+    if (Object.keys(validationErrors).length === 0) {
+      setFormIsValid(true);
+    }
 
     setFormErrors(validationErrors);
   };
@@ -54,10 +56,14 @@ const SignupForm = () => {
       formErrors[e.target.name] = {};
       setFormErrors({});
     }
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    if (e.target.name === 'confirm_password') {
+      setConfirmPassword(e.target.value)
+    } else {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    }
   };
 
   const handleSignup = (e) => {
@@ -66,19 +72,47 @@ const SignupForm = () => {
     if (Object.keys(formErrors).length > 0) {
       setFormIsValid(false);
     } else {
-      dispatch(signupUser(() => api.signup(formData))).then(() => {
-        setIsRegistered(true);
+      dispatch(signupUser(() => api.signup(formData))).then((res) => {
+        if (res.error) {
 
-        setTimeout(() => {
-          dispatch(
-            loginUser(
-              async () => await api.login(formData.username, formData.password),
-            ),
-          ).then((result) => {
-            localStorage.setItem('authToken', result.payload.access);
-            navigate('/');
-          });
-        }, 2000);
+          const response = JSON.parse(res.error.message)
+          let newErrors = { ...formErrors };
+          const errorsArray = Object.entries(response)
+
+          if (errorsArray.length > 1) {
+            errorsArray.map(([key, value]) => {
+              newErrors = {
+                ...newErrors,
+                [key]: {
+                  message: value[0],
+                  field: key
+                },
+              };
+            })
+          } else {
+            newErrors = {
+              ...newErrors,
+              "confirm_password": {
+                message: "Unable to create account. Try again later",
+                field: "confirm_password"
+              },
+            };
+          }
+          setFormErrors(newErrors)
+        } else {
+          setIsRegistered(true);
+
+          setTimeout(() => {
+            dispatch(
+              loginUser(
+                async () => await api.login(formData.username, formData.password),
+              ),
+            ).then((result) => {
+              localStorage.setItem('authToken', result.payload.access);
+              navigate('/');
+            });
+          }, 2000);
+        }
       });
     }
   };
@@ -101,17 +135,17 @@ const SignupForm = () => {
           </div>
 
           <div className="w-full flex flex-col">
-            <form action="">
+            <form onSubmit={handleSignup}>
               <div>
                 <input
                   name="username"
                   type="text"
+                  required
                   placeholder="username"
                   onChange={handleOnChange}
-                  onBlur={handleBlur}
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
                 />
-                {formErrors.username && (
+                 {formErrors.username && (
                   <p
                     hidden={!(formErrors.username.field === 'username')}
                     className="text-red-500 text-sm"
@@ -125,12 +159,12 @@ const SignupForm = () => {
                 <input
                   name="email"
                   type="email"
+                  required
                   placeholder="Email"
                   onChange={handleOnChange}
-                  onBlur={handleBlur}
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
                 />
-                {formErrors.email && (
+                 {formErrors.email && (
                   <p
                     hidden={!(formErrors.email.field === 'email')}
                     className="text-red-500 text-sm"
@@ -144,9 +178,10 @@ const SignupForm = () => {
                 <input
                   name="password"
                   type="password"
+                  required
                   placeholder="Password"
-                  onChange={handleOnChange}
                   onBlur={handleBlur}
+                  onChange={handleOnChange}
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
                 />
                 {formErrors.password && (
@@ -162,10 +197,11 @@ const SignupForm = () => {
                 <input
                   name="confirm_password"
                   type="password"
+                  required
                   placeholder="Confirm Password"
                   value={confirmPassword}
                   onBlur={handleBlur}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  onChange={handleOnChange}
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
                 />
                 {formErrors.confirm_password && (
@@ -199,8 +235,8 @@ const SignupForm = () => {
 
               <div className="w-full flex flex-col my-4">
                 <button
-                  onClick={handleSignup}
-                  disabled={status === 'loading' || !isValidForm}
+                  type="submit"
+                  disabled={status === 'loading'}
                   className="w-full text-white font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >
                   Register

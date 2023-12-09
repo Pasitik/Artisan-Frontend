@@ -12,8 +12,8 @@ const Home = () => {
             </h1>
             <p className="max-w-xl text-center text-grey-500 lg:text-left lg:max-w-md">
               We offer a wide range of services to help you grow your business.
-              Whether it&apos;s designing an app, creating a website or providing
-              digital support.
+              Whether it&apos;s designing an app, creating a website or
+              providing digital support.
             </p>
             <div className="flex justify-center mt-14 lg:justify-start">
               <button

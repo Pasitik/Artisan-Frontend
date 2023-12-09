@@ -8,6 +8,8 @@ import { fetchArtisan } from './SearchArtisanSlice';
 import { useApi } from '../data/ApiProvider';
 import Pagination from '../components/Pagination';
 import SearchFilters from '../features/SearchFilters';
+import { Link } from 'react-router-dom';
+import Artisan from '../components/Artisan';
 
 const SearchArtisan = () => {
   const searchRef = useRef();
@@ -21,7 +23,7 @@ const SearchArtisan = () => {
     city: '',
     street: '',
   });
-  const { status, data, error } = useSelector((state) => state.artisan);
+  const { status, data, error } = useSelector((state) => state.artisans);
 
   useEffect(() => {
     dispatch(
@@ -68,7 +70,6 @@ const SearchArtisan = () => {
     }
   };
 
-  // const handleFilters
   if (status === 'loading') {
     return <div>Loading...</div>;
   }
@@ -117,32 +118,13 @@ const SearchArtisan = () => {
           <section className="py-4 px-2 grid grid-cols-2">
             {data && data.results.length != 0 ? (
               data.results.map((artist) => (
-                <figure
+                <Link
+                  to={`/artisan/${artist.id}`}
                   key={artist.id}
-                  className="flex m-2 w-12/12 border-5 border border-gray-400"
+                  className={'m-2 p-0 border-5 border border-gray-400'}
                 >
-                  <img src="./artisan.jpeg" width={200} height={200} />
-                  <figcaption className="px-2 flex flex-col justify-end ">
-                    <p className="flex mx-1 capitalize">
-                      <span className="mr-2 font-bold">Job title: </span>
-                      {artist.job_title}
-                    </p>
-                    <div className="flex mx-1">
-                      <span className="mr-2 font-bold">Ratings: </span>
-                      <StarRating
-                        totalStars={5}
-                        ratings={artist.rating}
-                        isRating={false}
-                      />
-                    </div>
-                    <p className="flex mx-1 capitalize">
-                      <span className="mr-2 font-bold">Location: </span>
-                      {artist.addresses[0]
-                        ? artist.addresses[0].city
-                        : 'Not available'}
-                    </p>
-                  </figcaption>
-                </figure>
+                  <Artisan artist={artist} />
+                </Link>
               ))
             ) : (
               <p className="text-center">No artisan found</p>

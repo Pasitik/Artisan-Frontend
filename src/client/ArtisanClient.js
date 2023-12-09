@@ -4,6 +4,15 @@ const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
 export const errorHandler = (error) => {
   console.error(JSON.stringify(error, null, 2));
+
+  console.log('=====>', error.response.data)
+
+  if (error.response.status == 400) {
+    const myrror = new Error()
+    myrror.message = JSON.stringify(error.response.data)
+    error = myrror
+  }
+  // throw for redux error handler
   throw error;
 };
 
@@ -33,11 +42,6 @@ export default class ArtisanClient {
     }, errorHandler);
 
     this.httpClient.interceptors.response.use((response) => {
-      if (response.statusText != 'OK' && response.status >= 300) {
-        if (response.status >= 500) {
-          throw new Error('Server failure');
-        }
-      }
       return response;
     }, errorHandler);
   }
@@ -122,6 +126,10 @@ export default class ArtisanClient {
 
   async fetchStreets() {
     const response = await this.get(`business/address/streets`);
+    return response.data;
+  }
+  async fetchArtist(id) {
+    const response = await this.get(`business/artisan/${id}/info`);
     return response.data;
   }
 }
