@@ -7,11 +7,13 @@ import { getCustomer } from './profileSlice';
 import { getHouseNumber } from '../features/houseNumberSlice';
 import { getCategory } from '../features/categorySlice';
 
+const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
+
 const Profile = () => {
   const api = useApi();
   const dispatch = useDispatch();
-//   const [isPhotoUpdated, setPhotoUpdated] = useState(false);
   const [uploadedImage, setuploadedImage] = useState(null);
+  //   const [uploadedImage, setuploadedImage] = useState(null);
 
   const [personalDataForm, setPersonalDataForm] = useState({
     first_name: '',
@@ -46,6 +48,7 @@ const Profile = () => {
     dispatch(getCustomer(async () => await api.fetchCustomer())).then((res) => {
       if (res.payload) {
         setPersonalDataForm(res.payload);
+        setuploadedImage(res.payload.photos[0].photo);
       }
     });
 
@@ -79,10 +82,9 @@ const Profile = () => {
         break;
       case artisanDataForm:
         setArtisanDataForm(form);
-		break;
-      case uploadedImage: 
-		// setPhotoUpdated(true)
-		handleFileChange(e);
+        break;
+      case uploadedImage:
+        handleFileChange(e);
         break;
       default:
         throw new Error('Invalid form type provided');
@@ -116,22 +118,22 @@ const Profile = () => {
   };
 
   function handleFileChange(e) {
-
-	const file = e.target.files[0]
+    const file = e.target.files[0];
 
     if (file && file.type.startsWith('image/')) {
-		const reader = new FileReader()
+      const formData = new FormData();
+      formData.append('photo', file);
 
-		reader.onload = () => {
-			setuploadedImage(reader.result)
-		}
-		reader.readAsDataURL(file)
-
-		alert(file)
-    }	
-	    //   dispatch(
-    //     getCustomer(async () => api.updateCustomerPortfolio(artisanDataForm)),
-    //   );
+      (async () => {
+        try {
+          const response = await api.updateCustomerProfilephoto(formData);
+            setuploadedImage(response.photo);
+          
+        } catch (error) {
+          console.log('Error:', error);
+        }
+      })();
+    }
   }
 
   if (status === 'loading') {
@@ -139,7 +141,7 @@ const Profile = () => {
   }
 
   if (status === 'failed') {
-    return <div>Error loading data: {error}</div>;
+    return <div>Error loading data</div>;
   }
 
   return (
@@ -147,51 +149,58 @@ const Profile = () => {
       <NavBar />
       <article id="hero" className="py-5">
         <div className="container mx-auto mt-10 md:px-12">
-          <h2 className="font-bold text-4xl mt-4 mb-16 text-center underline">
+          <h2 className="font-bold text-2xl mt-4 mb-16 text-center">
             {' '}
-            Update profile
+            Profile
           </h2>
           <section>
-            <h3 className="font-bold text-xl mt-4 mb-16 text-center underline">
-              Personal data
+            <h3 className="font-bold text-xl mt-4 mb-16 text-center">
+              Personal Information
             </h3>
-            
-			 <div className="my-8 flex flex-col items-center">
-			 <p>Drag and drop an image or click to upload.</p>
 
-      <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => handleOnChange(e, uploadedImage)}
-        style={{ display: 'none' }}
-        id="fileInput"
-      />
-      <label htmlFor="fileInput">
-        <div
-        //   onDragOver={handleDragOver}
-        //   onDrop={handleDrop}
-          style={{
-            width: '300px',
-            height: '300px',
-            border: '2px dashed #ccc',
-            textAlign: 'center',
-            paddingTop: '20px',
-            cursor: 'pointer',
-			display: 'grid',
-			placeContent: 'center'
-          }}
-        >
-            <img
-              src={uploadedImage ? uploadedImage : '../profilephoto.jpeg'}
-              alt="Uploaded"
-              style={{ maxWidth: '100%', maxHeight: '100%' , objectFit: 'cover'}}
-			  height={270}
-			  width={270}
-			  
-            />
-        </div>
-      </label>
-    </div>
+            <div className="my-8 flex flex-col items-center">
+              <p>Drag and drop an image or click to upload.</p>
+
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleOnChange(e, uploadedImage)}
+                style={{ display: 'none' }}
+                id="fileInput"
+              />
+              <label htmlFor="fileInput">
+                <div
+                  //   onDragOver={handleDragOver}
+                  //   onDrop={handleDrop}
+                  style={{
+                    width: '300px',
+                    height: '300px',
+                    border: '2px dashed #ccc',
+                    textAlign: 'center',
+                    paddingTop: '20px',
+                    cursor: 'pointer',
+                    display: 'grid',
+                    placeContent: 'center',
+                  }}
+                >
+                  <img
+                    src={
+                      uploadedImage
+                        ? BASE_API_URL + uploadedImage
+                        : '../profilephoto.jpeg'
+                    }
+                    alt="Uploaded"
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: '100%',
+                      objectFit: 'cover',
+                    }}
+                    height={270}
+                    width={270}
+                  />
+                </div>
+              </label>
+            </div>
             <form onSubmit={handlePersonalSubmit}>
               <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 {customer && (
@@ -286,7 +295,7 @@ const Profile = () => {
 
           <section>
             <h3 className="font-bold text-xl mt-4 mb-16 text-center underline">
-              Address data
+              Address Information
             </h3>
             <form onSubmit={handleAddressSubmit}>
               <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -356,7 +365,7 @@ const Profile = () => {
           </section>
           <section>
             <h3 className="font-bold text-xl mt-4 mb-16 text-center underline">
-              business data
+              Business Information
             </h3>
             <form onSubmit={handleBusinessSubmit}>
               <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">

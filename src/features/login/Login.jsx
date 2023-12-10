@@ -51,8 +51,8 @@ const LoginForm = () => {
 
     dispatch(loginUser(async () => await api.login(username, password))).then(
       (result) => {
-        if (result.error && result.error.code === 'ERR_BAD_REQUEST') {
-          setError({ hasError: true, message: 'Invalid username or password' });
+        if (result.error) {
+          setError({ hasError: true, message: result.error.message });
         } else {
           localStorage.setItem('authToken', result.payload.access);
           navigate('/');

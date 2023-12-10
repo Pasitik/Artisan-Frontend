@@ -12,6 +12,16 @@ export const errorHandler = (error) => {
     myrror.message = JSON.stringify(error.response.data);
     error = myrror;
   }
+  if (error.response.status == 401 && error.config.url !== 'auth/jwt/create') {
+    localStorage.removeItem('authToken');
+    // make new request with the refresh and update accesstoken
+  } else {
+    const myrror = new Error();
+    if (error.response.data.detail) {
+      myrror.message = error.response.data.detail;
+      error = myrror;
+    }
+  }
   // throw for redux error handler
   throw error;
 };
@@ -90,7 +100,7 @@ export default class ArtisanClient {
   }
 
   async getArtisanCategories() {
-    const response = await this.get('business/category');
+    const response = await this.get('business/category/');
     return response.data;
   }
 
@@ -139,7 +149,7 @@ export default class ArtisanClient {
   }
 
   async fetchCustomer() {
-    const response = await this.get(`business/profile/me`);
+    const response = await this.get(`business/profile/me/`);
     return response.data;
   }
   async fetchCustomerAddress() {
@@ -154,8 +164,24 @@ export default class ArtisanClient {
     const response = await this.put(`business/artisan/profile/`, body);
     return response.data;
   }
+
   async fetchCustomerPortfolio() {
     const response = await this.get(`business/artisan/profile/`);
+    return response.data;
+  }
+
+  async fetchCustomerProfilephoto() {
+    const response = await this.get('business/profile/photo/');
+    return response.data;
+  }
+  async updateCustomerProfilephoto(body) {
+    const response = await this.httpClient.post(
+      'business/customer/photo/',
+      body,
+      {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      },
+    );
     return response.data;
   }
 }
