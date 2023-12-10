@@ -6,8 +6,10 @@ import artisanProfileReducer from '../features/addArtisanSlice';
 import statesReducer from '../features/stateSlice';
 import artisansReducer from '.././pages/SearchArtisanSlice';
 import artisanReducer from '.././pages/artisanDetailSlice';
+import customerReducer from '.././pages/profileSlice';
 import citiesReducer from '../features/citySlice';
 import streetsReducer from '../features/streetSlice';
+import houseNumberReducer from '../features/houseNumberSlice';
 
 export const store = configureStore({
   reducer: {
@@ -19,6 +21,8 @@ export const store = configureStore({
     states: statesReducer,
     cities: citiesReducer,
     streets: streetsReducer,
+    address: houseNumberReducer,
     artisan: artisanReducer,
+    customer: customerReducer,
   },
 });

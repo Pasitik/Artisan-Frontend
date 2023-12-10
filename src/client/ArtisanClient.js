@@ -132,4 +132,30 @@ export default class ArtisanClient {
     const response = await this.get(`business/artisan/${id}/info`);
     return response.data;
   }
+
+  async updateCustomer(body) {
+    const response = await this.put(`business/profile/me/`, body);
+    return response.data;
+  }
+
+  async fetchCustomer() {
+    const response = await this.get(`business/profile/me`);
+    return response.data;
+  }
+  async fetchCustomerAddress() {
+    const response = await this.get(`business/address/profile/`);
+    return response.data;
+  }
+  async updateCustomerAddress(body) {
+    const response = await this.put(`business/address/profile/`, body);
+    return response.data;
+  }
+  async updateCustomerPortfolio(body) {
+    const response = await this.put(`business/artisan/profile/`, body);
+    return response.data;
+  }
+  async fetchCustomerPortfolio() {
+    const response = await this.get(`business/artisan/profile/`);
+    return response.data;
+  }
 }

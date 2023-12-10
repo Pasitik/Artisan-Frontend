@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #fb923c;
+}
+
+label,
+input,
+textarea {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input:placeholder-shown + label,
+textarea:placeholder-shown + label {
+  cursor: text;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: -2.125rem 0;
+  transform: translate(0, 2.125rem) scale(1.25);
+}
+
+input:not(:placeholder-shown) + label,
+input:focus + label,
+textarea:not(:placeholder-shown) + label,
+textarea:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}

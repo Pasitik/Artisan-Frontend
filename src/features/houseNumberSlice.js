@@ -1,37 +1,37 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  customer: null,
+  address: null,
   status: 'idle',
   error: null,
 };
 
-export const getCustomer = createAsyncThunk(
-  'customer/info',
+export const getHouseNumber = createAsyncThunk(
+  'location/house',
   async (getCategory) => getCategory(),
 );
 
-export const fetchCustomer = createSlice({
-  name: 'customer',
+export const fetchHouseNumber = createSlice({
+  name: 'address line',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getCustomer.pending, (state) => {
+      .addCase(getHouseNumber.pending, (state) => {
         state.status = 'loading';
-        state.customer = null;
+        state.address = null;
         state.error = null;
       })
-      .addCase(getCustomer.fulfilled, (state, action) => {
+      .addCase(getHouseNumber.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.error = null;
-        state.customer = action.payload;
+        state.address = action.payload;
       })
-      .addCase(getCustomer.rejected, (state, action) => {
+      .addCase(getHouseNumber.rejected, (state, action) => {
         state.status = 'failed';
-        state.customer = null;
+        state.address = null;
         state.error = action.error.message;
       });
   },
 });
-export default fetchCustomer.reducer;
+export default fetchHouseNumber.reducer;
