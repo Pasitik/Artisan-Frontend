@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import { useApi } from '../data/ApiProvider';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,13 +6,12 @@ import { addArtisan } from '../features/addArtisanSlice';
 import { getCustomer } from './profileSlice';
 import { getHouseNumber } from '../features/houseNumberSlice';
 import { getCategory } from '../features/categorySlice';
-import { current } from '@reduxjs/toolkit';
 
 const Profile = () => {
   const api = useApi();
   const dispatch = useDispatch();
-  const profileRef = useRef();
-  const [isPhotoUpdated, setPhotoUpdated] = useState(false);
+//   const [isPhotoUpdated, setPhotoUpdated] = useState(false);
+  const [uploadedImage, setuploadedImage] = useState(null);
 
   const [personalDataForm, setPersonalDataForm] = useState({
     first_name: '',
@@ -81,9 +80,9 @@ const Profile = () => {
       case artisanDataForm:
         setArtisanDataForm(form);
 		break;
-      case isPhotoUpdated: 
-		setPhotoUpdated(true)
-		handleImageSubmit(form);
+      case uploadedImage: 
+		// setPhotoUpdated(true)
+		handleFileChange(e);
         break;
       default:
         throw new Error('Invalid form type provided');
@@ -116,15 +115,23 @@ const Profile = () => {
     }
   };
 
-  function handleImageSubmit(e) {
-    e.preventDefault();
-    if (profileRef.current.value && isPhotoUpdated) {
-    //   dispatch(
+  function handleFileChange(e) {
+
+	const file = e.target.files[0]
+
+    if (file && file.type.startsWith('image/')) {
+		const reader = new FileReader()
+
+		reader.onload = () => {
+			setuploadedImage(reader.result)
+		}
+		reader.readAsDataURL(file)
+
+		alert(file)
+    }	
+	    //   dispatch(
     //     getCustomer(async () => api.updateCustomerPortfolio(artisanDataForm)),
     //   );
-		alert(profileRef.current.value)
-		setPhotoUpdated(false)
-    }	
   }
 
   if (status === 'loading') {
@@ -148,23 +155,43 @@ const Profile = () => {
             <h3 className="font-bold text-xl mt-4 mb-16 text-center underline">
               Personal data
             </h3>
-            <form className="my-8 flex flex-col items-center" onSubmit={handleImageSubmit}>
-              <h4>Profile photo</h4>
-			   {/* '../profilephoto.jpeg' */}
-              <img
-                src={profileRef.current.value}
-                alt="user profile photo"
-                height={300}
-                width={300}
-              />
-              <input
-                type="file"
-                name="profile_photo"
-                className="w-[230px] m-1"
-                ref={profileRef}
-				onChange={(e) => handleOnChange(e, isPhotoUpdated)}
-              />
-            </form>
+            
+			 <div className="my-8 flex flex-col items-center">
+			 <p>Drag and drop an image or click to upload.</p>
+
+      <input
+        type="file"
+        accept="image/*"
+        onChange={(e) => handleOnChange(e, uploadedImage)}
+        style={{ display: 'none' }}
+        id="fileInput"
+      />
+      <label htmlFor="fileInput">
+        <div
+        //   onDragOver={handleDragOver}
+        //   onDrop={handleDrop}
+          style={{
+            width: '300px',
+            height: '300px',
+            border: '2px dashed #ccc',
+            textAlign: 'center',
+            paddingTop: '20px',
+            cursor: 'pointer',
+			display: 'grid',
+			placeContent: 'center'
+          }}
+        >
+            <img
+              src={uploadedImage ? uploadedImage : '../profilephoto.jpeg'}
+              alt="Uploaded"
+              style={{ maxWidth: '100%', maxHeight: '100%' , objectFit: 'cover'}}
+			  height={270}
+			  width={270}
+			  
+            />
+        </div>
+      </label>
+    </div>
             <form onSubmit={handlePersonalSubmit}>
               <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 {customer && (
