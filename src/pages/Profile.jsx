@@ -6,11 +6,13 @@ import { addArtisan } from '../features/addArtisanSlice';
 import { getCustomer } from './profileSlice';
 import { getHouseNumber } from '../features/houseNumberSlice';
 import { getCategory } from '../features/categorySlice';
+import { current } from '@reduxjs/toolkit';
 
 const Profile = () => {
   const api = useApi();
   const dispatch = useDispatch();
   const profileRef = useRef();
+  const [isPhotoUpdated, setPhotoUpdated] = useState(false);
 
   const [personalDataForm, setPersonalDataForm] = useState({
     first_name: '',
@@ -78,6 +80,10 @@ const Profile = () => {
         break;
       case artisanDataForm:
         setArtisanDataForm(form);
+		break;
+      case isPhotoUpdated: 
+		setPhotoUpdated(true)
+		handleImageSubmit(form);
         break;
       default:
         throw new Error('Invalid form type provided');
@@ -110,6 +116,17 @@ const Profile = () => {
     }
   };
 
+  function handleImageSubmit(e) {
+    e.preventDefault();
+    if (profileRef.current.value && isPhotoUpdated) {
+    //   dispatch(
+    //     getCustomer(async () => api.updateCustomerPortfolio(artisanDataForm)),
+    //   );
+		alert(profileRef.current.value)
+		setPhotoUpdated(false)
+    }	
+  }
+
   if (status === 'loading') {
     return <div>Loading...</div>;
   }
@@ -131,10 +148,11 @@ const Profile = () => {
             <h3 className="font-bold text-xl mt-4 mb-16 text-center underline">
               Personal data
             </h3>
-            <form className="my-8 flex flex-col items-center">
+            <form className="my-8 flex flex-col items-center" onSubmit={handleImageSubmit}>
               <h4>Profile photo</h4>
+			   {/* '../profilephoto.jpeg' */}
               <img
-                src={'../profilephoto.jpeg'}
+                src={profileRef.current.value}
                 alt="user profile photo"
                 height={300}
                 width={300}
@@ -144,6 +162,7 @@ const Profile = () => {
                 name="profile_photo"
                 className="w-[230px] m-1"
                 ref={profileRef}
+				onChange={(e) => handleOnChange(e, isPhotoUpdated)}
               />
             </form>
             <form onSubmit={handlePersonalSubmit}>
