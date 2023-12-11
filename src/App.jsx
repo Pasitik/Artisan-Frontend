@@ -17,6 +17,7 @@ import ArtisanDetail from './features/ArtisanDetail';
 import Profile from './features/Profile';
 import About from './pages/About';
 import UserProvider from './data/UserProvider';
+import LearnMore from './pages/LeanMore';
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route path="/login" element={<LoginForm />} />
-              <Route path="/signup" element={<SignupForm />} />
+              <Route path="/register" element={<SignupForm />} />
               <Route path="/search" element={<SearchArtisan />} />
+              <Route path="/more" element={<LearnMore />} />
               <Route path="/artisan/:id" element={<ArtisanDetail />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>

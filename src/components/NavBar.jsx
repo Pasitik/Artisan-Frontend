@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useUser } from '../data/UserProvider';
@@ -8,9 +8,9 @@ import UserProfileDropdown from '../components/UserProfileDropdown';
 const NavBar = () => {
   let Links = [
     { name: 'Home', link: '/home' },
+    { name: 'Search', link: '/search' },
     { name: 'About', link: '/about' },
-    { name: 'Sign in', link: '/login' },
-    { name: 'Sign up', link: '/signup' },
+    { name: 'Log in', link: '/login' },
   ];
 
   let [open, setOpen] = useState(false);
@@ -41,20 +41,20 @@ const NavBar = () => {
                 key={link.name}
                 className="md:ml-8 text-xl md:my-0 my-7"
                 hidden={
-                  (user && link.name === 'Sign in') ||
-                  (user && link.name === 'Sign up')
+                  (user && link.name === 'Log in')
                 }
               >
-                <Link
+                <NavLink
+                  activeClassName={'red'}
                   to={link.link}
                   className="text-gray-800 font-bold text-lg hover:text-gray-400 duration-500"
                 >
                   {link.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
 
-            <Link to={'/search'}>
+            <Link to={'/register'} hidden={user}>
               <button className=" bg-orange-400 text-white font-[Poppins] font-bold py-2 px-6 rounded md:ml-8 hover:bg-orange-300 duration-500">
                 Get Started
               </button>

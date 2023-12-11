@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.active {
+  background-color:  #fb923c;
+  color: #fff;
+  font-style: bold;
+  padding: 0.5em 1em;
+  border-radius: 30%;
+  
+}
 fieldset {
   margin: 0;
   padding: 0;

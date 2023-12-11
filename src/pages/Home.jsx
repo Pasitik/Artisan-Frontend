@@ -1,4 +1,6 @@
 import NavBar from '../components/NavBar';
+import { Link } from 'react-router-dom';
+
 
 const Home = () => {
   return (
@@ -16,18 +18,22 @@ const Home = () => {
               providing digital support.
             </p>
             <div className="flex justify-center mt-14 lg:justify-start">
+              <Link to="more">
               <button
                 type="button"
                 className="text-white bg-green-500 font-medium rounded-lg px-5 py-4 text-center hover:bg-green-300 houver:drop-shadow-md transition duration-300 ease-in-out"
               >
                 Learn more
               </button>
+              </Link>
+              <Link to="artisan/join">
               <button
                 type="button"
                 className="ml-5 text-white bg-orange-400 font-medium rounded-lg px-5 py-4 text-center hover:bg-orange-300 houver:drop-shadow-md transition duration-300 ease-in-out"
               >
                 Join Artisans
               </button>
+              </Link>
             </div>
           </div>
           <div className="ld:w-1/2">
