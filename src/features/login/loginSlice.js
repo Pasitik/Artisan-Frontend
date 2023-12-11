@@ -6,9 +6,8 @@ const initialState = {
   error: null,
 };
 
-export const loginUser = createAsyncThunk(
-  'login/loginUser',
-  async (login) => await login(),
+export const loginUser = createAsyncThunk('login/loginUser', (login) =>
+  login(),
 );
 
 const loginSlice = createSlice({

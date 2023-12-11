@@ -4,37 +4,42 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import LoginForm from './features/login/Login';
+import LoginForm from './pages/Login';
 import Home from './pages/Home';
 import PrivateRoutes from './components/PrivateRoutes';
 import './App.css';
-import SignupForm from './features/login/Signup';
+import SignupForm from './pages/Signup';
 import AddAddress from './features/AddAddress';
 import AddArtisan from './features/AddArtisan';
 import ApiProvider from './data/ApiProvider';
-import SearchArtisan from './pages/SearchArtisan';
-import ArtisanDetail from './pages/ArtisanDetail';
-import Profile from './pages/Profile';
+import SearchArtisan from './features/SearchArtisan';
+import ArtisanDetail from './features/ArtisanDetail';
+import Profile from './features/Profile';
+import About from './pages/About';
+import UserProvider from './data/UserProvider';
 
 function App() {
   return (
     <>
       <ApiProvider>
-        <Router>
-          <Routes>
-            <Route element={<PrivateRoutes />}>
-              <Route path="/artisan/address" element={<AddAddress />} />
-              <Route path="/artisan/join" element={<AddArtisan />} />
-              <Route path="/artisan/profile" element={<Profile />} />
-            </Route>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/signup" element={<SignupForm />} />
-            <Route path="/search" element={<SearchArtisan />} />
-            <Route path="/artisan/:id" element={<ArtisanDetail />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </Router>
+        <UserProvider>
+          <Router>
+            <Routes>
+              <Route element={<PrivateRoutes />}>
+                <Route path="/artisan/address" element={<AddAddress />} />
+                <Route path="/artisan/join" element={<AddArtisan />} />
+                <Route path="/artisan/profile" element={<Profile />} />
+              </Route>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/about" element={<About />} />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/signup" element={<SignupForm />} />
+              <Route path="/search" element={<SearchArtisan />} />
+              <Route path="/artisan/:id" element={<ArtisanDetail />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+          </Router>
+        </UserProvider>
       </ApiProvider>
     </>
   );

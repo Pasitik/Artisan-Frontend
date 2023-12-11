@@ -5,7 +5,7 @@ import ArtisanClient from '../client/ArtisanClient';
 const ApiContext = createContext(null);
 export default function ApiProvider({ children }) {
   const onError = useCallback(() => {
-    alert('An tunexpected error has occured, Please try again.');
+    alert('An unexpected error has occured, Please try again.');
   }, []);
 
   const api = new ArtisanClient(onError);

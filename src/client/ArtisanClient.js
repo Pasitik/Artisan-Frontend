@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
 export const errorHandler = (error) => {
-  console.error(JSON.stringify(error, null, 2));
+  const originalRequest = error.config;
 
   console.log('=====>', error.response.data);
 
@@ -12,9 +12,31 @@ export const errorHandler = (error) => {
     myrror.message = JSON.stringify(error.response.data);
     error = myrror;
   }
-  if (error.response.status == 401 && error.config.url !== 'auth/jwt/create') {
-    localStorage.removeItem('authToken');
-    // make new request with the refresh and update accesstoken
+  if (error.response.status === 401 && !originalRequest._retry) {
+    originalRequest._retry = true;
+    const refreshToken = localStorage.getItem('refresh');
+    (async () => {
+      try {
+        const response = await this.httpClient.post('/auth/jwt/refresh', {
+          refresh: refreshToken,
+        });
+
+        if (response.status === 200) {
+          const newAccessToken = response.data.access;
+          localStorage.setItem('authToken', newAccessToken);
+
+          // Update the original request with the new access token
+          originalRequest.headers.Authorization = `JWT ${newAccessToken}`;
+
+          // Retry the original request
+          return this.httpClient(originalRequest);
+        }
+      } catch (refreshError) {
+        console.error('Error refreshing access token:', refreshError);
+        // Redirect to login page
+        history.push('/login');
+      }
+    })();
   } else {
     const myrror = new Error();
     if (error.response.data.detail) {
@@ -22,8 +44,9 @@ export const errorHandler = (error) => {
       error = myrror;
     }
   }
-  // throw for redux error handler
   throw error;
+  // console.error(JSON.stringify(error, null, 2))
+  // return Promise.reject(error)
 };
 
 export default class ArtisanClient {
@@ -36,7 +59,6 @@ export default class ArtisanClient {
     if (!BASE_API_URL) {
       throw new 'Base url is not provided'();
     }
-
     const accessToken = localStorage.getItem('authToken');
     this.httpClient = axios.create({
       baseURL: BASE_API_URL + '/',
@@ -48,20 +70,22 @@ export default class ArtisanClient {
 
     this.httpClient.interceptors.request.use((config) => {
       console.log(`Request: ${config.method} ${config.url}`);
+
+      const accessToken = localStorage.getItem('authToken');
+      if (accessToken) {
+        config.headers.Authorization = `JWT ${accessToken}`;
+      }
       return config;
     }, errorHandler);
 
-    this.httpClient.interceptors.response.use((response) => {
-      return response;
-    }, errorHandler);
+    this.httpClient.interceptors.response.use(
+      (response) => response,
+      errorHandler,
+    );
   }
 
-  async get(url, query) {
-    return await this.httpClient.get(url, {
-      params: {
-        query: query,
-      },
-    });
+  async get(url) {
+    return await this.httpClient.get(url);
   }
 
   async post(url, body) {
@@ -76,11 +100,28 @@ export default class ArtisanClient {
     return await this.httpClient.delete(url);
   }
 
-  async login(username, password) {
+  isAuthenticated() {
+    return localStorage.getItem('authToken') !== null;
+  }
+
+  async loginUser(username, password) {
     const response = await this.post('auth/jwt/create', {
       username,
       password,
     });
+    if (response.data.access) {
+      localStorage.setItem('authToken', response.data.access);
+      localStorage.setItem('refresh', response.data.refresh);
+    }
+    return response.data;
+  }
+
+  async logout() {
+    return null;
+  }
+
+  async getUser() {
+    const response = await this.get('auth/users/me/');
     return response.data;
   }
 
@@ -149,9 +190,10 @@ export default class ArtisanClient {
   }
 
   async fetchCustomer() {
-    const response = await this.get(`business/profile/me/`);
+    const response = await this.httpClient.get('business/profile/me/');
     return response.data;
   }
+
   async fetchCustomerAddress() {
     const response = await this.get(`business/address/profile/`);
     return response.data;

@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import { useApi } from '../data/ApiProvider';
 import { useDispatch, useSelector } from 'react-redux';
-import { addArtisan } from '../features/addArtisanSlice';
+import { addArtisan } from './addArtisanSlice';
 import { getCustomer } from './profileSlice';
-import { getHouseNumber } from '../features/houseNumberSlice';
-import { getCategory } from '../features/categorySlice';
+import { getHouseNumber } from './houseNumberSlice';
+import { getCategory } from './categorySlice';
 
 const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
@@ -127,8 +127,7 @@ const Profile = () => {
       (async () => {
         try {
           const response = await api.updateCustomerProfilephoto(formData);
-            setuploadedImage(response.photo);
-          
+          setuploadedImage(response.photo);
         } catch (error) {
           console.log('Error:', error);
         }

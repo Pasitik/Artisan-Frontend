@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import { signupUser } from './signupSlice';
-import { loginUser } from './loginSlice';
-import AuthSide from '../../components/AuthSide';
-import { useApi } from '../../data/ApiProvider';
-import { signUpValidation } from '../../components/Validation';
+import { signupUser } from '../features/login/signupSlice';
+import { loginUser } from '../features/login/loginSlice';
+import AuthSide from '../components/AuthSide';
+import { useApi } from '../data/ApiProvider';
+import { signUpValidation } from '../components/Validation';
 
 const SignupForm = () => {
   const dispatch = useDispatch();

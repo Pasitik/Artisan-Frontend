@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchArtisan } from './SearchArtisanSlice';
 import { useApi } from '../data/ApiProvider';
 import Pagination from '../components/Pagination';
-import SearchFilters from '../features/SearchFilters';
+import SearchFilters from './SearchFilters';
 import { Link } from 'react-router-dom';
 import Artisan from '../components/Artisan';
 
