@@ -45,7 +45,6 @@ const NavBar = () => {
                 }
               >
                 <NavLink
-                  activeClassName={'red'}
                   to={link.link}
                   className="text-gray-800 font-bold text-lg hover:text-gray-400 duration-500"
                 >

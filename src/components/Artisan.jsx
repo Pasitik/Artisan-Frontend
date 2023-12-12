@@ -11,7 +11,7 @@ const Artisan = ({ artist }) => {
         </p>
         <div className="flex mx-1">
           <span className="mr-2 font-bold">Ratings: </span>
-          <StarRating totalStars={5} ratings={artist.rating} isRating={false} />
+          <StarRating totalStars={5} ratings={artist.ratings} isRating={false} />
         </div>
         <p className="flex mx-1 capitalize">
           <span className="mr-2 font-bold">Location: </span>
@@ -19,7 +19,7 @@ const Artisan = ({ artist }) => {
         </p>
         <p className="flex mx-1 capitalize">
           <span className="mr-2 font-bold">Phone: </span>
-          {artist.phone}
+          {artist.phone ? artist.phone : 'Not Available'}
         </p>
       </figcaption>
     </figure>

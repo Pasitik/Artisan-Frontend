@@ -5,7 +5,7 @@ const Star = ({ filled, onClick }) => (
     onClick={onClick}
     style={{
       cursor: 'pointer',
-      color: filled ? 'gold' : 'lightgray',
+      color: filled ? '#fb923c' : 'lightgray',
     }}
   >
     &#9733; {/* Unicode character for a star */}
