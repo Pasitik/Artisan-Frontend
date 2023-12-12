@@ -40,9 +40,7 @@ const NavBar = () => {
               <li
                 key={link.name}
                 className="md:ml-8 text-xl md:my-0 my-7"
-                hidden={
-                  (user && link.name === 'Log in')
-                }
+                hidden={user && link.name === 'Log in'}
               >
                 <NavLink
                   to={link.link}
