@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useApi } from '../data/ApiProvider';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,13 +8,19 @@ import NavBar from '../components/NavBar';
 import { Modal } from '../components/Modal';
 import StarRating from '../components/StarRating';
 import { useUser } from '../data/UserProvider';
+import Review from '../components/Review';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const ArtisanDetail = () => {
   const { id } = useParams();
   const api = useApi();
   const dispatch = useDispatch();
   const [toggleModel, setToggleModel] = useState(true);
+  const [isReview, setReview] = useState(true);
+  const [isReviewSubmitted, setIsReviewSubmitted] = useState(false);
   const { user } = useUser();
+  const reviewRef = useRef();
   const { status, artisan, error } = useSelector((state) => state.artisan);
 
   const reviews = [
@@ -31,13 +37,42 @@ const ArtisanDetail = () => {
     dispatch(getArtisan(async () => await api.fetchArtist(id)));
   }, [dispatch, api, id]);
 
-  const handleReview = (e) => {
-    console.log('Review clicked');
+  const handleReview = () => {
+    console.log('Review Clicked');
+    setReview(true);
+    setToggleModel(false);
+  };
+
+  const handleRating = () => {
+    setReview(false);
     setToggleModel(false);
   };
 
   const handleModelToggle = () => {
     setToggleModel(true);
+    setIsReviewSubmitted(false);
+  };
+
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+
+    if (!id) {
+      throw new Error('Artisan id not found');
+    }
+    if (reviewRef.current.value.trim() !== '') {
+      const review = reviewRef.current.value;
+
+      (async () => {
+        const response = await api.updateArtisanReview({
+          review: review,
+          artisan_id: id,
+        });
+        if (response === 'OK') {
+          setIsReviewSubmitted(true);
+          reviewRef.current.value = '';
+        }
+      })();
+    }
   };
 
   if (status === 'loading') {
@@ -55,7 +90,7 @@ const ArtisanDetail = () => {
         {artisan && (
           <>
             <Modal xtraclass={''} hidden={toggleModel}>
-              <div className="relative text-white bg-slate-500 ">
+              <div className="relative bg-slate-500 ">
                 <button
                   className="absolute top-0 right-0 bottom-0 text-xl"
                   onClick={handleModelToggle}
@@ -63,11 +98,36 @@ const ArtisanDetail = () => {
                   x
                 </button>
               </div>
-              <div className="flex justify-center items-center h-[100%]">
-                <div className="text-4xl">
-                  <StarRating totalStars={5} ratings={5} isRating />
+              {isReview ? (
+                <div className="flex justify-center items-center h-[100%]">
+                  {!isReviewSubmitted ? (
+                    <Review
+                      handleReviewSubmit={handleReviewSubmit}
+                      reviewRef={reviewRef}
+                      handleModelToggle={handleModelToggle}
+                    />
+                  ) : (
+                    <>
+                      <div className="w-full">
+                        <p className="text-white font-bold">
+                          Review Successfully submitted
+                        </p>
+                        <div className="my-2 p-2 grid place-content-center">
+                          <span className="block text-4xl text-green-800 border border-1 border-green-600 rounded-full w-[50px] h-[50px] transition-transform ease-in-out duration-300">
+                            <FontAwesomeIcon icon={faCheck} />
+                          </span>
+                        </div>
+                      </div>
+                    </>
+                  )}{' '}
                 </div>
-              </div>
+              ) : (
+                <div className="flex justify-center items-center h-[100%]">
+                  <div className="text-4xl font-bold text-black">
+                    <StarRating totalStars={5} ratings={5} isRating />
+                  </div>
+                </div>
+              )}
             </Modal>
             <Artisan artist={artisan} />
             <article className="my-2">
@@ -91,19 +151,24 @@ const ArtisanDetail = () => {
               {Array.from({ length: 5 })
                 .map(() => reviews[0])
                 .map((review, idx) => (
-                  <p key={idx} className="my-1 p-1">{review}</p>
+                  <p key={idx} className="my-1 p-1">
+                    {review}
+                  </p>
                 ))}
             </article>
 
             {user && (
               <section className="flex">
                 <button
-                  onClick={handleReview}
+                  onClick={handleRating}
                   className="m-1 bg-black text-sm text-white py-2 rounded-full px-4"
                 >
                   Rate
                 </button>
-                <button className="m-1 bg-black text-sm text-white py-2 rounded-full px-4">
+                <button
+                  onClick={handleReview}
+                  className="m-1 bg-black text-sm text-white py-2 rounded-full px-4"
+                >
                   Review
                 </button>
               </section>

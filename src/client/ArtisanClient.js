@@ -226,6 +226,10 @@ export default class ArtisanClient {
     const response = await this.post('business/rating/add_rating/', body);
     return response.data;
   }
+  async updateArtisanReview(body) {
+    const response = await this.post('business/review/add_review/', body);
+    return response.data;
+  }
 
   async updateCustomerProfilephoto(body) {
     const response = await this.httpClient.post(

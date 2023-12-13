@@ -32,6 +32,7 @@ const StarRating = ({ totalStars, ratings, isRating }) => {
               key={index}
               filled={index < rating}
               onClick={() => handleStarClick(index)}
+              isRating
             />
           ))
         : [...Array(totalStars)].map((_, idx) => (
