@@ -8,7 +8,7 @@ export default function UserProvider({ children }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (api.isAuthenticated()) {
+        if (api.isAuthenticated()) {
         const result = await api.fetchCustomer();
 
         if (result.username) {

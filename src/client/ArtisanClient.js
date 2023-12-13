@@ -11,7 +11,19 @@ export const errorHandler = (error) => {
     const myrror = new Error();
     myrror.message = JSON.stringify(error.response.data);
     error = myrror;
+
+    return Promise.reject(error)
   }
+
+  if (error.response.status === 401 && error.config.url === 'auth/jwt/create') {
+    const myrror = new Error();
+    if (error.response.data.detail) {
+      myrror.message = error.response.data.detail;
+      error = myrror;
+    }
+    return Promise.reject(error)
+  }
+
   if (error.response.status === 401 && !originalRequest._retry) {
     originalRequest._retry = true;
     const refreshToken = localStorage.getItem('refresh');
@@ -37,16 +49,8 @@ export const errorHandler = (error) => {
         history.push('/login');
       }
     })();
-  } else {
-    const myrror = new Error();
-    if (error.response.data.detail) {
-      myrror.message = error.response.data.detail;
-      error = myrror;
-    }
-  }
-  throw error;
-  // console.error(JSON.stringify(error, null, 2))
-  // return Promise.reject(error)
+  } 
+  // throw error;
 };
 
 export default class ArtisanClient {

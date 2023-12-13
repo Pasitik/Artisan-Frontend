@@ -132,7 +132,7 @@ const LoginForm = () => {
                   </button>
                   {status === 'loading' ? 'Loging in...' : ''}
 
-                  <Link to="/signup">
+                  <Link to="/register">
                     <button className="w-full text-[#060606] my-2 font-semibold bg-white border border-black/40 rounded-md p-4 text-center flex items-center justify-center">
                       Register
                     </button>

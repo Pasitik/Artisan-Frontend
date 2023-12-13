@@ -6,11 +6,13 @@ import { loginUser } from '../features/login/loginSlice';
 import AuthSide from '../components/AuthSide';
 import { useApi } from '../data/ApiProvider';
 import { signUpValidation } from '../components/Validation';
+import { useUser } from '../data/UserProvider';
 
 const SignupForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const api = useApi();
+  const {login} = useUser()
   const [formErrors, setFormErrors] = useState({});
   const [isValidForm, setFormIsValid] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -23,8 +25,7 @@ const SignupForm = () => {
   });
 
   const { status } = useSelector((state) => state.users);
-  const api = useApi();
-
+ 
   useEffect(() => {
     if (
       formData.username &&
@@ -78,7 +79,7 @@ const SignupForm = () => {
           let newErrors = { ...formErrors };
           const errorsArray = Object.entries(response);
 
-          if (errorsArray.length > 1) {
+          if (errorsArray.length > 0) {
             errorsArray.map(([key, value]) => {
               newErrors = {
                 ...newErrors,
@@ -101,16 +102,15 @@ const SignupForm = () => {
         } else {
           setIsRegistered(true);
 
-          setTimeout(() => {
-            dispatch(
-              loginUser(
-                async () =>
-                  await api.login(formData.username, formData.password),
-              ),
-            ).then((result) => {
-              localStorage.setItem('authToken', result.payload.access);
-              navigate('/');
-            });
+          setTimeout(async () => {
+            try {
+              const res = await login(formData.username, formData.password);
+              if (res.access) {
+                navigate('/');
+              }
+            } catch (error) {
+              return error.message;
+            }
           }, 2000);
         }
       });

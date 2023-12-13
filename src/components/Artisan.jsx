@@ -1,9 +1,10 @@
 import StarRating from './StarRating';
+const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
 const Artisan = ({ artist }) => {
   return (
     <figure key={artist.id} className="flex w-12/12">
-      <img src="../artisan.jpeg" width={200} height={200} />
+      <img src={BASE_API_URL + user.photos[0].photo} width={200} height={200} />
       <figcaption className="px-2 flex flex-col justify-end ">
         <p className="flex mx-1 capitalize">
           <span className="mr-2 font-bold">Job title: </span>

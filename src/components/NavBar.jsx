@@ -51,7 +51,7 @@ const NavBar = () => {
               </li>
             ))}
 
-            <Link to={'/register'} hidden={user}>
+            <Link to={'register'} hidden={user}>
               <button className=" bg-orange-400 text-white font-[Poppins] font-bold py-2 px-6 rounded md:ml-8 hover:bg-orange-300 duration-500">
                 Get Started
               </button>
