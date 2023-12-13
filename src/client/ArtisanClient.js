@@ -184,6 +184,11 @@ export default class ArtisanClient {
     return response.data;
   }
 
+  async verifyArtist(id) {
+    const response = await this.get(`business/artisan/${id}/verify/`);
+    return response.data;
+  }
+
   async updateCustomer(body) {
     const response = await this.put(`business/profile/me/`, body);
     return response.data;

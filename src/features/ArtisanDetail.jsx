@@ -11,6 +11,7 @@ import { useUser } from '../data/UserProvider';
 import Review from '../components/Review';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { dateToString } from '../utils/date';
 
 const ArtisanDetail = () => {
   const { id } = useParams();
@@ -19,26 +20,23 @@ const ArtisanDetail = () => {
   const [toggleModel, setToggleModel] = useState(true);
   const [isReview, setReview] = useState(true);
   const [isReviewSubmitted, setIsReviewSubmitted] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
   const { user } = useUser();
   const reviewRef = useRef();
   const { status, artisan, error } = useSelector((state) => state.artisan);
-
-  const reviews = [
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut \
-  similique nulla ipsum illo error corrupti sit labore aspernatur \
-  debitis enim, provident cupiditate facere culpa odit temporibus \
-  quas veritatis minus modi?',
-  ];
 
   if (!id) {
     throw new Error('User not found');
   }
   useEffect(() => {
     dispatch(getArtisan(async () => await api.fetchArtist(id)));
+    (async () => {
+      const response = await api.verifyArtist(id);
+      setIsVerified(response);
+    })();
   }, [dispatch, api, id]);
 
   const handleReview = () => {
-    console.log('Review Clicked');
     setReview(true);
     setToggleModel(false);
   };
@@ -86,7 +84,7 @@ const ArtisanDetail = () => {
   return (
     <>
       <NavBar />
-      <section className="p-4">
+      <section className="p-4 container mx-32">
         {artisan && (
           <>
             <Modal xtraclass={''} hidden={toggleModel}>
@@ -148,16 +146,35 @@ const ArtisanDetail = () => {
             </article>
             <article className="my-2">
               <h3 className="font-bold">Reviews:</h3>
-              {Array.from({ length: 5 })
-                .map(() => reviews[0])
-                .map((review, idx) => (
-                  <p key={idx} className="my-1 p-1">
-                    {review}
-                  </p>
-                ))}
+              {artisan.reviews.length > 0 ? (
+                artisan.reviews.map((review, idx) => (
+                  <section key={review.id} className="my-1 p-1">
+                    <div className="my-1 p-1">
+                      <p>
+                        <span className="text-sm font-bold mr-2">Review:</span>
+                        {review.review}
+                      </p>
+                      <p className="text-sm flex justify-between">
+                        <span>
+                          <span className="text-sm font-bold mr-2">
+                            Reviewer:
+                          </span>
+                          {'Alexis Smith'}
+                        </span>
+                        <span>
+                          <span className="text-sm font-bold mr-2">Date:</span>{' '}
+                          {dateToString(review.updated_at)}
+                        </span>
+                      </p>
+                    </div>
+                  </section>
+                ))
+              ) : (
+                <p>No reviews</p>
+              )}
             </article>
 
-            {user && (
+            {user && !isVerified && (
               <section className="flex">
                 <button
                   onClick={handleRating}
