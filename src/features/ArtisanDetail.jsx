@@ -148,7 +148,7 @@ const ArtisanDetail = () => {
               <h3 className="font-bold">Reviews:</h3>
               {artisan.reviews.length > 0 ? (
                 artisan.reviews.map((review) => (
-                  <section key={review.id} className="my-1 p-1">
+                  <section key={review.id} className="my-1 p-1 max-w-3xl">
                     <div className="my-1 p-1">
                       <p>
                         <span className="text-sm font-bold mr-2">Review:</span>
@@ -159,9 +159,9 @@ const ArtisanDetail = () => {
                           <span className="text-sm font-bold mr-2">
                             Reviewer:
                           </span>
-                          {'Alexis Smith'}
+                          {review.reviewer}
                         </span>
-                        <span>
+                        <span className=''>
                           <span className="text-sm font-bold mr-2">Date:</span>{' '}
                           {dateToString(review.updated_at)}
                         </span>
