@@ -364,7 +364,7 @@ const Profile = () => {
             <h3 className="font-bold text-xl mt-4 mb-16 text-center">
               Business Information
             </h3>
-            {data && customer.membership === 'A' ? (
+            {data && customer && customer.membership === 'A' ? (
               <form onSubmit={handleBusinessSubmit}>
                 <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <>
