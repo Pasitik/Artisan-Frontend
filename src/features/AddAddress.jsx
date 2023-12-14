@@ -96,11 +96,7 @@ const AddAddress = () => {
     }
     console.log(formData);
 
-    dispatch(async () => await api.addAddress(formData)).then((result) => {
-      console.log(result);
-      // navigate("/");
-      console.log('we are in', formErrors);
-    });
+    dispatch(async () => await api.addAddress(formData));
   };
 
   return (

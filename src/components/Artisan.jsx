@@ -4,7 +4,13 @@ const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 const Artisan = ({ artist }) => {
   return (
     <figure key={artist.id} className="flex w-12/12">
-      <img src={BASE_API_URL + user.photos[0].photo} width={200} height={200} />
+      <img
+        src={
+          artist.photo ? BASE_API_URL + artist.photo : '../profilephoto.jpeg'
+        }
+        width={200}
+        height={200}
+      />
       <figcaption className="px-2 flex flex-col justify-end ">
         <p className="flex mx-1 capitalize">
           <span className="mr-2 font-bold">Job title: </span>
@@ -24,7 +30,7 @@ const Artisan = ({ artist }) => {
         </p>
         <p className="flex mx-1 capitalize">
           <span className="mr-2 font-bold">Phone: </span>
-          {artist.phone ? artist.phone : 'Not Available'}
+          {artist.business_line ? artist.business_line : 'Not Available'}
         </p>
       </figcaption>
     </figure>

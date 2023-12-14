@@ -27,7 +27,11 @@ const UserProfileDropdown = ({ user, logout }) => {
         {user && (
           <img
             className="h-full border-2 rounded-full"
-            src={user.photos.length > 0 ? BASE_API_URL + user.photos[0].photo : './pphoto.png'}
+            src={
+              user.photos.length > 0
+                ? BASE_API_URL + user.photos[0].photo
+                : '../pphoto.png'
+            }
             alt=""
             width={40}
             height={40}

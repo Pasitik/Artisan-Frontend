@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { signupUser } from '../features/login/signupSlice';
-import { loginUser } from '../features/login/loginSlice';
 import AuthSide from '../components/AuthSide';
 import { useApi } from '../data/ApiProvider';
 import { signUpValidation } from '../components/Validation';
@@ -12,7 +11,7 @@ const SignupForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const api = useApi();
-  const {login} = useUser()
+  const { login } = useUser();
   const [formErrors, setFormErrors] = useState({});
   const [isValidForm, setFormIsValid] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -25,7 +24,7 @@ const SignupForm = () => {
   });
 
   const { status } = useSelector((state) => state.users);
- 
+
   useEffect(() => {
     if (
       formData.username &&

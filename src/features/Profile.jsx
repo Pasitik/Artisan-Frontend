@@ -13,26 +13,25 @@ const Profile = () => {
   const api = useApi();
   const dispatch = useDispatch();
   const [uploadedImage, setuploadedImage] = useState(null);
-  //   const [uploadedImage, setuploadedImage] = useState(null);
 
   const [personalDataForm, setPersonalDataForm] = useState({
-    first_name: '',
-    last_name: '',
-    username: '',
-    birth_date: '',
-    phone: '',
+    first_name: ' ',
+    last_name: ' ',
+    username: ' ',
+    birth_date: ' ',
+    phone: ' ',
   });
   const [addressDataForm, setAddressDataForm] = useState({
-    house_number: '',
-    street: '',
-    city: '',
-    state: '',
+    house_number: ' ',
+    street: ' ',
+    city: ' ',
+    state: ' ',
   });
   const [artisanDataForm, setArtisanDataForm] = useState({
-    job_title: '',
-    summary: '',
-    category: '',
-    business_line: '',
+    job_title: ' ',
+    summary: ' ',
+    category: ' ',
+    business_line: ' ',
   });
 
   useEffect(() => {
@@ -48,7 +47,11 @@ const Profile = () => {
     dispatch(getCustomer(async () => await api.fetchCustomer())).then((res) => {
       if (res.payload) {
         setPersonalDataForm(res.payload);
-        setuploadedImage(res.payload.photos[0].photo);
+        const profilePhoto =
+          res.payload.photos.length > 0
+            ? res.payload.photos[0].photo
+            : undefined;
+        setuploadedImage(profilePhoto);
       }
     });
 
@@ -61,7 +64,7 @@ const Profile = () => {
     );
   }, [api, dispatch]);
 
-  const { status, customer, error } = useSelector((state) => state.customer);
+  const { status, customer } = useSelector((state) => state.customer);
   const { address } = useSelector((state) => state.address);
   const { data } = useSelector((state) => state.artisanProfile);
   const { category } = useSelector((state) => state.category);
@@ -146,7 +149,7 @@ const Profile = () => {
   return (
     <div>
       <NavBar />
-      <article id="hero" className="py-5">
+      <article id="hero" className="py-5 profile-section">
         <div className="container mx-auto mt-10 md:px-12">
           <h2 className="font-bold text-2xl mt-4 mb-16 text-center">
             {' '}
@@ -216,7 +219,7 @@ const Profile = () => {
                         placeholder=""
                         onChange={(e) => handleOnChange(e, personalDataForm)}
                       />
-                      <label htmlFor="first_name">First Name </label>
+                      <label htmlFor="first_name tesx">First Name </label>
                     </div>
                     <div className="field">
                       <input
@@ -226,7 +229,7 @@ const Profile = () => {
                         className="block w-full p-2 rounded shadow"
                         name="last_name"
                         value={personalDataForm.last_name}
-                        placeholder="Last name"
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, personalDataForm)}
                       />
                       <label>Last Name </label>
@@ -251,7 +254,7 @@ const Profile = () => {
                         className="block w-full p-2 rounded shadow"
                         name="email"
                         value={customer.email}
-                        placeholder=""
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, personalDataForm)}
                       />
                       <label>Email</label>
@@ -262,8 +265,12 @@ const Profile = () => {
                         required
                         className="block w-full p-2 rounded shadow"
                         name="birth_date"
-                        value={personalDataForm.birth_date}
-                        placeholder="Date of birth"
+                        value={
+                          personalDataForm.birth_date
+                            ? personalDataForm.birth_date
+                            : ''
+                        }
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, personalDataForm)}
                       />
                       <label>Birth Date</label>
@@ -275,7 +282,7 @@ const Profile = () => {
                         className="block w-full p-2 rounded shadow"
                         name="phone"
                         value={personalDataForm.phone}
-                        placeholder="Phone"
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, personalDataForm)}
                       />
                       <label>Phone</label>
@@ -293,7 +300,7 @@ const Profile = () => {
           </section>
 
           <section>
-            <h3 className="font-bold text-xl mt-4 mb-16 text-center underline">
+            <h3 className="font-bold text-xl mt-4 mb-16 text-center">
               Address Information
             </h3>
             <form onSubmit={handleAddressSubmit}>
@@ -307,7 +314,7 @@ const Profile = () => {
                         className="block w-full p-2 rounded shadow"
                         name="house_number"
                         value={addressDataForm.house_number}
-                        placeholder=""
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, addressDataForm)}
                       />
                       <label>Address line 1</label>
@@ -320,7 +327,7 @@ const Profile = () => {
                         className="block w-full p-2 rounded shadow"
                         name="street"
                         value={addressDataForm.street}
-                        placeholder=""
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, addressDataForm)}
                       />
                       <label htmlFor="street">Street</label>
@@ -333,7 +340,7 @@ const Profile = () => {
                         className="block w-full p-2 rounded shadow"
                         name="city"
                         value={addressDataForm.city}
-                        placeholder=""
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, addressDataForm)}
                       />
                       <label htmlFor="city">City</label>
@@ -346,7 +353,7 @@ const Profile = () => {
                         className="block w-full p-2 rounded shadow"
                         name="state"
                         value={addressDataForm.state}
-                        placeholder=""
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, addressDataForm)}
                       />
                       <label htmlFor="state">State / Province</label>
@@ -378,7 +385,7 @@ const Profile = () => {
                         className="block w-full p-2 rounded shadow"
                         name="job_title"
                         value={artisanDataForm.job_title}
-                        placeholder=""
+                        placeholder=" "
                         onChange={(e) => handleOnChange(e, artisanDataForm)}
                       />
                       <label htmlFor="job_title">Job Title</label>
@@ -418,11 +425,10 @@ const Profile = () => {
                     <div className="field">
                       <input
                         id="business_line"
-                        disabled
                         type="tel"
                         className="block w-full p-2 rounded shadow"
                         name="business_line"
-                        value={'+0304567890'}
+                        value={artisanDataForm.business_line}
                         placeholder=" "
                         onChange={(e) => handleOnChange(e, artisanDataForm)}
                       />

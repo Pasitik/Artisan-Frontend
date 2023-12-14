@@ -147,7 +147,7 @@ const ArtisanDetail = () => {
             <article className="my-2">
               <h3 className="font-bold">Reviews:</h3>
               {artisan.reviews.length > 0 ? (
-                artisan.reviews.map((review, idx) => (
+                artisan.reviews.map((review) => (
                   <section key={review.id} className="my-1 p-1">
                     <div className="my-1 p-1">
                       <p>

@@ -12,7 +12,7 @@ export const errorHandler = (error) => {
     myrror.message = JSON.stringify(error.response.data);
     error = myrror;
 
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
 
   if (error.response.status === 401 && error.config.url === 'auth/jwt/create') {
@@ -21,7 +21,7 @@ export const errorHandler = (error) => {
       myrror.message = error.response.data.detail;
       error = myrror;
     }
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
 
   if (error.response.status === 401 && !originalRequest._retry) {
@@ -49,7 +49,7 @@ export const errorHandler = (error) => {
         history.push('/login');
       }
     })();
-  } 
+  }
   // throw error;
 };
 
@@ -65,7 +65,7 @@ export default class ArtisanClient {
     }
     const accessToken = localStorage.getItem('authToken');
     this.httpClient = axios.create({
-      baseURL: BASE_API_URL + '/',
+      baseURL: BASE_API_URL,
       headers: {
         'Content-Type': 'application/json',
         Authorization: accessToken ? `JWT ${accessToken}` : null,

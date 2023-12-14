@@ -18,21 +18,21 @@ fieldset {
   position: relative;
   margin-bottom: 1.5em;
 }
-input:focus,
-textarea:focus {
+.profile-section input:focus,
+.profile-section textarea:focus {
   outline: none;
   border-bottom: 2px solid #fb923c;
 }
 
-label,
-input,
-textarea {
+.profile-section label,
+.profile-section input,
+.profile-section textarea {
   transition: all 0.2s;
   touch-action: manipulation;
 }
 
-input:placeholder-shown + label,
-textarea:placeholder-shown + label {
+.profile-section input:placeholder-shown + label,
+.profile-section textarea:placeholder-shown + label {
   cursor: text;
   max-width: 70%;
   white-space: nowrap;
@@ -42,12 +42,16 @@ textarea:placeholder-shown + label {
   transform: translate(0, 2.125rem) scale(1.25);
 }
 
-input:not(:placeholder-shown) + label,
-input:focus + label,
-textarea:not(:placeholder-shown) + label,
-textarea:focus + label {
+.profile-section input:not(:placeholder-shown) + label,
+.profile-section input:focus + label,
+.profile-section textarea:not(:placeholder-shown) + label,
+.profile-section textarea:focus + label {
   transform: translate(0, 0) scale(1);
   cursor: pointer;
+}
+.profile-section label {
+  font-size: 0.7rem;
+  line-height: 1.25rem;
 }
 
 #modal {
