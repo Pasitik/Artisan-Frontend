@@ -165,7 +165,7 @@ const Profile = () => {
 
             <div className="my-8 mb-20 flex flex-col items-center">
               <p>Drag and drop an image or click to upload.</p>
-
+              <label htmlFor='fileInput'>
               <input
                 type="file"
                 accept="image/*"
@@ -176,7 +176,7 @@ const Profile = () => {
                 <div
                   //   onDragOver={handleDragOver}
                   //   onDrop={handleDrop}
-                  className='max-w-[300px] max-h-[300px] border-2 border-dashed boder-[#ccc] text-center pt-2 pointer grid place-content-center'
+                  className='max-w-[300px] max-h-[300px] border-2 border-dashed boder-[#ccc] text-center pt-2 cursor-pointer grid place-content-center'
                 >
                   <img
                     src={
@@ -191,6 +191,7 @@ const Profile = () => {
                     width={270}
                   />
                 </div>
+                </label>
                 <p>Using your business flyer or poster is recommend.</p>
             </div>
             <form onSubmit={handlePersonalSubmit}>
