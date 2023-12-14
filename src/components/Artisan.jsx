@@ -10,6 +10,7 @@ const Artisan = ({ artist }) => {
         }
         width={200}
         height={200}
+        className='max-h-[200px] object-contain'
       />
       <figcaption className="px-2 flex flex-col justify-end ">
         <p className="flex mx-1 capitalize">

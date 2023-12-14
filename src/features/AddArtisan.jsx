@@ -4,20 +4,24 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useApi } from '../data/ApiProvider';
 import { getCategory } from './categorySlice';
 import { addArtisan } from './addArtisanSlice';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../data/UserProvider';
 
 const AddArtisan = () => {
   const dispatch = useDispatch();
   const api = useApi();
+  const { user } = useUser();
+  const navigate = useNavigate();
 
   const [formErrors, setFormErrors] = useState({});
-  const [isValidForm, setFormIsValid] = useState(false);
   const [formData, setFormData] = useState({
     job_title: '',
     summary: '',
     category: '',
+    business_line: '',
   });
 
-  const { data, status, error } = useSelector((state) => state.category);
+  const { category, status, error } = useSelector((state) => state.category);
 
   useEffect(() => {
     dispatch(getCategory(async () => await api.getArtisanCategories()));
@@ -32,53 +36,30 @@ const AddArtisan = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    if (formData.job_title || formData.summary || formData.category) {
-      setFormIsValid(true);
-    }
   };
 
-  const handleBlur = (e) => {
-    let newErrors = { ...formErrors };
-    if (!e.target.value && e.target.name == 'job_title') {
-      newErrors = {
-        ...newErrors,
-        job_title: {
-          message: 'Profession number is required',
-          field: 'job_title',
-        },
-      };
-    }
-    if (!e.target.value && e.target.name == 'summary') {
-      newErrors = {
-        ...newErrors,
-        summary: {
-          message: 'Summary is required',
-          field: 'summary',
-        },
-      };
-    }
-    setFormErrors(newErrors);
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!formData.job_title || !formData.summary || !formData.category) {
-      setFormIsValid(false);
       return;
     }
-    console.log(formData);
 
     dispatch(addArtisan(async () => await api.addArtisan(formData))).then(
-      (result) => {
-        console.log(result);
-        // navigate("/");
+      async () => {
         setFormData({
           job_title: '',
           summary: '',
           category: '',
+          business_line: '',
         });
-        setFormIsValid(false);
-        console.log('we are in', formErrors);
+        const response = await api.updateCustomerMembership({
+          ...user,
+          membership: 'A',
+        });
+        if (response.membership) {
+          navigate('/artisan/profile');
+        }
       },
     );
   };
@@ -109,7 +90,7 @@ const AddArtisan = () => {
           </div>
 
           <div className="w-full flex flex-col">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <div>
                 <label hidden htmlFor="job title"></label>
                 <input
@@ -119,7 +100,7 @@ const AddArtisan = () => {
                   value={formData.job_title}
                   placeholder="Profession"
                   onChange={handleOnChange}
-                  onBlur={handleBlur}
+                  required
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
                 />
                 {formErrors.job_title && (
@@ -140,7 +121,7 @@ const AddArtisan = () => {
                   placeholder="Summary"
                   value={formData.summary}
                   onChange={handleOnChange}
-                  onBlur={handleBlur}
+                  required
                   className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
                 />
                 {formErrors.summary && (
@@ -152,32 +133,52 @@ const AddArtisan = () => {
                   </p>
                 )}
               </div>
-              <div className="my-2">
-                <label>
-                  Select job category:
-                  <select
-                    name="category"
-                    className="block w-full"
-                    value={formData.category}
-                    onChange={handleOnChange}
+              <div>
+                <label hidden htmlFor="business_line"></label>
+                <input
+                  id="business_line"
+                  name="business_line"
+                  type="tel"
+                  placeholder="Telephone"
+                  value={formData.business_line}
+                  onChange={handleOnChange}
+                  className="w-full text-black py-2 my-2 bg-transparent border-b border-black outline-none focus:outline-none"
+                />
+                {formErrors.business_line && (
+                  <p
+                    hidden={
+                      !(formErrors.business_line.field === 'business_line')
+                    }
+                    className="text-red-500 text-sm"
                   >
-                    <option value="">-- Select --</option>
-                    {data &&
-                      data.map((opt) => (
-                        <option
-                          value={opt.category}
-                          key={opt.category + '' + opt.id}
-                        >
-                          {opt.category.toLowerCase().replaceAll('_', ' ')}
-                        </option>
-                      ))}
-                  </select>
-                </label>
+                    {formErrors.business_line.message}
+                  </p>
+                )}
+              </div>
+              <div className="my-2">
+                <label hidden>category </label>
+                <select
+                  name="category"
+                  className="block w-full"
+                  value={formData.category}
+                  onChange={handleOnChange}
+                >
+                  <option value="">-- Select job category --</option>
+                  {category &&
+                    category.map((opt) => (
+                      <option
+                        value={opt.category}
+                        key={opt.category + '' + opt.id}
+                      >
+                        {opt.category.toLowerCase().replaceAll('_', ' ')}
+                      </option>
+                    ))}
+                </select>
               </div>
               <div className="w-full flex flex-col my-4">
                 <button
-                  onClick={handleSubmit}
-                  disabled={status === 'loading' || !isValidForm}
+                  type="submit"
+                  disabled={status === 'loading'}
                   className="w-full text-white my-2 font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
                 >
                   Join

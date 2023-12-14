@@ -104,6 +104,10 @@ export default class ArtisanClient {
     return await this.httpClient.delete(url);
   }
 
+  async patch(url, body) {
+    return await this.httpClient.patch(url, body);
+  }
+
   isAuthenticated() {
     return localStorage.getItem('authToken') !== null;
   }
@@ -170,21 +174,21 @@ export default class ArtisanClient {
   }
 
   async fetchStates() {
-    const response = await this.get(`business/address/states`);
+    const response = await this.get(`business/address/states/`);
     return response.data;
   }
 
   async fetchCities() {
-    const response = await this.get(`business/address/cities`);
+    const response = await this.get(`business/address/cities/`);
     return response.data;
   }
 
   async fetchStreets() {
-    const response = await this.get(`business/address/streets`);
+    const response = await this.get(`business/address/streets/`);
     return response.data;
   }
   async fetchArtist(id) {
-    const response = await this.get(`business/artisan/${id}/info`);
+    const response = await this.get(`business/artisan/${id}/info/`);
     return response.data;
   }
 
@@ -194,12 +198,12 @@ export default class ArtisanClient {
   }
 
   async updateCustomer(body) {
-    const response = await this.put(`business/profile/me/`, body);
+    const response = await this.put('business/profile/me/', body);
     return response.data;
   }
 
   async fetchCustomer() {
-    const response = await this.httpClient.get('business/profile/me/');
+    const response = await this.get('business/profile/me/');
     return response.data;
   }
 
@@ -248,6 +252,11 @@ export default class ArtisanClient {
         headers: { 'Content-Type': 'multipart/form-data' },
       },
     );
+    return response.data;
+  }
+
+  async updateCustomerMembership(body) {
+    const response = await this.patch('business/profile/me/', body);
     return response.data;
   }
 }

@@ -6,6 +6,7 @@ import { addArtisan } from './addArtisanSlice';
 import { getCustomer } from './profileSlice';
 import { getHouseNumber } from './houseNumberSlice';
 import { getCategory } from './categorySlice';
+import { Link } from 'react-router-dom';
 
 const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
@@ -47,6 +48,7 @@ const Profile = () => {
     dispatch(getCustomer(async () => await api.fetchCustomer())).then((res) => {
       if (res.payload) {
         setPersonalDataForm(res.payload);
+
         const profilePhoto =
           res.payload.photos.length > 0
             ? res.payload.photos[0].photo
@@ -62,6 +64,7 @@ const Profile = () => {
         }
       },
     );
+
   }, [api, dispatch]);
 
   const { status, customer } = useSelector((state) => state.customer);
@@ -160,7 +163,7 @@ const Profile = () => {
               Personal Information
             </h3>
 
-            <div className="my-8 flex flex-col items-center">
+            <div className="my-8 mb-20 flex flex-col items-center">
               <p>Drag and drop an image or click to upload.</p>
 
               <input
@@ -170,20 +173,10 @@ const Profile = () => {
                 style={{ display: 'none' }}
                 id="fileInput"
               />
-              <label htmlFor="fileInput">
                 <div
                   //   onDragOver={handleDragOver}
                   //   onDrop={handleDrop}
-                  style={{
-                    width: '300px',
-                    height: '300px',
-                    border: '2px dashed #ccc',
-                    textAlign: 'center',
-                    paddingTop: '20px',
-                    cursor: 'pointer',
-                    display: 'grid',
-                    placeContent: 'center',
-                  }}
+                  className='max-w-[300px] max-h-[300px] border-2 border-dashed boder-[#ccc] text-center pt-2 pointer grid place-content-center'
                 >
                   <img
                     src={
@@ -192,16 +185,13 @@ const Profile = () => {
                         : '../profilephoto.jpeg'
                     }
                     alt="Uploaded"
-                    style={{
-                      maxWidth: '100%',
-                      maxHeight: '100%',
-                      objectFit: 'cover',
-                    }}
+                  
+                    className='max-w-full max-h-full object-cover overflow-hidden'
                     height={270}
                     width={270}
                   />
                 </div>
-              </label>
+                <p>Using your business flyer or poster is recommend.</p>
             </div>
             <form onSubmit={handlePersonalSubmit}>
               <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
@@ -370,12 +360,12 @@ const Profile = () => {
             </form>
           </section>
           <section>
-            <h3 className="font-bold text-xl mt-4 mb-16 text-center underline">
+            <h3 className="font-bold text-xl mt-4 mb-16 text-center">
               Business Information
             </h3>
-            <form onSubmit={handleBusinessSubmit}>
-              <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {data ? (
+            {data && customer.membership === 'A' ? (
+              <form onSubmit={handleBusinessSubmit}>
+                <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <>
                     <div className="field">
                       <input
@@ -435,17 +425,34 @@ const Profile = () => {
                       <label htmlFor="business_line">Work line</label>
                     </div>{' '}
                   </>
-                ) : (
-                  <button>Join Artisans</button>
-                )}
-              </fieldset>
-              <button
-                type="submit"
-                className="w-full text-white font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
-              >
-                save
-              </button>
-            </form>
+                </fieldset>
+                <button
+                  type="submit"
+                  className="w-full text-white font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center mb-4"
+                >
+                  save
+                </button>
+              </form>
+            ) : (
+              <>
+                <Link to="/artisan/join">
+                <button
+                  disabled={
+                    !(addressDataForm &&
+                    personalDataForm &&
+                    trackProfileCompletion(addressDataForm, personalDataForm))
+                  }
+                  className="mb-8 w-full text-white font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
+                >
+                  {addressDataForm &&
+                  personalDataForm &&
+                  trackProfileCompletion(addressDataForm, personalDataForm)
+                    ? 'Join Artisans'
+                    : 'Complete profile setup to activate'}
+                </button>
+                </Link> 
+              </>
+            )}
           </section>
         </div>
       </article>
@@ -454,3 +461,21 @@ const Profile = () => {
 };
 
 export default Profile;
+
+function trackProfileCompletion(addressDataForm, personalDataForm) {
+  const personalInfo =
+    personalDataForm &&
+    Object.values({
+      first_name: personalDataForm.first_name,
+      last_name: personalDataForm.last_name,
+      phone: personalDataForm.phone,
+      birth_date: personalDataForm.birth_date,
+    });
+  const isPersonalFormCompleted =
+    personalInfo && personalInfo.every((value) => value != '');
+
+  const addressInfo = addressDataForm && Object.values(addressDataForm);
+  const isAddressFormCompleted =
+    addressInfo && addressInfo.every((value) => value != '');
+  return isPersonalFormCompleted && isAddressFormCompleted;
+}
