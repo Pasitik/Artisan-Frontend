@@ -3,7 +3,7 @@ const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
 const Artisan = ({ artist }) => {
   return (
-    <figure key={artist.id} className="flex w-12/12">
+    <figure key={artist.id} className="flex w-12/12 max-h-[130px]">
       <img
         src={
           artist.photo ? BASE_API_URL + artist.photo : '../profilephoto.jpeg'
