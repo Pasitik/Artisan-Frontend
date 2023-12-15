@@ -18,23 +18,23 @@ const Profile = () => {
   const [uploadedImage, setuploadedImage] = useState(null);
 
   const [personalDataForm, setPersonalDataForm] = useState({
-    first_name: ' ',
-    last_name: ' ',
-    username: ' ',
-    birth_date: ' ',
-    phone: ' ',
+    first_name: '',
+    last_name: '',
+    username: '',
+    birth_date: '',
+    phone: '',
   });
   const [addressDataForm, setAddressDataForm] = useState({
-    house_number: ' ',
-    street: ' ',
-    city: ' ',
-    state: ' ',
+    house_number: '',
+    street: '',
+    city: '',
+    state: '',
   });
   const [artisanDataForm, setArtisanDataForm] = useState({
-    job_title: ' ',
-    summary: ' ',
-    category: ' ',
-    business_line: ' ',
+    job_title: '',
+    summary: '',
+    category: '',
+    business_line: '',
   });
 
   useEffect(() => {
@@ -469,11 +469,7 @@ const Profile = () => {
 
 export default Profile;
 
-
-function trackProfileCompletion(
-  personalDataForm,
-  addressDataForm,
-) {
+function trackProfileCompletion(personalDataForm, addressDataForm) {
   const personalInfo = {
     first_name: personalDataForm.first_name,
     last_name: personalDataForm.last_name,
@@ -481,7 +477,6 @@ function trackProfileCompletion(
     birth_date: personalDataForm.birth_date,
   };
 
-  console.log(personalInfo);
   const isPersonalFormCompleted =
     personalDataForm &&
     Object.values(personalInfo).every((value) => value.trim() !== '');
@@ -491,6 +486,6 @@ function trackProfileCompletion(
     Object.values(addressDataForm).every(
       (value) => value.toString().trim() !== '',
     );
-  
+
   return isPersonalFormCompleted && isAddressFormCompleted;
 }

@@ -29,7 +29,7 @@ const Pagination = ({ numberOfRecords, handleFetch, currentPage }) => {
         Previous
       </button>
       {Array.from(
-        { length: numberOfRecords > 5 ? 5 : 1 },
+        { length: totalPages > 5 ? 5 : totalPages },
         (_, index) => startIndex + index,
       ).map((val, idx) => (
         <span
