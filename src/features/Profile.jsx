@@ -7,11 +7,13 @@ import { getCustomer } from './profileSlice';
 import { getHouseNumber } from './houseNumberSlice';
 import { getCategory } from './categorySlice';
 import { Link } from 'react-router-dom';
+import { useUser } from '../data/UserProvider';
 
 const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
 const Profile = () => {
   const api = useApi();
+  const { setUser } = useUser();
   const dispatch = useDispatch();
   const [uploadedImage, setuploadedImage] = useState(null);
 
@@ -64,7 +66,6 @@ const Profile = () => {
         }
       },
     );
-
   }, [api, dispatch]);
 
   const { status, customer } = useSelector((state) => state.customer);
@@ -101,7 +102,9 @@ const Profile = () => {
     e.preventDefault();
 
     if (personalDataForm.username) {
-      dispatch(getCustomer(async () => api.updateCustomer(personalDataForm)));
+      dispatch(
+        getCustomer(async () => api.updateCustomer(personalDataForm)),
+      ).then((res) => (!res.error ? setUser(res.payload) : null));
     }
   };
 
@@ -109,7 +112,7 @@ const Profile = () => {
     e.preventDefault();
     if (addressDataForm.state && addressDataForm.house_number) {
       dispatch(
-        getCustomer(async () => api.updateCustomerAddress(addressDataForm)),
+        getHouseNumber(async () => api.updateCustomerAddress(addressDataForm)),
       );
     }
   };
@@ -118,7 +121,7 @@ const Profile = () => {
     e.preventDefault();
     if (artisanDataForm.job_title && artisanDataForm.category) {
       dispatch(
-        getCustomer(async () => api.updateCustomerPortfolio(artisanDataForm)),
+        addArtisan(async () => api.updateCustomerPortfolio(artisanDataForm)),
       );
     }
   };
@@ -165,18 +168,18 @@ const Profile = () => {
 
             <div className="my-8 mb-20 flex flex-col items-center">
               <p>Drag and drop an image or click to upload.</p>
-              <label htmlFor='fileInput'>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => handleOnChange(e, uploadedImage)}
-                style={{ display: 'none' }}
-                id="fileInput"
-              />
+              <label htmlFor="fileInput">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleOnChange(e, uploadedImage)}
+                  style={{ display: 'none' }}
+                  id="fileInput"
+                />
                 <div
                   //   onDragOver={handleDragOver}
                   //   onDrop={handleDrop}
-                  className='max-w-[300px] max-h-[300px] border-2 border-dashed boder-[#ccc] text-center pt-2 cursor-pointer grid place-content-center'
+                  className="max-w-[300px] max-h-[300px] border-2 border-dashed boder-[#ccc] text-center pt-2 cursor-pointer grid place-content-center"
                 >
                   <img
                     src={
@@ -185,14 +188,13 @@ const Profile = () => {
                         : '../profilephoto.jpeg'
                     }
                     alt="Uploaded"
-                  
-                    className='max-w-full max-h-full object-cover overflow-hidden'
+                    className="max-w-full max-h-full object-cover overflow-hidden"
                     height={270}
                     width={270}
                   />
                 </div>
-                </label>
-                <p>Using your business flyer or poster is recommend.</p>
+              </label>
+              <p>Using your business flyer or poster is recommend.</p>
             </div>
             <form onSubmit={handlePersonalSubmit}>
               <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
@@ -364,7 +366,9 @@ const Profile = () => {
             <h3 className="font-bold text-xl mt-4 mb-16 text-center">
               Business Information
             </h3>
-            {data && customer && customer.membership === 'A' ? (
+            {customer &&
+            customer.membership === 'A' &&
+            trackProfileCompletion(customer, address) ? (
               <form onSubmit={handleBusinessSubmit}>
                 <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <>
@@ -437,21 +441,23 @@ const Profile = () => {
             ) : (
               <>
                 <Link to="/artisan/join">
-                <button
-                  disabled={
-                    !(addressDataForm &&
-                    personalDataForm &&
-                    trackProfileCompletion(addressDataForm, personalDataForm))
-                  }
-                  className="mb-8 w-full text-white font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
-                >
-                  {addressDataForm &&
-                  personalDataForm &&
-                  trackProfileCompletion(addressDataForm, personalDataForm)
-                    ? 'Join Artisans'
-                    : 'Complete profile setup to activate'}
-                </button>
-                </Link> 
+                  <button
+                    disabled={
+                      !(
+                        customer &&
+                        data &&
+                        trackProfileCompletion(customer, address)
+                      )
+                    }
+                    className="mb-8 w-full text-white font-semibold bg-[#060606] rounded-md p-4 text-center flex items-center justify-center"
+                  >
+                    {customer &&
+                    data &&
+                    trackProfileCompletion(customer, address)
+                      ? 'Join Artisans'
+                      : 'Complete profile setup to activate'}
+                  </button>
+                </Link>
               </>
             )}
           </section>
@@ -463,20 +469,28 @@ const Profile = () => {
 
 export default Profile;
 
-function trackProfileCompletion(addressDataForm, personalDataForm) {
-  const personalInfo =
-    personalDataForm &&
-    Object.values({
-      first_name: personalDataForm.first_name,
-      last_name: personalDataForm.last_name,
-      phone: personalDataForm.phone,
-      birth_date: personalDataForm.birth_date,
-    });
-  const isPersonalFormCompleted =
-    personalInfo && personalInfo.every((value) => value != '');
 
-  const addressInfo = addressDataForm && Object.values(addressDataForm);
+function trackProfileCompletion(
+  personalDataForm,
+  addressDataForm,
+) {
+  const personalInfo = {
+    first_name: personalDataForm.first_name,
+    last_name: personalDataForm.last_name,
+    phone: personalDataForm.phone,
+    birth_date: personalDataForm.birth_date,
+  };
+
+  console.log(personalInfo);
+  const isPersonalFormCompleted =
+    personalDataForm &&
+    Object.values(personalInfo).every((value) => value.trim() !== '');
+
   const isAddressFormCompleted =
-    addressInfo && addressInfo.every((value) => value != '');
+    addressDataForm &&
+    Object.values(addressDataForm).every(
+      (value) => value.toString().trim() !== '',
+    );
+  
   return isPersonalFormCompleted && isAddressFormCompleted;
 }

@@ -161,7 +161,7 @@ const ArtisanDetail = () => {
                           </span>
                           {review.reviewer}
                         </span>
-                        <span className=''>
+                        <span className="">
                           <span className="text-sm font-bold mr-2">Date:</span>{' '}
                           {dateToString(review.updated_at)}
                         </span>
