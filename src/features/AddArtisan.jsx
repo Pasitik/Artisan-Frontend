@@ -53,13 +53,19 @@ const AddArtisan = () => {
           category: '',
           business_line: '',
         });
-        const response = await api.updateCustomerMembership({
-          ...user,
-          membership: 'A',
-        });
-        if (response.membership) {
-          navigate('/artisan/profile');
+
+        if  (user.membership != 'A') {
+          const response = await api.updateCustomerMembership({
+            ...user,
+            membership: 'A',
+          });
+
+          if (!response.membership) {
+            throw new Error('failed to update artisan membership.')
+          }
         }
+
+        navigate('/artisan/profile');
       },
     );
   };
