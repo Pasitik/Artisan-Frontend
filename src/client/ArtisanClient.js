@@ -5,7 +5,7 @@ const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 export const errorHandler = (error) => {
   const originalRequest = error.config;
 
-  console.log('=====>', error.response.data);
+  // console.log('=====>', error.response.data);
 
   if (error.response.status == 400) {
     const myrror = new Error();
@@ -15,7 +15,7 @@ export const errorHandler = (error) => {
     return Promise.reject(error);
   }
 
-  if (error.response.status === 401 && error.config.url === 'auth/jwt/create') {
+  if (error.response.status === 401 && error.config.url === 'user/jwt/create') {
     const myrror = new Error();
     if (error.response.data.detail) {
       myrror.message = error.response.data.detail;
@@ -29,7 +29,7 @@ export const errorHandler = (error) => {
     const refreshToken = localStorage.getItem('refresh');
     (async () => {
       try {
-        const response = await this.httpClient.post('/auth/jwt/refresh', {
+        const response = await this.httpClient.post('/user/jwt/refresh', {
           refresh: refreshToken,
         });
 
