@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useUser } from '../data/UserProvider';
 
 const Home = () => {
-  const {user} = useUser();
+  const { user } = useUser();
 
   return (
     <div>
@@ -28,7 +28,7 @@ const Home = () => {
                   Learn more
                 </button>
               </Link>
-              {user && !user.isArtisan && <Link to="artisan/join">
+              <Link to="artisan/join" hidden={user && user.isArtisan}>
                 <button
                   type="button"
                   className="ml-5 text-white bg-orange-400 font-medium rounded-lg px-5 py-4 text-center hover:bg-orange-300 houver:drop-shadow-md transition duration-300 ease-in-out"
@@ -36,7 +36,6 @@ const Home = () => {
                   Join Artisans
                 </button>
               </Link>
-              }
             </div>
           </div>
           <div className="ld:w-1/2">
