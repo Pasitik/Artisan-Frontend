@@ -29,16 +29,14 @@ const Home = () => {
                   Learn more
                 </button>
               </Link>
-              {user && !user.isArtisan && (
-                <Link to="artisan/join">
-                  <button
-                    type="button"
-                    className="ml-5 text-white bg-orange-400 font-medium rounded-lg px-5 py-4 text-center hover:bg-orange-300 houver:drop-shadow-md transition duration-300 ease-in-out"
-                  >
-                    Join Artisans
-                  </button>
-                </Link>
-              )}
+              <Link to="artisan/join" hidden={user && user.isArtisan}>
+                <button
+                  type="button"
+                  className="ml-5 text-white bg-orange-400 font-medium rounded-lg px-5 py-4 text-center hover:bg-orange-300 houver:drop-shadow-md transition duration-300 ease-in-out"
+                >
+                  Join Artisans
+                </button>
+              </Link>
             </div>
           </div>
           <div className="ld:w-1/2">
