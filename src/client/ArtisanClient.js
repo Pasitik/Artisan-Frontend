@@ -113,7 +113,7 @@ export default class ArtisanClient {
   }
 
   async loginUser(username, password) {
-    const response = await this.post('auth/jwt/create', {
+    const response = await this.post('user/jwt/create', {
       username,
       password,
     });
