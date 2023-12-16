@@ -10,11 +10,11 @@ const Artisan = ({ artist }) => {
         src={
           artist.photo ? BASE_API_URL + artist.photo : '../profilephoto.jpeg'
         }
-        width={200}
-        height={200}
-        className="max-h-[200px] object-contain"
+        width={135}
+        height={135}
+        className=" max-h-[135px] object-contain"
       />
-      <figcaption className="flex flex-col justify-end text-no-wrap ">
+      <figcaption className="flex flex-col justify-end mx-2">
         <p className="flex capitalize">
           <span className="mr-2 font-bold leading-tight">Job title: </span>
           {artist.job_title}
@@ -30,8 +30,8 @@ const Artisan = ({ artist }) => {
         <p className="flex capitalize">
           <span className="mr-2 font-bold leading-tight">Location: </span>
           {artist.addresses.length > 0 && artist.addresses[0].city
-            ? artistAddress.slice(0, 22) +
-              (artistAddress.length > 22 ? '...' : '')
+            ? artistAddress.slice(0, 30) +
+              (artistAddress.length > 30 ? '...' : '')
             : 'Not available'}
         </p>
         <p className="flex capitalize">

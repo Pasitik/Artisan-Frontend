@@ -1,7 +1,10 @@
 import NavBar from '../components/NavBar';
 import { Link } from 'react-router-dom';
+import { useUser } from '../data/UserProvider';
 
 const Home = () => {
+  const {user} = useUser();
+
   return (
     <div>
       <NavBar />
@@ -25,7 +28,7 @@ const Home = () => {
                   Learn more
                 </button>
               </Link>
-              <Link to="artisan/join">
+              {user && !user.isArtisan && <Link to="artisan/join">
                 <button
                   type="button"
                   className="ml-5 text-white bg-orange-400 font-medium rounded-lg px-5 py-4 text-center hover:bg-orange-300 houver:drop-shadow-md transition duration-300 ease-in-out"
@@ -33,6 +36,7 @@ const Home = () => {
                   Join Artisans
                 </button>
               </Link>
+              }
             </div>
           </div>
           <div className="ld:w-1/2">
