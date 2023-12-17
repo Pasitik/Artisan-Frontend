@@ -21,7 +21,7 @@ const Home = () => {
               providing digital support.
             </p>
             <div className="flex justify-center mt-14 lg:justify-start">
-              <Link to="more">
+              <Link to="/faq">
                 <button
                   type="button"
                   className="text-white bg-green-500 font-medium rounded-lg px-5 py-4 text-center hover:bg-green-300 houver:drop-shadow-md transition duration-300 ease-in-out"
