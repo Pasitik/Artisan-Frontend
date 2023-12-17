@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useUser } from '../data/UserProvider';
 import UserProfileDropdown from '../components/UserProfileDropdown';
+import { HashLink as NavLink } from 'react-router-hash-link';
 
 const NavBar = () => {
   let Links = [
-    { name: 'Home', link: '/home' },
-    { name: 'Search', link: '/search' },
-    { name: 'About', link: '/about' },
-    { name: 'Log in', link: '/login' },
+    { name: 'Home', link: '/home', smooth: false },
+    { name: 'Search', link: '/search', smooth: false },
+    { name: 'About', link: '/#about', smooth: true },
+    { name: 'Log in', link: '/login', smooth: false },
   ];
 
   let [open, setOpen] = useState(false);
@@ -45,6 +46,7 @@ const NavBar = () => {
                 <NavLink
                   to={link.link}
                   className="text-gray-800 font-bold text-lg hover:text-gray-400 duration-500"
+                  smooth={Links.smooth}
                 >
                   {link.name}
                 </NavLink>
