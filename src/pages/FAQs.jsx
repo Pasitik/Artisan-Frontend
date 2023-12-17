@@ -15,15 +15,15 @@ const FAQs = () => {
       <NavBar />
       <h1 className="text-left text-3xl font-extrabold my-10 mx-20">FAQs</h1>
       <div className="w-full flex justify-center items-center ">
-        <div className="w-1/2">
+        <div className=" w-full md:w-1/2 md:mx-0 mx-5">
           {faqs.map((item, i) => (
             <div className="bg-[#f0ebe1] mb-5 py-10 px-20">
               <div
-                className="flex justify-between text-[#85662b] my-5 cursor-pointer text-xl font-bold"
+                className="flex justify-between text-[#85662b] my-5 cursor-pointer md:text-xl font-bold"
                 onClick={() => toggle(i)}
               >
                 <h2 className="font-bold">{item.question}</h2>
-                <span className="font-bold text-2xl">
+                <span className="font-bold md:text-2xl">
                   {selected === i ? '-' : '+'}
                 </span>
               </div>
