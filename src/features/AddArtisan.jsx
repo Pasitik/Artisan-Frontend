@@ -54,14 +54,14 @@ const AddArtisan = () => {
           business_line: '',
         });
 
-        if  (user.membership != 'A') {
+        if (user.membership != 'A') {
           const response = await api.updateCustomerMembership({
             ...user,
             membership: 'A',
           });
 
           if (!response.membership) {
-            throw new Error('failed to update artisan membership.')
+            throw new Error('failed to update artisan membership.');
           }
         }
 
