@@ -146,10 +146,10 @@ const Profile = () => {
   const handleDragOver = (e) => {
     e.preventDefault();
   };
-  
+
   const handleDrop = (e) => {
-    e.preventDefault(); 
-  
+    e.preventDefault();
+
     if (e.dataTransfer.items) {
       const file = e.dataTransfer.items[0].getAsFile();
       handleFileChange({ target: { files: [file] } });
@@ -189,8 +189,8 @@ const Profile = () => {
                   id="fileInput"
                 />
                 <div
-                    onDragOver={handleDragOver}
-                    onDrop={handleDrop}
+                  onDragOver={handleDragOver}
+                  onDrop={handleDrop}
                   className="max-w-[300px] max-h-[300px] border-2 border-dashed boder-[#ccc] text-center pt-2 cursor-pointer grid place-content-center"
                 >
                   <img
@@ -415,7 +415,11 @@ const Profile = () => {
                         name="category"
                         className="block w-full"
                         onChange={(e) => handleOnChange(e, artisanDataForm)}
-                        value={artisanDataForm.category ? artisanDataForm.category : ''}
+                        value={
+                          artisanDataForm.category
+                            ? artisanDataForm.category
+                            : ''
+                        }
                       >
                         <option value="" disabled>
                           -- Select --
@@ -423,11 +427,12 @@ const Profile = () => {
                         {category &&
                           category.map((opts, index) => (
                             <option key={opts + index} value={opts}>
-                              {opts && opts.category.toLowerCase().replaceAll('_', ' ')}
+                              {opts &&
+                                opts.category
+                                  .toLowerCase()
+                                  .replaceAll('_', ' ')}
                             </option>
-                          )) 
-              
-                        }
+                          ))}
                       </select>
                       <label htmlFor="category">Category</label>
                     </div>

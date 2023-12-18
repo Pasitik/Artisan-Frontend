@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import faqs from '../data/FaqData';
 import NavBar from '../components/NavBar';
 
@@ -16,8 +16,8 @@ const FAQs = () => {
       <h1 className="text-left text-3xl font-extrabold my-10 mx-20">FAQs</h1>
       <div className="w-full flex justify-center items-center ">
         <div className=" w-full md:w-1/2 md:mx-0 mx-5">
-          {faqs.map((item, i) => (
-            <div className="bg-[#f0ebe1] mb-5 py-10 px-20">
+          {faqs.map((item, idx) => (
+            <div key={idx} className="bg-[#f0ebe1] mb-5 py-10 px-20">
               <div
                 className="flex justify-between text-[#85662b] my-5 cursor-pointer md:text-xl font-bold"
                 onClick={() => toggle(i)}
