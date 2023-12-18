@@ -29,7 +29,7 @@ const UserProfileDropdown = ({ user, logout }) => {
             className="h-full border-2 rounded-full max-h-[40px] max-w-[40px] object-cover"
             src={
               user.photos.length > 0
-                ? BASE_API_URL + '/media/' + user.photos[0].photo
+                ? BASE_API_URL + 'media/' + user.photos[0].photo
                 : '../pphoto.png'
             }
             alt=""
