@@ -119,7 +119,7 @@ const Profile = () => {
 
   const handleBusinessSubmit = (e) => {
     e.preventDefault();
-    if (artisanDataForm.job_title && artisanDataForm.category) {
+    if (artisanDataForm.job_title) {
       dispatch(
         addArtisan(async () => api.updateCustomerPortfolio(artisanDataForm)),
       );
@@ -403,7 +403,7 @@ const Profile = () => {
                         name="category"
                         className="block w-full"
                         onChange={(e) => handleOnChange(e, artisanDataForm)}
-                        value={artisanDataForm.category}
+                        value={artisanDataForm.category ? artisanDataForm.category : ''}
                       >
                         <option value="" disabled>
                           -- Select --
@@ -411,9 +411,11 @@ const Profile = () => {
                         {category &&
                           category.map((opts, index) => (
                             <option key={opts + index} value={opts}>
-                              {opts.category.toLowerCase().replaceAll('_', ' ')}
+                              {opts && opts.category.toLowerCase().replaceAll('_', ' ')}
                             </option>
-                          ))}
+                          )) 
+              
+                        }
                       </select>
                       <label htmlFor="category">Category</label>
                     </div>
