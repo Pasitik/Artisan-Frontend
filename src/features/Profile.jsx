@@ -196,7 +196,7 @@ const Profile = () => {
                   <img
                     src={
                       uploadedImage
-                        ? BASE_API_URL + "media/" + uploadedImage
+                        ? BASE_API_URL + "media" + uploadedImage
                         : '../profilephoto.jpeg'
                     }
                     alt="Uploaded"
