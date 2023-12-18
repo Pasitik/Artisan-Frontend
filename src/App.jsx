@@ -15,7 +15,7 @@ import ApiProvider from './data/ApiProvider';
 import SearchArtisan from './features/SearchArtisan';
 import ArtisanDetail from './features/ArtisanDetail';
 import Profile from './features/Profile';
-import About from './pages/About';
+import About from './components/About';
 import UserProvider from './data/UserProvider';
 import LearnMore from './pages/LeanMore';
 
@@ -32,7 +32,7 @@ function App() {
                 <Route path="/artisan/profile" element={<Profile />} />
               </Route>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/about" element={<About />} />
+              <Route exact path="#about" element={<About />} />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/register" element={<SignupForm />} />
               <Route path="/search" element={<SearchArtisan />} />
