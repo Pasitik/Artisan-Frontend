@@ -20,16 +20,16 @@ const FAQs = () => {
             <div key={idx} className="bg-[#f0ebe1] mb-5 py-10 px-20">
               <div
                 className="flex justify-between text-[#85662b] my-5 cursor-pointer md:text-xl font-bold"
-                onClick={() => toggle(i)}
+                onClick={() => toggle(idx)}
               >
                 <h2 className="font-bold">{item.question}</h2>
                 <span className="font-bold md:text-2xl">
-                  {selected === i ? '-' : '+'}
+                  {selected === idx ? '-' : '+'}
                 </span>
               </div>
               <div
                 className={
-                  selected === i
+                  selected === idx
                     ? 'h-auto max-h-[9999] transition-all duration-1000 ease-in-out'
                     : 'text-[8b7f75] max-h-0 overflow-hidden transition-all duration-1000 ease-in-out'
                 }
