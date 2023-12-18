@@ -143,6 +143,18 @@ const Profile = () => {
       })();
     }
   }
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+  
+  const handleDrop = (e) => {
+    e.preventDefault(); 
+  
+    if (e.dataTransfer.items) {
+      const file = e.dataTransfer.items[0].getAsFile();
+      handleFileChange({ target: { files: [file] } });
+    }
+  };
 
   if (status === 'loading') {
     return <div>Loading...</div>;
@@ -177,8 +189,8 @@ const Profile = () => {
                   id="fileInput"
                 />
                 <div
-                  //   onDragOver={handleDragOver}
-                  //   onDrop={handleDrop}
+                    onDragOver={handleDragOver}
+                    onDrop={handleDrop}
                   className="max-w-[300px] max-h-[300px] border-2 border-dashed boder-[#ccc] text-center pt-2 cursor-pointer grid place-content-center"
                 >
                   <img
@@ -194,7 +206,7 @@ const Profile = () => {
                   />
                 </div>
               </label>
-              <p>Using your business flyer or poster is recommend.</p>
+              <p>Using your business flyer or poster is recommended.</p>
             </div>
             <form onSubmit={handlePersonalSubmit}>
               <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
