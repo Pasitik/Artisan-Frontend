@@ -73,7 +73,7 @@ export default class ArtisanClient {
     });
 
     this.httpClient.interceptors.request.use((config) => {
-      console.log(`Request: ${config.method} ${config.url}`);
+      // console.log(`Request: ${config.method} ${config.url}`);
 
       const accessToken = localStorage.getItem('authToken');
       if (accessToken) {
