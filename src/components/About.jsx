@@ -22,7 +22,7 @@ const About = () => {
         <h1 className=" font-bold text-5xl m-5" id="about">
           About
         </h1>
-        <p className=" text-center">
+        <p className="text-start">
           Welcome to ArtisanBay, your go-to platform for connecting with skilled
           artisans in your local community. We understand the value of
           craftsmanship and the importance of finding reliable professionals for
@@ -36,7 +36,7 @@ const About = () => {
           people with the skills and expertise they require, promoting a vibrant
           ecosystem of trades and services.
         </p>
-        <p className=" font-semibold font-sans pt-3 text-center">
+        <p className=" font-semibold font-sans pt-3 text-start">
           Join us in supporting local artisans and building a stronger, more
           connected community. Whether you're a homeowner in search of skilled
           professionals or an artisan looking to showcase your expertise,
