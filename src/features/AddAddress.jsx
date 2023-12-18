@@ -94,8 +94,6 @@ const AddAddress = () => {
       setFormIsValid(false);
       return;
     }
-    console.log(formData);
-
     dispatch(async () => await api.addAddress(formData));
   };
 

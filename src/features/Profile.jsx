@@ -426,7 +426,7 @@ const Profile = () => {
                         </option>
                         {category &&
                           category.map((opts, index) => (
-                            <option key={opts + index} value={opts}>
+                            <option key={opts + index} value={opts.category}>
                               {opts &&
                                 opts.category
                                   .toLowerCase()

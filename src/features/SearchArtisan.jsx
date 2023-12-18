@@ -37,11 +37,14 @@ const SearchArtisan = () => {
     const keyValueString = keyValuePairs
       .map(([key, value]) => `${key}=${value}`)
       .join('&');
-    dispatch(fetchArtisan(async () => api.fetchArtisan(keyValueString))).then(
-      () => {
-        searchRef.current.focus();
-      },
-    );
+
+      if (keyValueString.length > 'title=&state=&city=&street='.length) {
+        dispatch(fetchArtisan(async () => api.searchArtisan(keyValueString))).then(
+          () => {
+            searchRef.current.focus();
+          },
+        );
+      }
   }, [searchParamsTracker, dispatch, api]);
 
   const handleSearch = (e) => {
@@ -51,10 +54,9 @@ const SearchArtisan = () => {
     if (e.key === 'Enter' && searchValue.trim() !== '') {
       dispatch(
         fetchArtisan(
-          async () => await api.fetchArtisan(`title=${searchValue}`),
+          async () => await api.searchArtisan(`title=${searchValue}`),
         ),
       ).then((res) => {
-        console.log(res);
         searchRef.current.focus();
         setSearchParamsTracker({ ...searchParamsTracker, title: searchValue });
       });
@@ -114,7 +116,7 @@ const SearchArtisan = () => {
               onKeyDown={handleSearch}
             />
           </div>
-          <section className="py-4 px-2 grid grid-cols-2">
+          <section className="py-4 px-2 grid md:grid-cols-2">
             {data && data.results.length != 0 ? (
               data.results.map((artist) => (
                 <Link

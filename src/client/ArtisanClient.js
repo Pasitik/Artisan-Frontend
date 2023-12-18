@@ -73,7 +73,7 @@ export default class ArtisanClient {
     });
 
     this.httpClient.interceptors.request.use((config) => {
-      // console.log(`Request: ${config.method} ${config.url}`);
+      console.log(`Request: ${config.method} ${config.url}`);
 
       const accessToken = localStorage.getItem('authToken');
       if (accessToken) {
@@ -158,7 +158,7 @@ export default class ArtisanClient {
     return response.data;
   }
 
-  async fetchArtisan(searchParam) {
+  async searchArtisan(searchParam) {
     const response = await this.get(`business/artisan/search/?${searchParam}`);
     return response.data;
   }
