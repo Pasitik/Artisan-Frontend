@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useUser } from '../data/UserProvider';
 import UserProfileDropdown from '../components/UserProfileDropdown';
+import { HashLink as NavLink } from 'react-router-hash-link';
 
 const NavBar = () => {
   let Links = [
-    { name: 'Home', link: '/home' },
-    { name: 'Search', link: '/search' },
-    { name: 'About', link: '/about' },
-    { name: 'Log in', link: '/login' },
+    { name: 'Home', link: '/home', smooth: false },
+    { name: 'Search', link: '/search', smooth: false },
+    { name: 'About', link: '/#about', smooth: true },
+    { name: 'Log in', link: '/login', smooth: false },
   ];
 
   let [open, setOpen] = useState(false);
@@ -33,7 +34,7 @@ const NavBar = () => {
           <ul
             className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:bg-white bg-gray-300 md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9
             transition-all duration-500 ease-in ${
-              open ? 'top-20 opacity-100 z-10' : 'top-[-490px]'
+              open ? 'top-20 opacity-100 z-[1]' : 'top-[-490px]'
             } md:opacity-100`}
           >
             {Links.map((link) => (
@@ -45,6 +46,7 @@ const NavBar = () => {
                 <NavLink
                   to={link.link}
                   className="text-gray-800 font-bold text-lg hover:text-gray-400 duration-500"
+                  smooth={Links.smooth}
                 >
                   {link.name}
                 </NavLink>
