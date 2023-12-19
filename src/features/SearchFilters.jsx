@@ -41,7 +41,7 @@ const SearchFilters = ({ searchParamsTracker, setSearchParamsTracker }) => {
   }
 
   return (
-    <section className="filters-section h-screen bg-gray-200 w-2/12 grid place-content-center">
+    <section className="filters-section h-screen bg-gray-200 lg:w-2/12 grid place-content-center md:w-4/12">
       <h2 className="font-bold text-xl">Filter By:</h2>
       {/* <div className="w-[180px] border boder-1 border-gray-600 max-w-[180px] grid place-content-center p-1 my-4">
         <button>Job title</button>

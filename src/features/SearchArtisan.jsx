@@ -82,7 +82,7 @@ const SearchArtisan = () => {
   return (
     <main className=" h-screen w-screen">
       <NavBar />
-      <div className="h-full bg-gray-50 flex">
+      <div className="h-full bg-gray-50 flex flex-col md:flex-row">
         <SearchFilters
           setSearchParamsTracker={setSearchParamsTracker}
           searchParamsTracker={searchParamsTracker}
@@ -92,7 +92,7 @@ const SearchArtisan = () => {
             Find an artisan near you!{' '}
           </h1>
 
-          <div className="w-[450px] flex items-center ml-4 border-2 border-black rounded-full bg-white">
+          <div className="w-[100%] flex items-center ml-4 border-2 border-black rounded-full bg-white md:w-[450px] overflow-hidden">
             {
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
@@ -105,7 +105,7 @@ const SearchArtisan = () => {
             <input
               id="search-box"
               type="search"
-              className="py-2 focus:outline-none px-2 flex-1 rounded-full w-full"
+              className="py-2 focus:outline-none px-2 flex-1 rounded-full w-full sm:w-[100px]"
               placeholder="capenter"
               value={searchItem}
               onChange={(e) => {
@@ -116,7 +116,7 @@ const SearchArtisan = () => {
               onKeyDown={handleSearch}
             />
           </div>
-          <section className="py-4 px-2 grid md:grid-cols-2">
+          <section className="py-4 px-2 grid md:grid-cols-1 lg:grid-cols-2">
             {data && data.results.length != 0 ? (
               data.results.map((artist) => (
                 <Link
