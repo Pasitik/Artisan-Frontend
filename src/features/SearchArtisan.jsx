@@ -9,6 +9,8 @@ import Pagination from '../components/Pagination';
 import SearchFilters from './SearchFilters';
 import { Link } from 'react-router-dom';
 import Artisan from '../components/Artisan';
+import Loader from '../components/Loader';
+
 
 const SearchArtisan = () => {
   const searchRef = useRef();
@@ -56,7 +58,7 @@ const SearchArtisan = () => {
         fetchArtisan(
           async () => await api.searchArtisan(`title=${searchValue}`),
         ),
-      ).then((res) => {
+      ).then(() => {
         searchRef.current.focus();
         setSearchParamsTracker({ ...searchParamsTracker, title: searchValue });
       });
@@ -72,7 +74,7 @@ const SearchArtisan = () => {
   };
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   if (status === 'failed') {

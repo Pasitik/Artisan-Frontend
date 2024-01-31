@@ -8,6 +8,8 @@ import { getHouseNumber } from './houseNumberSlice';
 import { getCategory } from './categorySlice';
 import { Link } from 'react-router-dom';
 import { useUser } from '../data/UserProvider';
+import Loader from '../components/Loader';
+
 
 const BASE_API_URL = import.meta.env.VITE_APP_BASE_API_URL;
 
@@ -157,7 +159,7 @@ const Profile = () => {
   };
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   if (status === 'failed') {

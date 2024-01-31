@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getStates } from './stateSlice';
 import { getCities } from './citySlice';
 import { getStreets } from './streetSlice';
+import Loader from '../components/Loader';
 
 const SearchFilters = ({ searchParamsTracker, setSearchParamsTracker }) => {
   const api = useApi();
@@ -33,7 +34,7 @@ const SearchFilters = ({ searchParamsTracker, setSearchParamsTracker }) => {
   };
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   if (status === 'failed') {

@@ -12,8 +12,10 @@ import Review from '../components/Review';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { dateToString } from '../utils/date';
+import Loader from '../components/Loader';
 
-const ArtisanDetail = () => {
+
+const RenderArtisanDetail = () => {
   const { id } = useParams();
   const api = useApi();
   const dispatch = useDispatch();
@@ -74,7 +76,11 @@ const ArtisanDetail = () => {
   };
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return (
+      <>
+      <Loader/>
+      </>
+    ); 
   }
 
   if (status === 'failed') {
@@ -83,7 +89,6 @@ const ArtisanDetail = () => {
 
   return (
     <>
-      <NavBar />
       <section className="p-4 container mx-32">
         {artisan && (
           <>
@@ -174,7 +179,7 @@ const ArtisanDetail = () => {
               )}
             </article>
 
-            {user && !isVerified && (
+           {user && !isVerified && (
               <section className="flex">
                 <button
                   onClick={handleRating}
@@ -196,4 +201,13 @@ const ArtisanDetail = () => {
     </>
   );
 };
+
+const ArtisanDetail = () => {
+  return (
+    <>
+      <NavBar />
+      <RenderArtisanDetail/>
+    </>
+  )
+}
 export default ArtisanDetail;

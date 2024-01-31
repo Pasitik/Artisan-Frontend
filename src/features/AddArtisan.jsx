@@ -6,6 +6,8 @@ import { getCategory } from './categorySlice';
 import { addArtisan } from './addArtisanSlice';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../data/UserProvider';
+import Loader from '../components/Loader';
+
 
 const AddArtisan = () => {
   const dispatch = useDispatch();
@@ -71,7 +73,7 @@ const AddArtisan = () => {
   };
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   if (status === 'failed') {
