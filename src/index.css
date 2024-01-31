@@ -109,7 +109,7 @@ fieldset {
 }
 
 .loader::after {
-  content: "";
+  content: '';
   width: 75px;
   height: 75px;
   border: 15px solid #dddddd;

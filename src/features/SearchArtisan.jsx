@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import Artisan from '../components/Artisan';
 import Loader from '../components/Loader';
 
-
 const SearchArtisan = () => {
   const searchRef = useRef();
   const dispatch = useDispatch();
@@ -40,13 +39,13 @@ const SearchArtisan = () => {
       .map(([key, value]) => `${key}=${value}`)
       .join('&');
 
-      if (keyValueString.length > 'title=&state=&city=&street='.length) {
-        dispatch(fetchArtisan(async () => api.searchArtisan(keyValueString))).then(
-          () => {
-            searchRef.current.focus();
-          },
-        );
-      }
+    if (keyValueString.length > 'title=&state=&city=&street='.length) {
+      dispatch(
+        fetchArtisan(async () => api.searchArtisan(keyValueString)),
+      ).then(() => {
+        searchRef.current.focus();
+      });
+    }
   }, [searchParamsTracker, dispatch, api]);
 
   const handleSearch = (e) => {
@@ -74,7 +73,7 @@ const SearchArtisan = () => {
   };
 
   if (status === 'loading') {
-    return <Loader/>;
+    return <Loader />;
   }
 
   if (status === 'failed') {

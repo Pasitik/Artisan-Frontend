@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from '../data/UserProvider';
 import Loader from '../components/Loader';
 
-
 const AddArtisan = () => {
   const dispatch = useDispatch();
   const api = useApi();
@@ -73,7 +72,7 @@ const AddArtisan = () => {
   };
 
   if (status === 'loading') {
-    return <Loader/>;
+    return <Loader />;
   }
 
   if (status === 'failed') {

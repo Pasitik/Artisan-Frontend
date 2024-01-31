@@ -14,7 +14,6 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { dateToString } from '../utils/date';
 import Loader from '../components/Loader';
 
-
 const RenderArtisanDetail = () => {
   const { id } = useParams();
   const api = useApi();
@@ -78,9 +77,9 @@ const RenderArtisanDetail = () => {
   if (status === 'loading') {
     return (
       <>
-      <Loader/>
+        <Loader />
       </>
-    ); 
+    );
   }
 
   if (status === 'failed') {
@@ -179,7 +178,7 @@ const RenderArtisanDetail = () => {
               )}
             </article>
 
-           {user && !isVerified && (
+            {user && !isVerified && (
               <section className="flex">
                 <button
                   onClick={handleRating}
@@ -206,8 +205,8 @@ const ArtisanDetail = () => {
   return (
     <>
       <NavBar />
-      <RenderArtisanDetail/>
+      <RenderArtisanDetail />
     </>
-  )
-}
+  );
+};
 export default ArtisanDetail;

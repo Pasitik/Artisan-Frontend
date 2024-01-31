@@ -14,7 +14,7 @@ import AddArtisan from './features/AddArtisan';
 import ApiProvider from './data/ApiProvider';
 import SearchArtisan from './features/SearchArtisan';
 import ArtisanDetail from './features/ArtisanDetail';
-import Profile from './features/Profile';
+import Profile from './features/Profile/Profile';
 import FAQs from './pages/FAQs';
 import About from './components/About';
 import UserProvider from './data/UserProvider';

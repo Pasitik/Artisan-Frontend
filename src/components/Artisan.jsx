@@ -8,7 +8,9 @@ const Artisan = ({ artist }) => {
     <figure key={artist.id} className="flex w-12/12 max-h-[130px]">
       <img
         src={
-          artist.photo ? BASE_API_URL + 'media/' + artist.photo : '../profilephoto.jpeg'
+          artist.photo
+            ? BASE_API_URL + 'media/' + artist.photo
+            : '../profilephoto.jpeg'
         }
         width={135}
         height={135}

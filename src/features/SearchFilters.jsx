@@ -34,7 +34,7 @@ const SearchFilters = ({ searchParamsTracker, setSearchParamsTracker }) => {
   };
 
   if (status === 'loading') {
-    return <Loader/>;
+    return <Loader />;
   }
 
   if (status === 'failed') {

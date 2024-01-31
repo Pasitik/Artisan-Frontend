@@ -6,7 +6,7 @@ import artisanProfileReducer from '../features/addArtisanSlice';
 import statesReducer from '../features/stateSlice';
 import artisansReducer from '../features/SearchArtisanSlice';
 import artisanReducer from '../features/artisanDetailSlice';
-import customerReducer from '../features/profileSlice';
+import customerReducer from '../features/Profile/profileSlice';
 import citiesReducer from '../features/citySlice';
 import streetsReducer from '../features/streetSlice';
 import houseNumberReducer from '../features/houseNumberSlice';
